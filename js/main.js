@@ -593,7 +593,7 @@ function sns_share(media)
 {
 	if (media == "facebook")
 	{
-		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.thefaceshopclouding.co.kr/?media=F01'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifcosmetic.com/'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -603,41 +603,9 @@ function sns_share(media)
 				"media" : media
 			}
 		});
-
-	  /*
-	  var media = "fb";
-	  FB.ui(
-	  {
-		method: 'feed',
-		name: "더페이스샵 - 블랑클라우닝'",
-		link: 'http://www.thefaceshopclouding.co.kr/?media=fb',
-		//picture: imgurl,
-		//picture: "http://www.tomorrowkids.or.kr/images/fb/jobimg_1.jpg",
-		caption: 'www.thefaceshopclouding.co.kr',
-		//description: job + " - " + job_explain
-		description: "1. 서장훈, 촉촉하게 수지랑!<br />서장훈 구름탄 기분이랄까~<br />촉촉한 선물 <br />2. 서장훈 더페이스샵 CF모델? <br />'아니아니 그게 아니고' 공개! <br />구름선물"
-	  },
-		function(response) {
-		  if (response && response.post_id) {
-			alert('111');
-			$.ajax({
-			  type   : "POST",
-			  async  : false,
-			  url    : "../main_exec.php",
-			  data:{
-				"exec" : "insert_share_info",
-				"media" : media,
-				"gubun" : gubun
-			  }
-			});
-		  }
-		}
-	  );
-	*/
-	
 	}else if (media == "twitter")
 	{
-		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("1. 서장훈, 촉촉하게 수지랑! 서장훈 구름탄 기분이랄까~촉촉한 선물 2. 서장훈 더페이스샵 CF모델? '아니아니 그게 아니고' 공개! 구름선물") + '&url='+ encodeURIComponent('http://bit.ly/1E9UlZ3'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("빌리프 이벤트") + '&url='+ encodeURIComponent('http://www.belifcosmetic.com'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -859,3 +827,18 @@ function chk_len2(val)
 		$("#mb_phone3").blur();
 	}
 }
+
+$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+				anchors: ['firstPage', 'secondPage', '3rdPage'],
+				menu: '#menu',
+				scrollingSpeed: 1000
+			});
+			
+
+		setInterval(function(){
+			$('.scroll_navi_area').animate({left:0},500).animate({left:100},500);
+		},1000);
+
+		});
