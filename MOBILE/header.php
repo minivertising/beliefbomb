@@ -2,8 +2,9 @@
 	include_once "../config.php";
 ?>
 <!doctype html>
-<html>
-  <head>
+<html prefix="og: http://ogp.me/ns#">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
+    <title>belif bomb</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,6 +30,7 @@
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
     <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type='text/javascript' src="../js/main.js"></script>
+
     <style>
 	html,body { height: 100%; margin: 0; padding: 0; }
     </style>

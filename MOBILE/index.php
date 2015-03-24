@@ -8,25 +8,134 @@
        <a href="http://www.belifcosmetic.com/" target="_blank">belif코스메틱</a>
     </div>
     <div>
-      <iframe allowfullscreen="1" src="https://www.youtube.com/embed/7LB0Id5a5Jk" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+      <iframe allowfullscreen="1" src="https://www.youtube.com/embed/7LB0Id5a5Jk?rel=0&loof=1&amp;controls=0&amp;showinfo=0" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
     </div>
     <div>
-      <a href="#" onclick="view_m">제품보기 모이스쳐밤</a>
-      <a href="#" onclick="view_a">제품보기 아쿠아밤</a>
+      <a href="#" data-mfp-src="#input_div" class="popup-with-zoom-anim" style="background:none;outline: none;">이벤트참여하기!</a>
+    </div>
+    <div>
+      <a href="#" onclick="sns_share('facebook');">페북</a>
+      <a href="#" onclick="sns_share('kakao');">까톡</a>
+      <a href="#" onclick="sns_share('twitter');">트윗</a>
+    </div>
+    <div>
+      <a href="#" onclick="view_mb">제품보기 모이스쳐밤</a>
+      <a href="#" onclick="view_ab">제품보기 아쿠아밤</a>
     </div>
 </div>
+<!---------------------------------------레이어팝업------------------------------------->
+    <div id="input_div" class="popup_wrap zoom-anim-dialog mfp-hide" style="background:white; width:400px">
+	  <div class="p_mid">
+      <ul>
+        <li>이름 : 
+          <input type="text" name="mb_name" id="mb_name">
+        </li>
+      </ul>
+      <ul>
+        <li>전화번호 : 
+          <select id="mb_phone1" name="mb_phone1" style="width:50px;height:20px;">
+            <option>010</option>
+            <option>011</option>
+            <option>016</option>
+            <option>017</option>
+            <option>018</option>
+            <option>019</option>
+          </select> -
+          <input type="text" size="6"name="mb_phone2" id="mb_phone2" maxlength="4" > -
+          <input type="text" size="6"name="mb_phone3" id="mb_phone3" maxlength="4" >
+        </li>
+      </ul>
+      <ul>
+        <li>주소 : 
+          <input type="text" name="mb_addr" id="mb_addr">
+        </li>
+      </ul>
+          <div class="input_block input_check">
+            <ul class="clearfix">
+              <li class="in_check"><input type="checkbox" name="use_agree" id="use_agree"></li>
+              <li class="in_check_label"><a href="#use_div" class="btn_detail popup-with-zoom-anim" onclick="open_use()">개인정보 수집 · 이용에 대한 동의</a></li>
+            </ul>
+            <ul class="clearfix">
+              <li class="in_check"><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
+              <li class="in_check_label"><a href="#privacy_div" class="btn_detail popup-with-zoom-anim" onclick="open_privacy()">개인정보의 취급 위탁 동의</a></li>
+            </ul>
+            <ul class="clearfix">
+              <li class="in_check"><input type="checkbox" name="adver_agree" id="adver_agree"></li>
+              <li class="in_check_label"><a href="#adver_div" class="btn_detail popup-with-zoom-anim" onclick="open_adver()">광고성 정보 전송 동의</a></li>
+            </ul>
+          </div>
+          <div class="btn_block">
+            <a href="#" onclick="javascript:chk_input();return false;"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+          </div>
+        </div><!--inner-->
+    </div>
+	</div>
+
+	<!-------------------------- 선물 확인 DIV -------------------------->
+  <div id="gift_div" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="p_mid">
+      <div class="block_close clearfix">
+        <a href="#" onclick="close_gift()" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
+      </div>
+      <div class="block_content product">
+        <div class="inner">
+          <img src="images/popup/img_product.png" alt=""/>
+        </div><!--inner-->
+      </div>
+    </div>
+  </div>
+<!-------------------------- 선물 확인 DIV -------------------------->
+<!-------------------------- 지도 DIV -------------------------->
+  <div id="map_div" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="p_mid">
+      <div class="block_close clearfix">
+        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
+      </div>
+      <div id="map_area" class="map_area" style="height:440px;border:1px solid skyblue"></div>
+    </div>
+  </div>
+<!-------------------------- 지도 DIV -------------------------->
+<!--------------------------  개인정보 활용 약관 DIV ----------------------->
+  <div id="use_div" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="p_mid">
+      <div class="block_close clearfix">
+        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
+      </div>
+<?
+	include_once "./popup_use_agree.php";
+?>
+    </div>
+  </div>
+<!--------------------------  개인정보 활용 약관 DIV ----------------------->
+<!--------------------------  개인정보 취급위탁동의 약관 DIV ----------------------->
+  <div id="privacy_div" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="p_mid">
+      <div class="block_close clearfix">
+        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
+      </div>
+<?
+	include_once "./popup_privacy_agree.php";
+?>
+    </div>
+  </div>
+<!--------------------------  개인정보 취급위탁동의 약관 DIV ----------------------->
+<!--------------------------  광고성 정보 전송 동의 약관 DIV ----------------------->
+  <div id="adver_div" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="p_mid">
+      <div class="block_close clearfix">
+        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
+      </div>
+<?
+	include_once "./popup_adver_agree.php";
+?>
+    </div>
+  </div>
+<!--------------------------  광고성 정보 전송 동의 약관 DIV ----------------------->
  </body>
 </html>
 
 	<script type="text/javascript">
 
-	// quick menu
-	var quickTop;
-	$(window).scroll(function() {
-		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
-		$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
-		
-	});
 
     // 유튜브 반복 재생
     var controllable_player,start, 
@@ -110,20 +219,6 @@
 		} );
 
 
-		// 퀵메뉴 기본 위치
-		var quick_height	= $(window).height()/2;
-		$('.quickmenu').css("top",quick_height);
-/*
-		setTimeout("auto_play();",2000);
-*/
-		// 체크박스 스타일 설정
-		$('.popup_wrap input').on('ifChecked ifUnchecked', function(event){
-			//alert(this.id);
-		}).iCheck({
-			checkboxClass: 'icheckbox_flat-blue',
-			increaseArea: '0%'
-		});
-
 		// 팝업 jQuery 스타일
 		$('.popup-with-zoom-anim').magnificPopup({
 			type: 'inline',
@@ -133,11 +228,21 @@
 			closeBtnInside: true,
 			//preloader: false,
 			midClick: true,
+
+
 			removalDelay: 300,
 			mainClass: 'my-mfp-zoom-in',
 			showCloseBtn : false,
 			callbacks: {
 				close: function() {
+					/*$("#mb_name").val("");
+					$("#mb_phone").val("");
+					$('input').iCheck('uncheck');
+					$("#postcode1").val("");
+					$("#postcode2").val("");
+					$("#addr1").val("");
+					$("#addr2").val("");
+					$("#post_div").hide();*/
 				}
 			}
 		});
