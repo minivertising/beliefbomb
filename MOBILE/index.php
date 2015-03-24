@@ -8,7 +8,13 @@
        <a href="http://www.belifcosmetic.com/" target="_blank">belif코스메틱</a>
     </div>
     <div>
-      <iframe allowfullscreen="1" src="https://www.youtube.com/embed/7LB0Id5a5Jk" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+      <iframe allowfullscreen="1" src="https://www.youtube.com/embed/7LB0Id5a5Jk?rel=0&loof=1&amp;controls=0&amp;showinfo=0" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
+    </div>
+    <div>
+      <a href="#" onclick="event_join()">이벤트참여하기!</a>
+    </div>
+    <div>
+      <a href="#" onclick="sns_info
     </div>
     <div>
       <a href="#" onclick="view_m">제품보기 모이스쳐밤</a>
@@ -20,13 +26,6 @@
 
 	<script type="text/javascript">
 
-	// quick menu
-	var quickTop;
-	$(window).scroll(function() {
-		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
-		$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
-		
-	});
 
     // 유튜브 반복 재생
     var controllable_player,start, 
@@ -109,38 +108,6 @@
 			return false;
 		} );
 
-
-		// 퀵메뉴 기본 위치
-		var quick_height	= $(window).height()/2;
-		$('.quickmenu').css("top",quick_height);
-/*
-		setTimeout("auto_play();",2000);
-*/
-		// 체크박스 스타일 설정
-		$('.popup_wrap input').on('ifChecked ifUnchecked', function(event){
-			//alert(this.id);
-		}).iCheck({
-			checkboxClass: 'icheckbox_flat-blue',
-			increaseArea: '0%'
-		});
-
-		// 팝업 jQuery 스타일
-		$('.popup-with-zoom-anim').magnificPopup({
-			type: 'inline',
-			fixedContentPos: true,
-			fixedBgPos: true,
-			overflowY: 'hidden',
-			closeBtnInside: true,
-			//preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in',
-			showCloseBtn : false,
-			callbacks: {
-				close: function() {
-				}
-			}
-		});
 
 		$('.first-popup-link').magnificPopup({
 			closeBtnInside:true
