@@ -828,17 +828,3 @@ function chk_len2(val)
 	}
 }
 
-$(document).ready(function() {
-			$('#fullpage').fullpage({
-				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				menu: '#menu',
-				scrollingSpeed: 1000
-			});
-			
-
-		setInterval(function(){
-			$('.scroll_navi_area').animate({left:0},500).animate({left:100},500);
-		},1000);
-
-		});
