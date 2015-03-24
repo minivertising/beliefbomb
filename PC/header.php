@@ -19,10 +19,15 @@
     <meta property="og:video:type" content="application/x-shockwave-flash">
     <meta property="og:video:width" content="1200">
 
+    <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
     <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/jquery.fullPage.js"></script>
-    
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
+
 	<style>
 	html,body { height: 100%; margin: 0; padding: 0; }
     </style>

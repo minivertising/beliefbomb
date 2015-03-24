@@ -18,7 +18,7 @@
         <div id="menu" style="position:fixed; bottom:50%; right:45px;">
           <a href="#firstPage">퀵메뉴</a>
         </div>
-        <div class="scroll_navi_area" style="position:absolute">
+        <div class="move_hat" style="position:absolute">
           <a href=#>하하핳</a>
         </div>
       </div>
@@ -29,4 +29,21 @@
     </div>
   </body>
 </html>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('#fullpage').fullpage({
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+		anchors: ['firstPage', 'secondPage', '3rdPage'],
+		menu: '#menu',
+		scrollingSpeed: 1000
+	});
+
+	setInterval(function(){
+		$('.move_hat').animate({left:0},500).animate({left:100},500);
+	},1000);
+
+});
+</script>
 
