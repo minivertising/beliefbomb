@@ -2,6 +2,7 @@
 	include_once   "./header.php";
 ?>
     <div id="fullpage">
+      <!------------- 첫번째 영역 -------------------->
       <div class="section " id="section0">
         <div>
           <iframe width="100%" height="500" src="https://www.youtube.com/embed/7LB0Id5a5Jk?rel=0&loof=1&autoplay=1&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -22,10 +23,15 @@
           <a href=#>하하핳</a>
         </div>
       </div>
+      <!------------- 첫번째 영역 -------------------->
+      <!------------- 두번째 영역 -------------------->
       <div class="section" id="section1">
       </div>
+      <!------------- 두번째 영역 -------------------->
+      <!------------- 세번째 영역 -------------------->
       <div class="section" id="section2">
       </div>
+      <!------------- 세번째 영역 -------------------->
     </div>
   </body>
 </html>
@@ -35,9 +41,10 @@
 $(document).ready(function() {
 	$('#fullpage').fullpage({
 		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-		anchors: ['firstPage', 'secondPage', '3rdPage'],
+		anchors: ['1', '2', '3'],
 		menu: '#menu',
-		scrollingSpeed: 1000
+		scrollingSpeed: 1000,
+		loopBottom: true,
 	});
 
 	setInterval(function(){
