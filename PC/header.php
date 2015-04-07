@@ -27,6 +27,11 @@
     <script type="text/javascript" src="../js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
+    <!-- <script type="text/javascript" src="../js/jQueryTween-aio-min.js"></script> -->
+    <script type="text/javascript" src="../js/jQueryTween.min.js"></script>
+    <script type="text/javascript" src="../js/RequestAnimationFrame.js"></script>
+    <script type="text/javascript" src="../js/tween.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollme.min.js"></script>
 
 	<style>
 	html,body { height: 100%; margin: 0; padding: 0; }

@@ -30,6 +30,9 @@
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
     <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type='text/javascript' src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/jQueryTween.min.js"></script>
+    <script type="text/javascript" src="../js/RequestAnimationFrame.js"></script>
+    <script type="text/javascript" src="../js/tween.min.js"></script>
 
     <style>
 	html,body { height: 100%; margin: 0; padding: 0; }

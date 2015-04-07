@@ -23,8 +23,8 @@
       <a href="#" onclick="view_ab">제품보기 아쿠아밤</a>
     </div>
 </div>
-<!---------------------------------------레이어팝업------------------------------------->
-    <div id="input_div" class="popup_wrap zoom-anim-dialog mfp-hide" style="background:white; width:400px">
+<!---------------------------------------참여자 정보 입력 팝업------------------------------------->
+    <div id="input_div" class="zoom-anim-dialog mfp-hide" style="background:white; width:400px">
 	  <div class="p_mid">
       <ul>
         <li>이름 : 
@@ -50,51 +50,28 @@
           <input type="text" name="mb_addr" id="mb_addr">
         </li>
       </ul>
-          <div class="input_block input_check">
+          <div>
             <ul class="clearfix">
               <li class="in_check"><input type="checkbox" name="use_agree" id="use_agree"></li>
-              <li class="in_check_label"><a href="#use_div" class="btn_detail popup-with-zoom-anim" onclick="open_use()">개인정보 수집 · 이용에 대한 동의</a></li>
+              <li class="in_check_label"><a href="#use_div" class="popup-with-zoom-anim">개인정보 수집 · 이용에 대한 동의</a></li>
             </ul>
             <ul class="clearfix">
-              <li class="in_check"><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
-              <li class="in_check_label"><a href="#privacy_div" class="btn_detail popup-with-zoom-anim" onclick="open_privacy()">개인정보의 취급 위탁 동의</a></li>
+              <li><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
+              <li><a href="#privacy_div" class="popup-with-zoom-anim">개인정보의 취급 위탁 동의</a></li>
             </ul>
             <ul class="clearfix">
-              <li class="in_check"><input type="checkbox" name="adver_agree" id="adver_agree"></li>
-              <li class="in_check_label"><a href="#adver_div" class="btn_detail popup-with-zoom-anim" onclick="open_adver()">광고성 정보 전송 동의</a></li>
+              <li><input type="checkbox" name="adver_agree" id="adver_agree"></li>
+              <li><a href="#adver_div" class="popup-with-zoom-anim">광고성 정보 전송 동의</a></li>
             </ul>
           </div>
-          <div class="btn_block">
-            <a href="#" onclick="javascript:chk_input();return false;"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+          <div>
+            <a href="#" onclick="javascript:m_chk_input();return false;">확인</a>
           </div>
         </div><!--inner-->
     </div>
 	</div>
+<!---------------------------------------참여자 정보 입력 팝업------------------------------------->
 
-	<!-------------------------- 선물 확인 DIV -------------------------->
-  <div id="gift_div" class="popup_wrap zoom-anim-dialog mfp-hide">
-    <div class="p_mid">
-      <div class="block_close clearfix">
-        <a href="#" onclick="close_gift()" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
-      </div>
-      <div class="block_content product">
-        <div class="inner">
-          <img src="images/popup/img_product.png" alt=""/>
-        </div><!--inner-->
-      </div>
-    </div>
-  </div>
-<!-------------------------- 선물 확인 DIV -------------------------->
-<!-------------------------- 지도 DIV -------------------------->
-  <div id="map_div" class="popup_wrap zoom-anim-dialog mfp-hide">
-    <div class="p_mid">
-      <div class="block_close clearfix">
-        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
-      </div>
-      <div id="map_area" class="map_area" style="height:440px;border:1px solid skyblue"></div>
-    </div>
-  </div>
-<!-------------------------- 지도 DIV -------------------------->
 <!--------------------------  개인정보 활용 약관 DIV ----------------------->
   <div id="use_div" class="popup_wrap zoom-anim-dialog mfp-hide">
     <div class="p_mid">
