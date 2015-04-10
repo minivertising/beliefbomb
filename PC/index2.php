@@ -1,16 +1,16 @@
 <?
 	include_once   "./header.php";
 ?>
-        <div id="menu" style="width:100%;height:40px;text-align:center;position:fixed;z-index:5">
+        <div style="width:100%;height:40px;text-align:center;position:fixed">
           <a href="#">빌리프홈</a>
-          <a href="#page2">PC/MOBILE 촉촉 이벤트</a>
+          <a href="#">PC/MOBILE 촉촉 이벤트</a>
           <a href="#">PLAY & SWEET 촉촉 이벤트 일정</a>
           <a href="#">PLAY & SWEET 촉촉 이벤트</a>
           <a href="#">제품보기</a>
         </div>
     <div class="contents_wrap" id="contents_wrap">
       <!------------- 첫번째 영역 -------------------->
-      <div class="area1 section" id="section1">
+      <div class="area1" id="area1" style="width:100%;height:995px;">
         <div>
           <a href="#" onclick="game_ready()">수분폭탄 터트리기</a>
         </div>
@@ -20,7 +20,7 @@
       </div>
       <!------------- 첫번째 영역 -------------------->
       <!------------- 두번째 영역 -------------------->
-      <div class="area2 section" id="section2">
+      <div class="area2" id="area2" style="width:100%;height:995px;">
         <div>
           <center>
             <h3>거리에서 만나는 즐거움 하나</h3>
@@ -50,7 +50,7 @@
       </div>
       <!------------- 두번째 영역 -------------------->
       <!------------- 세번째 영역 -------------------->
-      <div class="area3 section" id="section3">
+      <div class="area3" id="area3" style="width:100%;height:995px;">
         <div>
           <center>
             <h3>거리에서 만나는 즐거움 둘</h3>
@@ -63,7 +63,7 @@
       </div>
       <!------------- 세번째 영역 -------------------->
       <!------------- 네번째 영역 -------------------->
-      <div class="area4 section" id="section4">
+      <div class="area4" id="area4" style="width:100%;height:995px;">
         <div>
           <a href="#">모이스쳐밤 자세히 보기</a>
         </div>
@@ -311,11 +311,22 @@ $(document).ready(function() {
 
 	//$('#contents_wrap').pagepiling();
 	$('#contents_wrap').pagepiling({
-		menu: '#menu',
 		anchors: ['page1', 'page2', 'page3', 'page4'],
 		sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
-		navigation    : false,
-		loopBottom       : true
+		navigation: {
+			'position': 'right',
+			'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Pgae 4']
+		},
+		afterRender: function(){
+			$('#pp-nav').addClass('custom');
+		},
+		afterLoad: function(anchorLink, index){
+			if(index>1){
+				$('#pp-nav').removeClass('custom');
+			}else{
+				$('#pp-nav').addClass('custom');
+			}
+		}
 	});
 
 
