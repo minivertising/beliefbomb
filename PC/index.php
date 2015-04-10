@@ -1,17 +1,17 @@
 <?
 	include_once   "./header.php";
 ?>
-        <div id="menu" style="width:100%;height:40px;text-align:center;position:fixed;z-index:5">
-          <a href="#">빌리프홈</a>
-          <a href="#page2">PC/MOBILE 촉촉 이벤트</a>
-          <a href="#">PLAY & SWEET 촉촉 이벤트 일정</a>
-          <a href="#">PLAY & SWEET 촉촉 이벤트</a>
-          <a href="#">제품보기</a>
-        </div>
-    <div class="contents_wrap" id="contents_wrap">
+    <div id="menu" style="width:100%;height:40px;text-align:center;position:fixed;z-index:5">
+      <a href="#">빌리프홈</a>
+      <a href="#">PC/MOBILE 촉촉 이벤트</a>
+      <a href="#">PLAY & SWEET 촉촉 이벤트 일정</a>
+      <a href="#">PLAY & SWEET 촉촉 이벤트</a>
+      <a href="#">제품보기</a>
+    </div>
+    <div class="contents_wrap" style="position:absolute">
       <!------------- 첫번째 영역 -------------------->
-      <div class="area1 section" id="section1">
-        <div>
+      <div class="area1" style="width:100%;height:995px;">
+        <div style="margin-top:100px">
           <a href="#" onclick="game_ready()">수분폭탄 터트리기</a>
         </div>
         <div id="menu" style="position:fixed; bottom:50%; right:45px;">
@@ -20,37 +20,21 @@
       </div>
       <!------------- 첫번째 영역 -------------------->
       <!------------- 두번째 영역 -------------------->
-      <div class="area2 section" id="section2">
+      <div class="area2" style="width:100%;height:995px;">
         <div>
           <center>
-            <h3>거리에서 만나는 즐거움 하나</h3>
-            <h1>수분을 지켜라, 즐거움이 터진다!</h1>
-            <h4>00월부터 전국 곳곳에서 당신을 촉촉하게 할 즐거움이 찾아갑니다.</h4>
-            <h4>이벤트에 참여해 당신의 수분을 지키고, 다양한 선물도 받아가세요!.</h4>
+            <h1>촉촉함이 팡팡! 달콤함이 팡팡!</h1>
+            <h4>접속하신 PC나 MOBILE에서 정해진 시간 안에 수분 폭탄을 터트리시면 추첨을 통해 정품 수분 폭탄 크림을 드립니다!</h4>
           </center>
         </div>
-        <div class="scrollme" style="text-align:center;left:50%;margin-left:400px">
-          참여방법<br />
-          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:200px;float:left;text-align:center;">
-          수분체크
-          </div>
-          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:100px;float:left;text-align:center;">
-          >
-          </div>
-          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:200px;float:left;text-align:center;">
-          로데오
-          </div>
-          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:100px;float:left;text-align:center;">
-          >
-          </div>
-          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:200px;float:left;text-align:center;">
-          선물
-          </div>
+        <div style="text-align:center;left:50%;margin-left:400px">
+          <a href="#" onclick="game_ready()">PC로 참여하기</a>
+          <a href="#" onclick="show_qrcode()">MOBILE로 참여하기</a>
         </div>
       </div>
       <!------------- 두번째 영역 -------------------->
       <!------------- 세번째 영역 -------------------->
-      <div class="area3 section" id="section3">
+      <div class="area3" style="width:100%;height:995px;">
         <div>
           <center>
             <h3>거리에서 만나는 즐거움 둘</h3>
@@ -63,7 +47,7 @@
       </div>
       <!------------- 세번째 영역 -------------------->
       <!------------- 네번째 영역 -------------------->
-      <div class="area4 section" id="section4">
+      <div class="area4" style="width:100%;height:995px;">
         <div>
           <a href="#">모이스쳐밤 자세히 보기</a>
         </div>
@@ -193,6 +177,13 @@
       </div>
     </div>
       <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
+      <!------------- QR코드 팝업 -------------------->
+    <div id="qrcode_pop" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white;display:none">
+      <div>
+        <a href='http://m.site.naver.com/0cPs2'><img src='http://qrcodethumb.phinf.naver.net/20150410_236/kyhfan_14286514585125HTi2_PNG/0cPs2.png'/></a>
+      </div>
+    </div>
+      <!------------- QR코드 팝업 -------------------->
       <!------------- 게임1 팝업 -------------------->
     <div id="event_game1_pop" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white;display:none">
       <div>
@@ -309,7 +300,7 @@ $(document).ready(function() {
 
 	var magnificPopup = $.magnificPopup.instance;
 
-	//$('#contents_wrap').pagepiling();
+/*
 	$('#contents_wrap').pagepiling({
 		menu: '#menu',
 		anchors: ['page1', 'page2', 'page3', 'page4'],
@@ -317,7 +308,7 @@ $(document).ready(function() {
 		navigation    : false,
 		loopBottom       : true
 	});
-
+*/
 
 
 });
@@ -449,6 +440,35 @@ function game_start()
 		url: "../main_exec.php"
 	});
 
+}
+
+function show_qrcode()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#qrcode_pop'
+		},
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: true,
+		callbacks: {
+			open: function() {
+				$('#qrcode_pop').css('top','-890px');
+				// 이동위치값 지정
+				var position = 0;
+				$('#qrcode_pop').show().animate({top:position},{duration:1000,easing:'easeOutBounce'});
+				//window.scrollTo(0,0);
+			}
+		}
+	}, 0);
 }
 
 function game_ready()

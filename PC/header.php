@@ -22,7 +22,6 @@
 
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
     <link rel="stylesheet" href="../lib/iCheck/skins/all.css">
-    <link rel="stylesheet" href="../lib/pagePiling/jquery.pagepiling.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
 
     <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
@@ -30,7 +29,6 @@
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
-    <script type="text/javascript" src="../lib/pagePiling/jquery.pagepiling.js"></script>
     <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
     <!-- <script type="text/javascript" src="../js/jQueryTween-aio-min.js"></script> -->
     <script type="text/javascript" src="../js/jQueryTween.min.js"></script>
