@@ -439,17 +439,19 @@ $(document).ready(function() {
 		if (cal_cnt == 0)
 		{
 			//alert('prev');
-			$("#cal_6").show();
-			$("#cal_4").hide();
-			//$("#cal_4").fadeOut();
+			$("#cal_4").fadeOut("fast", function(){
+				$("#cal_6").fadeIn("fast");
+			});
 			cal_cnt = 2;
 		}else if (cal_cnt == 1){
-			$("#cal_4").show();
-			$("#cal_5").hide();
+			$("#cal_5").fadeOut("fast", function(){
+				$("#cal_4").fadeIn("fast");
+			});
 			cal_cnt = 0;
 		}else if (cal_cnt == 2){
-			$("#cal_5").show();
-			$("#cal_6").hide();
+			$("#cal_6").fadeOut("fast", function(){
+				$("#cal_5").fadeIn("fast");
+			});
 			cal_cnt =1;
 		}
 	}
@@ -458,17 +460,19 @@ $(document).ready(function() {
 	{
 		if (cal_cnt == 0)
 		{
-			//alert('prev');
-			$("#cal_5").show();
-			$("#cal_4").hide();
+			$("#cal_4").fadeOut("fast", function(){
+				$("#cal_5").fadeIn("fast");
+			});
 			cal_cnt = 1;
 		}else if (cal_cnt == 1){
-			$("#cal_6").show();
-			$("#cal_5").hide();
+			$("#cal_5").fadeOut("fast", function(){
+				$("#cal_6").fadeIn("fast");
+			});
 			cal_cnt = 2;
 		}else if (cal_cnt == 2){
-			$("#cal_4").show();
-			$("#cal_6").hide();
+			$("#cal_6").fadeOut("fast", function(){
+				$("#cal_4").fadeIn("fast");
+			});
 			cal_cnt =0;
 		}
 	}
