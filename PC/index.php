@@ -74,7 +74,7 @@
       </div>
       <!------------- 다섯번째 영역 -------------------->
       <!--quickmenu-->
-        <div class="quickmenu" style="position:absolute;right:20px;z-index:50;">
+        <div class="quickmenu" id="quickmenu" style="position:absolute;right:20px;z-index:50;">
           <a href="#">TOP</a>
         </div>
       <!--quickmenu-->
@@ -216,6 +216,8 @@
       <!------------- 게임1 팝업 -------------------->
       <!------------- 게임2 팝업 -------------------->
     <div id="event_game2_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
+      <!-- <script type="text/javascript" src="../js/jQueryTween-aio-min.js"></script> -->
+
       <div class="timediv">
         <center>
           <div>
@@ -337,8 +339,8 @@ $(document).ready(function() {
 		  return false;
 	} );
 	// 퀵메뉴 기본 위치
-	var quick_height	= $(window).height()/2;
-	$('.quickmenu').css("top",quick_height);
+	//var quick_height	= $(window).height()/2;
+	//$('.quickmenu').css("top",quick_height);
 
 /*
 	$('#contents_wrap').pagepiling({
@@ -349,8 +351,9 @@ $(document).ready(function() {
 		loopBottom       : true
 	});
 */
+	var quick_height	= $(window).height()/2;
 
-
+	initMoving(document.getElementById("quickmenu"), quick_height, 50, 50);
 });
 
 
@@ -491,5 +494,83 @@ $(document).ready(function() {
 			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height() + $(".area3").height() + $(".area4").height()},500);
 		}
 	}
+
+	function initMoving(target, position, topLimit, btmLimit) {
+		if (!target)
+			return false;
+
+		var obj = target;
+		var initTop = position;
+		var bottomLimit = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight) - btmLimit - obj.offsetHeight;
+		var top = initTop;
+
+		obj.style.position = 'absolute';
+
+		if (typeof(window.pageYOffset) == 'number') {	//WebKit
+			var getTop = function() {
+				return window.pageYOffset;
+			}
+		} else if (typeof(document.documentElement.scrollTop) == 'number') {
+			var getTop = function() {
+				return Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+			}
+		} else {
+			var getTop = function() {
+				return 0;
+			}
+		}
+
+		if (self.innerHeight) {	//WebKit
+			var getHeight = function() {
+				return self.innerHeight;
+			}
+		} else if(document.documentElement.clientHeight) {
+			var getHeight = function() {
+				return document.documentElement.clientHeight;
+			}
+		} else {
+			var getHeight = function() {
+				return 500;
+			}
+		}
+
+		function move() {
+			if (initTop > 0) {
+				pos = getTop() + initTop;
+			} else {
+				pos = getTop() + getHeight() + initTop;
+			}
+
+			if (pos > bottomLimit)
+				pos = bottomLimit;
+			if (pos < topLimit)
+				pos = topLimit;
+
+			interval = top - pos;
+			top = top - interval / 3;
+			obj.style.top = top + 'px';
+
+			//window.setTimeout(function () {
+				//move();
+			//}, 25);
+		}
+
+		function addEvent(obj, type, fn) {
+			if (obj.addEventListener) {
+				obj.addEventListener(type, fn, false);
+			} else if (obj.attachEvent) {
+				obj['e' + type + fn] = fn;
+				obj[type + fn] = function() {
+					obj['e' + type + fn](window.event);
+				}
+				obj.attachEvent('on' + type, obj[type + fn]);
+			}
+		}
+
+		addEvent(window, 'load', function () {
+			move();
+		});
+	}
+
 </script>
 
