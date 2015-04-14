@@ -440,17 +440,17 @@ $(document).ready(function() {
 		{
 			//alert('prev');
 			$("#cal_4").fadeOut("fast", function(){
-				$("#cal_6").fadeIn("fast");
+				$("#cal_6").fadeIn("slow");
 			});
 			cal_cnt = 2;
 		}else if (cal_cnt == 1){
 			$("#cal_5").fadeOut("fast", function(){
-				$("#cal_4").fadeIn("fast");
+				$("#cal_4").fadeIn("slow");
 			});
 			cal_cnt = 0;
 		}else if (cal_cnt == 2){
 			$("#cal_6").fadeOut("fast", function(){
-				$("#cal_5").fadeIn("fast");
+				$("#cal_5").fadeIn("slow");
 			});
 			cal_cnt =1;
 		}
@@ -461,17 +461,17 @@ $(document).ready(function() {
 		if (cal_cnt == 0)
 		{
 			$("#cal_4").fadeOut("fast", function(){
-				$("#cal_5").fadeIn("fast");
+				$("#cal_5").fadeIn("slow");
 			});
 			cal_cnt = 1;
 		}else if (cal_cnt == 1){
 			$("#cal_5").fadeOut("fast", function(){
-				$("#cal_6").fadeIn("fast");
+				$("#cal_6").fadeIn("slow");
 			});
 			cal_cnt = 2;
 		}else if (cal_cnt == 2){
 			$("#cal_6").fadeOut("fast", function(){
-				$("#cal_4").fadeIn("fast");
+				$("#cal_4").fadeIn("slow");
 			});
 			cal_cnt =0;
 		}
@@ -482,7 +482,7 @@ $(document).ready(function() {
 	{
 		if (param == "site_event")
 		{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height()},1500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height()},500);
 		}else if (param == "calender"){
 			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height()},500);
 		}else if (param == "off_event"){
