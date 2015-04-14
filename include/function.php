@@ -22,7 +22,20 @@
 		global $_gl;
 		global $my_db;
 
-		$query			= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_phone='".$phone."'";
+		$query			= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_phone='".$phone."'";
+		$result			= mysqli_query($my_db, $query);
+		$memberCnt	= mysqli_num_rows($result);
+
+		return $memberCnt;
+	}
+
+	// 이벤트 당일 전체 참여자수
+	function BB_TodayMember()
+	{
+		global $_gl;
+		global $my_db;
+
+		$query			= "SELECT * FROM ".$_gl['member_info_table']." WHERE regdate like '%".date('Y-m-d')."%'";
 		$result			= mysqli_query($my_db, $query);
 		$memberCnt	= mysqli_num_rows($result);
 

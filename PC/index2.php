@@ -1,70 +1,69 @@
 <?
 	include_once   "./header.php";
 ?>
-    <div id="menu" style="width:100%;height:40px;text-align:center;position:fixed;z-index:5">
-      <a href="http://www.belifcosmetic.com/main.jsp" target="_blank">빌리프홈</a>
-      <a href="#" onclick="screen_move('site_event')">PC/MOBILE 촉촉 이벤트</a>
-      <a href="#" onclick="screen_move('calender')">PLAY & SWEET 촉촉 이벤트 일정</a>
-      <a href="#" onclick="screen_move('off_event')">PLAY & SWEET 촉촉 이벤트</a>
-      <a href="#" onclick="screen_move('product')">제품보기</a>
-    </div>
-    <div class="contents_wrap" id="contents_wrap" style="position:absolute;width:100%">
+        <div style="width:100%;height:40px;text-align:center;position:fixed">
+          <a href="#">빌리프홈</a>
+          <a href="#">PC/MOBILE 촉촉 이벤트</a>
+          <a href="#">PLAY & SWEET 촉촉 이벤트 일정</a>
+          <a href="#">PLAY & SWEET 촉촉 이벤트</a>
+          <a href="#">제품보기</a>
+        </div>
+    <div class="contents_wrap" id="contents_wrap">
       <!------------- 첫번째 영역 -------------------->
-      <div class="area1" style="width:100%;height:995px;">
-        <div style="margin-top:100px">
+      <div class="area1" id="area1" style="width:100%;height:995px;">
+        <div>
           <a href="#" onclick="game_ready()">수분폭탄 터트리기</a>
         </div>
+        <div id="menu" style="position:fixed; bottom:50%; right:45px;">
+          <a href="#firstPage">퀵메뉴</a>
+        </div>
       </div>
       <!------------- 첫번째 영역 -------------------->
       <!------------- 두번째 영역 -------------------->
-      <div class="area2" style="width:100%;height:995px;">
+      <div class="area2" id="area2" style="width:100%;height:995px;">
         <div>
           <center>
-            <h1>촉촉함이 팡팡! 달콤함이 팡팡!</h1>
-            <h4>접속하신 PC나 MOBILE에서 정해진 시간 안에 수분 폭탄을 터트리시면 추첨을 통해 정품 수분 폭탄 크림을 드립니다!</h4>
+            <h3>거리에서 만나는 즐거움 하나</h3>
+            <h1>수분을 지켜라, 즐거움이 터진다!</h1>
+            <h4>00월부터 전국 곳곳에서 당신을 촉촉하게 할 즐거움이 찾아갑니다.</h4>
+            <h4>이벤트에 참여해 당신의 수분을 지키고, 다양한 선물도 받아가세요!.</h4>
           </center>
         </div>
-        <div style="text-align:center;left:50%;margin-left:400px">
-          <a href="#" onclick="game_ready();return false;">PC로 참여하기</a>
-          <a href="#" onclick="show_qrcode();return false;">MOBILE로 참여하기</a>
+        <div class="scrollme" style="text-align:center;left:50%;margin-left:400px">
+          참여방법<br />
+          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:200px;float:left;text-align:center;">
+          수분체크
+          </div>
+          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:100px;float:left;text-align:center;">
+          >
+          </div>
+          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:200px;float:left;text-align:center;">
+          로데오
+          </div>
+          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:100px;float:left;text-align:center;">
+          >
+          </div>
+          <div class="animateme" data-when="enter" data-from="1" data-to="0" data-opacity="0" data-translatey="200" style="width:200px;float:left;text-align:center;">
+          선물
+          </div>
         </div>
       </div>
       <!------------- 두번째 영역 -------------------->
       <!------------- 세번째 영역 -------------------->
-      <div class="area3" style="width:100%;height:995px;">
+      <div class="area3" id="area3" style="width:100%;height:995px;">
         <div>
           <center>
-            <h1>Play & Sweet 촉촉 이벤트 일정</h1>
+            <h3>거리에서 만나는 즐거움 둘</h3>
+            <h1>달콤한 캔디카를 만나보세요!</h1>
           </center>
         </div>
-        <div style="width:100%">
-          <div style="position:absolute;width:100px;height:400px;left:20%">
-            <a href="#" onclick="prev_cal();return false;">이전</a>
-          </div>
-          <div id="cal_4" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:green">
-            4월 달력
-          </div>
-          <div id="cal_5" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:skyblue;display:none">
-            5월 달력
-          </div>
-          <div id="cal_6" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:red;display:none">
-            6월 달력
-          </div>
-          <div style="position:absolute;width:100px;height:400px;left:80%">
-            <a href="#" onclick="next_cal();return false;">이후</a>
-          </div>
+        <div>
+          <a href="#">자세히 보기</a>
         </div>
       </div>
       <!------------- 세번째 영역 -------------------->
       <!------------- 네번째 영역 -------------------->
-      <div class="area4" style="width:100%;height:995px;">
-        <div>
-          <h1>촉촉함이 팡팡! 흔들리는 로데오 위에서 수분을 지키세요!</h1>
-        </div>
-      </div>
-      <!------------- 네번째 영역 -------------------->
-      <!------------- 다섯번째 영역 -------------------->
-      <div class="area5" style="width:100%;height:995px;">
+      <div class="area4" id="area4" style="width:100%;height:995px;">
         <div>
           <a href="#">모이스쳐밤 자세히 보기</a>
         </div>
@@ -72,13 +71,7 @@
           <a href="#">아쿠아밤 자세히 보기</a>
         </div>
       </div>
-      <!------------- 다섯번째 영역 -------------------->
-      <!--quickmenu-->
-        <div class="quickmenu" style="position:absolute;right:20px;z-index:50;">
-          <a href="#">TOP</a>
-        </div>
-      <!--quickmenu-->
-
+      <!------------- 네번째 영역 -------------------->
     </div>
       <!------------- 이벤트 당첨 정보입력(크림1) 팝업 -------------------->
     <div id="event_cream_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
@@ -200,13 +193,6 @@
       </div>
     </div>
       <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
-      <!------------- QR코드 팝업 -------------------->
-    <div id="qrcode_pop" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white;display:none">
-      <div>
-        <a href='http://m.site.naver.com/0cPs2'><img src='http://qrcodethumb.phinf.naver.net/20150410_236/kyhfan_14286514585125HTi2_PNG/0cPs2.png'/></a>
-      </div>
-    </div>
-      <!------------- QR코드 팝업 -------------------->
       <!------------- 게임1 팝업 -------------------->
     <div id="event_game1_pop" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white;display:none">
       <div>
@@ -261,15 +247,6 @@
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
-	// quick menu
-	var quickTop;
-	$(window).scroll(function() {
-		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
-		//$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
-		$('.quickmenu').animate({top:$(window).scrollTop()+quickTop},100,'easeOutExpo');
-		
-	});
-
 var bomb_cnt = 0;
 var currentsec=9;
 var currentmil=100;
@@ -332,27 +309,251 @@ $(document).ready(function() {
 
 	var magnificPopup = $.magnificPopup.instance;
 
-	$( '.quickmenu' ).click( function() {
-		$( 'html, body' ).animate( { scrollTop : 0 }, 300 );
-		  return false;
-	} );
-	// 퀵메뉴 기본 위치
-	var quick_height	= $(window).height()/2;
-	$('.quickmenu').css("top",quick_height);
-
-/*
+	//$('#contents_wrap').pagepiling();
 	$('#contents_wrap').pagepiling({
-		menu: '#menu',
 		anchors: ['page1', 'page2', 'page3', 'page4'],
 		sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
-		navigation    : false,
-		loopBottom       : true
+		navigation: {
+			'position': 'right',
+			'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Pgae 4']
+		},
+		afterRender: function(){
+			$('#pp-nav').addClass('custom');
+		},
+		afterLoad: function(anchorLink, index){
+			if(index>1){
+				$('#pp-nav').removeClass('custom');
+			}else{
+				$('#pp-nav').addClass('custom');
+			}
+		}
 	});
-*/
+
 
 
 });
 
+function event_action()
+{
+	if (bomb_cnt > 10)
+	//if (bomb_cnt > 50)
+	{
+		keepgoin=false;
+		$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$("#cap1").attr("onclick","");
+
+		$.ajax({
+			type:"POST",
+			cache: false,
+			data:{
+				"exec"			: "winner_check"
+			},
+			url: "../main_exec.php",
+			success: function(response){
+				alert(response);
+				if (response == "N")
+				{
+					alert("당첨되지 않으셨습니다. 다시 응모해 주세요.");
+					$.magnificPopup.close();
+				}else if (response == "Y"){
+					$.magnificPopup.open({
+						items: {
+							src: '#event_cream_pop',
+						},
+						type: 'inline',
+						showCloseBtn : false
+					}, 0);
+				}else{
+					$.magnificPopup.open({
+						items: {
+							src: '#event_kit_pop',
+						},
+						type: 'inline',
+						showCloseBtn : false
+					}, 0);
+				}
+			}
+		});
+
+		return false;
+	}
+
+	if (bomb_cnt % 2 == 0)
+	{
+		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$('#w1').show();
+		$('#w1').animate({top:"230",left:"420"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w1').css({"top":"250px","left":"400px"});
+		$('#w2_2').show();
+		$('#w2_2').animate({top:"200",left:"20"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w2_2').css({"top":"220px","left":"40px"});
+	}else{
+		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: -20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$('#w1_2').show();
+		$('#w1_2').animate({top:"250",left:"30"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w1_2').css({"top":"270px","left":"30px"});
+		$('#w2').show();
+		$('#w2').animate({top:"180",left:"410"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w2').css({"top":"200px","left":"430px"});
+	}
+	//$('#cap1').jQueryTween({ to: { rotate: { z: -30 },translate: {y: -250 },rotate: { z: 30 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out },function() {
+	//});
+	if (keepgoin == false)
+	{
+		keepgoin=true;
+		timer();
+	}
+	bomb_cnt = bomb_cnt + 1;
+
+}
+
+function timer(){
+	if(keepgoin){
+		currentmil-=1;
+		if (currentmil==0){
+			currentmil=100;
+			currentsec-=1;
+		}
+		Strsec=""+currentsec;
+		Strmil=""+currentmil;
+		if (Strsec.length!=2){
+			Strsec="0"+currentsec;
+		}
+		if (Strmil.length!=2){
+			Strmil="0"+currentmil;
+		}
+		$("#timer_s").val(Strsec);
+		$("#timer_ms").val(Strmil);
+		if (Strsec == 0)
+		{
+			$("#timer_ms").val("00");
+			alert("타임 오버!");
+			$("#cap1").attr("onclick","");
+		}else{
+			setTimeout("timer()", 10);
+		}
+	}
+}
+
+function startover(){
+	keepgoin=false;
+	currentsec=0;
+	currentmin=0;
+	currentmil=0;
+	Strsec="00";
+	Strmin="00";
+	Strmil="00";
+}
+
+function game_start()
+{
+	$.magnificPopup.close();
+
+	setTimeout("game_start_data();",500);
+
+	$.ajax({
+		type:"POST",
+		cache: false,
+		data:{
+			"exec"			: "insert_event_member"
+		},
+		url: "../main_exec.php"
+	});
+
+}
+
+function game_ready()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#event_game1_pop'
+		},
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: true,
+		callbacks: {
+			open: function() {
+				$('#event_game1_pop').css('top','-890px');
+				// 이동위치값 지정
+				var position = 0;
+				$('#event_game1_pop').show().animate({top:position},{duration:1000,easing:'easeOutBounce'});
+				//window.scrollTo(0,0);
+			},
+			close: function() {
+				bomb_cnt = 0;
+				currentsec=9;
+				currentmil=100;
+				keepgoin=false;
+				$("#cap1").attr("onclick","event_action();");
+				$("#timer_s").val("10");
+				$("#timer_ms").val("00");
+				$("#mb_name").val();
+				$("#mb_phone1").val();
+				$("#mb_phone2").val();
+				$("#mb_phone3").val();
+				$("#mb_addr1").val();
+				$("#mb_addr2").val();
+				$("#mb_shop").val();
+				$('input').iCheck('uncheck');
+			}
+		}
+	}, 0);
+	
+}
+function game_start_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#event_game2_pop'
+		},
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: true,
+		callbacks: {
+			open: function() {
+				$('#event_game2_pop').css('top','-890px');
+				// 이동위치값 지정
+				var position = 0;
+				$('#event_game2_pop').show().animate({top:position},{duration:100,easing:'easeOutBounce'});
+				//window.scrollTo(0,0);
+			},
+			close: function() {
+				bomb_cnt = 0;
+				currentsec=9;
+				currentmil=100;
+				keepgoin=false;
+				$("#cap1").attr("onclick","event_action();");
+				$("#timer_s").val("10");
+				$("#timer_ms").val("00");
+				$("#mb_name").val("");
+				$("#mb_phone1").val("");
+				$("#mb_phone2").val("");
+				$("#mb_phone3").val("");
+				$("#mb_addr1").val("");
+				$("#mb_addr2").val("");
+				$("#mb_shop").val("");
+				$('input').iCheck('uncheck');
+			}
+		}
+	}, 0);
+	
+}
 
 	function closeDaumPostcode() {
 		// iframe을 넣은 element를 안보이게 한다.
@@ -433,63 +634,5 @@ $(document).ready(function() {
 		showDaumPostcode();
 	}
 
-	var cal_cnt = 0;
-	function prev_cal()
-	{
-		if (cal_cnt == 0)
-		{
-			//alert('prev');
-			$("#cal_4").fadeOut("fast", function(){
-				$("#cal_6").fadeIn("slow");
-			});
-			cal_cnt = 2;
-		}else if (cal_cnt == 1){
-			$("#cal_5").fadeOut("fast", function(){
-				$("#cal_4").fadeIn("slow");
-			});
-			cal_cnt = 0;
-		}else if (cal_cnt == 2){
-			$("#cal_6").fadeOut("fast", function(){
-				$("#cal_5").fadeIn("slow");
-			});
-			cal_cnt =1;
-		}
-	}
-
-	function next_cal()
-	{
-		if (cal_cnt == 0)
-		{
-			$("#cal_4").fadeOut("fast", function(){
-				$("#cal_5").fadeIn("slow");
-			});
-			cal_cnt = 1;
-		}else if (cal_cnt == 1){
-			$("#cal_5").fadeOut("fast", function(){
-				$("#cal_6").fadeIn("slow");
-			});
-			cal_cnt = 2;
-		}else if (cal_cnt == 2){
-			$("#cal_6").fadeOut("fast", function(){
-				$("#cal_4").fadeIn("slow");
-			});
-			cal_cnt =0;
-		}
-	}
-
-
-	function screen_move(param)
-	{
-		if (param == "site_event")
-		{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height()},500);
-		}else if (param == "calender"){
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height()},500);
-		}else if (param == "off_event"){
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height() + $(".area3").height()},500);
-		}else{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height() + $(".area3").height() + $(".area4").height()},500);
-		}
-	}
 </script>
 
