@@ -1,42 +1,114 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta charset="utf-8">
-<title> bxslider </title>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="http://pic.styleindex.co.kr/skin/inda/mobile/dm/test/jquery.bxslider.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>SmoothMovingLayer Demo</title>
 <script type="text/javascript">
-		$(document).ready(function(){
-		  $('.slider').bxSlider({
-			  pager: false,     // 하단 숫자 //
-			  controls: true, // 좌/우 컨트롤러 //
-			  auto: true,        // 자동실행 //
-			  pause: 2000
-		  });
-		});
-  </script>
+//<![CDATA[
+function initMoving(target, position, topLimit, btmLimit) {
+	if (!target)
+		return false;
+
+	var obj = target;
+	var initTop = position;
+	var bottomLimit = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight) - btmLimit - obj.offsetHeight;
+	var top = initTop;
+
+	obj.style.position = 'absolute';
+
+	if (typeof(window.pageYOffset) == 'number') {	//WebKit
+		var getTop = function() {
+			return window.pageYOffset;
+		}
+	} else if (typeof(document.documentElement.scrollTop) == 'number') {
+		var getTop = function() {
+			return Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+		}
+	} else {
+		var getTop = function() {
+			return 0;
+		}
+	}
+
+	if (self.innerHeight) {	//WebKit
+		var getHeight = function() {
+			return self.innerHeight;
+		}
+	} else if(document.documentElement.clientHeight) {
+		var getHeight = function() {
+			return document.documentElement.clientHeight;
+		}
+	} else {
+		var getHeight = function() {
+			return 500;
+		}
+	}
+
+	function move() {
+		if (initTop > 0) {
+			pos = getTop() + initTop;
+		} else {
+			pos = getTop() + getHeight() + initTop;
+		}
+
+		if (pos > bottomLimit)
+			pos = bottomLimit;
+		if (pos < topLimit)
+			pos = topLimit;
+
+		interval = top - pos;
+		top = top - interval / 3;
+		obj.style.top = top + 'px';
+
+		window.setTimeout(function () {
+			move();
+		}, 25);
+	}
+
+	function addEvent(obj, type, fn) {
+		if (obj.addEventListener) {
+			obj.addEventListener(type, fn, false);
+		} else if (obj.attachEvent) {
+			obj['e' + type + fn] = fn;
+			obj[type + fn] = function() {
+				obj['e' + type + fn](window.event);
+			}
+			obj.attachEvent('on' + type, obj[type + fn]);
+		}
+	}
+
+	addEvent(window, 'load', function () {
+		move();
+	});
+}
+//]]>
+</script>
 <style type="text/css">
-	.wrap {width:920px; margin:0 auto; position:relative;}
-	.bx-controls-direction .bx-prev {display:block; background: url(http://pic.styleindex.co.kr/skin/inda/mobile/dm/test/controls.png) no-repeat 0 0; width:32px; height:32px; text-indent:-999px; position:absolute; top:105px; left:10px;}
-	.bx-controls-direction .bx-prev:hover {background-position:0 -32px;}
-	.bx-controls-direction .bx-next {display:block; background: url(http://pic.styleindex.co.kr/skin/inda/mobile/dm/test/controls.png) no-repeat -43px 0; width:32px; height:32px; text-indent:-999px; position:absolute; top:105px; right:10px;}
-	.bx-controls-direction .bx-next:hover {background-position:-43px -32px;}
+body {
+	margin: 0;
+}
+#head {
+	width: 800px;
+	height: 3000px;
+	background: #eee;
+}
+#gotop {
+	position: absolute;
+	left: 810px;
+	top: 50px;
+	background: #ddd;
+	width: 100px;
+	height: 1000px;
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-	<div class="slider">
-		<p>
-			<img src="http://pic.styleindex.co.kr/skin/inda/mobile/dm/test/01.jpg"/>
-		</p>
-		<p>
-			<img src="http://pic.styleindex.co.kr/skin/inda/mobile/dm/test/02.jpg"/>
-		</p>
-		<p>
-			<img src="http://pic.styleindex.co.kr/skin/inda/mobile/dm/test/03.jpg"/>
-		</p>
-	</div>
+<div id="head">
+	웹사이트 헤더
 </div>
-</body>
+<div id="gotop">
+	<a href="#head" title="상단으로">위로</a>
+</div>
+<script type="text/javascript">initMoving(document.getElementById("gotop"), 50, 50, 50);</script>
+</body> 
 </html>
