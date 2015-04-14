@@ -231,15 +231,6 @@
 
 
 
-.footer{
-	position: relative;
-	background:#fff;
-	padding:30px 0;
-	text-align:center;
-	border-top:1px solid #ddd;
-}
-
-
 /*퀵메뉴 DIV*/
 .contents_wrap .quickmenu{
 	position:absolute;

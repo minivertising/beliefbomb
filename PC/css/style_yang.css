@@ -165,10 +165,9 @@ body{
 
 
 .footer{
-	background:#fff;
+	background:#f6f6f6;
 	padding:30px 0;
 	text-align:center;
-	border-top:1px solid #ddd;
 }
 
 /*popup*/
@@ -435,4 +434,144 @@ body{
 .bar{
 	border-bottom:1px solid #e0ecf5;
 	margin:15px 40px 10px;
+}
+
+
+
+
+
+
+
+.wrap_page{
+	width:100%;
+}
+.contents_wrap{
+	position:absolute;width:100%	;
+}
+
+.wrap_menu{
+	width:100%;
+	background:#ddd;
+	
+}
+.menu{
+	width:940px;
+	height:70px;
+	z-index:5;
+	/*margin:0 auto;*/
+	position:absolute;
+	left:50%;
+	margin-left:-470px;
+}
+.menu .block_logo{
+	float:left;
+	padding-top:15px;
+}
+.menu .block_menu{
+	padding-top:15px;
+	float:right;
+	width:815px;
+}
+.menu .block_menu a,
+.menu .block_menu span{
+	display:block;
+	float:left;
+}
+
+.menu .block_menu a.btn_view_pro{
+}
+.menu .block_menu span{
+	padding:2px 20px 0;
+}
+
+.contents_wrap .title{
+	text-align:center;
+	padding-top:100px;
+}
+.contents_wrap .btn_go{
+	text-align:center;
+	padding-top:50px;
+	padding-bottom:15px;
+}
+.contents_wrap .img_detail{
+	text-align:center;
+	padding-top:275px;
+	padding-bottom:83px;
+}
+
+.block_cal .title{
+	padding-bottom:20px;
+}
+.block_offevent_1{
+	background:#f0faff;
+	width:100%;
+	height:950px;
+}
+.block_offevent_1 .title{
+	padding-top:80px;
+}
+
+.block_offevent_2{
+	background:#e4f7ff;
+	width:100%;
+	height:950px;
+}
+.block_offevent_2 .block_img_detail{
+	width:900px;
+	margin:0 auto;
+}
+.block_offevent_2 .block_img_detail .d_1,
+.block_offevent_2 .block_img_detail .d_2,
+.block_offevent_2 .block_img_detail .d_3{
+	float:left;
+	width:220px;
+}
+
+.block_offevent_3{
+	width:100%;
+	height:1004px;
+	position:relative;
+	
+}
+.block_offevent_3 .vs{
+	position:absolute;
+	top:90px;
+	left:48%;
+}
+.block_offevent_3 .mbom{
+	width:50%;
+	background:#cbdef1 url(../images/bg_white.png) center;
+	float:left;
+	text-align:center;
+}
+
+.block_offevent_3 .mbom .title,
+.block_offevent_3 .abom .title{
+	height:76px;
+}
+.block_offevent_3 .mbom .img,
+.block_offevent_3 .abom .img{
+	height:540px;
+}
+.block_offevent_3 .mbom .img{
+}
+.block_offevent_3 .mbom .txt{
+	padding-top:20px;
+}
+.block_offevent_3 .mbom .btn_block{
+	padding-top:30px;
+	padding-bottom:80px;
+}
+.block_offevent_3 .abom{
+	width:50%;
+	background:#d3eff5 url(../images/bg_white.png) center;
+	float:left;
+	text-align:center;
+}
+.block_offevent_3 .abom .txt{
+	padding-top:20px;
+}
+.block_offevent_3 .abom .btn_block{
+	padding-top:30px;
+	padding-bottom:80px;
 }

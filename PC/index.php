@@ -1,46 +1,52 @@
 <?
 	include_once   "./header.php";
 ?>
-    <div id="menu" style="width:100%;height:40px;text-align:center;position:fixed;z-index:5">
-      <a href="http://www.belifcosmetic.com/main.jsp" target="_blank">빌리프홈</a>
-      <a href="#" onclick="screen_move('site_event')">PC/MOBILE 촉촉 이벤트</a>
-      <a href="#" onclick="screen_move('calender')">PLAY & SWEET 촉촉 이벤트 일정</a>
-      <a href="#" onclick="screen_move('off_event')">PLAY & SWEET 촉촉 이벤트</a>
-      <a href="#" onclick="screen_move('product')">제품보기</a>
-    </div>
-    <div class="contents_wrap" id="contents_wrap" style="position:absolute;width:100%">
+
+ <div  class="wrap_menu">
+    <div id="menu" class="menu clearfix">
+      <div class="block_logo">
+      	<a href="http://www.belifcosmetic.com/main.jsp" target="_blank"><img src="images/logo.png" width="75" height="35" alt=""/></a>
+      </div>
+      <div class="block_menu clearfix">
+          <a href="#" onclick="screen_move('site_event')"><img src="images/btn_menu_1.png" alt=""/></a>
+          <span><img src="images/ber_menu.png" alt=""/></span>
+          <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_2.png" alt=""/></a>
+          <span><img src="images/ber_menu.png" alt=""/></span>
+          <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
+          <span><img src="images/ber_menu.png" alt=""/></span>
+          <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
+          <a href="#" class="btn_fb" ><img src="images/btn_fb.png" alt=""/></a>
+          <a href="#" class="btn_kt"><img src="images/btn_kt.png" alt=""/></a>
+      </div>
+    </div> 
+ </div> 
+    
+  <div class="contents_wrap" id="contents_wrap">
       <!------------- 첫번째 영역 -------------------->
-      <div class="area1" style="width:100%;height:995px;">
-        <div style="margin-top:100px">
-          <a href="#" onclick="game_ready()">수분폭탄 터트리기</a>
-          <input type="hidden" name="mb_chkphone" id="mb_chkphone" value="">
+      <div class="area1" style="width:100%;">
+      	<div class="title">
+   	    	<img src="images/title.png" alt=""/>
+        </div>
+        <div class="btn_go">
+          <a href="#" onclick="game_ready()"><img src="images/btn_event_go.png" alt=""/></a>
+        </div>
+        <div style="text-align:center;">
+          <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
+        </div>        
+        <div class="img_detail">
+   	    	<img src="images/img_detail.png" alt=""/>
         </div>
       </div>
       <!------------- 첫번째 영역 -------------------->
+
       <!------------- 두번째 영역 -------------------->
-      <div class="area2" style="width:100%;height:995px;">
-        <div>
-          <center>
-            <h1>촉촉함이 팡팡! 달콤함이 팡팡!</h1>
-            <h4>접속하신 PC나 MOBILE에서 정해진 시간 안에 수분 폭탄을 터트리시면 추첨을 통해 정품 수분 폭탄 크림을 드립니다!</h4>
-          </center>
-        </div>
-        <div style="text-align:center;left:50%;margin-left:400px">
-          <a href="#" onclick="game_ready();return false;">PC로 참여하기</a>
-          <a href="#" onclick="show_qrcode();return false;">MOBILE로 참여하기</a>
-        </div>
-      </div>
-      <!------------- 두번째 영역 -------------------->
-      <!------------- 세번째 영역 -------------------->
-      <div class="area3" style="width:100%;height:995px;">
-        <div>
-          <center>
-            <h1>Play & Sweet 촉촉 이벤트 일정</h1>
-          </center>
+      <div class="area2 block_cal" style="width:100%;height:995px; background:#eee;">
+        <div class="title">
+   	    	<img src="images/title_cal.png" alt=""/>
         </div>
         <div style="width:100%">
           <div style="position:absolute;width:100px;height:400px;left:20%">
-            <a href="#" onclick="prev_cal();return false;">이전</a>
+            <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_left.png" alt=""/></a>
           </div>
           <div id="cal_4" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:green">
             4월 달력
@@ -52,31 +58,79 @@
             6월 달력
           </div>
           <div style="position:absolute;width:100px;height:400px;left:80%">
-            <a href="#" onclick="next_cal();return false;">이후</a>
+            <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_right.png" alt=""/></a>
           </div>
         </div>
       </div>
+      
       <!------------- 세번째 영역 -------------------->
-      <!------------- 네번째 영역 -------------------->
-      <div class="area4" style="width:100%;height:995px;">
-        <div>
-          <h1>촉촉함이 팡팡! 흔들리는 로데오 위에서 수분을 지키세요!</h1>
+      <div class="area3 block_offevent_1">
+        <div class="title">
+   	    	<img src="images/title_offevent_1.png" alt=""/>
         </div>
       </div>
+      
       <!------------- 네번째 영역 -------------------->
-      <!------------- 다섯번째 영역 -------------------->
-      <div class="area5" style="width:100%;height:995px;">
-        <div>
-          <a href="#">모이스쳐밤 자세히 보기</a>
+      <div class="area4 block_offevent_2">
+        <div class="title">
+   	    	<img src="images/title_offevent_2.png" alt=""/>
+        </div>
+        <div class="block_img_detail clearfix">
+        	<div class="d_1">
+       	    	<img src="images/img_event2_detail_1.png" alt=""/>
+            </div>
+        	<div class="d_2">
+       	    	<img src="images/img_event2_detail_2.png" alt=""/>
+            </div>
+        	<div class="d_3">
+       	    	<img src="images/img_event2_detail_3.png" alt=""/>
+            </div>
         </div>
         <div>
-          <a href="#">아쿠아밤 자세히 보기</a>
+   	    	<img src="images/car.png" alt=""/>
         </div>
       </div>
       <!------------- 다섯번째 영역 -------------------->
+      <div class="area5 block_offevent_3">
+      	<div class="vs"><img src="images/txt_vs.png" alt=""/></div>
+        <div class="mbom">
+          <div class="title">
+ 	      	  <img src="images/name_mbom.png" alt=""/>
+          </div>
+          <div class="img">
+       	  	<img src="images/mbom.png" alt=""/>
+          </div>
+          <div class="txt">
+          	<img src="images/txt_mbom.png" alt=""/>
+          </div>
+          <div class="btn_block">
+         	<a href="#"><img src="images/btn_mbom.png" alt=""/></a>
+          </div>
+        </div>
+        <div class="abom">
+          <div class="title">
+ 	      	  <img src="images/name_abom.png" alt=""/>
+          </div>
+          <div class="img">
+       	  	<img src="images/abom.png" alt=""/>
+          </div>
+          <div class="txt">
+          	<img src="images/txt_abom.png" alt=""/>
+          </div>
+          <div class="btn_block">
+          	<a href="#"><img src="images/btn_abom.png" alt=""/></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+   	  	<img src="images/txt_footer.png" width="924" height="99" alt=""/>
+      </div>
+      
+      
+      
       <!--quickmenu-->
         <div class="quickmenu" id="quickmenu" style="position:absolute;right:20px;z-index:50;">
-          <a href="#">TOP</a>
+          <a href="#"><img src="images/btn_top.png" alt=""/></a>
         </div>
       <!--quickmenu-->
 
