@@ -31,6 +31,28 @@ switch ($_REQUEST['exec'])
 		echo $flag;
 	break;
 
+	case "insert_detail_event" :
+		$mb_zipcode1		= $_REQUEST['mb_zipcode1'];
+		$mb_zipcode2		= $_REQUEST['mb_zipcode2'];
+		$mb_addr1			= $_REQUEST['mb_addr1'];
+		$mb_addr2			= $_REQUEST['mb_addr2'];
+		$mb_shop			= $_REQUEST['shop'];
+		$mb_gift				= $_REQUEST['mb_gift'];
+		$mb_chkphone	= $_REQUEST['mb_chkphone'];
+		$addr					= $mb_addr1." ".$mb_addr2;
+		$zipcode			= $mb_zipcode1."-".$mb_zipcode2;
+		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."' WHERE mb_phone='".$mb_chkphone."'";
+		$result 	= mysqli_query($my_db, $query);
+
+		//$ins_idx = mysqli_insert_id($result);
+		if ($result)
+			$flag = "Y";
+		else
+			$flag = "N";
+
+		echo $flag;
+	break;
+
 	case "winner_check" :
 		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'Y' AND mb_winner <> 'I' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result 	= mysqli_query($my_db, $query);

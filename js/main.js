@@ -45,6 +45,7 @@ function chk_input()
 	//var mb_addr2		= $('#mb_addr2').val();
 	//var mb_shop		= $('#mb_shop').val();
 	//var mb_idx			= $('#mb_idx').val();
+	var cel_phone		= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
 
 	if (mb_name == "")
 	{
@@ -117,6 +118,7 @@ function chk_input()
 			alert(response);
 			if (response == "Y")
 			{
+				$("#mb_chkphone").val(cel_phone);
 				//alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
 				if (mb_gift == "cream")
 					setTimeout("event_cream_data();",500);
@@ -149,43 +151,80 @@ function chk_input()
 
 function chk_input2()
 {
-	//var mb_addr1		= $('#mb_addr1').val();
-	//var mb_addr2		= $('#mb_addr2').val();
-	//var mb_shop		= $('#mb_shop').val();
-	//var mb_idx			= $('#mb_idx').val();
+	var mb_addr1			= $('#mb_addr1').val();
+	var mb_addr2			= $('#mb_addr2').val();
+	var mb_zipcode1		= $('#mb_zipcode1').val();
+	var mb_zipcode2		= $('#mb_zipcode2').val();
+	var mb_shop			= $('#mb_shop').val();
+	var mb_idx				= $('#mb_idx').val();
 	var mb_gift				= $("#mb_gift").val();
+	var mb_chkphone	= $("#mb_chkphone").val();
 
-	if (mb_addr1 == "")
+	if (mb_zipcode1)
 	{
-		alert('매장 선택을 안 하셨습니다');
-		//setTimeout("shop_data();",500);
-		return false;
+		if (mb_zipcode1 == "")
+		{
+			alert('주소를 선택 안하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
+
+		if (mb_zipcode2 == "")
+		{
+			alert('주소를 선택 안하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
+
+		if (mb_addr1 == "")
+		{
+			alert('주소를 선택 안하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
+
+		if (mb_addr2 == "")
+		{
+			alert('주소를 선택 안하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
+	}else{
+		if (mb_addr1 == "")
+		{
+			alert('매장 선택을 안 하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
+
+		if (mb_addr2 == "")
+		{
+			alert('매장 선택을 안 하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
+
+		if (mb_shop == "")
+		{
+			alert('매장 선택을 안 하셨습니다');
+			//setTimeout("shop_data();",500);
+			return false;
+		}
 	}
 
-	if (mb_addr2 == "")
-	{
-		alert('매장 선택을 안 하셨습니다');
-		//setTimeout("shop_data();",500);
-		return false;
-	}
 
-	if (mb_shop == "")
-	{
-		alert('매장 선택을 안 하셨습니다');
-		//setTimeout("shop_data();",500);
-		return false;
-	}
 
 	$.ajax({
 		type:"POST",
 		data:{
-			"exec"				: "insert_event",
-			"mb_name"			: mb_name,
-			"mb_phone1"		    : mb_phone1,
-			"mb_phone2"		    : mb_phone2,
-			"mb_phone3"		    : mb_phone3,
+			"exec"				: "insert_detail_event",
+			"mb_zipcode1"	: mb_zipcode1,
+			"mb_zipcode2"	: mb_zipcode2,
+			"mb_addr1"			: mb_addr1,
+			"mb_addr2"			: mb_addr2,
 			"shop"				: mb_shop,
-			"mb_idx"				: mb_idx
+			"mb_gift"			: mb_gift,
+			"mb_chkphone"	: mb_chkphone
 		},
 		url: "../main_exec.php",
 		success: function(response){
@@ -207,6 +246,8 @@ function chk_input2()
 				$("#mb_phone3").val("");
 				$("#mb_addr1").val("");
 				$("#mb_addr2").val("");
+				$("#mb_zipcode1").val("");
+				$("#mb_zipcode2").val("");
 				$("#mb_shop").val("");
 				$('input').iCheck('uncheck');
 				$.magnificPopup.close();
@@ -221,8 +262,11 @@ function chk_input2()
 				$("#mb_addr1").val("");
 				$("#mb_addr2").val("");
 				$("#mb_shop").val("");
+				$("#mb_zipcode1").val("");
+				$("#mb_zipcode2").val("");
 				$('input').iCheck('uncheck');
 				$.magnificPopup.close();
+				$("#mb_chkphone").val(response);
 			}
 		}
 	});

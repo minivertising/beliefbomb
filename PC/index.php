@@ -13,6 +13,7 @@
       <div class="area1" style="width:100%;height:995px;">
         <div style="margin-top:100px">
           <a href="#" onclick="game_ready()">수분폭탄 터트리기</a>
+          <input type="hidden" name="mb_chkphone" id="mb_chkphone" value="">
         </div>
       </div>
       <!------------- 첫번째 영역 -------------------->
