@@ -40,24 +40,24 @@
       <!------------- 첫번째 영역 -------------------->
 
       <!------------- 두번째 영역 -------------------->
-      <div class="area2 block_cal" style="width:100%;height:995px; background:#eee;">
+      <div class="area2 block_cal">
         <div class="title">
    	    	<img src="images/title_cal.png" alt=""/>
         </div>
         <div style="width:100%">
-          <div style="position:absolute;width:100px;height:400px;left:20%">
+          <div class="arrow_left">
             <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_left.png" alt=""/></a>
           </div>
-          <div id="cal_4" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:green">
+          <div id="cal_4" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:green">
             4월 달력
           </div>
-          <div id="cal_5" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:skyblue;display:none">
+          <div id="cal_5" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:skyblue;display:none">
             5월 달력
           </div>
-          <div id="cal_6" style="position:absolute;width:400px;height:400px;left:50%;margin-left:-200px;background:red;display:none">
+          <div id="cal_6" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:red;display:none">
             6월 달력
           </div>
-          <div style="position:absolute;width:100px;height:400px;left:80%">
+          <div class="arrow_right">
             <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_right.png" alt=""/></a>
           </div>
         </div>
@@ -86,40 +86,52 @@
        	    	<img src="images/img_event2_detail_3.png" alt=""/>
             </div>
         </div>
-        <div>
-   	    	<img src="images/car.png" alt=""/>
+        <div class="car_bg">
+        	<div class="inner">
+            	<div class="ful_1">
+                	<img src="images/ful_1.png" alt=""/>
+                </div>
+            	<div class="ful_2">
+                	<img src="images/ful_2.png" alt=""/>
+                </div>
+                <div class="img_car">
+                    <img src="images/car.png" alt=""/>
+                </div>
+            </div>
         </div>
       </div>
       <!------------- 다섯번째 영역 -------------------->
       <div class="area5 block_offevent_3">
       	<div class="vs"><img src="images/txt_vs.png" alt=""/></div>
-        <div class="mbom">
-          <div class="title">
- 	      	  <img src="images/name_mbom.png" alt=""/>
-          </div>
-          <div class="img">
-       	  	<img src="images/mbom.png" alt=""/>
-          </div>
-          <div class="txt">
-          	<img src="images/txt_mbom.png" alt=""/>
-          </div>
-          <div class="btn_block">
-         	<a href="#"><img src="images/btn_mbom.png" alt=""/></a>
-          </div>
-        </div>
-        <div class="abom">
-          <div class="title">
- 	      	  <img src="images/name_abom.png" alt=""/>
-          </div>
-          <div class="img">
-       	  	<img src="images/abom.png" alt=""/>
-          </div>
-          <div class="txt">
-          	<img src="images/txt_abom.png" alt=""/>
-          </div>
-          <div class="btn_block">
-          	<a href="#"><img src="images/btn_abom.png" alt=""/></a>
-          </div>
+        <div class="inner clearfix">
+            <div class="mbom">
+              <div class="title">
+                  <img src="images/name_mbom.png" alt=""/>
+              </div>
+              <div class="img">
+                <img src="images/mbom.png" alt=""/>
+              </div>
+              <div class="txt">
+                <img src="images/txt_mbom.png" alt=""/>
+              </div>
+              <div class="btn_block">
+                <a href="#"><img src="images/btn_mbom.png" alt=""/></a>
+              </div>
+            </div>
+            <div class="abom">
+              <div class="title">
+                  <img src="images/name_abom.png" alt=""/>
+              </div>
+              <div class="img">
+                <img src="images/abom.png" alt=""/>
+              </div>
+              <div class="txt">
+                <img src="images/txt_abom.png" alt=""/>
+              </div>
+              <div class="btn_block">
+                <a href="#"><img src="images/btn_abom.png" alt=""/></a>
+              </div>
+            </div>
         </div>
       </div>
       <div class="footer">

@@ -451,7 +451,9 @@ body{
 
 .wrap_menu{
 	width:100%;
-	background:#ddd;
+	background: rgba(255, 255, 255, 0.5); 
+	height:70px;
+	border-bottom:1px solid #cae7f3;
 	
 }
 .menu{
@@ -476,14 +478,26 @@ body{
 .menu .block_menu span{
 	display:block;
 	float:left;
+	padding-top:13px;
 }
 
-.menu .block_menu a.btn_view_pro{
+.menu .block_menu a.btn_view_pro,
+.menu .block_menu a.btn_fb,
+.menu .block_menu a.btn_kt{
+	padding-top:3px;
+	padding-left:5px;
+}
+.menu .block_menu a.btn_fb{
+	padding-left:30px;
 }
 .menu .block_menu span{
-	padding:2px 20px 0;
+	padding:15px 20px 0;
 }
 
+
+.contents_wrap .area1{
+	background:#e4f7ff;
+}
 .contents_wrap .title{
 	text-align:center;
 	padding-top:100px;
@@ -498,6 +512,22 @@ body{
 	padding-top:275px;
 	padding-bottom:83px;
 }
+.block_cal {
+	background:#f0faff url(../images/bg_cal.png) bottom center no-repeat;
+	background-size:auto;
+	width:100%;
+	height:990px;
+}
+.block_cal .arrow_left {
+position:absolute;width:100px;height:400px;left:20%;
+padding-top:50px;
+}
+.block_cal .arrow_right{
+position:absolute;width:100px;height:400px;left:80%;
+padding-top:50px;	
+
+}
+
 
 .block_cal .title{
 	padding-bottom:20px;
@@ -512,13 +542,19 @@ body{
 }
 
 .block_offevent_2{
-	background:#e4f7ff;
+	background:#e4f7ff url(../images/bg_white.png) 50% 50% no-repeat;
 	width:100%;
 	height:950px;
 }
+.block_offevent_2 .title{
+	padding-bottom:40px;
+}
 .block_offevent_2 .block_img_detail{
-	width:900px;
-	margin:0 auto;
+	width:660px;
+	left:50%;
+	margin-left:-330px;
+	position:absolute;
+	height:250px;
 }
 .block_offevent_2 .block_img_detail .d_1,
 .block_offevent_2 .block_img_detail .d_2,
@@ -526,11 +562,52 @@ body{
 	float:left;
 	width:220px;
 }
+.block_offevent_2 .block_img_detail .d_1,
+.block_offevent_2 .block_img_detail .d_3{
+	padding-top:40px;
+}
+.block_offevent_2 .car_bg{
+	width:100%;
+	height:340px;
+	bottom:0;
+	position:absolute;
+	background:url(../images/bg_car.png) 50% 100% no-repeat;
+}
+.block_offevent_2 .inner{
+	position:relative;
+	width:100%;
+	height:310px;
+}
+.block_offevent_2 .inner .img_car{
+	position:absolute;
+	width:700px;
+	left:50%;
+	top:0;
+	margin-left:-350px;
+	z-index:100;
+}
+.block_offevent_2 .inner .ful_1,
+.block_offevent_2 .inner .ful_2{
+	position:absolute;
+	z-index:110;
+	bottom:2px;
+}
+.block_offevent_2 .inner .ful_1{
+	left:37%;
+	margin-left:-50px;
+}
+.block_offevent_2 .inner .ful_2{
+	left:62%;
+}
 
 .block_offevent_3{
 	width:100%;
 	height:1004px;
 	position:relative;
+	
+}
+.block_offevent_3 .inner{
+	width:100%;
 	
 }
 .block_offevent_3 .vs{
