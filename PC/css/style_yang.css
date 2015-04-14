@@ -246,7 +246,29 @@ body{
 	z-index:899;
 	bottom:160px;
 	left:50%;
-	margin-left:-125px;	
+	margin-left:-120px;
+	width:240px;
+	height:400px;
+}
+
+.popup_wrap .p_mid.game .img_product .p_inner{
+	position:relative;
+	width:240px;
+	height:400px;	
+}
+.popup_wrap .p_mid.game .img_product .p_inner .cap{
+	position:absolute;
+	bottom:89px;
+	z-index:898;
+}
+.popup_wrap .p_mid.game .img_product .p_inner .cap.c_2{
+	bottom:200px;
+	z-index:896;
+}
+.popup_wrap .p_mid.game .img_product .p_inner .body{
+	bottom:0;
+	z-index:897;
+	position:absolute;
 }
 .popup_wrap .p_mid.game .img_product.ing{
 	bottom:180px;
