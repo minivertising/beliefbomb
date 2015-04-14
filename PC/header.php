@@ -31,6 +31,8 @@
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
     <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
     <script type="text/javascript" src="../js/jQueryTween-aio-min.js"></script>
+	<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+  	<script type="text/javascript" src="../js/jquery.scrollmagic.js"></script>
     <!-- <script type="text/javascript" src="../js/jquery.scrollme.min.js"></script> -->
 
   </head>
