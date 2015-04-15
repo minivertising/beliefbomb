@@ -308,11 +308,11 @@ function event_kit_data()
 
 function event_action()
 {
-	if (bomb_cnt > 50)
+	if (bomb_cnt > 10)
 	//if (bomb_cnt > 50)
 	{
 		keepgoin=false;
-		$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
 		$("#game_title").hide();
