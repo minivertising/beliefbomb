@@ -28,7 +28,7 @@
    	    	<img src="images/title.png" alt=""/>
         </div>
         <div class="btn_go">
-          <a href="#" onclick="game_ready()"><img src="images/btn_event_go.png" alt=""/></a>
+          <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
         </div>
         <div style="text-align:center;">
           <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
@@ -277,11 +277,62 @@
     </div>
       <!------------- QR코드 팝업 -------------------->
       <!------------- 게임1 팝업 -------------------->
-    <div id="event_game1_pop" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white;display:none">
-      <div>
-        <a href="#" onclick="game_start()">START!</a>
+    <div class="popup_wrap" id="event_game1_pop" style="display:none;margin-top:-362px">
+      <div class="p_mid game">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content">
+          <div class="inner">
+            <div class="btn_start">
+              <a href="#" onclick="game_start()"><img src="images/popup/btn_start.png" alt=""/></a>
+            </div>
+            <div class="title" id="game_title">
+              <img src="images/popup/title_game.png" alt=""/>
+            </div>
+            <div class="img_product">
+              <div class="p_inner">
+                <div class="cap" id="cap1">
+                  <img src="images/popup/cap_1.png"alt=""/>
+                </div>
+                <div class="body" id="body1">
+                  <img src="images/popup/p_body.png" width="241" height="216" alt=""/>
+                </div>
+              </div>
+            </div>
+            <div class="time clearfix">
+              <div class="num">
+                <img src="images/popup/num1.png" alt="" id="game_num1"/>
+              </div>
+              <div class="num">
+                <img src="images/popup/num0.png" alt="" id="game_num2"/>
+              </div>
+              <div class="num">
+                <img src="images/popup/num_dash.png" alt=""/>
+              </div>
+              <div class="num">
+                <img src="images/popup/num0.png" alt="" id="game_num3"/>
+              </div>
+              <div class="num">
+                <img src="images/popup/num0.png" alt="" id="game_num4"/>
+              </div>
+            </div>
+            <div class="gage">
+              <div class="bg" id="gage_bg">
+              100%
+              </div>
+            </div>
+            <div class="bg_water_1">
+              <img src="images/popup/bg_water.png"  alt=""/>
+            </div>
+            <div class="bg_water_2">
+              <img src="images/popup/bg_water_2.png"  alt=""/>
+            </div>
+          </div><!--inner-->
+        </div>
       </div>
     </div>
+
       <!------------- 게임1 팝업 -------------------->
       <!------------- 게임2 팝업 -------------------->
     <div id="event_game2_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
@@ -384,6 +435,7 @@ $(document).ready(function() {
 				currentmil=100;
 				keepgoin=false;
 				$("#cap1").attr("onclick","event_action();");
+				$("#body1").attr("onclick","event_action();");
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
 				$("#mb_name").val();

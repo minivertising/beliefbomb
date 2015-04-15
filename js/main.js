@@ -308,13 +308,16 @@ function event_kit_data()
 
 function event_action()
 {
-	if (bomb_cnt > 10)
+	if (bomb_cnt > 50)
 	//if (bomb_cnt > 50)
 	{
 		keepgoin=false;
 		$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#cap1").attr("onclick","");
-
+		$("#body1").attr("onclick","");
+		$("#game_title").hide();
+		
+/*
 		$.ajax({
 			type:"POST",
 			cache: false,
@@ -347,35 +350,51 @@ function event_action()
 				}
 			}
 		});
-
+*/
 		return false;
 	}
 
+	var gage_per	= bomb_cnt*2;
+	var gage_bg	= gage_per;
+	if (gage_per > 98)
+	{
+		gage_bg = "98";
+	}
 	if (bomb_cnt % 2 == 0)
 	{
 		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$("#gage_bg").css("width", gage_bg + "%");
+		$("#gage_bg").html(gage_per + "%");
+		/*
 		$('#w1').show();
 		$('#w1').animate({top:"230",left:"420"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
 		$('#w1').css({"top":"250px","left":"400px"});
 		$('#w2_2').show();
 		$('#w2_2').animate({top:"200",left:"20"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
 		$('#w2_2').css({"top":"220px","left":"40px"});
+		*/
 	}else{
 		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: -20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$("#gage_bg").css("width", gage_bg + "%");
+		$("#gage_bg").html(gage_per + "%");
+		/*
 		$('#w1_2').show();
 		$('#w1_2').animate({top:"250",left:"30"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
 		$('#w1_2').css({"top":"270px","left":"30px"});
 		$('#w2').show();
 		$('#w2').animate({top:"180",left:"410"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
 		$('#w2').css({"top":"200px","left":"430px"});
+		*/
 	}
 	//$('#cap1').jQueryTween({ to: { rotate: { z: -30 },translate: {y: -250 },rotate: { z: 30 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out },function() {
 	//});
+	/*
 	if (keepgoin == false)
 	{
 		keepgoin=true;
 		timer();
 	}
+	*/
 	bomb_cnt = bomb_cnt + 1;
 
 }
@@ -395,13 +414,23 @@ function timer(){
 		if (Strmil.length!=2){
 			Strmil="0"+currentmil;
 		}
-		$("#timer_s").val(Strsec);
-		$("#timer_ms").val(Strmil);
+		//$("#timer_s").val(Strsec);
+		//$("#timer_ms").val(Strmil);
+		var sec1		= Strsec.substring(0,1);
+		var sec2		= Strsec.substring(1,2);
+		var msec1	= Strmil.substring(0,1);
+		var msec2	= Strmil.substring(1,2);
+		$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
+		$("#game_num2").attr("src","images/popup/num" + sec2 + ".png");
+		$("#game_num3").attr("src","images/popup/num" + msec1 + ".png");
+		$("#game_num4").attr("src","images/popup/num" + msec2 + ".png");
+		
 		if (Strsec == 0)
 		{
-			$("#timer_ms").val("00");
+			$("#game_num4").attr("src","images/popup/num0.png");
 			alert("타임 오버!");
-			$("#cap1").attr("onclick","");
+			//$("#cap1").attr("onclick","");
+			$.magnificPopup.close();
 		}else{
 			setTimeout("timer()", 10);
 		}
@@ -420,9 +449,9 @@ function startover(){
 
 function game_start()
 {
-	$.magnificPopup.close();
-
-	setTimeout("game_start_data();",500);
+	//$.magnificPopup.close();
+	
+	//setTimeout("game_start_data();",500);
 
 	$.ajax({
 		type:"POST",
@@ -431,6 +460,17 @@ function game_start()
 			"exec"			: "insert_event_member"
 		},
 		url: "../main_exec.php"
+	});
+	var position = 0;
+	$('.btn_start').animate({top:position},500,'easeInBack', function(){
+		$('.btn_start').fadeOut('fast');
+		if (keepgoin == false)
+		{
+			keepgoin=true;
+			timer();
+		}
+		$("#cap1").attr("onclick","event_action();");
+		$("#body1").attr("onclick","event_action();");
 	});
 
 }
@@ -495,8 +535,13 @@ function game_ready()
 				currentmil=100;
 				keepgoin=false;
 				$("#cap1").attr("onclick","event_action();");
-				$("#timer_s").val("10");
-				$("#timer_ms").val("00");
+				$("#body1").attr("onclick","event_action();");
+				$("#game_num1").attr("src","images/popup/num1.png");
+				$("#game_num2").attr("src","images/popup/num0.png");
+				$("#game_num3").attr("src","images/popup/num0.png");
+				$("#game_num4").attr("src","images/popup/num0.png");
+				$(".btn_start").css("top","250px");
+				$(".btn_start").show();
 				$("#mb_name").val();
 				$("#mb_phone1").val();
 				$("#mb_phone2").val();
@@ -541,6 +586,7 @@ function game_start_data()
 				currentmil=100;
 				keepgoin=false;
 				$("#cap1").attr("onclick","event_action();");
+				$("#body1").attr("onclick","event_action();");
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
 				$("#mb_name").val("");
