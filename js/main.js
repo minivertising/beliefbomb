@@ -605,13 +605,13 @@ function game_ready()
 				$("#gage_bg").html("0%");
 				$(".btn_start").css("top","250px");
 				$(".btn_start").show();
-				$("#mb_name").val();
-				$("#mb_phone1").val();
-				$("#mb_phone2").val();
-				$("#mb_phone3").val();
-				$("#mb_addr1").val();
-				$("#mb_addr2").val();
-				$("#mb_shop").val();
+				$("#mb_name").val("");
+				$("#mb_phone1").val("");
+				$("#mb_phone2").val("");
+				$("#mb_phone3").val("");
+				$("#mb_addr1").val("");
+				$("#mb_addr2").val("");
+				$("#mb_shop").val("");
 				$('input').iCheck('uncheck');
 			}
 		}
