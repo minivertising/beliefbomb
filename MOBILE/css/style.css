@@ -119,3 +119,92 @@
 .my-mfp-slide-bottom.mfp-removing.mfp-bg {
 	opacity: 0;
 }
+
+
+/*common*/
+* {
+	padding: 0;
+	margin: 0;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
+
+.menu {
+	width:100%;
+	border-bottom:1px solid #ccc;
+}
+
+.menu a{
+	display:block;
+	float:left;
+}
+.menu a.menu_ham{
+	display:block;
+	float:right;
+}
+
+.block_game{
+	position:relative;
+	width:100%;
+	text-align:center;
+	height:100%;
+}
+.block_game .inner_ele{
+	width:100%;
+	position:absolute;
+}
+.block_game .bg_top{
+}
+.block_game .bg_top img{
+	width:100%;
+}
+
+.block_game .title{
+}
+.block_game .title img{
+	width:80%;
+}
+
+.block_game .btn_block{
+	padding:5% 0;
+}
+.block_game .btn_block a img{
+	width:40%;
+}
+
+.block_game .txt_1 {
+	padding-top:30%;
+}
+.block_game .txt_1 img,
+.block_game .txt_2 img{
+	width:95%;
+}
+
+.img_wrap{
+	width:100%;
+}
+
+
+
+.footer img{
+	width:100%;
+}

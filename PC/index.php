@@ -24,41 +24,36 @@
   <div class="contents_wrap" id="contents_wrap">
     <!------------- 첫번째 영역 -------------------->
     <div class="area1" style="width:100%;">
-      <div class="title">
-        <img src="images/title.png" alt=""/>
-      </div>
-      <div class="btn_go">
-        <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
-      </div>
-      <div style="text-align:center;">
-        <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
-      </div>        
-      <div class="img_detail">
-        <img src="images/img_detail.png" alt=""/>
-      </div>
-    </div>
-    <!------------- 첫번째 영역 -------------------->
-
-    <!------------- 두번째 영역 -------------------->
-    <div class="area2 block_cal">
-      <div class="title">
-        <img src="images/title_cal.png" alt=""/>
-      </div>
-      <div style="width:100%">
-        <div class="arrow_left">
-          <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_left.png" alt=""/></a>
+      <div class="bg_inner">
+        <div class="title">
+          <img src="images/title.png" alt=""/>
         </div>
-        <div id="cal_4" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:green">
-        4월 달력
+        <div class="btn_go">
+          <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
         </div>
-        <div id="cal_5" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:skyblue;display:none">
-        5월 달력
+        <div class="btn_mobile">
+          <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
+        </div>        
+        <div class="img_detail">
+          <img src="images/img_detail.png" alt=""/>
         </div>
-        <div id="cal_6" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:red;display:none">
-        6월 달력
+        <div class="candy_mbom">
+          <img src="images/bg_mbom_candy.png" alt=""/>
         </div>
-        <div class="arrow_right">
-          <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_right.png" alt=""/></a>
+        <div class="candy_abom">
+          <img src="images/bg_abom_candy.png" alt=""/>
+        </div>
+        <div class="cap_mbom">
+          <img src="images/cap_mbom.png" alt=""/>
+        </div>
+        <div class="cap_abom">
+          <img src="images/cap_abom.png" alt=""/>
+        </div>
+        <div class="bg_mbom">
+          <img src="images/main_mbom.png" alt=""/>
+        </div>
+        <div class="bg_abom">
+          <img src="images/main_abom.png" alt=""/>
         </div>
       </div>
     </div>
@@ -140,7 +135,7 @@
       <img src="images/txt_footer.png" width="924" height="99" alt=""/>
     </div>
     <!--quickmenu-->
-    <div class="quickmenu" id="quickmenu" style="position:absolute;right:20px;z-index:50;">
+    <div class="quickmenu" id="quickmenu" style="position:fixed;right:20px;z-index:50;bottom:50px;">
       <a href="#"><img src="images/btn_top.png" alt=""/></a>
     </div>
     <!--quickmenu-->
@@ -513,6 +508,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 	// quick menu
+	/*
 	var quickTop;
 	$(window).scroll(function() {
 		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
@@ -520,6 +516,7 @@
 		$('.quickmenu').animate({top:$(window).scrollTop()+quickTop},100,'easeOutExpo');
 		
 	});
+	*/
 
 var bomb_cnt = 0;
 var currentsec=9;
@@ -589,6 +586,19 @@ $(document).ready(function() {
 		$( 'html, body' ).animate( { scrollTop : 0 }, 300 );
 		  return false;
 	} );
+
+	setInterval(function(){
+		$('.bg_water_1').animate({bottom:100},500).animate({bottom:110},500);
+	},1000);
+
+	setInterval(function(){
+		$('.bg_water_2').animate({bottom:100},500).animate({bottom:110},500);
+	},800);
+
+	setInterval(function(){
+		$('.quickmenu').animate({bottom:60},500).animate({bottom:50},500);
+	},800);
+
 	// 퀵메뉴 기본 위치
 	//var quick_height	= $(window).height()/2;
 	//$('.quickmenu').css("top",quick_height);
@@ -603,7 +613,7 @@ $(document).ready(function() {
 	});
 */
 	var quick_height	= $(window).height()/2;
-	initMoving(document.getElementById("quickmenu"), quick_height, 50, 50);
+	//initMoving(document.getElementById("quickmenu"), quick_height, 50, 50);
 
 	var b_width			= $(window).width();
 	var car_width		= -350;
