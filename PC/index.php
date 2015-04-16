@@ -2,153 +2,150 @@
 	include_once   "./header.php";
 ?>
 
- <div  class="wrap_menu" style="position:fixed;z-index:9999">
+  <div  class="wrap_menu" style="position:fixed;z-index:9999">
     <div id="menu" class="menu clearfix">
       <div class="block_logo">
-      	<a href="http://www.belifcosmetic.com/main.jsp" target="_blank"><img src="images/logo.png" width="75" height="35" alt=""/></a>
+        <a href="http://www.belifcosmetic.com/main.jsp" target="_blank"><img src="images/logo.png" width="75" height="35" alt=""/></a>
       </div>
       <div class="block_menu clearfix">
-          <a href="#" onclick="screen_move('site_event')"><img src="images/btn_menu_1.png" alt=""/></a>
-          <span><img src="images/ber_menu.png" alt=""/></span>
-          <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_2.png" alt=""/></a>
-          <span><img src="images/ber_menu.png" alt=""/></span>
-          <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
-          <span><img src="images/ber_menu.png" alt=""/></span>
-          <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
-          <a href="#" class="btn_fb" ><img src="images/btn_fb.png" alt=""/></a>
-          <a href="#" class="btn_kt"><img src="images/btn_kt.png" alt=""/></a>
+        <a href="#" onclick="screen_move('site_event')"><img src="images/btn_menu_1.png" alt=""/></a>
+        <span><img src="images/ber_menu.png" alt=""/></span>
+        <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_2.png" alt=""/></a>
+        <span><img src="images/ber_menu.png" alt=""/></span>
+        <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
+        <span><img src="images/ber_menu.png" alt=""/></span>
+        <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
+        <a href="#" class="btn_fb" ><img src="images/btn_fb.png" alt=""/></a>
+        <a href="#" class="btn_kt"><img src="images/btn_kt.png" alt=""/></a>
       </div>
     </div> 
- </div> 
-    <input type="hidden" name="mb_chkphone" id="mb_chkphone" value="">
+  </div> 
+  <input type="hidden" name="mb_chkphone" id="mb_chkphone" value="">
   <div class="contents_wrap" id="contents_wrap">
-      <!------------- 첫번째 영역 -------------------->
-      <div class="area1" style="width:100%;">
-      	<div class="title">
-   	    	<img src="images/title.png" alt=""/>
-        </div>
-        <div class="btn_go">
-          <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
-        </div>
-        <div style="text-align:center;">
-          <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
-        </div>        
-        <div class="img_detail">
-   	    	<img src="images/img_detail.png" alt=""/>
-        </div>
+    <!------------- 첫번째 영역 -------------------->
+    <div class="area1" style="width:100%;">
+      <div class="title">
+        <img src="images/title.png" alt=""/>
       </div>
-      <!------------- 첫번째 영역 -------------------->
-
-      <!------------- 두번째 영역 -------------------->
-      <div class="area2 block_cal">
-        <div class="title">
-   	    	<img src="images/title_cal.png" alt=""/>
-        </div>
-        <div style="width:100%">
-          <div class="arrow_left">
-            <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_left.png" alt=""/></a>
-          </div>
-          <div id="cal_4" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:green">
-            4월 달력
-          </div>
-          <div id="cal_5" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:skyblue;display:none">
-            5월 달력
-          </div>
-          <div id="cal_6" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:red;display:none">
-            6월 달력
-          </div>
-          <div class="arrow_right">
-            <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_right.png" alt=""/></a>
-          </div>
-        </div>
+      <div class="btn_go">
+        <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
       </div>
-      
-      <!------------- 세번째 영역 -------------------->
-      <div class="area3 block_offevent_1">
-        <div class="title">
-   	    	<img src="images/title_offevent_1.png" alt=""/>
-        </div>
+      <div style="text-align:center;">
+        <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
+      </div>        
+      <div class="img_detail">
+        <img src="images/img_detail.png" alt=""/>
       </div>
-      
-      <!------------- 네번째 영역 -------------------->
-      <div class="area4 block_offevent_2" id="area4">
-        <div class="title">
-   	    	<img src="images/title_offevent_2.png" alt=""/>
-        </div>
-        <div class="block_img_detail clearfix">
-        	<div class="d_1" style="opacity:0">
-       	    	<img src="images/img_event2_detail_1.png" alt=""/>
-            </div>
-        	<div class="d_2" style="opacity:0">
-       	    	<img src="images/img_event2_detail_2.png" alt=""/>
-            </div>
-        	<div class="d_3" style="opacity:0">
-       	    	<img src="images/img_event2_detail_3.png" alt=""/>
-            </div>
-        </div>
-        <div class="car_bg">
-        	<div class="inner">
-            	<div class="ful_1">
-                	<img src="images/ful_1.png" alt=""/>
-                </div>
-            	<div class="ful_2">
-                	<img src="images/ful_2.png" alt=""/>
-                </div>
-				<div class="triger1">
-				</div>
-                <div class="img_car">
-                    <img src="images/car.png" alt=""/>
-                </div>
-            </div>
-        </div>
-      </div>
-      <!------------- 다섯번째 영역 -------------------->
-      <div class="area5 block_offevent_3" id="area5">
-      	<div class="vs"><img src="images/txt_vs.png" alt=""/></div>
-        <div class="inner clearfix">
-            <div class="mbom">
-              <div class="title">
-                  <img src="images/name_mbom.png" alt=""/>
-              </div>
-              <div class="img">
-                <img src="images/mbom.png" alt=""/>
-              </div>
-              <div class="txt">
-                <img src="images/txt_mbom.png" alt=""/>
-              </div>
-              <div class="btn_block">
-                <a href="#"><img src="images/btn_mbom.png" alt=""/></a>
-              </div>
-            </div>
-            <div class="abom">
-              <div class="title">
-                  <img src="images/name_abom.png" alt=""/>
-              </div>
-              <div class="img">
-                <img src="images/abom.png" alt=""/>
-              </div>
-              <div class="txt">
-                <img src="images/txt_abom.png" alt=""/>
-              </div>
-              <div class="btn_block">
-                <a href="#"><img src="images/btn_abom.png" alt=""/></a>
-              </div>
-            </div>
-        </div>
-      </div>
-      <div class="footer">
-   	  	<img src="images/txt_footer.png" width="924" height="99" alt=""/>
-      </div>
-      
-      
-      
-      <!--quickmenu-->
-        <div class="quickmenu" id="quickmenu" style="position:absolute;right:20px;z-index:50;">
-          <a href="#"><img src="images/btn_top.png" alt=""/></a>
-        </div>
-      <!--quickmenu-->
-
     </div>
+    <!------------- 첫번째 영역 -------------------->
+
+    <!------------- 두번째 영역 -------------------->
+    <div class="area2 block_cal">
+      <div class="title">
+        <img src="images/title_cal.png" alt=""/>
+      </div>
+      <div style="width:100%">
+        <div class="arrow_left">
+          <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_left.png" alt=""/></a>
+        </div>
+        <div id="cal_4" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:green">
+        4월 달력
+        </div>
+        <div id="cal_5" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:skyblue;display:none">
+        5월 달력
+        </div>
+        <div id="cal_6" style="position:absolute;width:400px;height:550px;left:50%;margin-left:-200px;background:red;display:none">
+        6월 달력
+        </div>
+        <div class="arrow_right">
+          <a href="#" onclick="prev_cal();return false;"><img src="images/arrow_right.png" alt=""/></a>
+        </div>
+      </div>
+    </div>
+
+    <!------------- 세번째 영역 -------------------->
+    <div class="area3 block_offevent_1">
+      <div class="title">
+        <img src="images/title_offevent_1.png" alt=""/>
+      </div>
+    </div>
+
+    <!------------- 네번째 영역 -------------------->
+    <div class="area4 block_offevent_2" id="area4">
+      <div class="title">
+        <img src="images/title_offevent_2.png" alt=""/>
+      </div>
+      <div class="block_img_detail clearfix">
+        <div class="d_1" style="opacity:0">
+          <img src="images/img_event2_detail_1.png" alt=""/>
+        </div>
+        <div class="d_2" style="opacity:0">
+          <img src="images/img_event2_detail_2.png" alt=""/>
+        </div>
+        <div class="d_3" style="opacity:0">
+          <img src="images/img_event2_detail_3.png" alt=""/>
+        </div>
+      </div>
+      <div class="car_bg">
+        <div class="inner">
+          <div class="ful_1">
+            <img src="images/ful_1.png" alt=""/>
+          </div>
+          <div class="ful_2">
+            <img src="images/ful_2.png" alt=""/>
+          </div>
+          <div class="triger1">
+          </div>
+          <div class="img_car">
+            <img src="images/car.png" alt=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------- 다섯번째 영역 -------------------->
+    <div class="area5 block_offevent_3" id="area5">
+      <div class="vs"><img src="images/txt_vs.png" alt=""/></div>
+      <div class="inner clearfix">
+        <div class="mbom">
+          <div class="title">
+            <img src="images/name_mbom.png" alt=""/>
+          </div>
+          <div class="img">
+            <img src="images/mbom.png" alt=""/>
+          </div>
+          <div class="txt">
+            <img src="images/txt_mbom.png" alt=""/>
+          </div>
+          <div class="btn_block">
+            <a href="#"><img src="images/btn_mbom.png" alt=""/></a>
+          </div>
+        </div>
+        <div class="abom">
+          <div class="title">
+            <img src="images/name_abom.png" alt=""/>
+          </div>
+          <div class="img">
+            <img src="images/abom.png" alt=""/>
+          </div>
+          <div class="txt">
+            <img src="images/txt_abom.png" alt=""/>
+          </div>
+          <div class="btn_block">
+            <a href="#"><img src="images/btn_abom.png" alt=""/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="images/txt_footer.png" width="924" height="99" alt=""/>
+    </div>
+    <!--quickmenu-->
+    <div class="quickmenu" id="quickmenu" style="position:absolute;right:20px;z-index:50;">
+      <a href="#"><img src="images/btn_top.png" alt=""/></a>
+    </div>
+    <!--quickmenu-->
+
+  </div>
       <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
     <!-- <div id="event_cream_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
       <input type="hidden" name="mb_gift" id="mb_gift" value="cream">
@@ -570,13 +567,13 @@ $(document).ready(function() {
 				$("#body1").attr("onclick","event_action();");
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
-				$("#mb_name").val();
-				$("#mb_phone1").val();
-				$("#mb_phone2").val();
-				$("#mb_phone3").val();
-				$("#mb_addr1").val();
-				$("#mb_addr2").val();
-				$("#mb_shop").val();
+				$("#mb_name").val("");
+				$("#mb_phone1").val("");
+				$("#mb_phone2").val("");
+				$("#mb_phone3").val("");
+				$("#mb_addr1").val("");
+				$("#mb_addr2").val("");
+				$("#mb_shop").val("");
 				$('input').iCheck('uncheck');
 			}
 		}
@@ -610,27 +607,33 @@ $(document).ready(function() {
 
 	var b_width			= $(window).width();
 	var car_width		= -350;
-
+<?
+	if ($IE8 == "N")
+	{
+?>
 	// init controller
 	controller = new ScrollMagic();
 
-TweenMax.set(".img_car", {marginLeft: "-=400"});
+	TweenMax.set(".img_car", {marginLeft: "-=400"});
 	// build tween
+			var tmarray	= [".d_1",".d_2",".d_3",".img_car"];
 	var tween = new TimelineMax ()
 		.add([
-			TweenMax.to(".d_3", 1000, {opacity: 1, ease: Linear.easeNone}),
-			TweenMax.to(".d_2", 800, {opacity: 1, ease: Linear.easeNone}),
-			TweenMax.to(".d_1", 500, {opacity: 1, ease: Linear.easeNone}),
-			TweenMax.to(".img_car", 100, {marginLeft: -350})
+			TweenMax.to(".d_3", 1, {opacity: 1, delay:3, ease: Bounce.easeIn}),
+			TweenMax.to(".d_2", 1, {opacity: 1, delay:2, ease: Bounce.easeIn}),
+			TweenMax.to(".d_1", 1, {opacity: 1, delay:1, ease: Bounce.easeIn}),
+			TweenMax.to(".img_car", 1, {marginLeft: -350})
+			//TweenMax.staggerTo(tmarray, 1, {marginLeft: -350},{rotation:360, y:100}, 0.5)
 		]);
 	// build scene
 	var scene = new ScrollScene({triggerElement: "#area4", duration: 1000, offset: 450})
 					.setTween(tween)
 					.setPin("#area4")
 					.addTo(controller);
-	
-	 //show indicators (requires debug extension)
-	//scene.addIndicators();
+<?
+	}
+?>
+
 });
 
 	function closeDaumPostcode() {

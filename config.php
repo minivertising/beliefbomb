@@ -23,6 +23,12 @@
 			break;
 		}
 	}
+
+	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 8.0" ))
+		$IE8	= "Y";
+	else
+		$IE8	= "N";
+	
 	if($check_mobile == "Y")
 		$gubun = "MOBILE";
 	else
