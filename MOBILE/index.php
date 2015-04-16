@@ -1,17 +1,28 @@
 <?
 	include_once "./header.php";
 ?>
+<div class="menu clearfix">
+   <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank"><img src="img/logo.png" width="60" alt=""/></a>
+   <a href="http://www.belifcosmetic.com/" target="_blank" class="menu_ham"><img src="img/menu_ham.png" width="45" alt=""/></a>
+</div>
 <div>
   <div>
-    <div>
-       <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank">belif</a>
-       <a href="http://www.belifcosmetic.com/" target="_blank">belif코스메틱</a>
-    </div>
-    <div>
-      <iframe allowfullscreen="1" src="https://www.youtube.com/embed/7LB0Id5a5Jk?rel=0&loof=1&amp;controls=0&amp;showinfo=0" frameborder="0" id="ytplayer" class="ytplayer"></iframe>
-    </div>
-    <div>
-      <a href="#" data-mfp-src="#input_div" class="popup-with-zoom-anim" style="background:none;outline: none;">이벤트참여하기!</a>
+    <div class="block_game">
+      <div class="inner_ele">
+          <div class="title img_wrap"><img src="img/title.png" alt=""/></div>
+          <div class="btn_block">
+          	<a href="#" data-mfp-src="#input_div" class="popup-with-zoom-anim" style="background:none;outline: none;">
+            	<img src="img/btn_game_go.png" alt=""/>
+            </a>
+          </div>
+          <div class="txt_1 img_wrap">
+            <img src="img/txt_game_info_1.png" alt=""/>
+          </div>
+          <div class="txt_2 img_wrap">
+            <img src="img/txt_game_info_2.png" alt=""/>
+          </div>
+      </div>   
+      <div class="bg_top img_wrap"><img src="img/bg_top.png" alt=""/></div>   
     </div>
     <div>
       <a href="#" onclick="sns_share('facebook');">페북</a>
@@ -21,6 +32,9 @@
     <div>
       <a href="#" onclick="view_mb">제품보기 모이스쳐밤</a>
       <a href="#" onclick="view_ab">제품보기 아쿠아밤</a>
+    </div>
+    <div class="footer img_wrap">
+    	<img src="img/footer.png"  alt=""/>
     </div>
 </div>
 <!---------------------------------------참여자 정보 입력 팝업------------------------------------->

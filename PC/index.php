@@ -24,17 +24,37 @@
   <div class="contents_wrap" id="contents_wrap">
       <!------------- 첫번째 영역 -------------------->
       <div class="area1" style="width:100%;">
-      	<div class="title">
-   	    	<img src="images/title.png" alt=""/>
-        </div>
-        <div class="btn_go">
-          <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
-        </div>
-        <div style="text-align:center;">
-          <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
-        </div>        
-        <div class="img_detail">
-   	    	<img src="images/img_detail.png" alt=""/>
+      	<div class="bg_inner">
+            <div class="title">
+                <img src="images/title.png" alt=""/>
+            </div>
+            <div class="btn_go">
+              <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
+            </div>
+            <div class="btn_mobile">
+              <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
+            </div>        
+            <div class="img_detail">
+                <img src="images/img_detail.png" alt=""/>
+            </div>
+            <div class="candy_mbom">
+            	<img src="images/bg_mbom_candy.png" alt=""/>
+            </div>
+            <div class="candy_abom">
+            	<img src="images/bg_abom_candy.png" alt=""/>
+            </div>
+            <div class="cap_mbom">
+            	<img src="images/cap_mbom.png" alt=""/>
+            </div>
+            <div class="cap_abom">
+            	<img src="images/cap_abom.png" alt=""/>
+            </div>
+            <div class="bg_mbom">
+       	    	<img src="images/main_mbom.png" alt=""/>
+            </div>
+            <div class="bg_abom">
+       	    	<img src="images/main_abom.png" alt=""/>
+            </div>
         </div>
       </div>
       <!------------- 첫번째 영역 -------------------->
