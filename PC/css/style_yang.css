@@ -473,7 +473,7 @@ body{
 	width:100%;
 }
 .popup_wrap .block_content .input_block.input_check{
-	padding-left:90px;
+	padding-left:110px;
 }
 .popup_wrap .block_content .input_block ul li{
 	display:block;
@@ -481,7 +481,7 @@ body{
 }
 
 .popup_wrap .block_content .input_block ul li.t_name{
-	width:90px;
+	width:110px;
 	text-align:right;
 	padding-right:10px;
 	padding-top:9px;
@@ -629,13 +629,13 @@ body{
 .contents_wrap .area1 .bg_mbom{
 	position:absolute;
 	top:120px;
-	left:10%;
+	right:65%;
 	z-index:800;
 }
 .contents_wrap .area1 .bg_abom{
 	position:absolute;
 	top:170px;
-	right:10%;
+	left:65%;
 	z-index:800;
 }
 
@@ -709,6 +709,7 @@ padding-top:50px;
 	height:950px;
 }
 .block_offevent_2 .title{
+	padding-top:60px;
 	padding-bottom:40px;
 }
 .block_offevent_2 .block_img_detail{
@@ -733,7 +734,7 @@ padding-top:50px;
 	height:340px;
 	bottom:0;
 	position:absolute;
-	background:url(../images/bg_car.png) 50% 100% no-repeat;
+	background:url(../images/bg_car.png) 30% 100% no-repeat;
 }
 .block_offevent_2 .inner{
 	position:relative;
