@@ -2,39 +2,60 @@
 	include_once "./header.php";
 ?>
 <div class="menu clearfix">
-   <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank"><img src="img/logo.png" width="60" alt=""/></a>
-   <a href="http://www.belifcosmetic.com/" target="_blank" class="menu_ham"><img src="img/menu_ham.png" width="45" alt=""/></a>
+   <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank" class="logo"><img src="img/logo.png" alt=""/></a>
+   <a href="http://www.belifcosmetic.com/" target="_blank" class="menu_ham"><img src="img/menu_ham.png" alt=""/></a>
 </div>
 <div>
   <div>
     <div class="block_game">
       <div class="inner_ele">
-          <div class="title img_wrap"><img src="img/title.png" alt=""/></div>
           <div class="btn_block">
           	<a href="#" data-mfp-src="#input_div" class="popup-with-zoom-anim" style="background:none;outline: none;">
             	<img src="img/btn_game_go.png" alt=""/>
             </a>
           </div>
-          <div class="txt_1 img_wrap">
-            <img src="img/txt_game_info_1.png" alt=""/>
-          </div>
-          <div class="txt_2 img_wrap">
-            <img src="img/txt_game_info_2.png" alt=""/>
-          </div>
       </div>   
       <div class="bg_top img_wrap"><img src="img/bg_top.png" alt=""/></div>   
+    </div>
+    <div class="offevent1">
+        <div class="inner_ele">
+            <div class="btn_block">
+              <a href="#"><img src="img/btn_cal.png" alt=""/></a>
+            </div>
+        </div>    
+    	<div class="bg_offevnet1 img_wrap"><img src="img/bg_offevent1.png" alt=""/></div>  
+    </div>
+    <div class="offevent2">
+        <div class="inner_ele">
+            <div class="btn_block">
+              <a href="#"><img src="img/btn_cal.png" alt=""/></a>
+            </div>
+        </div>    
+    	<div class="bg_offevnet2 img_wrap"><img src="img/bg_offevent2.png" alt=""/></div>  
+    </div>
+    <div class="mbom1">
+        <div class="inner_ele">
+            <div class="btn_block">
+              <a href="#"><img src="img/btn_detail_m.png" alt=""/></a>
+            </div>
+        </div>    
+    	<div class="bg_mbom img_wrap"><img src="img/bg_mbom1.png" alt=""/></div>  
+    </div>
+    <div class="abom1">
+        <div class="inner_ele">
+            <div class="btn_block">
+              <a href="#"><img src="img/btn_detail_a.png" alt=""/></a>
+            </div>
+        </div>    
+    	<div class="bg_abom img_wrap"><img src="img/bg_abom1.png" alt=""/></div>  
+    </div>
+    <div class="footer img_wrap">
+    	<img src="img/footer.png"  alt=""/>
     </div>
     <div>
       <a href="#" onclick="sns_share('facebook');">페북</a>
       <a href="#" onclick="sns_share('kakao');">까톡</a>
       <a href="#" onclick="sns_share('twitter');">트윗</a>
-    </div>
-    <div>
-      <a href="#" onclick="view_mb">제품보기 모이스쳐밤</a>
-      <a href="#" onclick="view_ab">제품보기 아쿠아밤</a>
-    </div>
-    <div class="footer img_wrap">
-    	<img src="img/footer.png"  alt=""/>
     </div>
 </div>
 <!---------------------------------------참여자 정보 입력 팝업------------------------------------->

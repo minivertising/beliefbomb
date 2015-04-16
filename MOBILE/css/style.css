@@ -150,27 +150,48 @@ html[xmlns] .clearfix {
 
 .menu {
 	width:100%;
-	border-bottom:1px solid #ccc;
+	border-bottom:1px solid #cae7f3;
+	position:fixed;
+	top:0;
+	z-index:10000;
+	background:#fff;
 }
 
 .menu a{
 	display:block;
 	float:left;
 }
+.menu a.logo{
+	padding-top:10px;
+	padding-left:10px;
+	width:15%;
+}
+.menu a.logo img{
+	width:100%;
+}
 .menu a.menu_ham{
 	display:block;
 	float:right;
+	width:12%;
+	background:#effaff;
+	padding:10px 0;
+	text-align:center;
+}
+.menu a.menu_ham img{
+	width:70%;
 }
 
 .block_game{
 	position:relative;
 	width:100%;
 	text-align:center;
-	height:100%;
+	margin-bottom: -1.2%;
+	padding-top:10%;
 }
 .block_game .inner_ele{
 	width:100%;
 	position:absolute;
+	top:28%;
 }
 .block_game .bg_top{
 }
@@ -198,6 +219,97 @@ html[xmlns] .clearfix {
 .block_game .txt_2 img{
 	width:95%;
 }
+
+.offevent1 {
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin-bottom: -1.2%;
+}
+.offevent1 .inner_ele{
+	width:100%;
+	position:absolute;
+	top:30%;
+}
+.offevent1 .btn_block{
+	padding:5% 0;
+}
+.offevent1 .btn_block a img{
+	width:40%;
+}
+.bg_offevnet1 img{
+	width:100%;
+}
+
+
+
+
+.offevent2 {
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin-bottom: -1.2%;
+}
+.offevent2 .inner_ele{
+	width:100%;
+	position:absolute;
+	top:23.5%;
+}
+.offevent2 .btn_block{
+	padding:5% 0;
+}
+.offevent2 .btn_block a img{
+	width:40%;
+}
+.bg_offevnet2 img{
+	width:100%;
+}
+
+
+.mbom1 {
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin-bottom: -1.2%;
+}
+.mbom1 .inner_ele{
+	width:100%;
+	position:absolute;
+	bottom:4.5%;
+}
+.mbom1 .btn_block{
+	padding:5% 0;
+}
+.mbom1 .btn_block a img{
+	width:50%;
+}
+.bg_mbom img{
+	width:100%;
+}
+
+
+.abom1 {
+	position:relative;
+	width:100%;
+	text-align:center;
+	margin-bottom: -1.2%;
+}
+.abom1 .inner_ele{
+	width:100%;
+	position:absolute;
+	bottom:4.5%;
+}
+.abom1 .btn_block{
+	padding:5% 0;
+}
+.abom1 .btn_block a img{
+	width:50%;
+}
+.bg_abom img{
+	width:100%;
+}
+
+
 
 .img_wrap{
 	width:100%;
