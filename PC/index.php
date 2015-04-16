@@ -2,7 +2,7 @@
 	include_once   "./header.php";
 ?>
 
- <div  class="wrap_menu">
+ <div  class="wrap_menu" style="position:fixed;z-index:9999">
     <div id="menu" class="menu clearfix">
       <div class="block_logo">
       	<a href="http://www.belifcosmetic.com/main.jsp" target="_blank"><img src="images/logo.png" width="75" height="35" alt=""/></a>
@@ -20,7 +20,7 @@
       </div>
     </div> 
  </div> 
-    
+    <input type="hidden" name="mb_chkphone" id="mb_chkphone" value="">
   <div class="contents_wrap" id="contents_wrap">
       <!------------- 첫번째 영역 -------------------->
       <div class="area1" style="width:100%;">
@@ -103,7 +103,7 @@
         </div>
       </div>
       <!------------- 다섯번째 영역 -------------------->
-      <div class="area5 block_offevent_3">
+      <div class="area5 block_offevent_3" id="area5">
       	<div class="vs"><img src="images/txt_vs.png" alt=""/></div>
         <div class="inner clearfix">
             <div class="mbom">
@@ -149,8 +149,8 @@
       <!--quickmenu-->
 
     </div>
-      <!------------- 이벤트 당첨 정보입력(크림1) 팝업 -------------------->
-    <div id="event_cream_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
+      <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
+    <!-- <div id="event_cream_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
       <input type="hidden" name="mb_gift" id="mb_gift" value="cream">
       <div>
         <div>
@@ -177,38 +177,66 @@
           <a href="#" onclick="chk_input()">정보 입력</a>
         </div>
       </div>
-    </div>
-      <!------------- 이벤트 당첨 정보입력(크림1) 팝업 -------------------->
-      <!------------- 이벤트 당첨 정보입력(KIT1) 팝업 -------------------->
-    <div id="event_kit_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
-      <input type="hidden" name="mb_gift" id="mb_gift" value="kit">
-      <div>
-        <div>
-        빌리프 MINI KIT 당첨을 축하드립니다!
+    </div> -->
+	<div class="popup_wrap zoom-anim-dialog mfp-hide" id="event_input1_pop">
+      <input type="hidden" name="mb_gift" id="mb_gift" value="">
+   	  <div class="p_mid">
+            <div class="block_close clearfix">
+                <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+            </div>
+            <div class="block_content">
+            	<div class="inner">
+                	<div class="title">
+       	    	    	<img src="images/popup/title_gift_1.png" alt="" id="input1_image"/>
+                        <!--폭탄크림 미니어쳐 당첨 <img src="images/popup/title_gift_2.png" alt=""/>-->
+                        <!--폭탄크림 KIT 당첨 <img src="images/popup/title_gift_3.png" alt=""/>-->
+                    </div>
+                    <div class="input_block">
+                        <ul class="clearfix">
+                            <li class="t_name"><img src="images/popup/txt_name.png" alt=""/></li>
+                            <li class="input_txt"><input type="text" name="mb_name" id="mb_name"></li>
+                        </ul>
+                        <ul class="clearfix">
+                          <li class="t_name"><img src="images/popup/txt_phone.png" alt=""/></li>
+                            <li class="input_txt phone clearfix">
+                            	<div><input type="tel" name="mb_phone1" id="mb_phone1"></div>
+                                <div><input type="tel" name="mb_phone2" id="mb_phone2" size="4"></div>
+                                <div><input type="tel" name="mb_phone3" id="mb_phone3" size="4"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bar"></div>
+                    <div class="input_block input_check">
+                        <ul class="clearfix">
+                            <li class="in_check"><input type="checkbox" name="use_agree" id="use_agree"></li>
+                            <li class="in_check_label"><img src="images/popup/check_agree_1.png" alt=""/></li>
+                            <li class="in_check_label"><a href="#use_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li class="in_check"><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
+                          <li class="in_check_label"><img src="images/popup/check_agree_2.png" alt=""/></li>
+                            <li class="in_check_label"><a href="#privacy_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
+                            </li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li class="in_check"><input type="checkbox" name="adver_agree" id="adver_agree"></li>
+                            <li class="in_check_label"><img src="images/popup/check_agree_3.png" alt=""/></li>
+                            <li class="in_check_label"><a href="#adver_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="txt_gift_detail">
+               	    	<img src="images/popup/txt_gift_detail.png" alt=""/>
+                    </div>
+                    <div class="btn_block">
+                        <a href="#" onclick="chk_input()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+                    </div>
+                </div><!--inner-->
+            </div>
         </div>
-        <div>
-          이름 <input type="text" name="mb_name" id="mb_name"><br />
-          전화번호 
-          <select name="mb_phone1" id="mb_phone1">
-            <option value="010">010</option>
-            <option value="011">011</option>
-            <option value="016">016</option>
-            <option value="017">017</option>
-            <option value="018">018</option>
-            <option value="019">019</option>
-          </select> - 
-          <input type="text" name="mb_phone2" id="mb_phone2" size="4"> - 
-          <input type="text" name="mb_phone3" id="mb_phone3" size="4"><br />
-          <input type="checkbox" name="use_agree" id="use_agree">개인정보 활용약관<br />
-          <input type="checkbox" name="privacy_agree" id="privacy_agree">개인정보 취급위탁 동의약관<br />
-          <input type="checkbox" name="adver_agree" id="adver_agree">광고성 정보 전송 동의약관
-        </div>
-        <div>
-          <a href="#" onclick="chk_input()">정보 입력</a>
-        </div>
-      </div>
-    </div>
-      <!------------- 이벤트 당첨 정보입력(KIT1) 팝업 -------------------->
+	</div>
+
+      <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
       <!------------- 이벤트 당첨 정보입력(CREAM2) 팝업 -------------------->
     <div id="event_cream2_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
       <input type="hidden" name="mb_gift" id="mb_gift" value="cream">
@@ -269,12 +297,64 @@
       </div>
     </div>
       <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
-      <!------------- QR코드 팝업 -------------------->
-    <div id="qrcode_pop" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white;display:none">
-      <div>
-        <a href='http://m.site.naver.com/0cPs2'><img src='http://qrcodethumb.phinf.naver.net/20150410_236/kyhfan_14286514585125HTi2_PNG/0cPs2.png'/></a>
+
+    <!------------- 개인정보 활용동의 팝업 -------------------->
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="use_div">
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#event_input1_pop" class="btn_close first-popup-link"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content agree">
+          <div class="inner">
+          개인정보 활용동의 내용
+          </div><!--inner-->
+        </div>
       </div>
     </div>
+    <!------------- 개인정보 활용동의 팝업 -------------------->
+    <!------------- 개인정보 취급 위탁동의 팝업 -------------------->
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="privacy_div">
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#event_input1_pop" class="btn_close first-popup-link"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content agree">
+          <div class="inner">
+          개인정보 취급 위탁동의 내용
+          </div><!--inner-->
+        </div>
+      </div>
+    </div>
+    <!------------- 개인정보 취급 위탁동의 팝업 -------------------->
+    <!------------- 광고성 정보전송동의 팝업 -------------------->
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="adver_div">
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#event_input1_pop" class="btn_close first-popup-link"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content agree">
+          <div class="inner">
+          광고성 정보전송동의 내용
+          </div><!--inner-->
+        </div>
+      </div>
+    </div>
+    <!------------- 광고성 정보전송동의 팝업 -------------------->
+
+      <!------------- QR코드 팝업 -------------------->
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none">
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content product">
+          <div class="inner">
+            <a href='http://m.site.naver.com/0cPs2'><img src='http://qrcodethumb.phinf.naver.net/20150410_236/kyhfan_14286514585125HTi2_PNG/0cPs2.png'  style="width:300px"/></a>
+          </div><!--inner-->
+        </div>
+      </div>
+    </div>
+
       <!------------- QR코드 팝업 -------------------->
       <!------------- 게임1 팝업 -------------------->
     <div class="popup_wrap" id="event_game1_pop" style="display:none;margin-top:-362px">
@@ -298,6 +378,19 @@
                 <div class="body" id="body1">
                   <img src="images/popup/p_body.png" width="241" height="216" alt=""/>
                 </div>
+                <div style="position:absolute;top:250px;left:250px;display:none;" id="w1">
+                  <img src="./images/waterdrop1.png">
+                </div>
+                <div style="position:absolute;top:250px;left:-60px;display:none;" id="w1_2">
+                  <img src="./images/waterdrop1_2.png">
+                </div>
+                <div style="position:absolute;top:200px;left:240px;display:none;" id="w2">
+                  <img src="./images/waterdrop2.png">
+                </div>
+                <div style="position:absolute;top:220px;left:-30px;display:none;" id="w2_2">
+                  <img src="./images/waterdrop2_2.png">
+                </div>
+
               </div>
             </div>
             <div class="time clearfix">
@@ -334,44 +427,83 @@
     </div>
 
       <!------------- 게임1 팝업 -------------------->
-      <!------------- 게임2 팝업 -------------------->
-    <div id="event_game2_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
-      <!-- <script type="text/javascript" src="../js/jQueryTween-aio-min.js"></script> -->
-
-      <div class="timediv">
-        <center>
-          <div>
-            <INPUT TYPE="text" NAME="timer_s" id="timer_s" VALUE="10" SIZE=3 STYLE="height:30px;border:0;font-size:30px;width:35px;">
-            :
-            <INPUT TYPE="text" NAME="timer_ms" id="timer_ms" VALUE="00" SIZE=3 STYLE="height:30px;border:0;font-size:30px;width:35px;">
-            <!-- <INPUT TYPE="button" NAME="start" VALUE=" 출발 " ONCLICK="keepgoin=true;timer()">
-            <INPUT TYPE="button" NAME="pause" VALUE=" 중지 " ONCLICK="keepgoin=false;">
-            <INPUT TYPE="reset" NAME="reset" VALUE=" 다시 "> -->
+      <!------------- 개인정보 활용동의 alert -------------------->
+    <div id="use_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_input1_pop" class="btn_close popup-with-zoom-anim" id="use_agree_close"><img src="images/popup/pop_btn_close.png" /></a>
           </div>
-          <div>
-            <div style="margin-top:100px">
-              <img src="./images/body.png">
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_agree_1.png" alt=""/>
             </div>
-            <div style="margin-top:-450px">
-              <img src="./images/cap1.png" onclick="event_action();" id="cap1">
-            </div>
-            <div style="position:absolute;top:250px;left:400px;display:none" id="w1">
-              <img src="./images/waterdrop1.png">
-            </div>
-            <div style="position:absolute;top:270px;left:30px;display:none" id="w1_2">
-              <img src="./images/waterdrop1_2.png">
-            </div>
-            <div style="position:absolute;top:200px;left:430px;display:none" id="w2">
-              <img src="./images/waterdrop2.png">
-            </div>
-            <div style="position:absolute;top:220px;left:40px;display:none" id="w2_2">
-              <img src="./images/waterdrop2_2.png">
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_input1_pop" class="popup-with-zoom-anim" id="use_agree_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
             </div>
           </div>
-        </center>
-      </div> <!--timediv-->
+        </div>
+      </div>
     </div>
-      <!------------- 게임2 팝업 -------------------->
+      <!------------- 개인정보 활용동의 alert -------------------->
+      <!------------- 개인정보 취급위탁동의 alert -------------------->
+    <div id="privacy_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_input1_pop" class="btn_close popup-with-zoom-anim" id="privacy_agree_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_agree_2.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_input1_pop" class="popup-with-zoom-anim" id="privacy_agree_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 개인정보 취급위탁동의 alert -------------------->
+      <!------------- 광고성 정보전송동의 alert -------------------->
+    <div id="adver_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_input1_pop" class="btn_close popup-with-zoom-anim" id="adver_agree_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_agree_3.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_input1_pop" class="popup-with-zoom-anim" id="adver_agree_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 광고성 정보전송동의 alert -------------------->
+      <!------------- 게임 실패 alert -------------------->
+    <div id="gameover_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/txt_fail.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="$.magnificPopup.close();setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 게임 실패 alert -------------------->
+
 <!--  주소검색 DIV 시작  -->
   <div id="post_div" style="display:none;border:5px solid;position:fixed;width:650px;height:600px;margin-left:-325px;top:50%;left:50%;margin-top:-300px;overflow:hidden;-webkit-overflow-scrolling:touch;z-index:999999">
     <img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:9999999" onclick="closeDaumPostcode()" alt="닫기 버튼">
@@ -482,25 +614,24 @@ $(document).ready(function() {
 	// init controller
 	controller = new ScrollMagic();
 
-TweenMax.set(".img_car", {marginLeft: "-=300"});
+TweenMax.set(".img_car", {marginLeft: "-=400"});
 	// build tween
 	var tween = new TimelineMax ()
 		.add([
-			TweenMax.to(".d_3", 0.8, {opacity: 1, ease: Linear.easeNone}),
-			TweenMax.to(".d_2", 0.7, {opacity: 1, ease: Linear.easeNone}),
-			TweenMax.to(".d_1", 0.6, {opacity: 1, ease: Linear.easeNone}),
-			TweenMax.to(".img_car", 0.5, {marginLeft: -350, ease: Cubic.easeOut})
+			TweenMax.to(".d_3", 1000, {opacity: 1, ease: Linear.easeNone}),
+			TweenMax.to(".d_2", 800, {opacity: 1, ease: Linear.easeNone}),
+			TweenMax.to(".d_1", 500, {opacity: 1, ease: Linear.easeNone}),
+			TweenMax.to(".img_car", 100, {marginLeft: -350})
 		]);
-
 	// build scene
-	var scene = new ScrollScene({triggerElement: ".triger1", duration: 0, offset: -150})
+	var scene = new ScrollScene({triggerElement: "#area4", duration: 1000, offset: 450})
 					.setTween(tween)
+					.setPin("#area4")
 					.addTo(controller);
-	// show indicators (requires debug extension)
+	
+	 //show indicators (requires debug extension)
 	//scene.addIndicators();
-
 });
-
 
 	function closeDaumPostcode() {
 		// iframe을 넣은 element를 안보이게 한다.

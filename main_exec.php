@@ -54,35 +54,61 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "winner_check" :
-		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'Y' AND mb_winner <> 'I' AND mb_regdate like '%".date("Y-m-d")."%'";
+		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'cream' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result 	= mysqli_query($my_db, $query);
 		$winner_cnt	= mysqli_num_rows($result);
+
+		$query2 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'kit' AND mb_regdate like '%".date("Y-m-d")."%'";
+		$result2 	= mysqli_query($my_db, $query2);
+		$kit_cnt	= mysqli_num_rows($result2);
+
+		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
+		$result3 	= mysqli_query($my_db, $query3);
+		$miniature_cnt	= mysqli_num_rows($result3);
+		$miniature_array = array("Y","N");
+		$kit_array = array("Y","N");
 
 		$flag	= "N";
 		// 1일 5명 당첨 ( 정품 )
 		if ($winner_cnt > 5)
 		{
-			$query2 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'S' AND mb_regdate like '%".date("Y-m-d")."%'";
-			$result2 	= mysqli_query($my_db, $query2);
-			$sample_cnt	= mysqli_num_rows($result2);
-			
-			// 1일 1000명 당첨 ( 샘플 )
-			if ($sample_cnt > 1000)
+			// 1일 2000명 당첨 ( 키트 )
+			if ($kit_cnt > 2000)
 			{
-				$flag	= "N";
-			}else{
-				// 샘플 당첨 추첨
-				$sample_array = array("Y","N");
-				shuffle($sample_array);
-				
-				if ($sample_array[0] == "Y")
+				// 1일 1000명 당첨 ( 미니어쳐 )
+				if ($miniature_cnt > 1000)
 				{
-					$flag	= "S";
-				}else{
 					$flag	= "N";
+				}else{
+					// 미니어쳐 당첨 추첨
+					shuffle($miniature_array);
+					
+					if ($miniature_array[0] == "Y")
+					{
+						$flag	= "M";
+					}else{
+						$flag	= "N";
+					}
+				}
+			}else{
+				// 키트 당첨 추첨
+				shuffle($kit_array);
+				
+				if ($kit_array[0] == "Y")
+				{
+					$flag	= "K";
+				}else{
+					// 미니어쳐 당첨 추첨
+					shuffle($miniature_array);
+					
+					if ($miniature_array[0] == "Y")
+					{
+						$flag	= "M";
+					}else{
+						$flag	= "N";
+					}
 				}
 			}
-			
 		}else{
 			// 정품 당첨 추첨
 			$winner_array = array(1,10,182,454,692);
@@ -99,24 +125,41 @@ switch ($_REQUEST['exec'])
 					$flag = "Y";
 					break;
 				}else{
-					$query2 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'S' AND mb_regdate like '%".date("Y-m-d")."%'";
-					$result2 	= mysqli_query($my_db, $query2);
-					$sample_cnt	= mysqli_num_rows($result2);
-					
-					// 1일 1000명 당첨 ( 샘플 )
-					if ($sample_cnt > 1000)
+					// 1일 1000명 당첨 ( 키트 )
+					if ($kit_cnt > 2000)
 					{
-						$flag	= "N";
-					}else{
-						// 샘플 당첨 추첨
-						$sample_array = array("Y","N");
-						shuffle($sample_array);
-						
-						if ($sample_array[0] == "Y")
+						// 1일 1000명 당첨 ( 미니어쳐 )
+						if ($miniature_cnt > 1000)
 						{
-							$flag	= "S";
-						}else{
 							$flag	= "N";
+						}else{
+							// 미니어쳐 당첨 추첨
+							shuffle($miniature_array);
+							
+							if ($miniature_array[0] == "Y")
+							{
+								$flag	= "M";
+							}else{
+								$flag	= "N";
+							}
+						}
+					}else{
+						// 키트 당첨 추첨
+						shuffle($kit_array);
+						
+						if ($kit_array[0] == "Y")
+						{
+							$flag	= "K";
+						}else{
+							// 미니어쳐 당첨 추첨
+							shuffle($miniature_array);
+							
+							if ($miniature_array[0] == "Y")
+							{
+								$flag	= "M";
+							}else{
+								$flag	= "N";
+							}
 						}
 					}
 				}

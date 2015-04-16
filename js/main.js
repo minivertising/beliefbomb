@@ -85,22 +85,22 @@ function chk_input()
 
 	if ($('#use_agree').is(":checked") == false)
 	{
-		alert("개인정보 활용 동의를 안 하셨습니다");
-		//setTimeout("agree_data();",500);
+		//alert("개인정보 활용 동의를 안 하셨습니다");
+		setTimeout("use_agree_data('" + mb_gift + "');",500);
 		return false;
 	}
 
 	if ($('#privacy_agree').is(":checked") == false)
 	{
-		alert("개인정보 활용 동의를 안 하셨습니다");
-		//setTimeout("agree_data();",500);
+		//alert("개인정보 활용 동의를 안 하셨습니다");
+		setTimeout("privacy_agree_data('" + mb_gift + "');",500);
 		return false;
 	}
 
 	if ($('#adver_agree').is(":checked") == false)
 	{
-		alert("개인정보 활용 동의를 안 하셨습니다");
-		//setTimeout("agree_data();",500);
+		//alert("개인정보 활용 동의를 안 하셨습니다");
+		setTimeout("adver_agree_data('" + mb_gift + "');",500);
 		return false;
 	}
 	$.ajax({
@@ -119,11 +119,7 @@ function chk_input()
 			if (response == "Y")
 			{
 				$("#mb_chkphone").val(cel_phone);
-				//alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
-				if (mb_gift == "cream")
-					setTimeout("event_cream_data();",500);
-				else
-					setTimeout("event_kit_data();",500);
+				setTimeout("event_input1_data('" + mb_gift + "');",500);
 			}
 			else if (response == "D")
 			{
@@ -272,6 +268,49 @@ function chk_input2()
 	});
 }
 
+function use_agree_data(gift)
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#use_agree_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function privacy_agree_data(gift)
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#privacy_agree_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function adver_agree_data(gift)
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#adver_agree_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function game_restart()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#gameover_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
 
 function game1_data()
 {
@@ -284,15 +323,21 @@ function game1_data()
 	}, 0);
 }
 
-function event_cream_data()
+function event_input1_data(gift)
 {
 	$.magnificPopup.open({
 		items: {
-			src: '#event_cream2_pop'
+			src: '#event_input1_pop'
 		},
 		type: 'inline',
 		showCloseBtn : false
 	}, 0);
+	
+	if (gift == "cream")
+	{
+	}else if (gift == "kit"){
+	}else{
+	}
 }
 
 function event_kit_data()
@@ -309,15 +354,15 @@ function event_kit_data()
 function event_action()
 {
 	if (bomb_cnt > 10)
-	//if (bomb_cnt > 50)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$("#gage_bg").html("100%");
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
 		$("#game_title").hide();
 		
-/*
+
 		$.ajax({
 			type:"POST",
 			cache: false,
@@ -332,17 +377,31 @@ function event_action()
 					alert("당첨되지 않으셨습니다. 다시 응모해 주세요.");
 					$.magnificPopup.close();
 				}else if (response == "Y"){
+					$("#input1_image").attr("src","images/popup/title_gift_1.png");
+					$("#mb_gift").val("cream");
 					$.magnificPopup.open({
 						items: {
-							src: '#event_cream_pop',
+							src: '#event_input1_pop',
 						},
 						type: 'inline',
 						showCloseBtn : false
 					}, 0);
-				}else{
+				}else if (response == "K"){
+					$("#input1_image").attr("src","images/popup/title_gift_3.png");
+					$("#mb_gift").val("kit");
 					$.magnificPopup.open({
 						items: {
-							src: '#event_kit_pop',
+							src: '#event_input1_pop',
+						},
+						type: 'inline',
+						showCloseBtn : false
+					}, 0);
+				}else {
+					$("#input1_image").attr("src","images/popup/title_gift_2.png");
+					$("#mb_gift").val("miniature");
+					$.magnificPopup.open({
+						items: {
+							src: '#event_input1_pop',
 						},
 						type: 'inline',
 						showCloseBtn : false
@@ -350,7 +409,6 @@ function event_action()
 				}
 			}
 		});
-*/
 		return false;
 	}
 
@@ -360,31 +418,30 @@ function event_action()
 	{
 		gage_bg = "98";
 	}
+
 	if (bomb_cnt % 2 == 0)
 	{
 		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
-		$("#gage_bg").css("width", gage_bg + "%");
+		//$("#gage_bg").css("width", gage_bg + "%");
+		//$("#gage_bg").css("width", gage_bg + "%");
+		$("#gage_bg").animate({width:gage_bg + "%"},{duration:100,easing:'easeOutBounce'});
 		$("#gage_bg").html(gage_per + "%");
-		/*
 		$('#w1').show();
-		$('#w1').animate({top:"230",left:"420"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
-		$('#w1').css({"top":"250px","left":"400px"});
+		$('#w1').animate({top:"250",left:"270"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w1').css({"top":"250px","left":"250px"});
 		$('#w2_2').show();
-		$('#w2_2').animate({top:"200",left:"20"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
-		$('#w2_2').css({"top":"220px","left":"40px"});
-		*/
+		$('#w2_2').animate({top:"200",left:"-50"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w2_2').css({"top":"220px","left":"-30px"});
 	}else{
 		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: -20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
-		$("#gage_bg").css("width", gage_bg + "%");
+		$("#gage_bg").animate({width:gage_bg + "%"},{duration:100,easing:'easeOutBounce'});
 		$("#gage_bg").html(gage_per + "%");
-		/*
 		$('#w1_2').show();
-		$('#w1_2').animate({top:"250",left:"30"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
-		$('#w1_2').css({"top":"270px","left":"30px"});
+		$('#w1_2').animate({top:"250",left:"-80"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w1_2').css({"top":"250px","left":"-60px"});
 		$('#w2').show();
-		$('#w2').animate({top:"180",left:"410"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
-		$('#w2').css({"top":"200px","left":"430px"});
-		*/
+		$('#w2').animate({top:"180",left:"260"},{duration:100,easing:'easeOutBounce'}).fadeOut(400);
+		$('#w2').css({"top":"200px","left":"240px"});
 	}
 	//$('#cap1').jQueryTween({ to: { rotate: { z: -30 },translate: {y: -250 },rotate: { z: 30 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out },function() {
 	//});
@@ -428,9 +485,11 @@ function timer(){
 		if (Strsec == 0)
 		{
 			$("#game_num4").attr("src","images/popup/num0.png");
-			alert("타임 오버!");
+			//alert("타임 오버!");
+			//$.magnificPopup.close();
+			setTimeout("game_restart();",500);
+
 			//$("#cap1").attr("onclick","");
-			$.magnificPopup.close();
 		}else{
 			setTimeout("timer()", 10);
 		}
@@ -471,6 +530,8 @@ function game_start()
 		}
 		$("#cap1").attr("onclick","event_action();");
 		$("#body1").attr("onclick","event_action();");
+		$("#gage_bg").css("width", "0%");
+		$("#gage_bg").html("0%");
 	});
 
 }
@@ -534,12 +595,14 @@ function game_ready()
 				currentsec=9;
 				currentmil=100;
 				keepgoin=false;
-				$("#cap1").attr("onclick","event_action();");
-				$("#body1").attr("onclick","event_action();");
+				$("#cap1").attr("onclick","");
+				$("#body1").attr("onclick","");
 				$("#game_num1").attr("src","images/popup/num1.png");
 				$("#game_num2").attr("src","images/popup/num0.png");
 				$("#game_num3").attr("src","images/popup/num0.png");
 				$("#game_num4").attr("src","images/popup/num0.png");
+				$("#gage_bg").css("width", "0%");
+				$("#gage_bg").html("0%");
 				$(".btn_start").css("top","250px");
 				$(".btn_start").show();
 				$("#mb_name").val();
