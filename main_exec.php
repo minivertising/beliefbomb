@@ -11,7 +11,7 @@ switch ($_REQUEST['exec'])
 		//$mb_addr		= $_REQUEST['mb_address'];
 		$mb_phone	= $mb_phone1."-".$mb_phone2."-".$mb_phone3;
 		$mb_gift			= $_REQUEST['mb_gift'];
-		$chk_member	= BB_memberChk($mb_phone);
+		$chk_member	= BB_memberChk($mb_phone, $mb_gift);
 
 		if ($chk_member == 0)
 		{

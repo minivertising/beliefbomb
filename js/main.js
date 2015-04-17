@@ -115,7 +115,6 @@ function chk_input()
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			alert(response);
 			if (response == "Y")
 			{
 				$("#mb_chkphone").val(cel_phone);
@@ -123,13 +122,18 @@ function chk_input()
 			}
 			else if (response == "D")
 			{
-				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+				$.magnificPopup.open({
+					items: {
+						src: '#event_duply_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
 				$("#mb_name").val("");
 				$("#mb_phone1").val("010");
 				$("#mb_phone2").val("");
 				$("#mb_phone3").val("");
 				$('input').iCheck('uncheck');
-				$.magnificPopup.close();
 			}
 			else
 			{
@@ -224,7 +228,6 @@ function chk_input2()
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			alert(response);
 			if (response == "Y")
 			{
 				alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
@@ -327,7 +330,6 @@ function event_input1_data(gift)
 {
 	if (gift == "cream")
 	{
-	alert(gift);
 		$.magnificPopup.open({
 			items: {
 				src: '#event_cream2_pop'
@@ -385,11 +387,15 @@ function event_action()
 			},
 			url: "../main_exec.php",
 			success: function(response){
-				alert(response);
 				if (response == "N")
 				{
-					alert("당첨되지 않으셨습니다. 다시 응모해 주세요.");
-					$.magnificPopup.close();
+					$.magnificPopup.open({
+						items: {
+							src: '#event_sorry_pop',
+						},
+						type: 'inline',
+						showCloseBtn : false
+					}, 0);
 				}else if (response == "Y"){
 					$("#input1_image").attr("src","images/popup/title_gift_1.png");
 					$("#mb_gift").val("cream");

@@ -17,12 +17,12 @@
 	}
 
 	// 이벤트 참여여부 체크(phone)
-	function BB_memberChk($phone)
+	function BB_memberChk($phone, $gift)
 	{
 		global $_gl;
 		global $my_db;
 
-		$query			= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_phone='".$phone."'";
+		$query			= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_phone='".$phone."' AND mb_winner='".$gift."'";
 		$result			= mysqli_query($my_db, $query);
 		$memberCnt	= mysqli_num_rows($result);
 
@@ -101,7 +101,7 @@
 	
 		$response = sendRequest($httpmethod, $url, $clientKey, $contentType, $phone, $s_url);
 
-		echo("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
+		//echo("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
 		$json_data = json_decode($response, true);
 
 		//print_r($json_data);

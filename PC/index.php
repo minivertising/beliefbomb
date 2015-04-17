@@ -363,7 +363,7 @@
         </div>
         <div class="block_content product">
           <div class="inner">
-            <a href='http://m.site.naver.com/0cPs2'><img src='http://qrcodethumb.phinf.naver.net/20150410_236/kyhfan_14286514585125HTi2_PNG/0cPs2.png'  style="width:300px"/></a>
+            <img src='images/qrcode.png'  style="width:300px"/>
           </div><!--inner-->
         </div>
       </div>
@@ -517,6 +517,46 @@
       </div>
     </div>
       <!------------- 게임 실패 alert -------------------->
+      <!------------- 이벤트 미당첨 alert -------------------->
+    <div id="event_sorry_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/txt_fail.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="$.magnificPopup.close();setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 이벤트 미당첨 alert -------------------->
+
+      <!------------- 동일한 상품 당첨 alert -------------------->
+    <div id="event_duply_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/txt_alredy.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+      <!------------- 동일한 상품 당첨 alert -------------------->
+
 
 <!--  주소검색 DIV 시작  -->
   <div id="post_div" style="display:none;border:5px solid;position:fixed;width:650px;height:600px;margin-left:-325px;top:50%;left:50%;margin-top:-300px;overflow:hidden;-webkit-overflow-scrolling:touch;z-index:999999">
