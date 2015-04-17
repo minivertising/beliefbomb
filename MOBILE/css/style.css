@@ -884,6 +884,80 @@ html[xmlns] .clearfix {
 }
 
 
+.wrap_page.popup.cal{
+	padding-bottom:70px;
+	background:#fff url(../img/popup/bg_cal_bottom.png) no-repeat bottom center;
+	background-size:contain;
+}
+.wrap_page.popup.cal .block_close,
+.wrap_page.popup.cal .title{
+	background:#e4f7ff;
+}
+.wrap_page.popup.cal .content{
+	padding-top:0;
+}
+.wrap_page.popup.cal .title{
+	padding-top:20px;
+}
+.wrap_page.popup.cal .cal_block .t_mon{
+	background:#f2fbff;
+	padding:10px 0;
+	border:1px solid #dcefff;
+	border-left:none;
+	border-right:none;
+	text-align:center;
+	width:100%;
+}
+.wrap_page.popup.cal .cal_block .t_mon .inner{
+	margin:0 5%;
+	width:90%;
+}
+.wrap_page.popup.cal .cal_block .t_mon .inner div{
+	float:left;
+}
+.wrap_page.popup.cal .cal_block .t_mon .inner div.m_num{
+	width:92%;
+	font-weight:bold;
+	color:#16567e;
+	padding-top:5px;
+	font-size:20px;
+}
+.wrap_page.popup.cal .cal_block .t_mon .inner div.arrow{
+	width:4%;
+}
+.wrap_page.popup.cal .cal_block .t_mon .inner div.arrow.right{
+	float:right;
+}
+.wrap_page.popup.cal .cal_block .t_mon .inner div.arrow img{
+	width:100%;
+}
+.wrap_page.popup.cal .cal_block .list_cal{
+	padding:0 0 80px;
+}
+.wrap_page.popup.cal .cal_block .list_cal ul{
+	margin:0 10%;
+}
+.wrap_page.popup.cal .cal_block .list_cal ul li{
+	list-style:none;
+	padding:15px 0;
+	border-bottom:1px solid #ddd;
+	font-size:14px;
+	color:#666;
+	font-weight:bold;
+	line-height:15px;
+	width:100%;
+}
+.wrap_page.popup.cal .cal_block .list_cal ul li span{
+	display:block;
+	float:left;
+}
+.wrap_page.popup.cal .cal_block .list_cal ul li span.txt{
+	padding-top:3px;
+}
+.wrap_page.popup.cal .cal_block .list_cal ul li span.icon{
+	display:inline-block;
+	padding-right:5px;
+}
 .txt_notice{
 	padding:20px 0 0;
 }
