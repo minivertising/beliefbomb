@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
 
     <meta property="og:site_name" content="belifbomb">
-    <meta property="og:url" content="https://youtu.be/7LB0Id5a5Jk">
+    <meta property="og:url" content="http://www.belifbomb.com/PC/index.php">
     <meta property="og:title" content="빌리프에서! 제목">
     <meta property="og:type" content="video">
     <meta property="og:image" content="http://www.thefaceshopclouding.co.kr/PC/images/sns_image.jpg">
     <meta property="og:description" content="빌리프 웹페이지 내용">
-    <meta property="og:video" content="https://youtu.be/7LB0Id5a5Jk">
+    <!-- <meta property="og:video" content="https://youtu.be/7LB0Id5a5Jk">
     <meta property="og:video:type" content="application/x-shockwave-flash">
-    <meta property="og:video:width" content="1200">
+    <meta property="og:video:width" content="1200"> -->
 
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
     <link rel="stylesheet" href="../lib/iCheck/skins/all.css">

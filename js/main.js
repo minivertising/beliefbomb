@@ -325,18 +325,32 @@ function game1_data()
 
 function event_input1_data(gift)
 {
-	$.magnificPopup.open({
-		items: {
-			src: '#event_input1_pop'
-		},
-		type: 'inline',
-		showCloseBtn : false
-	}, 0);
-	
 	if (gift == "cream")
 	{
+	alert(gift);
+		$.magnificPopup.open({
+			items: {
+				src: '#event_cream2_pop'
+			},
+			type: 'inline',
+			showCloseBtn : false
+		}, 0);
 	}else if (gift == "kit"){
+		$.magnificPopup.open({
+			items: {
+				src: '#event_gift2_pop'
+			},
+			type: 'inline',
+			showCloseBtn : false
+		}, 0);
 	}else{
+		$.magnificPopup.open({
+			items: {
+				src: '#event_gift2_pop'
+			},
+			type: 'inline',
+			showCloseBtn : false
+		}, 0);
 	}
 }
 
@@ -664,4 +678,67 @@ function game_start_data()
 		}
 	}, 0);
 	
+}
+
+function sns_share(media)
+{
+	if (media == "facebook")
+	{
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifbomb.co.kr/?media=fb'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : "facebook"
+			}
+		});
+	}else{
+		Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+			success: function() {
+
+				// 로그인 성공시, API를 호출합니다.
+				Kakao.API.request( {
+					url : '/v1/api/story/linkinfo',
+					data : {
+						url : 'http://www.belifbomb.com/'
+					}
+				}).then(function(res) {
+					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
+					return Kakao.API.request( {
+						url : '/v1/api/story/post/link',
+						data : {
+						link_info : res,
+							content:"빌리프 폭탄수분크림 \r\n\r\n테스트!"
+						}
+					});
+				}).then(function(res) {
+					return Kakao.API.request( {
+						url : '/v1/api/story/mystory',
+						data : { id : res.id }
+					});
+				}).then(function(res) {
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "../main_exec.php",
+						data:{
+							"exec" : "insert_share_info",
+							"media" : "story"
+						}
+					});
+					alert("카카오스토리에 공유 되었습니다.");
+				}, function (err) {
+					alert(JSON.stringify(err));
+				});
+
+			},
+			fail: function(err) {
+				alert(JSON.stringify(err))
+			},
+		});
+	}
 }

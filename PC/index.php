@@ -15,8 +15,8 @@
         <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
         <span><img src="images/ber_menu.png" alt=""/></span>
         <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
-        <a href="#" class="btn_fb" ><img src="images/btn_fb.png" alt=""/></a>
-        <a href="#" class="btn_kt"><img src="images/btn_kt.png" alt=""/></a>
+        <a href="#" class="btn_fb" onclick="sns_share('facebook')"><img src="images/btn_fb.png" alt=""/></a>
+        <a href="#" class="btn_kt" onclick="sns_share('story')"><img src="images/btn_kt.png" alt=""/></a>
       </div>
     </div> 
   </div> 
@@ -142,34 +142,6 @@
 
   </div>
       <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
-    <!-- <div id="event_cream_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
-      <input type="hidden" name="mb_gift" id="mb_gift" value="cream">
-      <div>
-        <div>
-        빌리프 수분폭탄크림 당첨을 축하드립니다!
-        </div>
-        <div>
-          이름 <input type="text" name="mb_name" id="mb_name"><br />
-          전화번호 
-          <select name="mb_phone1" id="mb_phone1">
-            <option value="010">010</option>
-            <option value="011">011</option>
-            <option value="016">016</option>
-            <option value="017">017</option>
-            <option value="018">018</option>
-            <option value="019">019</option>
-          </select> - 
-          <input type="text" name="mb_phone2" id="mb_phone2" size="4"> - 
-          <input type="text" name="mb_phone3" id="mb_phone3" size="4"><br />
-          <input type="checkbox" name="use_agree" id="use_agree">개인정보 활용약관<br />
-          <input type="checkbox" name="privacy_agree" id="privacy_agree">개인정보 취급위탁 동의약관<br />
-          <input type="checkbox" name="adver_agree" id="adver_agree">광고성 정보 전송 동의약관
-        </div>
-        <div>
-          <a href="#" onclick="chk_input()">정보 입력</a>
-        </div>
-      </div>
-    </div> -->
 	<div class="popup_wrap zoom-anim-dialog mfp-hide" id="event_input1_pop">
       <input type="hidden" name="mb_gift" id="mb_gift" value="">
    	  <div class="p_mid">
@@ -230,39 +202,67 @@
 
       <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
       <!------------- 이벤트 당첨 정보입력(CREAM2) 팝업 -------------------->
-    <div id="event_cream2_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
+    <div id="event_cream2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
       <input type="hidden" name="mb_gift" id="mb_gift" value="cream">
-      <div>
-        <div>
-        수분폭탄 즐거움이 터진다!<br />
-        이벤트 참여를 위해서 개인 정보가 필요합니다.
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
-        <div>
-          주소입력
-          <input type="text" name="mb_zipcode1" id="mb_zipcode1" style="width:60px"> - 
-          <input type="text" name="mb_zipcode2" id="mb_zipcode2" style="width:60px">
-          <a href="#" onclick="search_zip();">우편번호 찾기</a><br />
-          <input type="text" name="mb_addr1" id="mb_addr1">
-          <input type="text" name="mb_addr2" id="mb_addr2">
-        </div>
-        <div>
-          <a href="#" onclick="chk_input2()">이벤트 참여</a>
+        <div class="block_content">
+          <div class="inner">
+            <div class="title title2">
+              <img src="images/popup/title_input_add.png" alt=""/>
+            </div>
+            <div class="input_block">
+              <ul class="clearfix">
+                <li class="t_name"><img src="images/popup/txt_label_add.png" alt=""/></li>
+                <li class="input_txt phone clearfix">
+                  <div><input type="tel" name="mb_zipcode1" id="mb_zipcode1"></div>
+                  <div><input type="tel" name="mb_zipcode2" id="mb_zipcode2"></div>
+                </li>
+                <li>
+                  <a href="#" onclick="search_zip();"><img src="images/popup/btn_add_num.png" alt=""/></a>
+                </li>
+              </ul>
+              <ul class="clearfix">
+                <li class="t_name"></li>
+                <li class="input_txt"><input type="text" name="mb_addr1" id="mb_addr1"></li>
+              </ul>
+              <ul class="clearfix">
+                <li class="t_name"></li>
+                <li class="input_txt"><input type="text" name="mb_addr2" id="mb_addr2"></li>
+              </ul>
+            </div>
+            <div class="txt_gift_detail">
+              <img src="images/popup/txt_add_detail.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="chk_input2()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+            </div>
+          </div><!--inner-->
         </div>
       </div>
     </div>
       <!------------- 이벤트 당첨 정보입력(CREAM2) 팝업 -------------------->
-      <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
-    <div id="event_kit2_pop" class="zoom-anim-dialog mfp-hide" style="position:absolute;width:500px;height:500px;top:50%;left:50%;margin-left:-250px;margin-top:-250px;background:white">
+      <!------------- 이벤트 당첨 정보입력(KIT, MINIATURE 2) 팝업 -------------------->
+    <div id="event_gift2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
       <input type="hidden" name="mb_gift" id="mb_gift" value="kit">
-      <div>
-        <div>
-        수분폭탄 즐거움이 터진다!<br />
-        이벤트 참여를 위해서 개인 정보가 필요합니다.
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
-        <div>
-          매장찾기
-          <select name="mb_addr1" id="mb_addr1" onchange="addr_change(this.value)">
-            <option value="">선택하세요</option>
+        <div class="block_content">
+          <div class="inner">
+            <div class="title p3">
+              <img src="images/popup/title_input_store_1.png" alt=""/>
+              <!--<img src="images/popup/title_input_store_2.png" alt=""/>-->
+            </div>
+            <div class="input_block pb3">
+              <ul class="clearfix">
+                <li class="t_name"><img src="images/popup/txt_label_store.png" alt=""/></li>
+                <li class="input_txt store clearfix">
+                  <select name="mb_addr1" id="mb_addr1" onchange="addr_change(this.value)">
+                    <option value="">선택하세요</option>
 <?
 	// 주소 쿼리
 	$query 		= "SELECT * FROM ".$_gl['addr_info_table']." WHERE addr_level='1'";
@@ -270,25 +270,36 @@
 	while($addr1_data = @mysqli_fetch_array($result))
 	{
 ?>
-            <option value="<?=$addr1_data['addr_sido']?>"><?=$addr1_data['addr_sido']?></option>
+                    <option value="<?=$addr1_data['addr_sido']?>"><?=$addr1_data['addr_sido']?></option>
 <?
 	}
 ?>
-
-          </select>
-          <select name="mb_addr2" id="mb_addr2" onchange="shop_change(this.value)">
-            <option value="">선택하세요</option>
-          </select>
-          <select name="mb_shop" id="mb_shop">
-            <option value="">선택하세요</option>
-          </select><br />
-        </div>
-        <div>
-          <a href="#" onclick="chk_input2()">이벤트 참여</a>
+                  </select>
+                </li>
+                <li class="input_txt store clearfix">
+                  <select name="mb_addr2" id="mb_addr2" onchange="shop_change(this.value)">
+                    <option value="">선택하세요</option>
+                  </select>
+                </li>
+              </ul>
+              <ul class="clearfix">
+                <li class="t_name"></li>
+                <li class="input_txt">
+                  <select name="mb_shop" id="mb_shop">
+                    <option value="">선택하세요</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="chk_input2()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+            </div>
+          </div><!--inner-->
         </div>
       </div>
     </div>
-      <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
+
+      <!------------- 이벤트 당첨 정보입력(KIT, MINIATURE 2) 팝업 -------------------->
 
     <!------------- 개인정보 활용동의 팝업 -------------------->
     <div class="popup_wrap zoom-anim-dialog mfp-hide" id="use_div">
