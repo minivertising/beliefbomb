@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../lib/Magnific-Popup/magnific-popup.css"> 
 	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script type='text/javascript' src="../js/jquery-1.11.2.min.js"></script>
-    <script type='text/javascript' src="../js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type='text/javascript' src="../js/analytics.js"></script>
     <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
@@ -35,7 +35,7 @@
     <script type="text/javascript" src="../js/tween.min.js"></script>
 
     <style>
-	html,body { height: 100%; margin: 0; padding: 0; }
+	html,body { height: 100%; margin: 0; padding: 0; overflow-x:hidden;}
     </style>
 
   </head>
