@@ -63,6 +63,13 @@
       <div class="title">
         <img src="images/title_offevent_1.png" alt=""/>
       </div>
+      <div class="btn_cal">
+      	<a href="#"><img src="images/btn_cal.png" alt=""/></a>
+      </div>
+      <div class="ab_inner">
+      	<div class="off1_img1"><img src="images/img_offevent1_2.png" alt=""/></div>
+        <div class="off1_img2"><img src="images/img_offevent1_1.png" alt=""/></div>
+      </div>
     </div>
 
     <!------------- 네번째 영역 -------------------->
@@ -70,6 +77,10 @@
       <div class="title">
         <img src="images/title_offevent_2.png" alt=""/>
       </div>
+
+      <div class="btn_cal">
+      	<a href="#"><img src="images/btn_cal.png" alt=""/></a>
+      </div>      
       <div class="block_img_detail clearfix">
         <div class="d_1" style="opacity:0">
           <img src="images/img_event2_detail_1.png" alt=""/>
