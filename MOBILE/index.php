@@ -1,6 +1,7 @@
 <?
 	include_once "./header.php";
 ?>
+  <body>
 <div class="menu clearfix">
    <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank" class="logo"><img src="img/logo.png" alt=""/></a>
    <a href="#" class="menu_ham"  onclick="show_menu()"><img src="img/menu_ham.png" alt=""/></a>

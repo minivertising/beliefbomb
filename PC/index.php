@@ -796,13 +796,13 @@ $(document).ready(function() {
 	{
 		if (param == "site_event")
 		{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height()},500);
+			$( 'html, body' ).animate({ scrollTop: 0},500);
 		}else if (param == "calender"){
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height()},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height()},500);
 		}else if (param == "off_event"){
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height() + $(".area3").height()},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height()},500);
 		}else{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area2").height() + $(".area3").height() + $(".area4").height()},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 970},500);
 		}
 	}
 

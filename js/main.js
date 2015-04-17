@@ -731,14 +731,14 @@ function sns_share(media)
 						}
 					});
 					alert("카카오스토리에 공유 되었습니다.");
-				}, function (err) {
-					alert(JSON.stringify(err));
+				//}, function (err) {
+				//	alert(JSON.stringify(err));
 				});
 
 			},
-			fail: function(err) {
-				alert(JSON.stringify(err))
-			},
+			//fail: function(err) {
+			//	alert(JSON.stringify(err))
+			//},
 		});
 	}
 }
