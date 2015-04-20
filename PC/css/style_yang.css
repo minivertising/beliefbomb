@@ -247,7 +247,13 @@ body{
 	position:absolute;
 	z-index:1111;
 	top:-15px;
-	left:10px;
+	left:11px;
+}
+.popup_wrap .p_mid.cal .list_cal .list ul li span.ic_car{
+}
+.popup_wrap .p_mid.cal .list_cal .list ul li span.ic_ban{
+	top:-10px;
+	left:16px;
 }
 
 .popup_wrap .p_mid.cal .list_cal .list_detail{
@@ -260,6 +266,18 @@ body{
 	font-size:12px;
 	letter-spacing:-1px;
 	padding-bottom:4px;
+	display:block;
+	line-height:16px;
+}
+
+.popup_wrap .p_mid.cal .list_cal .list_detail ul li span,
+.popup_wrap .p_mid.cal .list_cal .list_detail ul li img{
+	display:block;
+	float:left;
+	padding-right:3px;
+}
+.popup_wrap .p_mid.cal .list_cal .list_detail ul li span{
+	padding-top:2px;
 }
 
 .popup_wrap .p_mid.game{
