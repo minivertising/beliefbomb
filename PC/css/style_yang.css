@@ -211,7 +211,6 @@ body{
 }
 .popup_wrap .p_mid.cal .list_cal{
 	text-align:center;
-	border:1px solid #ccc;
 	margin:160px 200px 0;
 }
 .popup_wrap .p_mid.cal .list_cal .mon_num{
@@ -221,11 +220,14 @@ body{
 	font-size:16px;
 }
 .popup_wrap .p_mid.cal .list_cal .list{
-	border:1px solid #ccc;
 	margin-top:50px;
 }
 .popup_wrap .p_mid.cal .list_cal .list ul{
 	padding:19px 0;
+	border-bottom:1px solid #ddd;
+}
+.popup_wrap .p_mid.cal .list_cal .list ul.last{
+	border-bottom: none;
 }
 .popup_wrap .p_mid.cal .list_cal .list ul li{
 	float:left;
@@ -234,7 +236,28 @@ body{
 	color:#2d74a0;
 	font-weight: bold;
 	font-size:12px;
+	position:relative;
 }
+.popup_wrap .p_mid.cal .list_cal .list ul li span{
+	display:block;
+	position:absolute;
+	z-index:1111;
+	top:-15px;
+	left:10px;
+}
+
+.popup_wrap .p_mid.cal .list_cal .list_detail{
+	padding-top:28px;
+	padding-left:20px;
+}
+.popup_wrap .p_mid.cal .list_cal .list_detail ul li{
+	color:#666;
+	text-align:left;
+	font-size:12px;
+	letter-spacing:-1px;
+	padding-bottom:4px;
+}
+
 .popup_wrap .p_mid.game{
 	width:450px;
 	height:700px;
