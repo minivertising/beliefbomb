@@ -21,7 +21,7 @@
     <div class="offevent1">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="#"><img src="img/btn_cal.png" alt=""/></a>
+          <a href="popup_cal.php"><img src="img/btn_cal.png" alt=""/></a>
         </div>
       </div>    
       <div class="bg_offevnet1 img_wrap"><img src="img/bg_offevent1.png" alt=""/></div>  
@@ -29,7 +29,7 @@
     <div class="offevent2">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="#"><img src="img/btn_cal.png" alt=""/></a>
+          <a href="popup_cal.php"><img src="img/btn_cal.png" alt=""/></a>
         </div>
       </div>    
       <div class="bg_offevnet2 img_wrap"><img src="img/bg_offevent2.png" alt=""/></div>  
