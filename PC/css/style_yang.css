@@ -189,6 +189,52 @@ body{
 	padding-bottom:25px;
 	background:#fff url(../images/popup/bg_popup.png) bottom right no-repeat;
 }
+.popup_wrap .p_mid.cal{
+	width:900px;
+	height:750px;
+	padding-bottom:0;
+	background:url(../images/bg_cal.png) bottom center no-repeat;
+	position:relative;
+}
+.popup_wrap .p_mid.cal .inner{
+	position:relative;
+}
+.popup_wrap .p_mid.cal .inner .arrow.left{
+	position:absolute;
+	top:330px;
+	left:50px;
+}
+.popup_wrap .p_mid.cal .inner .arrow.right{
+	position:absolute;
+	top:330px;
+	right:50px;
+}
+.popup_wrap .p_mid.cal .list_cal{
+	text-align:center;
+	border:1px solid #ccc;
+	margin:160px 200px 0;
+}
+.popup_wrap .p_mid.cal .list_cal .mon_num{
+	padding:10px 0;
+	color:#2d74a0;
+	font-weight:bold;
+	font-size:16px;
+}
+.popup_wrap .p_mid.cal .list_cal .list{
+	border:1px solid #ccc;
+	margin-top:50px;
+}
+.popup_wrap .p_mid.cal .list_cal .list ul{
+	padding:19px 0;
+}
+.popup_wrap .p_mid.cal .list_cal .list ul li{
+	float:left;
+	width:67px;
+	display:block;
+	color:#2d74a0;
+	font-weight: bold;
+	font-size:12px;
+}
 .popup_wrap .p_mid.game{
 	width:450px;
 	height:700px;
