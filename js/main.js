@@ -115,7 +115,6 @@ function chk_input()
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			alert(response);
 			if (response == "Y")
 			{
 				$("#mb_chkphone").val(cel_phone);
@@ -123,13 +122,18 @@ function chk_input()
 			}
 			else if (response == "D")
 			{
-				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+				$.magnificPopup.open({
+					items: {
+						src: '#event_duply_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
 				$("#mb_name").val("");
 				$("#mb_phone1").val("010");
 				$("#mb_phone2").val("");
 				$("#mb_phone3").val("");
 				$('input').iCheck('uncheck');
-				$.magnificPopup.close();
 			}
 			else
 			{
@@ -224,7 +228,6 @@ function chk_input2()
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			alert(response);
 			if (response == "Y")
 			{
 				alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
@@ -325,18 +328,31 @@ function game1_data()
 
 function event_input1_data(gift)
 {
-	$.magnificPopup.open({
-		items: {
-			src: '#event_input1_pop'
-		},
-		type: 'inline',
-		showCloseBtn : false
-	}, 0);
-	
 	if (gift == "cream")
 	{
+		$.magnificPopup.open({
+			items: {
+				src: '#event_cream2_pop'
+			},
+			type: 'inline',
+			showCloseBtn : false
+		}, 0);
 	}else if (gift == "kit"){
+		$.magnificPopup.open({
+			items: {
+				src: '#event_gift2_pop'
+			},
+			type: 'inline',
+			showCloseBtn : false
+		}, 0);
 	}else{
+		$.magnificPopup.open({
+			items: {
+				src: '#event_gift2_pop'
+			},
+			type: 'inline',
+			showCloseBtn : false
+		}, 0);
 	}
 }
 
@@ -371,11 +387,15 @@ function event_action()
 			},
 			url: "../main_exec.php",
 			success: function(response){
-				alert(response);
 				if (response == "N")
 				{
-					alert("당첨되지 않으셨습니다. 다시 응모해 주세요.");
-					$.magnificPopup.close();
+					$.magnificPopup.open({
+						items: {
+							src: '#event_sorry_pop',
+						},
+						type: 'inline',
+						showCloseBtn : false
+					}, 0);
 				}else if (response == "Y"){
 					$("#input1_image").attr("src","images/popup/title_gift_1.png");
 					$("#mb_gift").val("cream");
@@ -664,4 +684,91 @@ function game_start_data()
 		}
 	}, 0);
 	
+}
+
+function sns_share(media)
+{
+	if (media == "facebook")
+	{
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifbomb.co.kr/?media=fb'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : "facebook"
+			}
+		});
+	}else{
+		Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+			success: function() {
+
+				// 로그인 성공시, API를 호출합니다.
+				Kakao.API.request( {
+					url : '/v1/api/story/linkinfo',
+					data : {
+						url : 'http://www.belifbomb.com/'
+					}
+				}).then(function(res) {
+					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
+					return Kakao.API.request( {
+						url : '/v1/api/story/post/link',
+						data : {
+						link_info : res,
+							content:"빌리프 폭탄수분크림 \r\n\r\n테스트!"
+						}
+					});
+				}).then(function(res) {
+					return Kakao.API.request( {
+						url : '/v1/api/story/mystory',
+						data : { id : res.id }
+					});
+				}).then(function(res) {
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "../main_exec.php",
+						data:{
+							"exec" : "insert_share_info",
+							"media" : "story"
+						}
+					});
+					alert("카카오스토리에 공유 되었습니다.");
+				//}, function (err) {
+				//	alert(JSON.stringify(err));
+				});
+
+			},
+			//fail: function(err) {
+			//	alert(JSON.stringify(err))
+			//},
+		});
+	}
+}
+
+function show_menu()
+{
+	//$("#mobile_menu").show();
+	//$( "#mobile_menu" ).toggle(menu_display);
+
+	if ($("#mobile_menu").css("display") == "block")
+	{
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+		});
+	}else{
+		$(".mask").width($(window).width());
+		$(".mask").height($(window).height());
+		$(".mask").fadeTo(1000, 0.3);
+
+		$('#mobile_menu').css('right','-200px');
+		// 이동위치값 지정
+		var position = 0;
+		$('#mobile_menu').show().animate({right:position},300,'linear');
+	}
+
 }
