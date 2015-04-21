@@ -5,4 +5,5 @@
 	$_gl['addr_info_table']			= "addr_info";				//주소정보 테이블
 	$_gl['shop_info_table']			= "shop_info";				//매장정보 테이블
 	$_gl['sms_info_table']			= "sms_info";				//문자정보 테이블
+	$_gl['schedule_info_table']	= "schedule_info";			//일정정보 테이블
 ?>

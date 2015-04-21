@@ -69,13 +69,14 @@ switch ($_REQUEST['exec'])
 		if ($result)
 		{
 			if ($mb_shop)
-				$lmsYN	= send_lms($mb_chkphone, $surl);
+				//$lmsYN	= send_lms($mb_chkphone, $surl);
+				$lmsYN	= "imsi";
 			$flag = "Y";
 		}else{
 			$flag = "N";
 		}
 
-		echo $lmsYN;
+		echo $flag;
 	break;
 
 	case "winner_check" :
@@ -90,8 +91,8 @@ switch ($_REQUEST['exec'])
 		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
-		$miniature_array = array("Y","N");
-		$kit_array = array("Y","N");
+		$miniature_array = array("Y","N","N","N","N","N","N","N","N");
+		$kit_array = array("Y","N","N","N","N","N","N","N","N");
 
 		$flag	= "N";
 		// 1일 5명 당첨 ( 정품 )
@@ -214,6 +215,24 @@ switch ($_REQUEST['exec'])
 
 	break;
 
-}
+	case "select_cal" :
+		$cal_date		= $_REQUEST['cal_date'];
+		
+		$query 		= "SELECT sc_name FROM ".$_gl['schedule_info_table']." WHERE sc_date = '".$cal_date."'";
+		$result 		= mysqli_query($my_db, $query);
+		$cal_name	= mysqli_fetch_array($result);
+		
+		echo $cal_name['sc_name'];
+	break;
 
+	case "select_desc_cal" :
+		$query 		= "SELECT * FROM ".$_gl['schedule_info_table']." WHERE sc_date > '".$cal_date."' ORDER BY sc_date ASC";
+		$result 		= mysqli_query($my_db, $query);
+		$cal_data		= mysqli_fetch_array($result);
+		$yoil = array("일","월","화","수","목","금","토");
+		
+		$date_arr		= explode("-",$cal_data['sc_date']);
+		echo "<ul><li>".$date_arr[1].".".$date_arr[2]."(".$yoil[date('w',strtotime($cal_data['sc_name']))].") ".$cal_data['sc_name']."</li></ul>";
+	break;
+}
 ?>

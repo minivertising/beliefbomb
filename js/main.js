@@ -50,8 +50,8 @@ function chk_input()
 	if (mb_name == "")
 	{
 
-		alert('개인정보 입력을 안 하셨습니다');
-		//setTimeout("ins_data();",500);
+		//alert('개인정보 입력을 안 하셨습니다');
+		setTimeout("ins_data('" + mb_gift + "');",500);
 
 		$("#mb_name").focus();
 		//$("#input_alert").show();
@@ -60,8 +60,8 @@ function chk_input()
 
 	if (mb_phone1 == "")
 	{
-		alert('개인정보 입력을 안 하셨습니다');
-		//setTimeout("ins_data();",500);
+		//alert('개인정보 입력을 안 하셨습니다');
+		setTimeout("ins_data('" + mb_gift + "');",500);
 
 		$("#mb_phone1").focus();
 		return false;
@@ -69,16 +69,16 @@ function chk_input()
 
 	if (mb_phone2 == "")
 	{
-		alert('개인정보 입력을 안 하셨습니다');
-		//setTimeout("ins_data();",500);
+		//alert('개인정보 입력을 안 하셨습니다');
+		setTimeout("ins_data('" + mb_gift + "');",500);
 		$("#mb_phone2").focus();
 		return false;
 	}
 
 	if (mb_phone3 == "")
 	{
-		alert('개인정보 입력을 안 하셨습니다');
-		//setTimeout("ins_data();",500);
+		//alert('개인정보 입력을 안 하셨습니다');
+		setTimeout("ins_data('" + mb_gift + "');",500);
 		$("#mb_phone3").focus();
 		return false;
 	}
@@ -118,13 +118,121 @@ function chk_input()
 			if (response == "Y")
 			{
 				$("#mb_chkphone").val(cel_phone);
-				setTimeout("event_input1_data('" + mb_gift + "');",500);
+				window.setTimeout("event_input1_data('" + mb_gift + "');",500);
 			}
 			else if (response == "D")
 			{
 				$.magnificPopup.open({
 					items: {
 						src: '#event_duply_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
+				$("#mb_name").val("");
+				$("#mb_phone1").val("010");
+				$("#mb_phone2").val("");
+				$("#mb_phone3").val("");
+				$('input').iCheck('uncheck');
+			}
+			else
+			{
+				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
+				$("#mb_name").val("");
+				$("#mb_phone1").val("010");
+				$("#mb_phone2").val("");
+				$("#mb_phone3").val("");
+				$('input').iCheck('uncheck');
+				$.magnificPopup.close();
+			}
+		}
+	});
+}
+
+function chk_input_mobile()
+{
+	var mb_name	= $('#mb_name').val();
+	var mb_phone1	= $('#mb_phone1').val();
+	var mb_phone2	= $('#mb_phone2').val();
+	var mb_phone3	= $('#mb_phone3').val();
+	var mb_gift		= $('#mb_gift').val();
+	var cel_phone	= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
+	var frm			= document.input_frm1;
+	if (mb_name == "")
+	{
+		window.setTimeout("m_ins_data();",500);
+
+		$("#mb_name").focus();
+		//$("#input_alert").show();
+		return false;
+	}
+
+	if (mb_phone1 == "")
+	{
+		window.setTimeout("m_ins_data();",500);
+
+		$("#mb_phone1").focus();
+		return false;
+	}
+
+	if (mb_phone2 == "")
+	{
+		window.setTimeout("m_ins_data();",500);
+		$("#mb_phone2").focus();
+		return false;
+	}
+
+	if (mb_phone3 == "")
+	{
+		window.setTimeout("m_ins_data();",500);
+		$("#mb_phone3").focus();
+		return false;
+	}
+
+	if ($('#use_agree').is(":checked") == false)
+	{
+		//alert("개인정보 활용 동의를 안 하셨습니다");
+		window.setTimeout("m_use_agree_data();",500);
+		return false;
+	}
+
+	if ($('#privacy_agree').is(":checked") == false)
+	{
+		//alert("개인정보 활용 동의를 안 하셨습니다");
+		window.setTimeout("m_privacy_agree_data();",500);
+		return false;
+	}
+
+	if ($('#adver_agree').is(":checked") == false)
+	{
+		//alert("개인정보 활용 동의를 안 하셨습니다");
+		window.setTimeout("m_adver_agree_data();",500);
+		return false;
+	}
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"				    : "insert_event",
+			"mb_name"			    : mb_name,
+			"mb_phone1"		    : mb_phone1,
+			"mb_phone2"		    : mb_phone2,
+			"mb_phone3"		    : mb_phone3,
+			"mb_gift"		        : mb_gift
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			if (response == "Y")
+			{
+				//$("#mb_chkphone").val(cel_phone);
+				//setTimeout("event_input1_data('" + mb_gift + "');",500);
+				frm.action = "popup_input2.php";
+				frm.submit();
+			}
+			else if (response == "D")
+			{
+				$.magnificPopup.open({
+					items: {
+						src: '#duplicate_alert',
 					},
 					type: 'inline',
 					showCloseBtn : false
@@ -164,50 +272,50 @@ function chk_input2()
 	{
 		if (mb_zipcode1 == "")
 		{
-			alert('주소를 선택 안하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('주소를 선택 안하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 
 		if (mb_zipcode2 == "")
 		{
-			alert('주소를 선택 안하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('주소를 선택 안하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 
 		if (mb_addr1 == "")
 		{
-			alert('주소를 선택 안하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('주소를 선택 안하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 
 		if (mb_addr2 == "")
 		{
-			alert('주소를 선택 안하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('주소를 선택 안하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 	}else{
 		if (mb_addr1 == "")
 		{
-			alert('매장 선택을 안 하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('매장 선택을 안 하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 
 		if (mb_addr2 == "")
 		{
-			alert('매장 선택을 안 하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('매장 선택을 안 하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 
 		if (mb_shop == "")
 		{
-			alert('매장 선택을 안 하셨습니다');
-			//setTimeout("shop_data();",500);
+			//alert('매장 선택을 안 하셨습니다');
+			setTimeout("ins_data('" + mb_gift + "');",500);
 			return false;
 		}
 	}
@@ -266,6 +374,94 @@ function chk_input2()
 				$('input').iCheck('uncheck');
 				$.magnificPopup.close();
 				$("#mb_chkphone").val(response);
+			}
+		}
+	});
+}
+
+function chk_input2_mobile()
+{
+	var mb_addr1		= $('#mb_addr1').val();
+	var mb_addr2		= $('#mb_addr2').val();
+	var mb_zipcode1	= $('#mb_zipcode1').val();
+	var mb_zipcode2	= $('#mb_zipcode2').val();
+	var mb_shop			= $('#mb_shop').val();
+	var mb_idx			= $('#mb_idx').val();
+	var mb_gift			= $("#mb_gift").val();
+	var mb_chkphone	= $("#mb_chkphone").val();
+
+	if (mb_gift == "cream")
+	{
+		if (mb_zipcode1 == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+
+		if (mb_zipcode2 == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+
+		if (mb_addr1 == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+
+		if (mb_addr2 == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+	}else{
+		if (mb_addr1 == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+
+		if (mb_addr2 == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+
+		if (mb_shop == "")
+		{
+			window.setTimeout("m_ins_data();",500);
+			return false;
+		}
+	}
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"				: "insert_detail_event",
+			"mb_zipcode1"	: mb_zipcode1,
+			"mb_zipcode2"	: mb_zipcode2,
+			"mb_addr1"			: mb_addr1,
+			"mb_addr2"			: mb_addr2,
+			"shop"				: mb_shop,
+			"mb_gift"			: mb_gift,
+			"mb_chkphone"	: mb_chkphone
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			if (response == "Y")
+			{
+				alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
+				location.href = "./index.php";
+			}
+			else if (response == "D")
+			{
+				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+				location.href = "./index.php";
+			}
+			else
+			{
+				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
+				location.href = "./index.php";
 			}
 		}
 	});
@@ -361,6 +557,74 @@ function event_kit_data()
 	$.magnificPopup.open({
 		items: {
 			src: '#event_kit2_pop'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function ins_data(param)
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#input_privacy_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false,
+		closeOnBgClick: false,
+		callbacks: {
+			open: function() {
+				if (param == "cream")
+				{
+					$("#input_privacy_close").attr("data-mfp-src","#event_input1_pop");
+					$("#input_privacy_ok").attr("data-mfp-src","#event_input1_pop");
+				}else{
+					$("#input_privacy_close").attr("data-mfp-src","#event_gift2_pop");
+					$("#input_privacy_ok").attr("data-mfp-src","#event_gift2_pop");
+				}
+			}
+		}
+	}, 0);
+}
+
+function m_ins_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#info_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function m_use_agree_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#use_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function m_privacy_agree_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#privacy_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+
+function m_adver_agree_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#adver_alert'
 		},
 		type: 'inline',
 		showCloseBtn : false
@@ -476,7 +740,7 @@ function event_action()
 
 }
 
-function timer(){
+function timer(param){
 	if(keepgoin){
 		currentmil-=1;
 		if (currentmil==0){
@@ -497,22 +761,48 @@ function timer(){
 		var sec2		= Strsec.substring(1,2);
 		var msec1	= Strmil.substring(0,1);
 		var msec2	= Strmil.substring(1,2);
-		$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
-		$("#game_num2").attr("src","images/popup/num" + sec2 + ".png");
-		$("#game_num3").attr("src","images/popup/num" + msec1 + ".png");
-		$("#game_num4").attr("src","images/popup/num" + msec2 + ".png");
-		
-		if (Strsec == 0)
+		if (param == "P")
 		{
-			$("#game_num4").attr("src","images/popup/num0.png");
-			//alert("타임 오버!");
-			//$.magnificPopup.close();
-			setTimeout("game_restart();",500);
+			$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
+			$("#game_num2").attr("src","images/popup/num" + sec2 + ".png");
+			$("#game_num3").attr("src","images/popup/num" + msec1 + ".png");
+			$("#game_num4").attr("src","images/popup/num" + msec2 + ".png");
+			if (Strsec == 0)
+			{
+				$("#game_num4").attr("src","images/popup/num0.png");
+				//alert("타임 오버!");
+				//$.magnificPopup.close();
+				window.setTimeout("game_restart();",500);
 
-			//$("#cap1").attr("onclick","");
+				//$("#cap1").attr("onclick","");
+			}else{
+				window.setTimeout("timer('P')", 10);
+				/*
+				window.setTimeout( (function(param) {
+					return function() {
+						timer('P');
+					};
+				})(param) , 10);
+				*/
+			}
 		}else{
-			setTimeout("timer()", 10);
+			$("#game_num1").attr("src","img/popup/num" + sec1 + ".png");
+			$("#game_num2").attr("src","img/popup/num" + sec2 + ".png");
+			$("#game_num3").attr("src","img/popup/num" + msec1 + ".png");
+			$("#game_num4").attr("src","img/popup/num" + msec2 + ".png");
+			if (Strsec == 0)
+			{
+				$("#game_num4").attr("src","img/popup/num0.png");
+				//alert("타임 오버!");
+				//$.magnificPopup.close();
+				//setTimeout("game_restart();",500);
+
+				//$("#cap1").attr("onclick","");
+			}else{
+				setTimeout("timer('M')", 10);
+			}
 		}
+		
 	}
 }
 
@@ -528,10 +818,6 @@ function startover(){
 
 function game_start()
 {
-	//$.magnificPopup.close();
-	
-	//setTimeout("game_start_data();",500);
-
 	$.ajax({
 		type:"POST",
 		cache: false,
@@ -546,15 +832,15 @@ function game_start()
 		if (keepgoin == false)
 		{
 			keepgoin=true;
-			timer();
+			timer("P");
 		}
 		$("#cap1").attr("onclick","event_action();");
 		$("#body1").attr("onclick","event_action();");
 		$("#gage_bg").css("width", "0%");
 		$("#gage_bg").html("0%");
 	});
-
 }
+
 
 function show_qrcode()
 {
@@ -572,7 +858,7 @@ function show_qrcode()
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in',
 		showCloseBtn : false,
-		closeOnBgClick: true,
+		closeOnBgClick: false,
 		callbacks: {
 			open: function() {
 				$('#qrcode_pop').css('top','-890px');
@@ -601,7 +887,7 @@ function game_ready()
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in',
 		showCloseBtn : false,
-		closeOnBgClick: true,
+		closeOnBgClick: false,
 		callbacks: {
 			open: function() {
 				$('#event_game1_pop').css('top','-890px');
@@ -623,6 +909,7 @@ function game_ready()
 				$("#game_num4").attr("src","images/popup/num0.png");
 				$("#gage_bg").css("width", "0%");
 				$("#gage_bg").html("0%");
+				$("#game_title").show();
 				$(".btn_start").css("top","250px");
 				$(".btn_start").show();
 				$("#mb_name").val("");
@@ -654,7 +941,7 @@ function game_start_data()
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in',
 		showCloseBtn : false,
-		closeOnBgClick: true,
+		closeOnBgClick: false,
 		callbacks: {
 			open: function() {
 				$('#event_game2_pop').css('top','-890px');
@@ -770,5 +1057,69 @@ function show_menu()
 		var position = 0;
 		$('#mobile_menu').show().animate({right:position},300,'linear');
 	}
+}
+
+function chk_len(val)
+{
+	if (val.length == 4)
+	{
+		$("#mb_phone3").focus();
+	}
+}
+
+function chk_len2(val)
+{
+	if (val.length == 4)
+	{
+		$("#mb_phone3").blur();
+	}
+}
+
+function show_detail_cal(cal_date)
+{
+	var cal_date_arr	= cal_date.split("-");
+	var weekday		= getWeekday(cal_date);
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"			: "select_cal",
+			"cal_date"	: cal_date
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			$(".list_detail").html("<ul><li>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
+		}
+	});
+
+}
+
+function getWeekday(sDate) {
+	var yy = parseInt(sDate.substr(0, 4), 10);
+	var mm = parseInt(sDate.substr(5, 2), 10);
+	var dd = parseInt(sDate.substr(8), 10);
+	var d = new Date(yy,mm - 1, dd);
+	var weekday=new Array(7);
+	weekday[0]="일";
+	weekday[1]="월";
+	weekday[2]="화";
+	weekday[3]="수";
+	weekday[4]="목";
+	weekday[5]="금";
+	weekday[6]="토";
+	return weekday[d.getDay()];
+}
+
+function show_desc_cal()
+{
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"			: "select_desc_cal"
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			$(".list_detail").html(response);
+		}
+	});
 
 }
