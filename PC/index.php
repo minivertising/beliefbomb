@@ -10,7 +10,7 @@
       <div class="block_menu clearfix">
         <a href="#" onclick="screen_move('site_event')"><img src="images/btn_menu_1.png" alt=""/></a>
         <span><img src="images/ber_menu.png" alt=""/></span>
-        <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_2.png" alt=""/></a>
+        <a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_menu_2.png" alt=""/></a>
         <span><img src="images/ber_menu.png" alt=""/></span>
         <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
         <span><img src="images/ber_menu.png" alt=""/></span>
@@ -846,6 +846,26 @@
       </div>
     </div> 
       <!------------- 동일한 상품 당첨 alert -------------------->
+
+      <!------------- 이벤트 당첨 후 완료 alert -------------------->
+    <div id="event_complete_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/title_alert_thx.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="sns_share('facebook');"><img src="images/popup/btn_share.png" alt=""/></a><a href="#" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 이벤트 당첨 후 완료 alert -------------------->
 
 
 <!--  주소검색 DIV 시작  -->

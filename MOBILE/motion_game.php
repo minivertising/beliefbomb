@@ -12,7 +12,7 @@
           <a href="#" onclick="javascript:event_start();"><img src="img/popup/btn_start.png" alt=""/></a>
         </div>
         <div class="title" id="title1">
-          <img src="img/popup/title_game.png" alt=""/>
+          <img src="img/popup/title_game.png" alt="" id="title_image"/>
         </div>
         <div class="cap" id="cap1">
           <img src="img/popup/cap_1.png"alt=""/>
@@ -144,7 +144,7 @@ function event_start()
 	var position = 0;
 	$('.btn_start').animate({top:position},500,'easeInBack', function(){
 		$('.btn_start').fadeOut('fast');
-		$('#title1').hide();
+		$('#title_image').attr("src","img/popup/title_game_2.png");
 		
 		if (keepgoin == false)
 		{
@@ -155,7 +155,7 @@ function event_start()
 		if (window.DeviceMotionEvent) {
 			window.addEventListener('devicemotion', deviceMotionHandler, false);
 		} else {
-			alert('이 기기는 지원하지 않습니다.');
+			alert('이 기기는 지원하지 않습니다. PC버전으로 참여해 주세요.');
 		}
 		triger = 1;
 	});
@@ -221,15 +221,12 @@ function deviceMotionHandler(eventData) {
 										setTimeout("game_sorry();",500);
 										return false;
 									}else if (response == "Y"){
-										alert(response);
 										location.href = "./popup_input1.php?gift=cream";
 										return false;
 									}else if (response == "K"){
-										alert(response);
 										location.href = "./popup_input1.php?gift=kit";
 										return false;
 									}else if (response == "M") {
-										alert(response);
 										location.href = "./popup_input1.php?gift=miniature";
 										return false;
 									}

@@ -121,7 +121,7 @@
 <!-------------------- kit & miniature -------------------->
 
   <!------------------- 개인정보 입력 alert ------------------->
-  <div id="info_alert"class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
+  <div id="info_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
     <div class="block_close clearfix">
       <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="img/popup/btn_close.png" /></a>
     </div>
@@ -137,6 +137,25 @@
     </div>
   </div><!--wrap_page popup-->
   <!------------------- 개인정보 입력 alert ------------------->
+
+  <!------------------- 이벤트 당첨 완료 alert ------------------->
+  <div id="event_complete_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="block_close clearfix">
+      <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
+    </div>
+    <div class="content">
+      <div class="inner alert">
+        <div class="title">
+          <img src="img/popup/pop_title_thanks.png" alt=""/>
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="sns_share('facebook');"><img src="img/popup/btn_share.png" alt=""/></a><a href="index.php"><img src="img/popup/btn_confirm2.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div><!--wrap_page popup-->     
+  <!------------------- 이벤트 당첨 완료 alert ------------------->
+
   <!--  주소검색 DIV 시작  -->
     <div id="post_div" style="display:none;position:fixed;width:100%;height:100%;top:0px;overflow:hidden;-webkit-overflow-scrolling:touch;z-index:99998">
       <img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:0px;top:0px;z-index:99999" onclick="closeDaumPostcode()" alt="닫기 버튼">

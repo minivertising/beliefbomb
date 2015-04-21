@@ -338,11 +338,8 @@ function chk_input2()
 		success: function(response){
 			if (response == "Y")
 			{
-				alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
-				$.magnificPopup.close();
-
-				//setTimeout("game1_data();",1000);
-
+				setTimeout("event_complete();",500);
+				//$.magnificPopup.close();
 			}
 			else if (response == "D")
 			{
@@ -450,8 +447,8 @@ function chk_input2_mobile()
 		success: function(response){
 			if (response == "Y")
 			{
-				alert("참여해주셔서 감사합니다.\n당첨시 3월 19일에 모바일쿠폰을 보내드립니다.\n미당첨시 따로 메시지를 보내드리지 않습니다.");
-				location.href = "./index.php";
+				setTimeout("event_m_complete();",500);
+				//location.href = "./index.php";
 			}
 			else if (response == "D")
 			{
@@ -606,6 +603,30 @@ function ins_data_etc()
 		type: 'inline',
 		showCloseBtn : false,
 		closeOnBgClick: false
+	}, 0);
+}
+
+function event_complete()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#event_complete_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false,
+		closeOnBgClick: true
+	}, 0);
+}
+
+function event_m_complete()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#event_complete_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false,
+		closeOnBgClick: true
 	}, 0);
 }
 
