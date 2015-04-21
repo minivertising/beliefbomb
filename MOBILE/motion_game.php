@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="gage">
-          <div class="inner" style="width:12%">
+          <div class="inner" id="gage_num">
             <div class="bg">
             100%
             </div>
@@ -58,7 +58,7 @@
     </div>
   </div>
   <!-------------- 미션 실패 alert -------------->
-  <div id="event_sorry_pop" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
+  <div id="gameover_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
     <div class="block_close clearfix">
       <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
     </div>
@@ -74,6 +74,25 @@
     </div>
   </div><!--wrap_page popup-->
   <!-------------- 미션 실패 alert -------------->
+
+  <!-------------- 미션 성공 & 미당첨 alert -------------->
+  <div id="event_sorry_pop" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="block_close clearfix">
+      <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
+    </div>
+    <div class="content">
+      <div class="inner alert">
+        <div class="title">
+          <img src="img/popup/title_alert_fail.png" alt=""/>
+        </div>
+        <div class="btn_block">
+          <a href="motion_game.php"><img src="img/popup/btn_re.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div><!--wrap_page popup-->    
+  <!-------------- 미션 성공 & 미당첨 alert -------------->
+
 
   </body>
 </html>
@@ -145,7 +164,9 @@ function event_start()
 	$('.btn_start').animate({top:position},500,'easeInBack', function(){
 		$('.btn_start').fadeOut('fast');
 		$('#title_image').attr("src","img/popup/title_game_2.png");
-		
+		$("#gage_num").css("width", "0%");
+		$(".bg").html("0%");
+
 		if (keepgoin == false)
 		{
 			keepgoin=true;
@@ -193,16 +214,12 @@ function deviceMotionHandler(eventData) {
 			}
 			if (triger == 1)
 			{
-				//$('.water_area').fadeIn('fast', function() {
-				//	$(".water_area").fadeOut('fast');
-				//});
-
+	var gage_per	= bomb_cnt*2;
+	var gage_bg	= gage_per;
 				if (bomb_cnt > 50)
 				{
 					window.removeEventListener('devicemotion', deviceMotionHandler, false);
 					keepgoin=false;
-					//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
-					//$("#cap1").attr("onclick","");
 					$("#title1").hide();
 					$("#cap1").hide();
 					$("#body1").hide();
@@ -241,11 +258,14 @@ function deviceMotionHandler(eventData) {
 						$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 					else
 						$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: -20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
-					//$('#cap1').jQueryTween({ to: { rotate: { z: -30 },translate: {y: -250 },rotate: { z: 30 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out },function() {
-					//});
+					$("#gage_num").animate({width:gage_bg + "%"},{duration:100,easing:'easeOutBounce'});
+					$(".bg").html(gage_per + "%");
+
 					bomb_cnt = bomb_cnt + 1;
 				}
 			}
+		}else{
+			$('#cap1').jQueryTween({ to: { translate: {y: 0 },rotate: { z: 0 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		}
 
 		lastX = x;

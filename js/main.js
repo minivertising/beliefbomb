@@ -676,7 +676,7 @@ function m_adver_agree_data()
 
 function event_action()
 {
-	if (bomb_cnt > 10)
+	if (bomb_cnt > 50)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -901,7 +901,10 @@ function event_action_ie8()
 
 function timer(param){
 	if(keepgoin){
-		currentmil-=1;
+		if (param == "P")
+			currentmil-=1;
+		else
+			currentmil-=10;
 		if (currentmil==0){
 			currentmil=100;
 			currentsec-=1;
@@ -941,8 +944,10 @@ function timer(param){
 			if (Strsec == 0)
 			{
 				$("#game_num4").attr("src","img/popup/num0.png");
+				window.setTimeout("game_restart();",500);
+				window.removeEventListener('devicemotion', deviceMotionHandler, false);
 			}else{
-				setTimeout("timer('M')", 10);
+				setTimeout("timer('M')", 100);
 			}
 		}
 		

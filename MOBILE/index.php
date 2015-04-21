@@ -3,7 +3,7 @@
 ?>
   <body>
 <div class="menu clearfix">
-   <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank" class="logo"><img src="img/logo.png" width="56" alt=""/></a>
+   <a href="www.belifcosmetic.com/mobile" class="logo" target="_blank"><img src="img/logo.png" width="56" alt=""/></a>
    <a href="#" class="menu_ham"  onclick="show_menu()"><img src="img/menu_ham.png" width="26" alt=""/></a>
 </div>
 <div>
@@ -37,7 +37,7 @@
     <div class="mbom1">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="http://www.belifcosmetic.com/product/detail.jsp?pid=ACM04550" target="_blank"><img src="img/btn_detail_m.png" alt=""/></a>
+          <a href="http://m.belifcosmetic.com/mobile_app/product/detail.jsp?pid=ACM04550" target="_blank"><img src="img/btn_detail_m.png" alt=""/></a>
         </div>
       </div>    
       <div class="bg_mbom img_wrap"><img src="img/bg_mbom1.png" alt=""/></div>  
@@ -45,7 +45,7 @@
     <div class="abom1">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="http://www.belifcosmetic.com/product/detail.jsp?pid=ACM04551" target="_blank"><img src="img/btn_detail_a.png" alt=""/></a>
+          <a href="http://m.belifcosmetic.com/mobile_app/product/detail.jsp?pid=ACM04551" target="_blank"><img src="img/btn_detail_a.png" alt=""/></a>
         </div>
       </div>    
       <div class="bg_abom img_wrap"><img src="img/bg_abom1.png" alt=""/></div>  
@@ -53,110 +53,20 @@
     <div class="footer img_wrap">
       <img src="img/footer.png"  alt=""/>
     </div>
-    <!-- <div>
-      <a href="#" onclick="sns_share('facebook');">페북</a>
-      <a href="#" onclick="sns_share('kakao');">까톡</a>
-      <a href="#" onclick="sns_share('twitter');">트윗</a>
-    </div> -->
   </div>
   <div id="mobile_menu" class="mobile_menu">
-  	<ul>
-    	<li><a href="#"><img src="img/gnb_game.png"  alt=""/></a></li>
-        <li><a href="#"><img src="img/gnb_event.png"  alt=""/></a></li>
-        <li class="cal"><a href="#"><img src="img/gnb_cal.png"  alt=""/></a></li>
-        <li class="pd"><a href="#"><img src="img/gnb_pd.png"  alt=""/></a></li>
-        <li class="clearfix last">
-        	<a href="#" class="left"><img src="img/gnb_fb.png"  alt=""/></a>
-            <a href="#"><img src="img/gnb_kt.png"  alt=""/></a>
-        </li>
+    <ul>
+      <li><a href="motion_game.php"><img src="img/gnb_game.png"  alt=""/></a></li>
+      <li><a href="#" onclick="screen_move('event');"><img src="img/gnb_event.png"  alt=""/></a></li>
+      <li class="cal"><a href="popup_cal.php"><img src="img/gnb_cal.png"  alt=""/></a></li>
+      <li class="pd"><a href="#" onclick="screen_move('product');"><img src="img/gnb_pd.png"  alt=""/></a></li>
+      <li class="clearfix last">
+        <a href="#" class="left" onclick="sns_share('facebook')"><img src="img/gnb_fb.png"  alt=""/></a>
+        <a href="#" onclick="sns_share('kakao')"><img src="img/gnb_kt.png"  alt=""/></a>
+      </li>
     </ul>
   </div>
   <div class="mask"></div>
-<!---------------------------------------참여자 정보 입력 팝업------------------------------------->
-    <div id="input_div" class="zoom-anim-dialog mfp-hide" style="background:white; width:400px">
-	  <div class="p_mid">
-      <ul>
-        <li>이름 : 
-          <input type="text" name="mb_name" id="mb_name">
-        </li>
-      </ul>
-      <ul>
-        <li>전화번호 : 
-          <select id="mb_phone1" name="mb_phone1" style="width:50px;height:20px;">
-            <option>010</option>
-            <option>011</option>
-            <option>016</option>
-            <option>017</option>
-            <option>018</option>
-            <option>019</option>
-          </select> -
-          <input type="text" size="6"name="mb_phone2" id="mb_phone2" maxlength="4" > -
-          <input type="text" size="6"name="mb_phone3" id="mb_phone3" maxlength="4" >
-        </li>
-      </ul>
-      <ul>
-        <li>주소 : 
-          <input type="text" name="mb_addr" id="mb_addr">
-        </li>
-      </ul>
-          <div>
-            <ul class="clearfix">
-              <li class="in_check"><input type="checkbox" name="use_agree" id="use_agree"></li>
-              <li class="in_check_label"><a href="#use_div" class="popup-with-zoom-anim">개인정보 수집 · 이용에 대한 동의</a></li>
-            </ul>
-            <ul class="clearfix">
-              <li><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
-              <li><a href="#privacy_div" class="popup-with-zoom-anim">개인정보의 취급 위탁 동의</a></li>
-            </ul>
-            <ul class="clearfix">
-              <li><input type="checkbox" name="adver_agree" id="adver_agree"></li>
-              <li><a href="#adver_div" class="popup-with-zoom-anim">광고성 정보 전송 동의</a></li>
-            </ul>
-          </div>
-          <div>
-            <a href="#" onclick="javascript:m_chk_input();return false;">확인</a>
-          </div>
-        </div><!--inner-->
-    </div>
-	</div>
-<!---------------------------------------참여자 정보 입력 팝업------------------------------------->
-
-<!--------------------------  개인정보 활용 약관 DIV ----------------------->
-  <div id="use_div" class="popup_wrap zoom-anim-dialog mfp-hide">
-    <div class="p_mid">
-      <div class="block_close clearfix">
-        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
-      </div>
-<?
-	include_once "./popup_use_agree.php";
-?>
-    </div>
-  </div>
-<!--------------------------  개인정보 활용 약관 DIV ----------------------->
-<!--------------------------  개인정보 취급위탁동의 약관 DIV ----------------------->
-  <div id="privacy_div" class="popup_wrap zoom-anim-dialog mfp-hide">
-    <div class="p_mid">
-      <div class="block_close clearfix">
-        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
-      </div>
-<?
-	include_once "./popup_privacy_agree.php";
-?>
-    </div>
-  </div>
-<!--------------------------  개인정보 취급위탁동의 약관 DIV ----------------------->
-<!--------------------------  광고성 정보 전송 동의 약관 DIV ----------------------->
-  <div id="adver_div" class="popup_wrap zoom-anim-dialog mfp-hide">
-    <div class="p_mid">
-      <div class="block_close clearfix">
-        <a href="#input_div" class="btn_close first-popup-link" onclick="javascript:close_look()"><img src="images/popup/pop_btn_close.png" /></a>
-      </div>
-<?
-	include_once "./popup_adver_agree.php";
-?>
-    </div>
-  </div>
-<!--------------------------  광고성 정보 전송 동의 약관 DIV ----------------------->
  </body>
 </html>
 
@@ -287,4 +197,26 @@
 		});
 
 	});
+
+	function screen_move(param)
+	{
+		if (param == "event")
+		{
+			//$( 'html, body' ).animate({ scrollTop: $(".block_game").height()},500);
+			//$( 'html, body' ).animate({ scrollTop: $(".bg_top").height()},500);
+			
+			$('#mobile_menu').animate({right:-200},300,'linear',function(){
+				$("#mobile_menu").hide();
+				$(".mask").fadeOut(100);
+				$( 'html, body' ).animate({ scrollTop: $(".bg_top").height()},500);
+			});
+			
+		}else{
+			$('#mobile_menu').animate({right:-200},300,'linear',function(){
+				$("#mobile_menu").hide();
+				$(".mask").fadeOut(100);
+				$( 'html, body' ).animate({ scrollTop: $(".bg_top").height() + $(".offevent1").height() + $(".offevent2").height()},500);
+			});
+		}
+	}
 	</script>

@@ -888,16 +888,6 @@
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
-	// quick menu
-	/*
-	var quickTop;
-	$(window).scroll(function() {
-		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
-		//$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
-		$('.quickmenu').animate({top:$(window).scrollTop()+quickTop},100,'easeOutExpo');
-		
-	});
-	*/
 
 var bomb_cnt = 0;
 var currentsec=9;
@@ -1020,7 +1010,6 @@ $(document).ready(function() {
 			TweenMax.to(".d_2", 0, {opacity: 1, delay:2, ease: Bounce.easeIn}),
 			TweenMax.to(".d_1", 0, {opacity: 1, delay:1, ease: Bounce.easeIn}),
 			TweenMax.to(".img_car", 1, {marginLeft: -350})
-			//TweenMax.staggerTo(tmarray, 1, {marginLeft: -350},{rotation:360, y:100}, 0.5)
 		]);
 	// build scene
 	var scene = new ScrollScene({triggerElement: "#area4", duration: 1000, offset: 450})
