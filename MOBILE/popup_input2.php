@@ -62,11 +62,11 @@
 		if ($_POST['mb_gift'] == "kit")
 		{
 ?>
-          <img src="img/popup/title_input_winner_2_2.png" alt=""/>
+          <img src="img/popup/title_input_winner_3_3.png" alt=""/>
 <?
 		}else{
 ?>
-          <img src="img/popup/title_input_winner_3_3.png" alt=""/>
+          <img src="img/popup/title_input_winner_2_2.png" alt=""/>
 <?
 		}
 ?>

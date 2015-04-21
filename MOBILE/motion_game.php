@@ -192,7 +192,7 @@ function deviceMotionHandler(eventData) {
 				//	$(".water_area").fadeOut('fast');
 				//});
 
-				if (bomb_cnt > 3)
+				if (bomb_cnt > 50)
 				{
 					window.removeEventListener('devicemotion', deviceMotionHandler, false);
 					keepgoin=false;
@@ -212,15 +212,12 @@ function deviceMotionHandler(eventData) {
 								setTimeout("game_sorry();",500);
 								return false;
 							}else if (response == "Y"){
-								alert(bomb_cnt);
 								location.href = "./popup_input1.php?gift=cream";
 								return false;
 							}else if (response == "K"){
-								alert(bomb_cnt);
 								location.href = "./popup_input1.php?gift=kit";
 								return false;
 							}else if (response == "M") {
-								alert(bomb_cnt);
 								location.href = "./popup_input1.php?gift=miniature";
 								return false;
 							}
