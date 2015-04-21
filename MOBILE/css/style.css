@@ -147,6 +147,57 @@ html[xmlns] .clearfix {
     height: 1%;
 }
 
+.mobile_menu{
+	position:absolute;
+	width:55%;
+	height:100%;
+	background:#fff;
+	top:0;right:0;
+	display:none;
+	z-index:9;
+	margin-top:56px;
+}
+.mobile_menu ul li{
+	display:block;
+	border-bottom:1px solid #d6e1ea;
+	width:90%;
+	padding-left:10%;
+	padding-top:10px;
+	padding-bottom:5px;
+}
+.mobile_menu ul li.cal{
+	background:#daf3ff;
+}
+.mobile_menu ul li.pd{
+	background:#b2e7ff;
+}
+.mobile_menu ul li a{
+	display:block;
+}
+.mobile_menu ul li a img{
+	width:50%;
+}
+.mobile_menu ul li.last{
+	text-align:center;
+    padding-left:0;
+	padding-top:0;
+	padding-bottom:0;
+	width:100%;
+}
+.mobile_menu ul li.last a{
+	display:block;
+	float:left;
+	text-align:center;
+	width:50%;
+	padding:7px 0 0 0;
+}
+.mobile_menu ul li.last a.left{
+	width:49%;
+	border-right:1px solid #d6e1ea;
+}
+.mobile_menu ul li.last a img{
+	width:30%;
+}
 
 .menu {
 	width:100%;
@@ -155,6 +206,7 @@ html[xmlns] .clearfix {
 	top:0;
 	z-index:10000;
 	background:#fff;
+	height:56px;
 }
 
 .menu a{
@@ -162,23 +214,21 @@ html[xmlns] .clearfix {
 	float:left;
 }
 .menu a.logo{
-	padding-top:10px;
+	padding-top:15px;
 	padding-left:10px;
-	width:15%;
+	width:40%;
 }
 .menu a.logo img{
-	width:100%;
 }
 .menu a.menu_ham{
 	display:block;
 	float:right;
 	width:12%;
 	background:#effaff;
-	padding:10px 0;
+	padding:16px 0;
 	text-align:center;
 }
 .menu a.menu_ham img{
-	width:70%;
 }
 
 .block_game{

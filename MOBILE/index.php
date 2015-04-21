@@ -3,8 +3,8 @@
 ?>
   <body>
 <div class="menu clearfix">
-   <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank" class="logo"><img src="img/logo.png" alt=""/></a>
-   <a href="#" class="menu_ham"  onclick="show_menu()"><img src="img/menu_ham.png" alt=""/></a>
+   <a href="localhost/beliefbomb/MOBILE/index.php" target="_blank" class="logo"><img src="img/logo.png" width="56" alt=""/></a>
+   <a href="#" class="menu_ham"  onclick="show_menu()"><img src="img/menu_ham.png" width="26" alt=""/></a>
 </div>
 <div>
   <div>
@@ -59,7 +59,17 @@
       <a href="#" onclick="sns_share('twitter');">트윗</a>
     </div> -->
   </div>
-  <div id="mobile_menu" style="position:absolute;width:200px;height:100%;background:red;top:0;right:0;display:none;z-index:9">
+  <div id="mobile_menu" class="mobile_menu">
+  	<ul>
+    	<li><a href="#"><img src="img/gnb_game.png"  alt=""/></a></li>
+        <li><a href="#"><img src="img/gnb_event.png"  alt=""/></a></li>
+        <li class="cal"><a href="#"><img src="img/gnb_cal.png"  alt=""/></a></li>
+        <li class="pd"><a href="#"><img src="img/gnb_pd.png"  alt=""/></a></li>
+        <li class="clearfix last">
+        	<a href="#" class="left"><img src="img/gnb_fb.png"  alt=""/></a>
+            <a href="#"><img src="img/gnb_kt.png"  alt=""/></a>
+        </li>
+    </ul>
   </div>
   <div class="mask"></div>
 <!---------------------------------------참여자 정보 입력 팝업------------------------------------->
