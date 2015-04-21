@@ -1093,7 +1093,7 @@ function show_menu()
 	}else{
 		$(".mask").width($(window).width());
 		$(".mask").height($(window).height());
-		$(".mask").fadeTo(1000, 0.3);
+		$(".mask").fadeTo(1000, 0.6);
 
 		$('#mobile_menu').css('right','-200px');
 		// 이동위치값 지정
