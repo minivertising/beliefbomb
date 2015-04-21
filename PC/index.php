@@ -123,7 +123,7 @@
             <img src="images/txt_mbom.png" alt=""/>
           </div>
           <div class="btn_block">
-            <a href="#"><img src="images/btn_mbom.png" alt=""/></a>
+            <a href="http://www.belifcosmetic.com/product/detail.jsp?pid=ACM04550" target="_blank"><img src="images/btn_mbom.png" alt=""/></a>
           </div>
         </div>
         <div class="abom">
@@ -137,7 +137,7 @@
             <img src="images/txt_abom.png" alt=""/>
           </div>
           <div class="btn_block">
-            <a href="#"><img src="images/btn_abom.png" alt=""/></a>
+            <a href="http://www.belifcosmetic.com/product/detail.jsp?pid=ACM04551" target="_blank"><img src="images/btn_abom.png" alt=""/></a>
           </div>
         </div>
       </div>

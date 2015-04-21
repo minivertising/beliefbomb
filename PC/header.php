@@ -20,6 +20,7 @@
     <meta property="og:video:type" content="application/x-shockwave-flash">
     <meta property="og:video:width" content="1200"> -->
 
+    <link rel="shortcut icon" type="image/x-icon" href="./images/pavicon.ico" />
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
     <link rel="stylesheet" href="../lib/iCheck/skins/all.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css" />

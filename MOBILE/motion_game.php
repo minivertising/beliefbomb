@@ -11,7 +11,7 @@
         <div class="btn_start">
           <a href="#" onclick="javascript:event_start();"><img src="img/popup/btn_start.png" alt=""/></a>
         </div>
-        <div class="title">
+        <div class="title" id="title1">
           <img src="img/popup/title_game.png" alt=""/>
         </div>
         <div class="cap" id="cap1">
@@ -19,6 +19,9 @@
         </div>
         <div class="body" id="body1">
           <img src="img/popup/p_body.png" alt=""/>
+        </div>
+        <div class="ending_img" style="display:none">
+          <img src="img/popup/p_ing.gif"alt=""/>
         </div>
         <div class="time clearfix">
           <div class="num">
@@ -38,7 +41,7 @@
           </div>
         </div>
         <div class="gage">
-          <div class="inner">
+          <div class="inner" style="width:12%">
             <div class="bg">
             100%
             </div>
@@ -141,6 +144,8 @@ function event_start()
 	var position = 0;
 	$('.btn_start').animate({top:position},500,'easeInBack', function(){
 		$('.btn_start').fadeOut('fast');
+		$('#title1').hide();
+		
 		if (keepgoin == false)
 		{
 			keepgoin=true;
@@ -150,7 +155,7 @@ function event_start()
 		if (window.DeviceMotionEvent) {
 			window.addEventListener('devicemotion', deviceMotionHandler, false);
 		} else {
-			alert('이 설비는 지원하지 않습니다. devicemotion 사건');
+			alert('이 기기는 지원하지 않습니다.');
 		}
 		triger = 1;
 	});
@@ -197,31 +202,40 @@ function deviceMotionHandler(eventData) {
 					window.removeEventListener('devicemotion', deviceMotionHandler, false);
 					keepgoin=false;
 					//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
-					$("#cap1").attr("onclick","");
-
-					$.ajax({
-						type:"POST",
-						cache: false,
-						data:{
-							"exec"			: "winner_check"
-						},
-						url: "../main_exec.php",
-						success: function(response){
-							if (response == "N")
-							{
-								setTimeout("game_sorry();",500);
-								return false;
-							}else if (response == "Y"){
-								location.href = "./popup_input1.php?gift=cream";
-								return false;
-							}else if (response == "K"){
-								location.href = "./popup_input1.php?gift=kit";
-								return false;
-							}else if (response == "M") {
-								location.href = "./popup_input1.php?gift=miniature";
-								return false;
-							}
-						}
+					//$("#cap1").attr("onclick","");
+					$("#title1").hide();
+					$("#cap1").hide();
+					$("#body1").hide();
+					$('.ending_img').show(0, function(){
+						setTimeout(function(){
+							$.ajax({
+								type:"POST",
+								cache: false,
+								data:{
+									"exec"			: "winner_check"
+								},
+								url: "../main_exec.php",
+								success: function(response){
+									if (response == "N")
+									{
+										setTimeout("game_sorry();",500);
+										return false;
+									}else if (response == "Y"){
+										alert(response);
+										location.href = "./popup_input1.php?gift=cream";
+										return false;
+									}else if (response == "K"){
+										alert(response);
+										location.href = "./popup_input1.php?gift=kit";
+										return false;
+									}else if (response == "M") {
+										alert(response);
+										location.href = "./popup_input1.php?gift=miniature";
+										return false;
+									}
+								}
+							});
+						},2000);
 					});
 
 					return false;
@@ -277,5 +291,6 @@ function game_sorry()
 		showCloseBtn : false,
 		closeOnBgClick: false
 	}, 0);
+	return false;
 }
 </script>
