@@ -968,6 +968,7 @@ html[xmlns] .clearfix {
 }
 .wrap_page.popup.game .game_bg{
 	width:100%;
+	padding-top:30px;
 }
 .wrap_page.popup.game .game_bg img{
 	width:100%;
