@@ -7,7 +7,7 @@
 	//include_once "include/dbi.php"; 			//DB 연결정보
 	include_once "include/page.class.php";		//페이징 처리 CLASS
 
-//	mysqli_query ($my_db,"set names utf8");
+	//mysqli_query ($my_db,"set names utf8");
 
 	$mobile_agent = array("iPhone","iPod","iPad","Android","Blackberry","SymbianOS|SCH-M\d+","Opera Mini", "Windows ce", "Nokia", "sony" );
 	$check_mobile = "N";

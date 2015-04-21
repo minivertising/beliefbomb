@@ -11,7 +11,7 @@
     <div class="block_game">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="#" data-mfp-src="#input_div" class="popup-with-zoom-anim" style="background:none;outline: none;">
+          <a href="motion_game.php" style="background:none;outline: none;">
             <img src="img/btn_game_go.png" alt=""/>
           </a>
         </div>

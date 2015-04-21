@@ -64,7 +64,7 @@
         <img src="images/title_offevent_1.png" alt=""/>
       </div>
       <div class="btn_cal">
-      	<a href="#"><img src="images/btn_cal.png" alt=""/></a>
+      	<a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_cal.png" alt=""/></a>
       </div>
       <div class="ab_inner">
       	<div class="off1_img1"><img src="images/img_offevent1_2.png" alt=""/></div>
@@ -79,8 +79,8 @@
       </div>
 
       <div class="btn_cal">
-      	<a href="#"><img src="images/btn_cal.png" alt=""/></a>
-      </div>      
+      	<a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_cal.png" alt=""/></a>
+      </div>
       <div class="block_img_detail clearfix">
         <div class="d_1" style="opacity:0">
           <img src="images/img_event2_detail_1.png" alt=""/>
@@ -153,63 +153,71 @@
 
   </div>
       <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
-	<div class="popup_wrap zoom-anim-dialog mfp-hide" id="event_input1_pop">
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="event_input1_pop">
       <input type="hidden" name="mb_gift" id="mb_gift" value="">
-   	  <div class="p_mid">
-            <div class="block_close clearfix">
-                <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
-            </div>
-            <div class="block_content">
-            	<div class="inner">
-                	<div class="title">
-       	    	    	<img src="images/popup/title_gift_1.png" alt="" id="input1_image"/>
-                        <!--폭탄크림 미니어쳐 당첨 <img src="images/popup/title_gift_2.png" alt=""/>-->
-                        <!--폭탄크림 KIT 당첨 <img src="images/popup/title_gift_3.png" alt=""/>-->
-                    </div>
-                    <div class="input_block">
-                        <ul class="clearfix">
-                            <li class="t_name"><img src="images/popup/txt_name.png" alt=""/></li>
-                            <li class="input_txt"><input type="text" name="mb_name" id="mb_name"></li>
-                        </ul>
-                        <ul class="clearfix">
-                          <li class="t_name"><img src="images/popup/txt_phone.png" alt=""/></li>
-                            <li class="input_txt phone clearfix">
-                            	<div><input type="tel" name="mb_phone1" id="mb_phone1"></div>
-                                <div><input type="tel" name="mb_phone2" id="mb_phone2" size="4"></div>
-                                <div><input type="tel" name="mb_phone3" id="mb_phone3" size="4"></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bar"></div>
-                    <div class="input_block input_check">
-                        <ul class="clearfix">
-                            <li class="in_check"><input type="checkbox" name="use_agree" id="use_agree"></li>
-                            <li class="in_check_label"><img src="images/popup/check_agree_1.png" alt=""/></li>
-                            <li class="in_check_label"><a href="#use_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
-                        </ul>
-                        <ul class="clearfix">
-                            <li class="in_check"><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
-                          <li class="in_check_label"><img src="images/popup/check_agree_2.png" alt=""/></li>
-                            <li class="in_check_label"><a href="#privacy_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
-                            </li>
-                        </ul>
-                        <ul class="clearfix">
-                            <li class="in_check"><input type="checkbox" name="adver_agree" id="adver_agree"></li>
-                            <li class="in_check_label"><img src="images/popup/check_agree_3.png" alt=""/></li>
-                            <li class="in_check_label"><a href="#adver_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="txt_gift_detail">
-               	    	<img src="images/popup/txt_gift_detail.png" alt=""/>
-                    </div>
-                    <div class="btn_block">
-                        <a href="#" onclick="chk_input()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
-                    </div>
-                </div><!--inner-->
-            </div>
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
-	</div>
+        <div class="block_content">
+          <div class="inner">
+            <div class="title">
+              <img src="images/popup/title_gift_1.png" alt="" id="input1_image"/>
+              <!--폭탄크림 미니어쳐 당첨 <img src="images/popup/title_gift_2.png" alt=""/>-->
+              <!--폭탄크림 KIT 당첨 <img src="images/popup/title_gift_3.png" alt=""/>-->
+            </div>
+            <div class="input_block">
+              <ul class="clearfix">
+                <li class="t_name"><img src="images/popup/txt_name.png" alt=""/></li>
+                <li class="input_txt"><input type="text" name="mb_name" id="mb_name"></li>
+              </ul>
+              <ul class="clearfix">
+                <li class="t_name"><img src="images/popup/txt_phone.png" alt=""/></li>
+                <li class="input_txt phone clearfix">
+                  <div>
+                    <!-- <input type="tel" name="mb_phone1" id="mb_phone1"> -->
+                    <select name="mb_phone1" id="mb_phone1">
+                      <option value="010">010</option>
+                      <option value="011">011</option>
+                      <option value="016">016</option>
+                      <option value="017">017</option>
+                      <option value="018">018</option>
+                      <option value="019">019</option>
+                    </select>
+                  </div>
+                  <div><input type="tel" name="mb_phone2" id="mb_phone2" size="4"></div>
+                  <div><input type="tel" name="mb_phone3" id="mb_phone3" size="4"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="bar"></div>
+            <div class="input_block input_check">
+              <ul class="clearfix">
+                <li class="in_check"><input type="checkbox" name="use_agree" id="use_agree"></li>
+                <li class="in_check_label"><img src="images/popup/check_agree_1.png" alt=""/></li>
+                <li class="in_check_label"><a href="#use_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
+              </ul>
+              <ul class="clearfix">
+                <li class="in_check"><input type="checkbox" name="privacy_agree" id="privacy_agree"></li>
+                <li class="in_check_label"><img src="images/popup/check_agree_2.png" alt=""/></li>
+                <li class="in_check_label"><a href="#privacy_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
+              </ul>
+              <ul class="clearfix">
+                <li class="in_check"><input type="checkbox" name="adver_agree" id="adver_agree"></li>
+                <li class="in_check_label"><img src="images/popup/check_agree_3.png" alt=""/></li>
+                <li class="in_check_label"><a href="#adver_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
+              </ul>
+            </div>
+            <div class="txt_gift_detail">
+              <img src="images/popup/txt_gift_detail.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="chk_input()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+            </div>
+          </div><!--inner-->
+        </div>
+      </div>
+    </div>
 
       <!------------- 이벤트 당첨 정보입력1 팝업 -------------------->
       <!------------- 이벤트 당첨 정보입력(CREAM2) 팝업 -------------------->
@@ -217,7 +225,7 @@
       <input type="hidden" name="mb_gift" id="mb_gift" value="cream">
       <div class="p_mid">
         <div class="block_close clearfix">
-          <a href="#" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
         <div class="block_content">
           <div class="inner">
@@ -255,12 +263,69 @@
       </div>
     </div>
       <!------------- 이벤트 당첨 정보입력(CREAM2) 팝업 -------------------->
-      <!------------- 이벤트 당첨 정보입력(KIT, MINIATURE 2) 팝업 -------------------->
-    <div id="event_gift2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
+    <div id="event_kit2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
       <input type="hidden" name="mb_gift" id="mb_gift" value="kit">
       <div class="p_mid">
         <div class="block_close clearfix">
-          <a href="#" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content">
+          <div class="inner">
+            <div class="title p3">
+              <img src="images/popup/title_input_store_2.png" alt=""/>
+              <!--<img src="images/popup/title_input_store_2.png" alt=""/>-->
+            </div>
+            <div class="input_block pb3">
+              <ul class="clearfix">
+                <li class="t_name"><img src="images/popup/txt_label_store.png" alt=""/></li>
+                <li class="input_txt store clearfix">
+                  <select name="mb_addr1" id="mb_addr1" onchange="addr_change(this.value)">
+                    <option value="">선택하세요</option>
+<?
+	// 주소 쿼리
+	$query 		= "SELECT * FROM ".$_gl['addr_info_table']." WHERE addr_level='1'";
+	$result 	= mysqli_query($my_db, $query);
+	while($addr1_data = @mysqli_fetch_array($result))
+	{
+?>
+                    <option value="<?=$addr1_data['addr_sido']?>"><?=$addr1_data['addr_sido']?></option>
+<?
+	}
+?>
+                  </select>
+                </li>
+                <li class="input_txt store clearfix">
+                  <select name="mb_addr2" id="mb_addr2" onchange="shop_change(this.value)">
+                    <option value="">선택하세요</option>
+                  </select>
+                </li>
+              </ul>
+              <ul class="clearfix">
+                <li class="t_name"></li>
+                <li class="input_txt">
+                  <select name="mb_shop" id="mb_shop">
+                    <option value="">선택하세요</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="chk_input2()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+            </div>
+          </div><!--inner-->
+        </div>
+      </div>
+    </div>
+
+      <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
+
+      <!------------- 이벤트 당첨 정보입력(MINIATURE 2) 팝업 -------------------->
+    <div id="event_miniature2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <input type="hidden" name="mb_gift" id="mb_gift" value="miniature">
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
         <div class="block_content">
           <div class="inner">
@@ -310,7 +375,7 @@
       </div>
     </div>
 
-      <!------------- 이벤트 당첨 정보입력(KIT, MINIATURE 2) 팝업 -------------------->
+      <!------------- 이벤트 당첨 정보입력(MINIATURE 2) 팝업 -------------------->
 
     <!------------- 개인정보 활용동의 팝업 -------------------->
     <div class="popup_wrap zoom-anim-dialog mfp-hide" id="use_div">
@@ -441,6 +506,231 @@
     </div>
 
       <!------------- 게임1 팝업 -------------------->
+
+<!----------- 일정 팝업 -------------->
+    <div id="cal_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-left:-450px;margin-top:-375px">
+      <div class="p_mid cal">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content">
+          <div class="inner">
+            <div class="arrow left"><a href="#" onclick="prev_cal()"><img src="images/arrow_cal_left.png" alt=""/></a></div>
+            <div class="arrow right"><a href="#" onclick="next_cal()"><img src="images/arrow_cal_right.png" alt=""/></a></div>
+          </div><!--inner-->
+          <div class="list_cal"><!--list_cal 5 -->
+            <div class="mon_num">5월</div>
+            <div class="list" id="month_5">
+              <ul class="clearfix">
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>1</li>
+                <li class="sat" onclick="show_detail_cal('2015-05-02')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>2</li>
+                <li class="sun">3</li>
+              </ul>
+              <ul class="clearfix">
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li onclick="show_detail_cal('2015-05-08')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>8</li>
+                <li class="sat">9</li>
+                <li class="sun">10</li>
+              </ul>
+              <ul class="clearfix">
+                <li onclick="show_detail_cal('2015-05-11')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li class="sat">16</li>
+                <li class="sun">17</li>
+              </ul>
+              <ul class="clearfix">
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li class="sat">23</li>
+                <li class="sun">24</li>
+              </ul>
+              <ul class="last clearfix">
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li class="sat">30</li>
+                <li class="sun">31</li>
+              </ul>
+            </div><!--list_cal 5 -->
+            <div class="list" id="month_6" style="display:none"><!--list_cal 6 -->
+              <ul class="clearfix">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li class="sat">6</li>
+                <li class="sun">7</li>
+              </ul>
+              <ul class="clearfix">
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li class="sat">13</li>
+                <li class="sun">14</li>
+              </ul>
+              <ul class="clearfix">
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li class="sat">20</li>
+                <li class="sun">21</li>
+              </ul>
+              <ul class="clearfix">
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li class="sat">27</li>
+                <li class="sun">28</li>
+              </ul>
+              <ul class="last clearfix">
+                <li>29</li>
+                <li>30</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li class="sat">&nbsp;</li>
+                <li class="sun">&nbsp;</li>
+              </ul>
+            </div><!--list_cal 6 -->
+            <div class="list" id="month_7" style="display:none"><!--list_cal 7 -->
+              <ul class="clearfix">
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li class="sat">4</li>
+                <li class="sun">5</li>
+              </ul>
+              <ul class="clearfix">
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li class="sat">11</li>
+                <li class="sun">12</li>
+              </ul>
+              <ul class="clearfix">
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li class="sat">18</li>
+                <li class="sun">19</li>
+              </ul>
+              <ul class="clearfix">
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li class="sat">25</li>
+                <li class="sun">26</li>
+              </ul>
+              <ul class="last clearfix">
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+                <li class="sat">&nbsp;</li>
+                <li class="sun">&nbsp;</li>
+              </ul>
+            </div><!--list_cal 7 -->
+
+            <div class="list_detail">
+              <ul>
+                <li>&nbsp;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!----------- 일정 팝업 -------------->
+
+      <!------------- 개인정보 입력 alert -------------------->
+    <div id="input_privacy_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_input1_pop" class="btn_close popup-with-zoom-anim" id="input_privacy_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_info.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_input1_pop" class="popup-with-zoom-anim" id="input_privacy_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 개인정보 입력 alert -------------------->
+      <!------------- 개인정보 입력 alert -------------------->
+    <div id="input_privacy_cream_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_cream2_pop" class="btn_close popup-with-zoom-anim" id="input_privacy_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_info.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_cream2_pop" class="popup-with-zoom-anim" id="input_privacy_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 개인정보 입력 alert -------------------->
+      <!------------- 개인정보 입력 alert -------------------->
+    <div id="input_privacy_etc_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_gift2_pop" class="btn_close popup-with-zoom-anim" id="input_privacy_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_info.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_gift2_pop" class="popup-with-zoom-anim" id="input_privacy_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 개인정보 입력 alert -------------------->
+
       <!------------- 개인정보 활용동의 alert -------------------->
     <div id="use_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
       <div class="p_alert">
@@ -510,7 +800,7 @@
               <img src="images/popup/txt_fail.png" alt=""/>
             </div>
             <div class="btn_block">
-              <a href="#" onclick="$.magnificPopup.close();setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
+              <a href="#" onclick="$.magnificPopup.close();window.setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
             </div>
           </div>
         </div>
@@ -529,7 +819,7 @@
               <img src="images/popup/txt_fail.png" alt=""/>
             </div>
             <div class="btn_block">
-              <a href="#" onclick="$.magnificPopup.close();setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
+              <a href="#" onclick="$.magnificPopup.close();window.setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
             </div>
           </div>
         </div>
@@ -608,7 +898,7 @@ $(document).ready(function() {
 		removalDelay: 300,
 		mainClass: 'my-mfp-zoom-in',
 		showCloseBtn : false,
-		closeOnBgClick: true,
+		closeOnBgClick: false,
 		callbacks: {
 			open: function() {
 				$('#event_game2_pop').css('top','-890px');
@@ -638,6 +928,26 @@ $(document).ready(function() {
 		}
 	});
 
+	// 팝업 jQuery 스타일
+	$('.popup-with-zoom-anim2').magnificPopup({
+		type: 'inline',
+		fixedContentPos: true,
+		fixedBgPos: true,
+		overflowY: 'hidden',
+		closeBtnInside: true,
+		//preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
+		showCloseBtn : false,
+		closeOnBgClick: true,
+		callbacks: {
+			open: function() {
+				show_desc_cal();
+			}
+		}
+	});
+
 	$('.first-popup-link').magnificPopup({
 		closeBtnInside:true
 	});
@@ -650,32 +960,18 @@ $(document).ready(function() {
 	} );
 
 	setInterval(function(){
-		$('.bg_water_1').animate({bottom:100},500).animate({bottom:110},500);
+		$('.bg_water_1').animate({bottom:120},1000).animate({bottom:110},500);
 	},1000);
 
 	setInterval(function(){
-		$('.bg_water_2').animate({bottom:100},500).animate({bottom:110},500);
+		$('.bg_water_2').animate({bottom:120},700).animate({bottom:110},500);
 	},800);
 
 	setInterval(function(){
 		$('.quickmenu').animate({bottom:60},500).animate({bottom:50},500);
 	},800);
 
-	// 퀵메뉴 기본 위치
-	//var quick_height	= $(window).height()/2;
-	//$('.quickmenu').css("top",quick_height);
-
-/*
-	$('#contents_wrap').pagepiling({
-		menu: '#menu',
-		anchors: ['page1', 'page2', 'page3', 'page4'],
-		sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
-		navigation    : false,
-		loopBottom       : true
-	});
-*/
 	var quick_height	= $(window).height()/2;
-	//initMoving(document.getElementById("quickmenu"), quick_height, 50, 50);
 
 	var b_width			= $(window).width();
 	var car_width		= -350;
@@ -793,18 +1089,20 @@ $(document).ready(function() {
 		if (cal_cnt == 0)
 		{
 			//alert('prev');
-			$("#cal_4").fadeOut("fast", function(){
-				$("#cal_6").fadeIn("slow");
-			});
-			cal_cnt = 2;
+			//$("#month_5").fadeOut("fast", function(){
+				alert("이벤트 일정이 없습니다.");
+			//});
+			//cal_cnt = 2;
 		}else if (cal_cnt == 1){
-			$("#cal_5").fadeOut("fast", function(){
-				$("#cal_4").fadeIn("slow");
+			$("#month_6").fadeOut("fast", function(){
+				$("#month_5").fadeIn("slow");
+				$(".mon_num").html("5월");
 			});
 			cal_cnt = 0;
 		}else if (cal_cnt == 2){
-			$("#cal_6").fadeOut("fast", function(){
-				$("#cal_5").fadeIn("slow");
+			$("#month_7").fadeOut("fast", function(){
+				$("#month_6").fadeIn("slow");
+				$(".mon_num").html("6월");
 			});
 			cal_cnt =1;
 		}
@@ -814,20 +1112,22 @@ $(document).ready(function() {
 	{
 		if (cal_cnt == 0)
 		{
-			$("#cal_4").fadeOut("fast", function(){
-				$("#cal_5").fadeIn("slow");
+			$("#month_5").fadeOut("fast", function(){
+				$("#month_6").fadeIn("slow");
+				$(".mon_num").html("6월");
 			});
 			cal_cnt = 1;
 		}else if (cal_cnt == 1){
-			$("#cal_5").fadeOut("fast", function(){
-				$("#cal_6").fadeIn("slow");
+			$("#month_6").fadeOut("fast", function(){
+				$("#month_7").fadeIn("slow");
+				$(".mon_num").html("7월");
 			});
 			cal_cnt = 2;
 		}else if (cal_cnt == 2){
-			$("#cal_6").fadeOut("fast", function(){
-				$("#cal_4").fadeIn("slow");
-			});
-			cal_cnt =0;
+			//$("#month_7").fadeOut("fast", function(){
+				alert("이벤트 일정이 없습니다.");
+			//});
+			//cal_cnt =0;
 		}
 	}
 

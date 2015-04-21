@@ -62,20 +62,21 @@ switch ($_REQUEST['exec'])
 			}
 		}
 
-		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_s_url='".$surl."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."'";
+		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_s_url='".$surl."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."' AND mb_winner='".$mb_gift."'";
 		$result 	= mysqli_query($my_db, $query);
 
 		//$ins_idx = mysqli_insert_id($result);
 		if ($result)
 		{
 			if ($mb_shop)
-				$lmsYN	= send_lms($mb_chkphone, $surl);
+				//$lmsYN	= send_lms($mb_chkphone, $surl);
+				$lmsYN	= "imsi";
 			$flag = "Y";
 		}else{
 			$flag = "N";
 		}
 
-		echo $lmsYN;
+		echo $flag;
 	break;
 
 	case "winner_check" :
@@ -214,6 +215,24 @@ switch ($_REQUEST['exec'])
 
 	break;
 
-}
+	case "select_cal" :
+		$cal_date		= $_REQUEST['cal_date'];
+		
+		$query 		= "SELECT sc_name FROM ".$_gl['schedule_info_table']." WHERE sc_date = '".$cal_date."'";
+		$result 		= mysqli_query($my_db, $query);
+		$cal_name	= mysqli_fetch_array($result);
+		
+		echo $cal_name['sc_name'];
+	break;
 
+	case "select_desc_cal" :
+		$query 		= "SELECT * FROM ".$_gl['schedule_info_table']." WHERE sc_date > '".$cal_date."' ORDER BY sc_date ASC";
+		$result 		= mysqli_query($my_db, $query);
+		$cal_data		= mysqli_fetch_array($result);
+		$yoil = array("일","월","화","수","목","금","토");
+		
+		$date_arr		= explode("-",$cal_data['sc_date']);
+		echo "<ul><li>".$date_arr[1].".".$date_arr[2]."(".$yoil[date('w',strtotime($cal_data['sc_name']))].") ".$cal_data['sc_name']."</li></ul>";
+	break;
+}
 ?>
