@@ -10,10 +10,8 @@
       <div class="block_menu clearfix">
         <a href="#" onclick="screen_move('site_event')"><img src="images/btn_menu_1.png" alt=""/></a>
         <span><img src="images/ber_menu.png" alt=""/></span>
-        <a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_menu_2.png" alt=""/></a>
-        <span><img src="images/ber_menu.png" alt=""/></span>
-        <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
-        <span><img src="images/ber_menu.png" alt=""/></span>
+        <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_3.png" alt=""/></a>
+        <a href="#" data-mfp-src="#cal_pop" class="btn_view_pro popup-with-zoom-anim2" style="outline:none"><img src="images/btn_menu_2.png" alt=""/></a>
         <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
         <a href="#" class="btn_fb" onclick="sns_share('facebook')"><img src="images/btn_fb.png" alt=""/></a>
         <a href="#" class="btn_kt" onclick="sns_share('story')"><img src="images/btn_kt.png" alt=""/></a>

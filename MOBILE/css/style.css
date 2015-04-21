@@ -147,6 +147,57 @@ html[xmlns] .clearfix {
     height: 1%;
 }
 
+.mobile_menu{
+	position:absolute;
+	width:55%;
+	height:100%;
+	background:#fff;
+	top:0;right:0;
+	display:none;
+	z-index:9;
+	margin-top:56px;
+}
+.mobile_menu ul li{
+	display:block;
+	border-bottom:1px solid #d6e1ea;
+	width:90%;
+	padding-left:10%;
+	padding-top:10px;
+	padding-bottom:5px;
+}
+.mobile_menu ul li.cal{
+	background:#daf3ff;
+}
+.mobile_menu ul li.pd{
+	background:#b2e7ff;
+}
+.mobile_menu ul li a{
+	display:block;
+}
+.mobile_menu ul li a img{
+	width:50%;
+}
+.mobile_menu ul li.last{
+	text-align:center;
+    padding-left:0;
+	padding-top:0;
+	padding-bottom:0;
+	width:100%;
+}
+.mobile_menu ul li.last a{
+	display:block;
+	float:left;
+	text-align:center;
+	width:50%;
+	padding:7px 0 0 0;
+}
+.mobile_menu ul li.last a.left{
+	width:49%;
+	border-right:1px solid #d6e1ea;
+}
+.mobile_menu ul li.last a img{
+	width:30%;
+}
 
 .menu {
 	width:100%;
@@ -155,6 +206,7 @@ html[xmlns] .clearfix {
 	top:0;
 	z-index:10000;
 	background:#fff;
+	height:56px;
 }
 
 .menu a{
@@ -162,23 +214,21 @@ html[xmlns] .clearfix {
 	float:left;
 }
 .menu a.logo{
-	padding-top:10px;
+	padding-top:15px;
 	padding-left:10px;
-	width:15%;
+	width:40%;
 }
 .menu a.logo img{
-	width:100%;
 }
 .menu a.menu_ham{
 	display:block;
 	float:right;
 	width:12%;
 	background:#effaff;
-	padding:10px 0;
+	padding:16px 0;
 	text-align:center;
 }
 .menu a.menu_ham img{
-	width:70%;
 }
 
 .block_game{
@@ -345,6 +395,9 @@ html[xmlns] .clearfix {
 .wrap_page.popup.game{
 	background:none;
 	padding-bottom:0;
+}
+.wrap_page.popup.game .content{
+	padding-top:0;
 }
 .wrap_page.popup.alert{
 	margin:3%;
@@ -688,7 +741,7 @@ html[xmlns] .clearfix {
 	width:100%;
 }
 .wrap_page.popup .content .inner.alert .btn_block img {
-	width:35%;
+	width:42%;
 }
 .wrap_page.popup .content .inner.agree{
 	padding:0 30px 60px;
@@ -993,17 +1046,17 @@ html[xmlns] .clearfix {
 }
 .wrap_page.popup.game .time{
 	position:absolute;
-	bottom:11%;
-	width:34%;
-	margin-left:-17%;
+	bottom:12%;
+	width:25%;
+	margin-left:-10%;
 	left:50%;
 	z-index:900;
 	z-index:901;
 }
 .wrap_page.popup.game .time .num{
 	float:left;
-	width:20%;
-	padding-right:0;
+	width:17%;
+	padding-right:2px;
 }
 .wrap_page.popup.game .time .num img{
 	width:100%;
@@ -1011,20 +1064,19 @@ html[xmlns] .clearfix {
 
 .wrap_page.popup.game .gage{
 	position:absolute;
-	width:50%;
-	border-radius: 10px;
+	width:250px;
+	padding:4px;
+	border-radius: 8px;
 	background:rgba(255,255,255,0.8);
-	height:6%;
+	height:32px;
 	bottom:4%;
 	left:50%;
 	z-index:911;
-	margin-left:-25%;
+	margin-left:-129px;
 }
 .wrap_page.popup.game .gage .inner{
 	position:relative;
-	width:92%;
-	margin:2%;
-	padding:2% 2%;
+	width:100%;
 	background: url(../img/popup/bg_gage.png) repeat-x;	
 	border-radius: 8px;	
 
@@ -1036,8 +1088,9 @@ html[xmlns] .clearfix {
 	font-size:15px;
 	width:100%;
 	text-align:left;
-	padding:2% 0;
-	line-height:15px;
+	padding:8px 0;
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	line-height:14px;
 }
 
 .wrap_page.popup.game {
@@ -1093,8 +1146,8 @@ html[xmlns] .clearfix {
 }
 .wrap_page.popup.game .bg_water_2{
 	position:absolute;
-	z-index:901;
-	bottom:17%;
+	z-index:888;
+	bottom:15%;
 	width:40%;
 	right:0;
 }
