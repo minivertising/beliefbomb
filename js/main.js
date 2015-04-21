@@ -51,7 +51,7 @@ function chk_input()
 	{
 
 		//alert('개인정보 입력을 안 하셨습니다');
-		setTimeout("ins_data('" + mb_gift + "');",500);
+		setTimeout("ins_data();",500);
 
 		$("#mb_name").focus();
 		//$("#input_alert").show();
@@ -61,7 +61,7 @@ function chk_input()
 	if (mb_phone1 == "")
 	{
 		//alert('개인정보 입력을 안 하셨습니다');
-		setTimeout("ins_data('" + mb_gift + "');",500);
+		setTimeout("ins_data();",500);
 
 		$("#mb_phone1").focus();
 		return false;
@@ -70,7 +70,7 @@ function chk_input()
 	if (mb_phone2 == "")
 	{
 		//alert('개인정보 입력을 안 하셨습니다');
-		setTimeout("ins_data('" + mb_gift + "');",500);
+		setTimeout("ins_data();",500);
 		$("#mb_phone2").focus();
 		return false;
 	}
@@ -78,7 +78,7 @@ function chk_input()
 	if (mb_phone3 == "")
 	{
 		//alert('개인정보 입력을 안 하셨습니다');
-		setTimeout("ins_data('" + mb_gift + "');",500);
+		setTimeout("ins_data();",500);
 		$("#mb_phone3").focus();
 		return false;
 	}
@@ -268,54 +268,54 @@ function chk_input2()
 	var mb_gift				= $("#mb_gift").val();
 	var mb_chkphone	= $("#mb_chkphone").val();
 
-	if (mb_zipcode1)
+	if (mb_gift == "cream")
 	{
 		if (mb_zipcode1 == "")
 		{
 			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_cream();",500);
 			return false;
 		}
 
 		if (mb_zipcode2 == "")
 		{
 			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_cream();",500);
 			return false;
 		}
 
 		if (mb_addr1 == "")
 		{
 			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_cream();",500);
 			return false;
 		}
 
 		if (mb_addr2 == "")
 		{
 			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_cream();",500);
 			return false;
 		}
 	}else{
 		if (mb_addr1 == "")
 		{
 			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_etc();",500);
 			return false;
 		}
 
 		if (mb_addr2 == "")
 		{
 			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_etc();",500);
 			return false;
 		}
 
 		if (mb_shop == "")
 		{
 			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data('" + mb_gift + "');",500);
+			setTimeout("ins_data_etc();",500);
 			return false;
 		}
 	}
@@ -536,18 +536,28 @@ function event_input1_data(gift)
 	}else if (gift == "kit"){
 		$.magnificPopup.open({
 			items: {
-				src: '#event_gift2_pop'
+				src: '#event_kit2_pop'
 			},
 			type: 'inline',
-			showCloseBtn : false
+			showCloseBtn : false,
+			callbacks: {
+				open: function() {
+					$("#mb_gift").val(gift);
+				}
+			}
 		}, 0);
 	}else{
 		$.magnificPopup.open({
 			items: {
-				src: '#event_gift2_pop'
+				src: '#event_miniature2_pop'
 			},
 			type: 'inline',
-			showCloseBtn : false
+			showCloseBtn : false,
+			callbacks: {
+				open: function() {
+					$("#mb_gift").val(gift);
+				}
+			}
 		}, 0);
 	}
 }
@@ -563,7 +573,7 @@ function event_kit_data()
 	}, 0);
 }
 
-function ins_data(param)
+function ins_data()
 {
 	$.magnificPopup.open({
 		items: {
@@ -571,19 +581,31 @@ function ins_data(param)
 		},
 		type: 'inline',
 		showCloseBtn : false,
-		closeOnBgClick: false,
-		callbacks: {
-			open: function() {
-				if (param == "cream")
-				{
-					$("#input_privacy_close").attr("data-mfp-src","#event_input1_pop");
-					$("#input_privacy_ok").attr("data-mfp-src","#event_input1_pop");
-				}else{
-					$("#input_privacy_close").attr("data-mfp-src","#event_gift2_pop");
-					$("#input_privacy_ok").attr("data-mfp-src","#event_gift2_pop");
-				}
-			}
-		}
+		closeOnBgClick: false
+	}, 0);
+}
+
+function ins_data_cream()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#input_privacy_cream_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false,
+		closeOnBgClick: false
+	}, 0);
+}
+
+function ins_data_etc()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#input_privacy_etc_alert'
+		},
+		type: 'inline',
+		showCloseBtn : false,
+		closeOnBgClick: false
 	}, 0);
 }
 

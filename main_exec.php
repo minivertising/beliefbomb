@@ -62,7 +62,7 @@ switch ($_REQUEST['exec'])
 			}
 		}
 
-		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_s_url='".$surl."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."'";
+		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_s_url='".$surl."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."' AND mb_winner='".$mb_gift."'";
 		$result 	= mysqli_query($my_db, $query);
 
 		//$ins_idx = mysqli_insert_id($result);
@@ -91,8 +91,8 @@ switch ($_REQUEST['exec'])
 		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
-		$miniature_array = array("Y","N","N","N","N","N","N","N","N");
-		$kit_array = array("Y","N","N","N","N","N","N","N","N");
+		$miniature_array = array("Y","N");
+		$kit_array = array("Y","N");
 
 		$flag	= "N";
 		// 1일 5명 당첨 ( 정품 )

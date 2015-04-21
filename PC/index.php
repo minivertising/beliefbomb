@@ -263,12 +263,69 @@
       </div>
     </div>
       <!------------- 이벤트 당첨 정보입력(CREAM2) 팝업 -------------------->
-      <!------------- 이벤트 당첨 정보입력(KIT, MINIATURE 2) 팝업 -------------------->
-    <div id="event_gift2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
-      <input type="hidden" name="mb_gift" id="mb_gift" value="">
+      <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
+    <div id="event_kit2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <input type="hidden" name="mb_gift" id="mb_gift" value="kit">
       <div class="p_mid">
         <div class="block_close clearfix">
-          <a href="#" class="btn_close"><img src="images/popup/pop_btn_close.png" /></a>
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+        </div>
+        <div class="block_content">
+          <div class="inner">
+            <div class="title p3">
+              <img src="images/popup/title_input_store_2.png" alt=""/>
+              <!--<img src="images/popup/title_input_store_2.png" alt=""/>-->
+            </div>
+            <div class="input_block pb3">
+              <ul class="clearfix">
+                <li class="t_name"><img src="images/popup/txt_label_store.png" alt=""/></li>
+                <li class="input_txt store clearfix">
+                  <select name="mb_addr1" id="mb_addr1" onchange="addr_change(this.value)">
+                    <option value="">선택하세요</option>
+<?
+	// 주소 쿼리
+	$query 		= "SELECT * FROM ".$_gl['addr_info_table']." WHERE addr_level='1'";
+	$result 	= mysqli_query($my_db, $query);
+	while($addr1_data = @mysqli_fetch_array($result))
+	{
+?>
+                    <option value="<?=$addr1_data['addr_sido']?>"><?=$addr1_data['addr_sido']?></option>
+<?
+	}
+?>
+                  </select>
+                </li>
+                <li class="input_txt store clearfix">
+                  <select name="mb_addr2" id="mb_addr2" onchange="shop_change(this.value)">
+                    <option value="">선택하세요</option>
+                  </select>
+                </li>
+              </ul>
+              <ul class="clearfix">
+                <li class="t_name"></li>
+                <li class="input_txt">
+                  <select name="mb_shop" id="mb_shop">
+                    <option value="">선택하세요</option>
+                  </select>
+                </li>
+              </ul>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="chk_input2()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
+            </div>
+          </div><!--inner-->
+        </div>
+      </div>
+    </div>
+
+      <!------------- 이벤트 당첨 정보입력(KIT2) 팝업 -------------------->
+
+      <!------------- 이벤트 당첨 정보입력(MINIATURE 2) 팝업 -------------------->
+    <div id="event_miniature2_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <input type="hidden" name="mb_gift" id="mb_gift" value="miniature">
+      <div class="p_mid">
+        <div class="block_close clearfix">
+          <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
         <div class="block_content">
           <div class="inner">
@@ -318,7 +375,7 @@
       </div>
     </div>
 
-      <!------------- 이벤트 당첨 정보입력(KIT, MINIATURE 2) 팝업 -------------------->
+      <!------------- 이벤트 당첨 정보입력(MINIATURE 2) 팝업 -------------------->
 
     <!------------- 개인정보 활용동의 팝업 -------------------->
     <div class="popup_wrap zoom-anim-dialog mfp-hide" id="use_div">
@@ -470,7 +527,7 @@
                 <li>&nbsp;</li>
                 <li>&nbsp;</li>
                 <li>1</li>
-                <li class="sat"><span><a href="#"><img src="images/icon_car.png" alt="" onclick="show_detail_cal('2015-05-02')" /></a></span>2</li>
+                <li class="sat" onclick="show_detail_cal('2015-05-02')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>2</li>
                 <li class="sun">3</li>
               </ul>
               <ul class="clearfix">
@@ -478,12 +535,12 @@
                 <li>5</li>
                 <li>6</li>
                 <li>7</li>
-                <li>8</li>
+                <li onclick="show_detail_cal('2015-05-08')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>8</li>
                 <li class="sat">9</li>
                 <li class="sun">10</li>
               </ul>
               <ul class="clearfix">
-                <li>11</li>
+                <li onclick="show_detail_cal('2015-05-11')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>11</li>
                 <li>12</li>
                 <li>13</li>
                 <li>14</li>
@@ -517,7 +574,7 @@
                 <li>3</li>
                 <li>4</li>
                 <li>5</li>
-                <li class="sat"><span><a href="#"><img src="images/icon_car.png" alt=""/></a></span>6</li>
+                <li class="sat">6</li>
                 <li class="sun">7</li>
               </ul>
               <ul class="clearfix">
@@ -564,7 +621,7 @@
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
-                <li class="sat"><span><a href="#"><img src="images/icon_car.png" alt=""/></a></span>4</li>
+                <li class="sat">4</li>
                 <li class="sun">5</li>
               </ul>
               <ul class="clearfix">
@@ -629,6 +686,44 @@
             </div>
             <div class="btn_block">
               <a href="#" data-mfp-src="#event_input1_pop" class="popup-with-zoom-anim" id="input_privacy_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 개인정보 입력 alert -------------------->
+      <!------------- 개인정보 입력 alert -------------------->
+    <div id="input_privacy_cream_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_cream2_pop" class="btn_close popup-with-zoom-anim" id="input_privacy_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_info.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_cream2_pop" class="popup-with-zoom-anim" id="input_privacy_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 개인정보 입력 alert -------------------->
+      <!------------- 개인정보 입력 alert -------------------->
+    <div id="input_privacy_etc_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" data-mfp-src="#event_gift2_pop" class="btn_close popup-with-zoom-anim" id="input_privacy_close"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/alert_txt_info.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" data-mfp-src="#event_gift2_pop" class="popup-with-zoom-anim" id="input_privacy_ok"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
             </div>
           </div>
         </div>
