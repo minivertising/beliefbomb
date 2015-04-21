@@ -342,6 +342,17 @@ body{
 	height:400px;
 }
 
+.popup_wrap .p_mid.game .img_product.ending{
+	position:absolute;
+	z-index:899;
+	bottom:160px;
+	left:50%;
+	margin-left:-227px;
+	width:453px;
+	height:572px;
+}
+
+
 .popup_wrap .p_mid.game .img_product .p_inner{
 	position:relative;
 	width:240px;
