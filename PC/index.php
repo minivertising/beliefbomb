@@ -444,7 +444,18 @@
         <div class="block_content">
           <div class="inner">
             <div class="btn_start">
+<?
+	if ($IE8 == "N")
+	{
+?>
               <a href="#" onclick="game_start()"><img src="images/popup/btn_start.png" alt=""/></a>
+<?
+	}else{
+?>
+              <a href="#" onclick="game_start_ie8()"><img src="images/popup/btn_start.png" alt=""/></a>
+<?
+	}
+?>
             </div>
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
@@ -452,7 +463,7 @@
             <div class="img_product">
               <div class="p_inner">
                 <div class="cap" id="cap1">
-                  <img src="images/popup/cap_1.png"alt=""/>
+                  <img src="images/popup/cap_1.png" alt="" id="cap_img"/>
                 </div>
                 <div class="body" id="body1">
                   <img src="images/popup/p_body.png" width="241" height="216" alt=""/>
@@ -1007,9 +1018,9 @@ $(document).ready(function() {
 			var tmarray	= [".d_1",".d_2",".d_3",".img_car"];
 	var tween = new TimelineMax ()
 		.add([
-			TweenMax.to(".d_3", 1, {opacity: 1, delay:3, ease: Bounce.easeIn}),
-			TweenMax.to(".d_2", 1, {opacity: 1, delay:2, ease: Bounce.easeIn}),
-			TweenMax.to(".d_1", 1, {opacity: 1, delay:1, ease: Bounce.easeIn}),
+			TweenMax.to(".d_3", 0, {opacity: 1, delay:3, ease: Bounce.easeIn}),
+			TweenMax.to(".d_2", 0, {opacity: 1, delay:2, ease: Bounce.easeIn}),
+			TweenMax.to(".d_1", 0, {opacity: 1, delay:1, ease: Bounce.easeIn}),
 			TweenMax.to(".img_car", 1, {marginLeft: -350})
 			//TweenMax.staggerTo(tmarray, 1, {marginLeft: -350},{rotation:360, y:100}, 0.5)
 		]);
