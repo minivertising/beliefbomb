@@ -37,7 +37,7 @@
     <div class="mbom1">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="#"><img src="img/btn_detail_m.png" alt=""/></a>
+          <a href="http://www.belifcosmetic.com/product/detail.jsp?pid=ACM04550" target="_blank"><img src="img/btn_detail_m.png" alt=""/></a>
         </div>
       </div>    
       <div class="bg_mbom img_wrap"><img src="img/bg_mbom1.png" alt=""/></div>  
@@ -45,7 +45,7 @@
     <div class="abom1">
       <div class="inner_ele">
         <div class="btn_block">
-          <a href="#"><img src="img/btn_detail_a.png" alt=""/></a>
+          <a href="http://www.belifcosmetic.com/product/detail.jsp?pid=ACM04551" target="_blank"><img src="img/btn_detail_a.png" alt=""/></a>
         </div>
       </div>    
       <div class="bg_abom img_wrap"><img src="img/bg_abom1.png" alt=""/></div>  
