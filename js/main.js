@@ -687,59 +687,63 @@ function event_action()
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
 		$("#game_title").hide();
-		
-
-		$.ajax({
-			type:"POST",
-			cache: false,
-			data:{
-				"exec"			: "winner_check"
-			},
-			url: "../main_exec.php",
-			success: function(response){
-				if (response == "N")
-				{
-					$.magnificPopup.open({
-						items: {
-							src: '#event_sorry_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "Y"){
-					$("#input1_image").attr("src","images/popup/title_gift_1.png");
-					$("#mb_gift").val("cream");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "K"){
-					$("#input1_image").attr("src","images/popup/title_gift_3.png");
-					$("#mb_gift").val("kit");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else {
-					$("#input1_image").attr("src","images/popup/title_gift_2.png");
-					$("#mb_gift").val("miniature");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}
-			}
+		$("#game_ing").hide();
+		$('#game_end').show(0, function(){
+			setTimeout(function(){
+				$.ajax({
+					type:"POST",
+					cache: false,
+					data:{
+						"exec"			: "winner_check"
+					},
+					url: "../main_exec.php",
+					success: function(response){
+						if (response == "N")
+						{
+							$.magnificPopup.open({
+								items: {
+									src: '#event_sorry_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else if (response == "Y"){
+							$("#input1_image").attr("src","images/popup/title_gift_1.png");
+							$("#mb_gift").val("cream");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else if (response == "K"){
+							$("#input1_image").attr("src","images/popup/title_gift_3.png");
+							$("#mb_gift").val("kit");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else {
+							$("#input1_image").attr("src","images/popup/title_gift_2.png");
+							$("#mb_gift").val("miniature");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}
+					}
+				});
+				return false;
+			},2000);
 		});
-		return false;
+
 	}
 
 	var gage_per	= bomb_cnt*2;
@@ -1217,14 +1221,14 @@ function sns_share(media)
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		Kakao.Link.createTalkLinkButton({
 		  container: '#kakao-link-btn',
-		  label: "서장훈이 화장품 CF를?! \n<아니 아니, 그게 아니고~> 전격 공개!\n 건조한 피부에 봄비같은 하얀 수분 크림 출시!\n 지금 10ml Kit도 신청하세요!",
+		  label: "빌리프 카톡 내용 입력",
 		  image: {
 			src: 'http://www.thefaceshopclouding.co.kr/PC/images/sns_kt.jpg',
 			width: '1200',
 			height: '630'
 		  },
 		  webButton: {
-			text: '더페이스샵',
+			text: '빌리프',
 			url: 'http://www.belifbomb.com/?media=kakao' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 		  }
 		});

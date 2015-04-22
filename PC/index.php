@@ -458,7 +458,7 @@
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
             </div>
-            <div class="img_product">
+            <div class="img_product" id="game_ing">
               <div class="p_inner">
                 <div class="cap" id="cap1">
                   <img src="images/popup/cap_1.png" alt="" id="cap_img"/>
@@ -480,6 +480,9 @@
                 </div>
 
               </div>
+            </div>
+            <div class="img_product ending" id="game_end" style="display:none;">
+              <img src="images/popup/game_ending.gif"  alt=""/>
             </div>
             <div class="time clearfix">
               <div class="num">
@@ -825,7 +828,7 @@
           </div>
           <div class="block_content">
             <div class="title">
-              <img src="images/popup/txt_fail.png" alt=""/>
+              <img src="images/popup/title_alert_fail.png" alt=""/>
             </div>
             <div class="btn_block">
               <a href="#" onclick="$.magnificPopup.close();window.setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
