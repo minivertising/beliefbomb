@@ -216,7 +216,7 @@ function deviceMotionHandler(eventData) {
 			{
 	var gage_per	= bomb_cnt*2;
 	var gage_bg	= gage_per;
-				if (bomb_cnt > 50)
+				if (bomb_cnt >= 50)
 				{
 					window.removeEventListener('devicemotion', deviceMotionHandler, false);
 					keepgoin=false;

@@ -3,7 +3,7 @@
 ?>
   <body>
 <div class="menu clearfix">
-   <a href="www.belifcosmetic.com/mobile" class="logo" target="_blank"><img src="img/logo.png" width="56" alt=""/></a>
+   <a href="http://www.belifcosmetic.com/mobile" class="logo" target="_blank"><img src="img/logo.png" width="56" alt=""/></a>
    <a href="#" class="menu_ham"  onclick="show_menu()"><img src="img/menu_ham.png" width="26" alt=""/></a>
 </div>
 <div>

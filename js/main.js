@@ -679,7 +679,7 @@ function m_adver_agree_data()
 
 function event_action()
 {
-	if (bomb_cnt > 50)
+	if (bomb_cnt >= 50)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -753,6 +753,7 @@ function event_action()
 		gage_bg = "98";
 	}
 
+	
 	if (bomb_cnt % 2 == 0)
 	{
 		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -792,7 +793,7 @@ function event_action()
 
 function event_action_ie8()
 {
-	if (bomb_cnt > 10)
+	if (bomb_cnt >= 50)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
