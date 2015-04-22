@@ -800,59 +800,62 @@ function event_action_ie8()
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
 		$("#game_title").hide();
-		
-
-		$.ajax({
-			type:"POST",
-			cache: false,
-			data:{
-				"exec"			: "winner_check"
-			},
-			url: "../main_exec.php",
-			success: function(response){
-				if (response == "N")
-				{
-					$.magnificPopup.open({
-						items: {
-							src: '#event_sorry_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "Y"){
-					$("#input1_image").attr("src","images/popup/title_gift_1.png");
-					$("#mb_gift").val("cream");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "K"){
-					$("#input1_image").attr("src","images/popup/title_gift_3.png");
-					$("#mb_gift").val("kit");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else {
-					$("#input1_image").attr("src","images/popup/title_gift_2.png");
-					$("#mb_gift").val("miniature");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}
-			}
+		$("#game_ing").hide();
+		$('#game_end').show(0, function(){
+			setTimeout(function(){
+				$.ajax({
+					type:"POST",
+					cache: false,
+					data:{
+						"exec"			: "winner_check"
+					},
+					url: "../main_exec.php",
+					success: function(response){
+						if (response == "N")
+						{
+							$.magnificPopup.open({
+								items: {
+									src: '#event_sorry_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else if (response == "Y"){
+							$("#input1_image").attr("src","images/popup/title_gift_1.png");
+							$("#mb_gift").val("cream");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else if (response == "K"){
+							$("#input1_image").attr("src","images/popup/title_gift_3.png");
+							$("#mb_gift").val("kit");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else {
+							$("#input1_image").attr("src","images/popup/title_gift_2.png");
+							$("#mb_gift").val("miniature");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}
+					}
+				});
+				return false;
+			},2000);
 		});
-		return false;
 	}
 
 	var gage_per	= bomb_cnt*2;
@@ -1139,6 +1142,8 @@ function game_ready()
 				$("#game_num4").attr("src","images/popup/num0.png");
 				$("#gage_bg").css("width", "0%");
 				$("#gage_bg").html("0%");
+				$("#game_ing").show();
+				$('#game_end').hide();
 				$("#game_title").show();
 				$(".btn_start").css("top","250px");
 				$(".btn_start").show();

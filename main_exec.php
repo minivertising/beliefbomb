@@ -234,5 +234,21 @@ switch ($_REQUEST['exec'])
 		$date_arr		= explode("-",$cal_data['sc_date']);
 		echo "<ul><li>".$date_arr[1].".".$date_arr[2]."(".$yoil[date('w',strtotime($cal_data['sc_name']))].") ".$cal_data['sc_name']."</li></ul>";
 	break;
+
+	case "update_coupon" :
+		$serial = $_REQUEST['serial'];
+		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_use='Y' WHERE mb_serialnumber='".$serial."'";
+		$result 	= mysqli_query($my_db, $query);
+
+		if ($result)
+		{
+			$flag = "Y";
+		}else{
+			$flag = "N";
+		}
+
+		echo $flag;
+
+	break;
 }
 ?>
