@@ -301,7 +301,7 @@
               </ul>
               <ul class="clearfix">
                 <li class="t_name"></li>
-                <li class="input_txt">
+                <li class="input_txt" style="margin-left:4px;">
                   <select name="mb_shop" id="mb_shop">
                     <option value="">선택하세요</option>
                   </select>
@@ -358,7 +358,7 @@
               </ul>
               <ul class="clearfix">
                 <li class="t_name"></li>
-                <li class="input_txt">
+                <li class="input_txt" style="margin-left:4px;">
                   <select name="mb_shop" id="mb_shop">
                     <option value="">선택하세요</option>
                   </select>

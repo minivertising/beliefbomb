@@ -12,10 +12,10 @@
 
     <meta property="og:site_name" content="belifbomb">
     <meta property="og:url" content="http://www.belifbomb.com/PC/index.php">
-    <meta property="og:title" content="빌리프에서! 제목">
-    <meta property="og:type" content="video">
-    <meta property="og:image" content="http://www.thefaceshopclouding.co.kr/PC/images/sns_image.jpg">
-    <meta property="og:description" content="빌리프 웹페이지 내용">
+    <meta property="og:title" content="빌리프 - 폭탄버스">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.belifbomb.com/MOBILE/img/sns_image.png" />
+    <meta property="og:description" content="즐거움이 팡!팡! 터진다!">
     <!-- <meta property="og:video" content="https://youtu.be/7LB0Id5a5Jk">
     <meta property="og:video:type" content="application/x-shockwave-flash">
     <meta property="og:video:width" content="1200"> -->

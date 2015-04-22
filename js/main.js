@@ -1216,7 +1216,7 @@ function sns_share(media)
 {
 	if (media == "facebook")
 	{
-		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifbomb.co.kr/?media=facebook'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifbomb.com/?media=facebook'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -1231,14 +1231,14 @@ function sns_share(media)
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		Kakao.Link.createTalkLinkButton({
 		  container: '#kakao-link-btn',
-		  label: "빌리프 카톡 내용 입력",
+		  label: "즐거움이 팡!팡! 터진다!",
 		  image: {
-			src: 'http://www.thefaceshopclouding.co.kr/PC/images/sns_kt.jpg',
+			src: 'http://www.belifbomb.com/MOBILE/img/sns_image.png',
 			width: '1200',
 			height: '630'
 		  },
 		  webButton: {
-			text: '빌리프',
+			text: '빌리프 - 폭탄버스',
 			url: 'http://www.belifbomb.com/?media=kakao' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 		  }
 		});

@@ -12,8 +12,8 @@
     <meta property="og:title" content="Water Bomb Bomb" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.thefaceshopclouding.co.kr/MOBILE/index.php" />
-    <meta property="og:image" content="http://www.thefaceshopclouding.co.kr/PC/images/sns_image.jpg" />
-    <meta property="og:description" content="빌리프" />
+    <meta property="og:image" content="http://www.belifbomb.com/MOBILE/img/sns_image.png" />
+    <meta property="og:description" content="즐거움이 팡!팡! 터진다!" />
 
     <link rel="shortcut icon" type="image/x-icon" href="./images/icon/favicon.ico" />
     <title>Belif</title>
