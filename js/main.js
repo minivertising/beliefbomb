@@ -224,6 +224,7 @@ function chk_input_mobile()
 		},
 		url: "../main_exec.php",
 		success: function(response){
+			alert(response);
 			if (response == "Y")
 			{
 				//$("#mb_chkphone").val(cel_phone);
