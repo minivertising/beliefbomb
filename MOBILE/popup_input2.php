@@ -1,6 +1,13 @@
 <?
 	include_once "./header.php";
 	$phone	= $_POST['mb_phone1']."-".$_POST['mb_phone2']."-".$_POST['mb_phone3'];
+
+	// 주소 바로 입력시 index로 이동
+	if ( !isset($_SERVER['HTTP_REFERER'])) { 
+		echo "<script>location.href='index.php'</script>"; 
+		exit; 
+	} 
+
 ?>
 <body class="bg_blue">
   <input type="hidden" name="mb_gift" id="mb_gift" value="<?=$_POST['mb_gift']?>">

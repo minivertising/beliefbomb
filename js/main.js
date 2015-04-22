@@ -1,4 +1,3 @@
-Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
 
 
 function addr_change(addr1)
@@ -872,7 +871,8 @@ function event_action_ie8()
 	{
 		//$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#cap_img").rotate({
-			angle: 20,
+			angle: -20,
+			center: ["0%", "100%"],
 			animateTo:0
 		});
 		//$("#cap1").animate({top:-10},{duration:100,easing:'easeOutBounce'});
@@ -887,7 +887,8 @@ function event_action_ie8()
 	}else{
 		//$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: -20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#cap_img").rotate({
-			angle: -20,
+			angle: 20,
+			center: ["100%", "0%"],
 			animateTo:0
 		});
 		$("#gage_bg").animate({width:gage_bg + "%"},{duration:100,easing:'easeOutBounce'});
@@ -1226,6 +1227,7 @@ function sns_share(media)
 			}
 		});
 	}else if (media == "kakao"){
+		Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		Kakao.Link.createTalkLinkButton({
 		  container: '#kakao-link-btn',
