@@ -263,121 +263,125 @@ function chk_input_mobile()
 
 function chk_input2()
 {
-	var mb_addr1			= $('#mb_addr1').val();
-	var mb_addr2			= $('#mb_addr2').val();
-	var mb_zipcode1		= $('#mb_zipcode1').val();
-	var mb_zipcode2		= $('#mb_zipcode2').val();
-	var mb_shop			= $('#mb_shop').val();
-	var mb_idx				= $('#mb_idx').val();
-	var mb_gift				= $("#mb_gift").val();
-	var mb_chkphone	= $("#mb_chkphone").val();
-
-	if (mb_gift == "cream")
+	if (event_triger == 0)
 	{
-		if (mb_zipcode1 == "")
+		event_triger = 1;
+		var mb_addr1			= $('#mb_addr1').val();
+		var mb_addr2			= $('#mb_addr2').val();
+		var mb_zipcode1		= $('#mb_zipcode1').val();
+		var mb_zipcode2		= $('#mb_zipcode2').val();
+		var mb_shop			= $('#mb_shop').val();
+		var mb_idx				= $('#mb_idx').val();
+		var mb_gift				= $("#mb_gift").val();
+		var mb_chkphone	= $("#mb_chkphone").val();
+
+		if (mb_gift == "cream")
 		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
+			if (mb_zipcode1 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+
+			if (mb_zipcode2 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+
+			if (mb_addr1 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+
+			if (mb_addr2 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+		}else{
+			if (mb_addr1 == "")
+			{
+				//alert('매장 선택을 안 하셨습니다');
+				setTimeout("ins_data_etc();",500);
+				return false;
+			}
+
+			if (mb_addr2 == "")
+			{
+				//alert('매장 선택을 안 하셨습니다');
+				setTimeout("ins_data_etc();",500);
+				return false;
+			}
+
+			if (mb_shop == "")
+			{
+				//alert('매장 선택을 안 하셨습니다');
+				setTimeout("ins_data_etc();",500);
+				return false;
+			}
 		}
 
-		if (mb_zipcode2 == "")
-		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
-		}
 
-		if (mb_addr1 == "")
-		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
-		}
 
-		if (mb_addr2 == "")
-		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
-		}
-	}else{
-		if (mb_addr1 == "")
-		{
-			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data_etc();",500);
-			return false;
-		}
-
-		if (mb_addr2 == "")
-		{
-			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data_etc();",500);
-			return false;
-		}
-
-		if (mb_shop == "")
-		{
-			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data_etc();",500);
-			return false;
-		}
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"				: "insert_detail_event",
+				"mb_zipcode1"	: mb_zipcode1,
+				"mb_zipcode2"	: mb_zipcode2,
+				"mb_addr1"			: mb_addr1,
+				"mb_addr2"			: mb_addr2,
+				"shop"				: mb_shop,
+				"mb_gift"			: mb_gift,
+				"mb_chkphone"	: mb_chkphone
+			},
+			url: "../main_exec.php",
+			success: function(response){
+				if (response == "Y")
+				{
+					setTimeout("event_complete();",500);
+					//$.magnificPopup.close();
+				}
+				else if (response == "D")
+				{
+					alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+					$("#mb_name").val("");
+					$("#mb_phone1").val("010");
+					$("#mb_phone2").val("");
+					$("#mb_phone3").val("");
+					$("#mb_addr1").val("");
+					$("#mb_addr2").val("");
+					$("#mb_zipcode1").val("");
+					$("#mb_zipcode2").val("");
+					$("#mb_shop").val("");
+					$('input').iCheck('uncheck');
+					$.magnificPopup.close();
+				}
+				else
+				{
+					alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
+					$("#mb_name").val("");
+					$("#mb_phone1").val("010");
+					$("#mb_phone2").val("");
+					$("#mb_phone3").val("");
+					$("#mb_addr1").val("");
+					$("#mb_addr2").val("");
+					$("#mb_shop").val("");
+					$("#mb_zipcode1").val("");
+					$("#mb_zipcode2").val("");
+					$('input').iCheck('uncheck');
+					$.magnificPopup.close();
+					$("#mb_chkphone").val(response);
+				}
+			}
+		});
 	}
-
-
-
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"				: "insert_detail_event",
-			"mb_zipcode1"	: mb_zipcode1,
-			"mb_zipcode2"	: mb_zipcode2,
-			"mb_addr1"			: mb_addr1,
-			"mb_addr2"			: mb_addr2,
-			"shop"				: mb_shop,
-			"mb_gift"			: mb_gift,
-			"mb_chkphone"	: mb_chkphone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			if (response == "Y")
-			{
-				setTimeout("event_complete();",500);
-				//$.magnificPopup.close();
-			}
-			else if (response == "D")
-			{
-				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
-				$("#mb_name").val("");
-				$("#mb_phone1").val("010");
-				$("#mb_phone2").val("");
-				$("#mb_phone3").val("");
-				$("#mb_addr1").val("");
-				$("#mb_addr2").val("");
-				$("#mb_zipcode1").val("");
-				$("#mb_zipcode2").val("");
-				$("#mb_shop").val("");
-				$('input').iCheck('uncheck');
-				$.magnificPopup.close();
-			}
-			else
-			{
-				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
-				$("#mb_name").val("");
-				$("#mb_phone1").val("010");
-				$("#mb_phone2").val("");
-				$("#mb_phone3").val("");
-				$("#mb_addr1").val("");
-				$("#mb_addr2").val("");
-				$("#mb_shop").val("");
-				$("#mb_zipcode1").val("");
-				$("#mb_zipcode2").val("");
-				$('input').iCheck('uncheck');
-				$.magnificPopup.close();
-				$("#mb_chkphone").val(response);
-			}
-		}
-	});
 }
 
 function chk_input2_mobile()
