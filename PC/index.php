@@ -10,8 +10,8 @@
       <div class="block_menu clearfix">
         <a href="#" onclick="screen_move('site_event')"><img src="images/btn_menu_1.png" alt=""/></a>
         <span><img src="images/ber_menu.png" alt=""/></span>
-        <a href="#" onclick="screen_move('off_event')"><img src="images/btn_menu_3.png" alt=""/></a>
-        <a href="#" onclick="screen_move('calender')" class="btn_view_pro"><img src="images/btn_menu_2.png" alt=""/></a>
+        <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_3.png" alt=""/></a>
+        <a href="#" data-mfp-src="#cal_pop" class="btn_view_pro popup-with-zoom-anim2" style="outline:none"><img src="images/btn_menu_2.png" alt=""/></a>
         <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
         <a href="#" class="btn_fb" onclick="sns_share('facebook')"><img src="images/btn_fb.png" alt=""/></a>
         <a href="#" class="btn_kt" onclick="sns_share('story')"><img src="images/btn_kt.png" alt=""/></a>
@@ -442,7 +442,18 @@
         <div class="block_content">
           <div class="inner">
             <div class="btn_start">
+<?
+	if ($IE8 == "N")
+	{
+?>
               <a href="#" onclick="game_start()"><img src="images/popup/btn_start.png" alt=""/></a>
+<?
+	}else{
+?>
+              <a href="#" onclick="game_start_ie8()"><img src="images/popup/btn_start.png" alt=""/></a>
+<?
+	}
+?>
             </div>
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
@@ -450,7 +461,7 @@
             <div class="img_product">
               <div class="p_inner">
                 <div class="cap" id="cap1">
-                  <img src="images/popup/cap_1.png"alt=""/>
+                  <img src="images/popup/cap_1.png" alt="" id="cap_img"/>
                 </div>
                 <div class="body" id="body1">
                   <img src="images/popup/p_body.png" width="241" height="216" alt=""/>
@@ -845,6 +856,26 @@
     </div> 
       <!------------- 동일한 상품 당첨 alert -------------------->
 
+      <!------------- 이벤트 당첨 후 완료 alert -------------------->
+    <div id="event_complete_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/title_alert_thx.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="sns_share('facebook');"><img src="images/popup/btn_share.png" alt=""/></a><a href="#" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 이벤트 당첨 후 완료 alert -------------------->
+
 
 <!--  주소검색 DIV 시작  -->
   <div id="post_div" style="display:none;border:5px solid;position:fixed;width:650px;height:600px;margin-left:-325px;top:50%;left:50%;margin-top:-300px;overflow:hidden;-webkit-overflow-scrolling:touch;z-index:999999">
@@ -857,16 +888,6 @@
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
-	// quick menu
-	/*
-	var quickTop;
-	$(window).scroll(function() {
-		quickTop = ($(window).height()-$('.quickmenu').height()) /2;
-		//$('.quickmenu').stop().animate({top:$(window).scrollTop()+quickTop},400,'easeOutExpo');
-		$('.quickmenu').animate({top:$(window).scrollTop()+quickTop},100,'easeOutExpo');
-		
-	});
-	*/
 
 var bomb_cnt = 0;
 var currentsec=9;
@@ -985,11 +1006,10 @@ $(document).ready(function() {
 			var tmarray	= [".d_1",".d_2",".d_3",".img_car"];
 	var tween = new TimelineMax ()
 		.add([
-			TweenMax.to(".d_3", 1, {opacity: 1, delay:3, ease: Bounce.easeIn}),
-			TweenMax.to(".d_2", 1, {opacity: 1, delay:2, ease: Bounce.easeIn}),
-			TweenMax.to(".d_1", 1, {opacity: 1, delay:1, ease: Bounce.easeIn}),
+			TweenMax.to(".d_3", 0, {opacity: 1, delay:3, ease: Bounce.easeIn}),
+			TweenMax.to(".d_2", 0, {opacity: 1, delay:2, ease: Bounce.easeIn}),
+			TweenMax.to(".d_1", 0, {opacity: 1, delay:1, ease: Bounce.easeIn}),
 			TweenMax.to(".img_car", 1, {marginLeft: -350})
-			//TweenMax.staggerTo(tmarray, 1, {marginLeft: -350},{rotation:360, y:100}, 0.5)
 		]);
 	// build scene
 	var scene = new ScrollScene({triggerElement: "#area4", duration: 1000, offset: 450})
