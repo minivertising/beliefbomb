@@ -173,6 +173,7 @@
 </html>
 <script src="http://dmaps.daum.net/map_js_init/postcode.js"></script>
 <script type="text/javascript">
+var event_triger = 0;
 $(document).ready(function() {
 	// 체크박스 스타일 설정
 	$('.wrap_page input').on('ifChecked ifUnchecked', function(event){

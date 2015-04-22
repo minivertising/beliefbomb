@@ -382,90 +382,94 @@ function chk_input2()
 
 function chk_input2_mobile()
 {
-	var mb_addr1		= $('#mb_addr1').val();
-	var mb_addr2		= $('#mb_addr2').val();
-	var mb_zipcode1	= $('#mb_zipcode1').val();
-	var mb_zipcode2	= $('#mb_zipcode2').val();
-	var mb_shop			= $('#mb_shop').val();
-	var mb_idx			= $('#mb_idx').val();
-	var mb_gift			= $("#mb_gift").val();
-	var mb_chkphone	= $("#mb_chkphone").val();
-
-	if (mb_gift == "cream")
+	if (event_triger == 0)
 	{
-		if (mb_zipcode1 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+		var mb_addr1		= $('#mb_addr1').val();
+		var mb_addr2		= $('#mb_addr2').val();
+		var mb_zipcode1	= $('#mb_zipcode1').val();
+		var mb_zipcode2	= $('#mb_zipcode2').val();
+		var mb_shop			= $('#mb_shop').val();
+		var mb_idx			= $('#mb_idx').val();
+		var mb_gift			= $("#mb_gift").val();
+		var mb_chkphone	= $("#mb_chkphone").val();
 
-		if (mb_zipcode2 == "")
+		if (mb_gift == "cream")
 		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_zipcode1 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_addr1 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_zipcode2 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_addr2 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
-	}else{
-		if (mb_addr1 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_addr1 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_addr2 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_addr2 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
+		}else{
+			if (mb_addr1 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_shop == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
+			if (mb_addr2 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
+
+			if (mb_shop == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 		}
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"				: "insert_detail_event",
+				"mb_zipcode1"	: mb_zipcode1,
+				"mb_zipcode2"	: mb_zipcode2,
+				"mb_addr1"			: mb_addr1,
+				"mb_addr2"			: mb_addr2,
+				"shop"				: mb_shop,
+				"mb_gift"			: mb_gift,
+				"mb_chkphone"	: mb_chkphone
+			},
+			url: "../main_exec.php",
+			success: function(response){
+				event_triger = 1;
+				if (response == "Y")
+				{
+					setTimeout("event_m_complete();",500);
+					//location.href = "./index.php";
+				}
+				else if (response == "D")
+				{
+					alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+					location.href = "./index.php";
+				}
+				else
+				{
+					alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
+					location.href = "./index.php";
+				}
+			}
+		});
 	}
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"				: "insert_detail_event",
-			"mb_zipcode1"	: mb_zipcode1,
-			"mb_zipcode2"	: mb_zipcode2,
-			"mb_addr1"			: mb_addr1,
-			"mb_addr2"			: mb_addr2,
-			"shop"				: mb_shop,
-			"mb_gift"			: mb_gift,
-			"mb_chkphone"	: mb_chkphone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			if (response == "Y")
-			{
-				setTimeout("event_m_complete();",500);
-				//location.href = "./index.php";
-			}
-			else if (response == "D")
-			{
-				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
-				location.href = "./index.php";
-			}
-			else
-			{
-				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
-				location.href = "./index.php";
-			}
-		}
-	});
 }
 
 function use_agree_data(gift)
