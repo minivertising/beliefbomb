@@ -384,6 +384,7 @@ function chk_input2_mobile()
 {
 	if (event_triger == 0)
 	{
+		event_triger = 1;
 		var mb_addr1		= $('#mb_addr1').val();
 		var mb_addr2		= $('#mb_addr2').val();
 		var mb_zipcode1	= $('#mb_zipcode1').val();
@@ -451,7 +452,6 @@ function chk_input2_mobile()
 			},
 			url: "../main_exec.php",
 			success: function(response){
-				event_triger = 1;
 				if (response == "Y")
 				{
 					setTimeout("event_m_complete();",500);
