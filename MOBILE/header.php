@@ -2,8 +2,8 @@
 	include_once "../config.php";
 ?>
 <!doctype html>
-<html prefix="og: http://ogp.me/ns#">
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
+<html>
+  <head>
     <title>belif bomb</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <meta property="og:title" content="Water Bomb Bomb" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.thefaceshopclouding.co.kr/MOBILE/index.php" />
+    <meta property="og:url" content="http://www.belifbomb.com/MOBILE/index.php" />
     <meta property="og:image" content="http://www.belifbomb.com/MOBILE/img/sns_image.png" />
     <meta property="og:description" content="즐거움이 팡!팡! 터진다!" />
 
