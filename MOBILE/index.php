@@ -62,7 +62,7 @@
       <li class="pd"><a href="#" onclick="screen_move('product');"><img src="img/gnb_pd.png"  alt=""/></a></li>
       <li class="clearfix last">
         <a href="#" class="left" onclick="sns_share('facebook')"><img src="img/gnb_fb.png"  alt=""/></a>
-        <a href="#" onclick="sns_share('kakao')"><img src="img/gnb_kt.png"  alt=""/></a>
+        <a href="#"   id="kakao-link-btn" onclick="sns_share('kakao')"><img src="img/gnb_kt.png"  alt=""/></a>
       </li>
     </ul>
   </div>
