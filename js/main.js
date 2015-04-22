@@ -1,3 +1,6 @@
+Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
+
+
 function addr_change(addr1)
 {
 	$.ajax({
