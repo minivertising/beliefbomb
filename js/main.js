@@ -787,7 +787,7 @@ function event_action()
 		$("#game_title").hide();
 		$("#game_ing").hide();
 		$('#game_end').show(0, function(){
-			//window.setTimeout("event_check_data();",2000);
+			window.setTimeout("event_check_data();",2000);
 		});
 
 	}
