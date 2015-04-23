@@ -1048,6 +1048,23 @@ html[xmlns] .clearfix {
 	margin-left:-20%;
 	top:35%;
 }
+.wrap_page.popup.game .ctn_num{
+	position:absolute;
+	z-index:999;
+	width:16%;
+	left:50%;
+	margin-left:-8%;
+	top:37%;	
+}
+.wrap_page.popup.game .ctn_num div{
+	float:left;
+	width:30%;
+	text-align:center;
+}
+.wrap_page.popup.game .ctn_num div img{
+	width:100%;
+}
+
 .wrap_page.popup.game .btn_start img{
 	width:100%;
 }
