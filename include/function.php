@@ -104,9 +104,9 @@
 			$short_url = get_bitly_short_url($longurl,'kyhfan','R_11ea80ffc2bf4bbe8c848b761e71df8a');
 		}else if ($num == "2"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan2','R_f7547b30052049679ee65de54c782e20');
-		}else if ($num == "2"){
+		}else if ($num == "3"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan3','R_426adbe491a44aee82bd938e9c7f032e');
-		}else if ($num == "2"){
+		}else if ($num == "4"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan4','R_6e2b8aac3f514271a5901cf546f9540a');
 		}else{
 			$short_url = get_bitly_short_url($longurl,'kyhfan5','R_089bb97a7ff8481da0e7b1600c6b6c0f');
