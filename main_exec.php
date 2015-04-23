@@ -234,7 +234,7 @@ switch ($_REQUEST['exec'])
 		$yoil = array("일","월","화","수","목","금","토");
 		
 		$date_arr		= explode("-",$cal_data['sc_date']);
-		echo "<ul><li>".$date_arr[1].".".$date_arr[2]."(".$yoil[date('w',strtotime($cal_data['sc_name']))].") ".$cal_data['sc_name']."</li></ul>";
+		echo "<ul><li><span>".$date_arr[1].".".$date_arr[2]."(".$yoil[date('w',strtotime($cal_data['sc_name']))].") ".$cal_data['sc_name']."</li></ul>";
 	break;
 
 	case "update_coupon" :
