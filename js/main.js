@@ -312,7 +312,8 @@ function chk_input2()
 			if (mb_addr1 == "")
 			{
 				//alert('매장 선택을 안 하셨습니다');
-				setTimeout("ins_data_etc();",500);
+				//setTimeout("ins_data_etc();",500);
+				alert('매장을 선택해 주세요.');
 				event_triger = 0;
 				return false;
 			}
@@ -320,7 +321,8 @@ function chk_input2()
 			if (mb_addr2 == "")
 			{
 				//alert('매장 선택을 안 하셨습니다');
-				setTimeout("ins_data_etc();",500);
+				//setTimeout("ins_data_etc();",500);
+				alert('매장을 선택해 주세요.');
 				event_triger = 0;
 				return false;
 			}
@@ -437,14 +439,16 @@ function chk_input2_mobile()
 		}else{
 			if (mb_addr1 == "")
 			{
-				window.setTimeout("m_ins_data();",500);
+				//window.setTimeout("m_ins_data();",500);
+				alert('매장을 선택해 주세요.');
 				event_triger = 0;
 				return false;
 			}
 
 			if (mb_addr2 == "")
 			{
-				window.setTimeout("m_ins_data();",500);
+				//window.setTimeout("m_ins_data();",500);
+				alert('매장을 선택해 주세요.');
 				event_triger = 0;
 				return false;
 			}
