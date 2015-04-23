@@ -423,11 +423,17 @@
         <div class="block_close clearfix">
           <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
-        <div class="block_content product">
+        <div class="block_content">
           <div class="inner">
-            <img src='images/qrcode.png'  style="width:300px"/>
+            <div class="title">
+              <img src="images/qr_text.png" alt="" id="input1_image"/>
+            </div>
+            <div class="input_block">
+              <img src='images/qrcode.png'  style="width:300px"/>
+            </div>
           </div><!--inner-->
         </div>
+
       </div>
     </div>
 
