@@ -1200,7 +1200,7 @@ function sns_share(media)
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		Kakao.Link.createTalkLinkButton({
 		  container: '#kakao-link-btn',
-		  label: "지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기\r\n빌리프 폭탄크림 정품 50ml - 5개",
+		  label: "지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기",
 		  image: {
 			src: 'http://www.belifbomb.com/MOBILE/img/sns_image.png',
 			width: '1200',
@@ -1238,7 +1238,7 @@ function sns_share(media)
 						url : '/v1/api/story/post/link',
 						data : {
 						link_info : res,
-							content:"지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기\r\n빌리프 폭탄크림 정품 50ml - 5개"
+							content:"지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기"
 						}
 					});
 				}).then(function(res) {

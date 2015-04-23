@@ -18,7 +18,7 @@
     <meta property="og:title" content="수분폭탄, 즐거움이 터진다">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://www.belifbomb.com/MOBILE/img/sns_image2.png" />
-    <meta property="og:description" content="지금 정해진 시간안에 폭탄 크림을 터트리면, 빌리프의 다양한 선물이 쏟아집니다. 더 많은 이벤트 자세히 보기 빌리프 폭탄크림 정품 50ml-50개">
+    <meta property="og:description" content="지금 정해진 시간안에 폭탄 크림을 터트리면, 빌리프의 다양한 선물이 쏟아집니다. 더 많은 이벤트 자세히 보기">
     <!-- <meta property="og:video" content="https://youtu.be/7LB0Id5a5Jk">
     <meta property="og:video:type" content="application/x-shockwave-flash">
     <meta property="og:video:width" content="1200"> -->
