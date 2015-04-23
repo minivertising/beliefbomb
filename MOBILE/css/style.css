@@ -1051,14 +1051,13 @@ html[xmlns] .clearfix {
 .wrap_page.popup.game .ctn_num{
 	position:absolute;
 	z-index:999;
-	width:16%;
+	width:12%;
 	left:50%;
-	margin-left:-8%;
+	margin-left:-6%;
 	top:37%;	
 }
 .wrap_page.popup.game .ctn_num div{
-	float:left;
-	width:30%;
+	width:100%;
 	text-align:center;
 }
 .wrap_page.popup.game .ctn_num div img{
