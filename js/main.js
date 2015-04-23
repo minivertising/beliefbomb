@@ -1345,13 +1345,13 @@ function show_detail_cal(cal_date)
 		},
 		url: "../main_exec.php",
 		success: function(response){
+			/*
 			var cal_array = response.split("||");
 			//var num = 0;
 			var list_str = "<ul>";
 			var event_img	= "";
 			while (cal_array.length)
 			{
-				/*
 				var cal_gubun_arr = cal_array.split("/");
 				if (cal_gubun_arr[1] == "1")
 					event_img = "<img src='images/icon_s_ban.png' alt=''/>";
