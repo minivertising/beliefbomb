@@ -100,6 +100,24 @@
   </div><!--wrap_page popup-->    
   <!-------------- 미션 성공 & 미당첨 alert -------------->
 
+  <!-------------- 이벤트 당첨여부 체크 alert -------------->
+  <div id="event_check_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
+    <div class="block_close clearfix">
+      <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
+    </div>
+    <div class="content">
+      <div class="inner alert">
+        <div class="title">
+          <img src="img/popup/title_alert_fail.png" alt=""/>
+        </div>
+        <div class="btn_block">
+          <a href="#" onclick="event_winner_check();"><img src="img/popup/btn_re.png" alt=""/></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div><!--wrap_page popup-->    
+  <!-------------- 이벤트 당첨여부 체크 alert -------------->
+
 
   </body>
 </html>
@@ -231,32 +249,7 @@ function deviceMotionHandler(eventData) {
 					$("#cap1").hide();
 					$("#body1").hide();
 					$('.ending_img').show(0, function(){
-						setTimeout(function(){
-							$.ajax({
-								type:"POST",
-								cache: false,
-								data:{
-									"exec"			: "winner_check"
-								},
-								url: "../main_exec.php",
-								success: function(response){
-									if (response == "N")
-									{
-										setTimeout("game_sorry();",500);
-										return false;
-									}else if (response == "Y"){
-										location.href = "./popup_input1.php?gift=cream";
-										return false;
-									}else if (response == "K"){
-										location.href = "./popup_input1.php?gift=kit";
-										return false;
-									}else if (response == "M") {
-										location.href = "./popup_input1.php?gift=miniature";
-										return false;
-									}
-								}
-							});
-						},2000);
+						window.setTimeout("m_event_check_data();",2000);
 					});
 
 					return false;
@@ -279,6 +272,46 @@ function deviceMotionHandler(eventData) {
 		lastY = y;
 		lastZ = z;
 	}
+}
+
+function m_event_check_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#event_check_alert',
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+
+}
+
+function event_winner_check()
+{
+	$.ajax({
+		type:"POST",
+		cache: false,
+		data:{
+			"exec"			: "winner_check"
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			if (response == "N")
+			{
+				setTimeout("game_sorry();",500);
+				return false;
+			}else if (response == "Y"){
+				location.href = "./popup_input1.php?gift=cream";
+				return false;
+			}else if (response == "K"){
+				location.href = "./popup_input1.php?gift=kit";
+				return false;
+			}else if (response == "M") {
+				location.href = "./popup_input1.php?gift=miniature";
+				return false;
+			}
+		}
+	});
 }
 
 $(document).ready(function() {
