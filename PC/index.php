@@ -463,8 +463,7 @@
 ?>
             </div>
               <div class="cnt_num clearfix" style="display:none">
-                <div><img src="images/popup/cnt_0.png" alt="" id="game_count"/></div>
-                <div><img src="images/popup/cnt_f.png" alt=""/></div>
+                <div><img src="images/popup/cnt_1.png" alt="" id="game_count"/></div>
               </div>
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
