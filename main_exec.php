@@ -47,16 +47,16 @@ switch ($_REQUEST['exec'])
 
 		if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 		{
-			$surl	= make_surl($mb_chkphone, "2");
+			$surl	= make_surl($serialNumber, "2");
 			if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 			{
-				$surl	= make_surl($mb_chkphone, "3");
+				$surl	= make_surl($serialNumber, "3");
 				if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 				{
-					$surl	= make_surl($mb_chkphone, "4");
+					$surl	= make_surl($serialNumber, "4");
 					if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 					{
-						$surl	= make_surl($mb_chkphone, "5");
+						$surl	= make_surl($serialNumber, "5");
 					}
 				}
 			}
