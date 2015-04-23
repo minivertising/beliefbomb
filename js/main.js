@@ -1345,25 +1345,25 @@ function show_detail_cal(cal_date)
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			/*
-			alert(response);
 			var cal_array = response.split("||");
-			var i = 0;
+			//var num = 0;
 			var list_str = "<ul>";
 			var event_img	= "";
 			while (cal_array.length)
 			{
-				var cal_gubun_arr = cal_array[i].split("/");
-				if (cal_gubun_arr == "1")
+				/*
+				var cal_gubun_arr = cal_array.split("/");
+				if (cal_gubun_arr[1] == "1")
 					event_img = "<img src='images/icon_s_ban.png' alt=''/>";
 				else
 					event_img = "<img src='images/icon_s_car.png' alt=''/>";
 				list_str += "<li>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + cal_gubun_arr[0]+ event_img + "</li>";
-				i++;
+				//num++;
 			}
 			list_str		+= "</ul>";
 			*/
 			$(".list_detail").html("<ul><li>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
+			//$(".list_detail").html(list_str);
 		}
 	});
 
