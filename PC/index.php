@@ -58,10 +58,10 @@
     <!------------- 세번째 영역 -------------------->
     <div class="area3 block_offevent_1">
       <div class="title">
+        <div class="btn_cal">
+          <a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_cal.png" alt=""/></a>
+        </div>
         <img src="images/title_offevent_1.png" alt=""/>
-      </div>
-      <div class="btn_cal">
-      	<a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_cal.png" alt=""/></a>
       </div>
       <div class="ab_inner">
       	<div class="off1_img1"><img src="images/img_offevent1_2.png" alt=""/></div>
@@ -72,12 +72,12 @@
     <!------------- 네번째 영역 -------------------->
     <div class="area4 block_offevent_2" id="area4">
       <div class="title">
+        <div class="btn_cal">
+          <a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_cal.png" alt=""/></a>
+        </div>
         <img src="images/title_offevent_2.png" alt=""/>
       </div>
 
-      <div class="btn_cal">
-      	<a href="#" data-mfp-src="#cal_pop" class="popup-with-zoom-anim2" style="outline:none"><img src="images/btn_cal.png" alt=""/></a>
-      </div>
       <div class="block_img_detail clearfix">
         <div class="d_1" style="opacity:0">
           <img src="images/img_event2_detail_1.png" alt=""/>
@@ -418,19 +418,15 @@
     <!------------- 광고성 정보전송동의 팝업 -------------------->
 
       <!------------- QR코드 팝업 -------------------->
-    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none">
-      <div class="p_mid">
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none;">
+      <div class="p_mid qr">
         <div class="block_close clearfix">
           <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
         <div class="block_content">
           <div class="inner">
-            <div class="title">
-              <img src="images/qr_text.png" alt="" id="input1_image"/>
-            </div>
-            <div class="input_block">
-              <img src='images/qrcode.png'  style="width:300px"/>
-            </div>
+          	<div style="padding-bottom:30px;"><img src="images/popup/title_qr.png" alt=""/></div>
+            <div><img src="images/qrcode.png" width="150" alt=""/></div>
           </div><!--inner-->
         </div>
 
@@ -893,10 +889,10 @@
           </div>
           <div class="block_content">
             <div class="title">
-              <img src="images/popup/title_alert_thx.png" alt=""/>
+              <img src="images/popup/title_mission.png" alt=""/>
             </div>
             <div class="btn_block">
-              <a href="#" onclick="event_winner_check();"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+              <a href="#" onclick="event_winner_check();"><img src="images/popup/btn_check.png" alt=""/></a>
             </div>
           </div>
         </div>

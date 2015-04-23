@@ -108,10 +108,10 @@
     <div class="content">
       <div class="inner alert">
         <div class="title">
-          <img src="img/popup/title_alert_fail.png" alt=""/>
+          <img src="img/popup/title_mission.png" alt=""/>
         </div>
         <div class="btn_block">
-          <a href="#" onclick="event_winner_check();"><img src="img/popup/btn_re.png" alt=""/></a>
+          <a href="#" onclick="event_winner_check();"><img src="img/popup/btn_gift_check.png" alt=""/></a>
         </div>
       </div><!--inner-->
     </div>
