@@ -168,6 +168,7 @@ body{
 	background:#f6f6f6;
 	padding:30px 0;
 	text-align:center;
+	margin-top:-10px;
 }
 
 /*popup*/
@@ -731,13 +732,13 @@ body{
 	position:absolute;
 	top:80px;
 	right:80%;
-	z-index:801;
+	z-index:799;
 }
 .contents_wrap .area1 .cap_abom{
 	position:absolute;
 	top:80px;
 	left:80%;
-	z-index:801;
+	z-index:799;
 }
 .contents_wrap .area1 .bg_mbom{
 	position:absolute;
@@ -918,7 +919,7 @@ padding-top:50px;
 }
 .block_offevent_3 .vs{
 	position:absolute;
-	top:90px;
+	top:100px;
 	left:48%;
 }
 .block_offevent_3 .mbom{
@@ -941,7 +942,7 @@ padding-top:50px;
 .block_offevent_3 .abom .img{
 	margin-top:0;
 	padding-top:17px;
-	height:503px;
+	height:501px;
 }
 .block_offevent_3 .mbom .img{
 }
