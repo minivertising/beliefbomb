@@ -103,7 +103,7 @@
   <!-------------- 미션 성공 & 미당첨 alert -------------->
 
   <!-------------- 이벤트 당첨여부 체크 alert -------------->
-  <div id="event_check_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog">
+  <div id="event_check_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
     <div class="block_close clearfix">
       <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
     </div>

@@ -1345,6 +1345,7 @@ function show_detail_cal(cal_date)
 		},
 		url: "../main_exec.php",
 		success: function(response){
+			
 			$(".list_detail").html("<ul><li>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
 		}
 	});
