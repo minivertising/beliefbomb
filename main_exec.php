@@ -45,16 +45,16 @@ switch ($_REQUEST['exec'])
 
 		$surl	= make_surl($serialNumber, "1");
 
-		if ($surl == "RATE_LIMIT_EXCEEDED")
+		if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 		{
 			$surl	= make_surl($mb_chkphone, $serialNumber, "2");
-			if ($surl == "RATE_LIMIT_EXCEEDED")
+			if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 			{
 				$surl	= make_surl($mb_chkphone, $serialNumber, "3");
-				if ($surl == "RATE_LIMIT_EXCEEDED")
+				if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 				{
 					$surl	= make_surl($mb_chkphone, $serialNumber, "4");
-					if ($surl == "RATE_LIMIT_EXCEEDED")
+					if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 					{
 						$surl	= make_surl($mb_chkphone, $serialNumber, "5");
 					}
