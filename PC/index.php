@@ -424,7 +424,7 @@
     <!------------- 광고성 정보전송동의 팝업 -------------------->
 
       <!------------- QR코드 팝업 -------------------->
-    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none;">
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none;margin-left:-175px;margin-top:-205px">
       <div class="p_mid qr">
         <div class="block_close clearfix">
           <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
