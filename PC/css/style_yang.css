@@ -266,13 +266,15 @@ body{
 	padding-left:40px;
 }
 .popup_wrap .p_mid.cal .list_cal .list_detail ul li{
-	color:#666;
+	color:#0085d9;
 	text-align:left;
-	font-size:12px;
+	font-size:16px;
+	font-weight:bold;
 	letter-spacing:-1px;
 	padding-bottom:4px;
 	display:block;
 	line-height:16px;
+	text-align:center;
 }
 
 .popup_wrap .p_mid.cal .list_cal .list_detail ul li span,
