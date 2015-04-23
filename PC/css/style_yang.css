@@ -191,7 +191,7 @@ body{
 }
 .popup_wrap .p_mid.qr{
 	width:350px;
-	height:410px;
+	height:385px;
 }
 .popup_wrap .p_mid.cal{
 	width:900px;
@@ -931,11 +931,17 @@ padding-top:50px;
 .block_offevent_3 .mbom .title,
 .block_offevent_3 .abom .title{
 	height:76px;
-	padding-top:80px;
+	padding-top:100px;
 }
 .block_offevent_3 .mbom .img,
 .block_offevent_3 .abom .img{
 	height:540px;
+	margin-top:-30px;
+}
+.block_offevent_3 .abom .img{
+	margin-top:0;
+	padding-top:17px;
+	height:503px;
 }
 .block_offevent_3 .mbom .img{
 }
@@ -953,7 +959,7 @@ padding-top:50px;
 	text-align:center;
 }
 .block_offevent_3 .abom .txt{
-	padding-top:20px;
+	padding-top:12px;
 }
 .block_offevent_3 .abom .btn_block{
 	padding-top:30px;
