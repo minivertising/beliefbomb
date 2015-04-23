@@ -472,10 +472,10 @@ function chk_input2_mobile()
 			url: "../main_exec.php",
 			beforeSend:function(){
 				$("#input_div").hide();
-				$("#loding_div").show();
+				$("#loading_div").show();
 			},
 			success: function(response){
-				$("#loding_div").hide();
+				$("#loading_div").hide();
 				$("#input_div").show();
 				if (response == "Y")
 				{

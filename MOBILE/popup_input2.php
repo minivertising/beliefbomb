@@ -3,12 +3,12 @@
 	$phone	= $_POST['mb_phone1']."-".$_POST['mb_phone2']."-".$_POST['mb_phone3'];
 
 	// 주소 바로 입력시 index로 이동
+	/*
 	if ( !isset($_SERVER['HTTP_REFERER'])) { 
 		echo "<script>location.href='index.php'</script>"; 
 		exit; 
 	} 
-	
-
+	*/
 ?>
 <body class="bg_blue">
   <input type="hidden" name="mb_gift" id="mb_gift" value="<?=$_POST['mb_gift']?>">
@@ -55,7 +55,7 @@
     </div>
   </div>
   <div id="loading_div" style="position:absolute;width:100%;height:100%;background:white;display:none">
-    <div style="position:absolute;top:50%;left:50%;margin-top:-64px;margin-left:-64px;height:500px">
+    <div style="position:absolute;top:50%;left:50%;margin-top:-64px;margin-left:-64px;">
       <img src="img/loading.gif">
     </div>
   </div>
