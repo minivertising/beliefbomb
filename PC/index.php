@@ -382,7 +382,9 @@
         </div>
         <div class="block_content agree">
           <div class="inner">
-          개인정보 활용동의 내용
+<?
+	include_once "./use_agree.php";
+?>
           </div><!--inner-->
         </div>
       </div>
@@ -396,7 +398,9 @@
         </div>
         <div class="block_content agree">
           <div class="inner">
-          개인정보 취급 위탁동의 내용
+<?
+	include_once "./privacy_agree.php";
+?>
           </div><!--inner-->
         </div>
       </div>
@@ -410,7 +414,9 @@
         </div>
         <div class="block_content agree">
           <div class="inner">
-          광고성 정보전송동의 내용
+<?
+	include_once "./adver_agree.php";
+?>
           </div><!--inner-->
         </div>
       </div>
