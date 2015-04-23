@@ -897,7 +897,7 @@ var currentsec=9;
 var currentmil=100;
 var keepgoin=false;
 var controller;
-
+var event_triger = 0;
 $(document).ready(function() {
 	// 체크박스 스타일 설정
 	$('.zoom-anim-dialog input').on('ifChecked ifUnchecked', function(event){
