@@ -12,9 +12,9 @@
         <span><img src="images/ber_menu.png" alt=""/></span>
         <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_3.png" alt=""/></a>
         <a href="#" data-mfp-src="#cal_pop" class="btn_view_pro popup-with-zoom-anim2" style="outline:none"><img src="images/btn_menu_2.png" alt=""/></a>
-        <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
-        <a href="#" class="btn_fb" onclick="sns_share('facebook')"><img src="images/btn_fb.png" alt=""/></a>
-        <a href="#" class="btn_kt" onclick="sns_share('story')"><img src="images/btn_kt.png" alt=""/></a>
+        <a href="#" onclick="screen_move('product')" class="btn_view_pro" style="padding-left:0px;padding-right:45px"><img src="images/btn_view_product.png" alt=""/></a>
+        <a href="#" class="btn_fb" onclick="sns_share('facebook')" style="padding-left:0px"><img src="images/btn_fb.png" alt=""/></a>
+        <a href="#" class="btn_kt" onclick="sns_share('story')" style="float:left"><img src="images/btn_ks.png" alt=""/></a>
       </div>
     </div> 
   </div> 
@@ -301,7 +301,7 @@
               </ul>
               <ul class="clearfix">
                 <li class="t_name"></li>
-                <li class="input_txt">
+                <li class="input_txt" style="margin-left:4px;">
                   <select name="mb_shop" id="mb_shop">
                     <option value="">선택하세요</option>
                   </select>
@@ -358,7 +358,7 @@
               </ul>
               <ul class="clearfix">
                 <li class="t_name"></li>
-                <li class="input_txt">
+                <li class="input_txt" style="margin-left:4px;">
                   <select name="mb_shop" id="mb_shop">
                     <option value="">선택하세요</option>
                   </select>
@@ -458,7 +458,7 @@
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
             </div>
-            <div class="img_product">
+            <div class="img_product" id="game_ing">
               <div class="p_inner">
                 <div class="cap" id="cap1">
                   <img src="images/popup/cap_1.png" alt="" id="cap_img"/>
@@ -480,6 +480,9 @@
                 </div>
 
               </div>
+            </div>
+            <div class="img_product ending" id="game_end" style="display:none;">
+              <img src="images/popup/game_ending.gif"  alt=""/>
             </div>
             <div class="time clearfix">
               <div class="num">
@@ -825,7 +828,7 @@
           </div>
           <div class="block_content">
             <div class="title">
-              <img src="images/popup/txt_fail.png" alt=""/>
+              <img src="images/popup/title_alert_fail.png" alt=""/>
             </div>
             <div class="btn_block">
               <a href="#" onclick="$.magnificPopup.close();window.setTimeout('game_ready();',500);"><img src="images/popup/btn_re.png" alt=""/></a>
@@ -876,6 +879,26 @@
     </div>
       <!------------- 이벤트 당첨 후 완료 alert -------------------->
 
+      <!------------- 이벤트 당첨여부 체크 alert -------------------->
+    <div id="event_check_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+      <div class="p_alert">
+        <div class="inner">
+          <div class="block_close clearfix">
+            <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
+          </div>
+          <div class="block_content">
+            <div class="title">
+              <img src="images/popup/title_alert_thx.png" alt=""/>
+            </div>
+            <div class="btn_block">
+              <a href="#" onclick="event_winner_check();"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!------------- 이벤트 당첨여부 체크 alert -------------------->
+
 
 <!--  주소검색 DIV 시작  -->
   <div id="post_div" style="display:none;border:5px solid;position:fixed;width:650px;height:600px;margin-left:-325px;top:50%;left:50%;margin-top:-300px;overflow:hidden;-webkit-overflow-scrolling:touch;z-index:999999">
@@ -894,7 +917,7 @@ var currentsec=9;
 var currentmil=100;
 var keepgoin=false;
 var controller;
-
+var event_triger = 0;
 $(document).ready(function() {
 	// 체크박스 스타일 설정
 	$('.zoom-anim-dialog input').on('ifChecked ifUnchecked', function(event){

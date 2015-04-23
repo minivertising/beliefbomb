@@ -42,6 +42,33 @@
 		return $memberCnt;
 	}
 
+	// 회원정보 가져오기(serialnumer)
+	function BB_check_serial($serial)
+	{
+		global $_gl;
+		global $my_db;
+
+		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_serialnumber='".$serial."'";
+		$result 	= mysqli_query($my_db, $query);
+		while($data = mysqli_fetch_array($result))
+			$info = $data;
+
+		return $info;
+	}
+
+	function BB_shop_info($shop_idx)
+	{
+		global $_gl;
+		global $my_db;
+
+		$query 		= "SELECT * FROM ".$_gl['shop_info_table']." WHERE idx='".$shop_idx."'";
+		$result 	= mysqli_query($my_db, $query);
+		while($data = mysqli_fetch_array($result))
+			$info = $data;
+
+		return $info;
+	}
+
 	/* returns the shortened url */
 	function get_bitly_short_url($url,$login,$appkey,$format='txt') {
 		$connectURL = 'http://api.bit.ly/v3/shorten?login='.$login.'&apiKey='.$appkey.'&uri='.urlencode($url).'&format='.$format;
@@ -77,9 +104,9 @@
 			$short_url = get_bitly_short_url($longurl,'kyhfan','R_11ea80ffc2bf4bbe8c848b761e71df8a');
 		}else if ($num == "2"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan2','R_f7547b30052049679ee65de54c782e20');
-		}else if ($num == "2"){
+		}else if ($num == "3"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan3','R_426adbe491a44aee82bd938e9c7f032e');
-		}else if ($num == "2"){
+		}else if ($num == "4"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan4','R_6e2b8aac3f514271a5901cf546f9540a');
 		}else{
 			$short_url = get_bitly_short_url($longurl,'kyhfan5','R_089bb97a7ff8481da0e7b1600c6b6c0f');
@@ -130,41 +157,29 @@
 
 		$params = array(
 			'send_time' => '', 
-			'send_phone' => '01030033965', 
-			//'dest_phone' => $phone, 
-			'dest_phone' => '01030033965', 
+			'send_phone' => '0800237007', 
+			'dest_phone' => $phone, 
+			//'dest_phone' => '01030033965', 
 			//'dest_phone' => '01099111804', 
 			//'dest_phone' => '01030885731', 
 			//'dest_phone' => '01030033965', 
 			'send_name' => '', 
 			'dest_name' => '', 
-			'subject' => '더페이스샵 - 하얀 수분 크림 쿠폰',
+			'subject' => 'water bomb! bomb! 빌리프 수분폭탄 쿠폰',
 			'msg_body' => "
-[더페이스샵_하얀수분크림]
-♥ 1만명 체험Kit 축! 당첨 ♥
-아래 URL을 클릭하시면 모바일 쿠폰 페이지 확인이 가능합니다.
-선택하신 매장에서 쿠폰을 제시하고 하얗고 촉촉한 블란클라우딩 하얀수분크림 10ml로 교환하세요!
+빌리프 수분폭탄 이벤트에 당첨되신 것을 축하드립니다.
 
-▶ 하얀 수분 크림 10ml Kit 받기:
+빌리프 폭탄크림을 통해 팡팡! 터지는 촉촉함을 피부로 직접 경험해보세요.
+
+▶ 쿠폰 받기:
 ".$s_url."
-▶ 교환기간 : 3/19 ~ 3/22
+▶ 교환 기간:
+4/28 ~ 6/14
 
-* 직원확인용 버튼 클릭시 제품교환이 불가합니다.
-* 매장은 신청 시 선택한 매장만 가능하며, 변경이 불가능합니다.
-* 불법적인 방법으로 이벤트에 참여하신 고객님은 이벤트 당첨 대상에서 제외되며, 당첨 이후에도 당첨이 취소될 수 있습니다.
+* 지정하신 오프라인 매장에서만 사용가능합니다.
+* 6/14이후 쿠폰 교환이 불가합니다.
 
-★★ 추가 혜택
-체험Kit에 당첨된 1만분께만 드리는 혜택! 하얀 수분 크림 구매 시 5,000원을 할인해드립니다.
-▶ 쿠폰번호
-
-▶ 쿠폰 사용기간 : 3/19 ~ 3/31
-
-* 할인쿠폰은 면세점을 제외한 전국매장에서 사용가능(단, 이마트 매장은 5,000원 적립)
-* 다른 행사와 중복 적용불가능(단, 구름쿠션 증정행사와 중복 가능)
-* 오프라인 매장에서만 사용가능.
-* 쿠폰 사용문의 
-031-689-7506
-"
+● 불법적인 방법으로 이벤트에 참여하신 고객님은 이벤트 당첨 대상에서 제외되며, 당첨 이후에도 당첨이 취소될 수 있습니다."
 		);
 
 		//curl initialization

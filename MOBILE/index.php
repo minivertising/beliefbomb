@@ -3,7 +3,7 @@
 ?>
   <body>
 <div class="menu clearfix">
-   <a href="www.belifcosmetic.com/mobile" class="logo" target="_blank"><img src="img/logo.png" width="56" alt=""/></a>
+   <a href="http://www.belifcosmetic.com/mobile" class="logo" target="_blank"><img src="img/logo.png" width="56" alt=""/></a>
    <a href="#" class="menu_ham"  onclick="show_menu()"><img src="img/menu_ham.png" width="26" alt=""/></a>
 </div>
 <div>
@@ -62,7 +62,7 @@
       <li class="pd"><a href="#" onclick="screen_move('product');"><img src="img/gnb_pd.png"  alt=""/></a></li>
       <li class="clearfix last">
         <a href="#" class="left" onclick="sns_share('facebook')"><img src="img/gnb_fb.png"  alt=""/></a>
-        <a href="#" onclick="sns_share('kakao')"><img src="img/gnb_kt.png"  alt=""/></a>
+        <a href="#"   id="kakao-link-btn" onclick="sns_share('kakao')"><img src="img/gnb_kt.png"  alt=""/></a>
       </li>
     </ul>
   </div>

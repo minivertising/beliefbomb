@@ -1,6 +1,13 @@
 <?
 	include_once "./header.php";
 	$phone	= $_POST['mb_phone1']."-".$_POST['mb_phone2']."-".$_POST['mb_phone3'];
+
+	// 주소 바로 입력시 index로 이동
+	if ( !isset($_SERVER['HTTP_REFERER'])) { 
+		echo "<script>location.href='index.php'</script>"; 
+		exit; 
+	} 
+
 ?>
 <body class="bg_blue">
   <input type="hidden" name="mb_gift" id="mb_gift" value="<?=$_POST['mb_gift']?>">
@@ -166,6 +173,7 @@
 </html>
 <script src="http://dmaps.daum.net/map_js_init/postcode.js"></script>
 <script type="text/javascript">
+var event_triger = 0;
 $(document).ready(function() {
 	// 체크박스 스타일 설정
 	$('.wrap_page input').on('ifChecked ifUnchecked', function(event){

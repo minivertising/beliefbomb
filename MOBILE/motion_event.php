@@ -1,5 +1,12 @@
 <?
 	include_once "./header.php";
+
+	// 주소 바로 입력시 index로 이동
+	if ( !isset($_SERVER['HTTP_REFERER']) && $_SERVER['REMOTE_ADDR'] != "127.0.0.1" ) { 
+		echo "<script>location.href='index.php'</script>"; 
+		exit; 
+	} 
+
 ?>
   <div class="start_area" style="width:100%;margin-top:200px;text-align:center;">
     <a href="#" onclick="javascript:event_start();">시작하기</a>

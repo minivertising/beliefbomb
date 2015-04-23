@@ -2,18 +2,18 @@
 	include_once "../config.php";
 ?>
 <!doctype html>
-<html prefix="og: http://ogp.me/ns#">
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
+<html>
+  <head>
     <title>belif bomb</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
-    <meta property="og:title" content="Water Bomb Bomb" />
+    <meta property="og:title" content="수분폭탄, 즐거움이 터진다">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.thefaceshopclouding.co.kr/MOBILE/index.php" />
-    <meta property="og:image" content="http://www.thefaceshopclouding.co.kr/PC/images/sns_image.jpg" />
-    <meta property="og:description" content="빌리프" />
+    <meta property="og:url" content="http://www.belifbomb.com/MOBILE/index.php" />
+    <meta property="og:image" content="http://www.belifbomb.com/MOBILE/img/sns_image2.png" />
+    <meta property="og:description" content="지금 정해진 시간안에 폭탄 크림을 터트리면, 빌리프의 다양한 선물이 쏟아집니다. 더 많은 이벤트 자세히 보기 빌리프 폭탄크림 정품 50ml-50개">
 
     <link rel="shortcut icon" type="image/x-icon" href="./images/icon/favicon.ico" />
     <title>Belif</title>

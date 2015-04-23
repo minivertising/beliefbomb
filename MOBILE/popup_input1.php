@@ -9,6 +9,13 @@
 		$gift_txt = "2";
 	else
 		$gift_txt = "3";
+
+	// 주소 바로 입력시 index로 이동
+	if ( !isset($_SERVER['HTTP_REFERER']) && $_SERVER['REMOTE_ADDR'] != "127.0.0.1" ) { 
+		echo "<script>location.href='index.php'</script>"; 
+		exit; 
+	} 
+
 ?>
 <body class="bg_blue">
   <form name="input_frm1" method="post">

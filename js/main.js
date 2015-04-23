@@ -1,4 +1,3 @@
-Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
 
 
 function addr_change(addr1)
@@ -224,6 +223,7 @@ function chk_input_mobile()
 		},
 		url: "../main_exec.php",
 		success: function(response){
+
 			if (response == "Y")
 			{
 				//$("#mb_chkphone").val(cel_phone);
@@ -248,6 +248,7 @@ function chk_input_mobile()
 			}
 			else
 			{
+				alert(response);
 				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
 				$("#mb_name").val("");
 				$("#mb_phone1").val("010");
@@ -262,209 +263,217 @@ function chk_input_mobile()
 
 function chk_input2()
 {
-	var mb_addr1			= $('#mb_addr1').val();
-	var mb_addr2			= $('#mb_addr2').val();
-	var mb_zipcode1		= $('#mb_zipcode1').val();
-	var mb_zipcode2		= $('#mb_zipcode2').val();
-	var mb_shop			= $('#mb_shop').val();
-	var mb_idx				= $('#mb_idx').val();
-	var mb_gift				= $("#mb_gift").val();
-	var mb_chkphone	= $("#mb_chkphone").val();
-
-	if (mb_gift == "cream")
+	if (event_triger == 0)
 	{
-		if (mb_zipcode1 == "")
+		event_triger = 1;
+		var mb_addr1			= $('#mb_addr1').val();
+		var mb_addr2			= $('#mb_addr2').val();
+		var mb_zipcode1		= $('#mb_zipcode1').val();
+		var mb_zipcode2		= $('#mb_zipcode2').val();
+		var mb_shop			= $('#mb_shop').val();
+		var mb_idx				= $('#mb_idx').val();
+		var mb_gift				= $("#mb_gift").val();
+		var mb_chkphone	= $("#mb_chkphone").val();
+
+		if (mb_gift == "cream")
 		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
+			if (mb_zipcode1 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+
+			if (mb_zipcode2 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+
+			if (mb_addr1 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+
+			if (mb_addr2 == "")
+			{
+				//alert('주소를 선택 안하셨습니다');
+				setTimeout("ins_data_cream();",500);
+				return false;
+			}
+		}else{
+			if (mb_addr1 == "")
+			{
+				//alert('매장 선택을 안 하셨습니다');
+				setTimeout("ins_data_etc();",500);
+				return false;
+			}
+
+			if (mb_addr2 == "")
+			{
+				//alert('매장 선택을 안 하셨습니다');
+				setTimeout("ins_data_etc();",500);
+				return false;
+			}
+
+			if (mb_shop == "")
+			{
+				//alert('매장 선택을 안 하셨습니다');
+				setTimeout("ins_data_etc();",500);
+				return false;
+			}
 		}
 
-		if (mb_zipcode2 == "")
-		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
-		}
 
-		if (mb_addr1 == "")
-		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
-		}
 
-		if (mb_addr2 == "")
-		{
-			//alert('주소를 선택 안하셨습니다');
-			setTimeout("ins_data_cream();",500);
-			return false;
-		}
-	}else{
-		if (mb_addr1 == "")
-		{
-			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data_etc();",500);
-			return false;
-		}
-
-		if (mb_addr2 == "")
-		{
-			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data_etc();",500);
-			return false;
-		}
-
-		if (mb_shop == "")
-		{
-			//alert('매장 선택을 안 하셨습니다');
-			setTimeout("ins_data_etc();",500);
-			return false;
-		}
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"				: "insert_detail_event",
+				"mb_zipcode1"	: mb_zipcode1,
+				"mb_zipcode2"	: mb_zipcode2,
+				"mb_addr1"			: mb_addr1,
+				"mb_addr2"			: mb_addr2,
+				"shop"				: mb_shop,
+				"mb_gift"			: mb_gift,
+				"mb_chkphone"	: mb_chkphone
+			},
+			url: "../main_exec.php",
+			success: function(response){
+				if (response == "Y")
+				{
+					setTimeout("event_complete();",500);
+					//$.magnificPopup.close();
+				}
+				else if (response == "D")
+				{
+					alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+					$("#mb_name").val("");
+					$("#mb_phone1").val("010");
+					$("#mb_phone2").val("");
+					$("#mb_phone3").val("");
+					$("#mb_addr1").val("");
+					$("#mb_addr2").val("");
+					$("#mb_zipcode1").val("");
+					$("#mb_zipcode2").val("");
+					$("#mb_shop").val("");
+					$('input').iCheck('uncheck');
+					$.magnificPopup.close();
+				}
+				else
+				{
+					alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
+					$("#mb_name").val("");
+					$("#mb_phone1").val("010");
+					$("#mb_phone2").val("");
+					$("#mb_phone3").val("");
+					$("#mb_addr1").val("");
+					$("#mb_addr2").val("");
+					$("#mb_shop").val("");
+					$("#mb_zipcode1").val("");
+					$("#mb_zipcode2").val("");
+					$('input').iCheck('uncheck');
+					$.magnificPopup.close();
+					$("#mb_chkphone").val(response);
+				}
+			}
+		});
 	}
-
-
-
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"				: "insert_detail_event",
-			"mb_zipcode1"	: mb_zipcode1,
-			"mb_zipcode2"	: mb_zipcode2,
-			"mb_addr1"			: mb_addr1,
-			"mb_addr2"			: mb_addr2,
-			"shop"				: mb_shop,
-			"mb_gift"			: mb_gift,
-			"mb_chkphone"	: mb_chkphone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			if (response == "Y")
-			{
-				setTimeout("event_complete();",500);
-				//$.magnificPopup.close();
-			}
-			else if (response == "D")
-			{
-				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
-				$("#mb_name").val("");
-				$("#mb_phone1").val("010");
-				$("#mb_phone2").val("");
-				$("#mb_phone3").val("");
-				$("#mb_addr1").val("");
-				$("#mb_addr2").val("");
-				$("#mb_zipcode1").val("");
-				$("#mb_zipcode2").val("");
-				$("#mb_shop").val("");
-				$('input').iCheck('uncheck');
-				$.magnificPopup.close();
-			}
-			else
-			{
-				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
-				$("#mb_name").val("");
-				$("#mb_phone1").val("010");
-				$("#mb_phone2").val("");
-				$("#mb_phone3").val("");
-				$("#mb_addr1").val("");
-				$("#mb_addr2").val("");
-				$("#mb_shop").val("");
-				$("#mb_zipcode1").val("");
-				$("#mb_zipcode2").val("");
-				$('input').iCheck('uncheck');
-				$.magnificPopup.close();
-				$("#mb_chkphone").val(response);
-			}
-		}
-	});
 }
 
 function chk_input2_mobile()
 {
-	var mb_addr1		= $('#mb_addr1').val();
-	var mb_addr2		= $('#mb_addr2').val();
-	var mb_zipcode1	= $('#mb_zipcode1').val();
-	var mb_zipcode2	= $('#mb_zipcode2').val();
-	var mb_shop			= $('#mb_shop').val();
-	var mb_idx			= $('#mb_idx').val();
-	var mb_gift			= $("#mb_gift").val();
-	var mb_chkphone	= $("#mb_chkphone").val();
-
-	if (mb_gift == "cream")
+	if (event_triger == 0)
 	{
-		if (mb_zipcode1 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+		event_triger = 1;
+		var mb_addr1		= $('#mb_addr1').val();
+		var mb_addr2		= $('#mb_addr2').val();
+		var mb_zipcode1	= $('#mb_zipcode1').val();
+		var mb_zipcode2	= $('#mb_zipcode2').val();
+		var mb_shop			= $('#mb_shop').val();
+		var mb_idx			= $('#mb_idx').val();
+		var mb_gift			= $("#mb_gift").val();
+		var mb_chkphone	= $("#mb_chkphone").val();
 
-		if (mb_zipcode2 == "")
+		if (mb_gift == "cream")
 		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_zipcode1 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_addr1 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_zipcode2 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_addr2 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
-	}else{
-		if (mb_addr1 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_addr1 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_addr2 == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
-		}
+			if (mb_addr2 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
+		}else{
+			if (mb_addr1 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 
-		if (mb_shop == "")
-		{
-			window.setTimeout("m_ins_data();",500);
-			return false;
+			if (mb_addr2 == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
+
+			if (mb_shop == "")
+			{
+				window.setTimeout("m_ins_data();",500);
+				return false;
+			}
 		}
+		$.ajax({
+			type:"POST",
+			data:{
+				"exec"				: "insert_detail_event",
+				"mb_zipcode1"	: mb_zipcode1,
+				"mb_zipcode2"	: mb_zipcode2,
+				"mb_addr1"			: mb_addr1,
+				"mb_addr2"			: mb_addr2,
+				"shop"				: mb_shop,
+				"mb_gift"			: mb_gift,
+				"mb_chkphone"	: mb_chkphone
+			},
+			url: "../main_exec.php",
+			success: function(response){
+				if (response == "Y")
+				{
+					setTimeout("event_m_complete();",500);
+					//location.href = "./index.php";
+				}
+				else if (response == "D")
+				{
+					alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
+					location.href = "./index.php";
+				}
+				else
+				{
+					alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
+					location.href = "./index.php";
+				}
+			}
+		});
 	}
-	$.ajax({
-		type:"POST",
-		data:{
-			"exec"				: "insert_detail_event",
-			"mb_zipcode1"	: mb_zipcode1,
-			"mb_zipcode2"	: mb_zipcode2,
-			"mb_addr1"			: mb_addr1,
-			"mb_addr2"			: mb_addr2,
-			"shop"				: mb_shop,
-			"mb_gift"			: mb_gift,
-			"mb_chkphone"	: mb_chkphone
-		},
-		url: "../main_exec.php",
-		success: function(response){
-			if (response == "Y")
-			{
-				setTimeout("event_m_complete();",500);
-				//location.href = "./index.php";
-			}
-			else if (response == "D")
-			{
-				alert("이미 이벤트에 응모하셨습니다.\n다음에 다시 참여해 주세요.");
-				location.href = "./index.php";
-			}
-			else
-			{
-				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
-				location.href = "./index.php";
-			}
-		}
-	});
 }
 
 function use_agree_data(gift)
@@ -677,9 +686,74 @@ function m_adver_agree_data()
 	}, 0);
 }
 
+function event_check_data()
+{
+	$.magnificPopup.open({
+		items: {
+			src: '#event_check_alert',
+		},
+		type: 'inline',
+		showCloseBtn : false
+	}, 0);
+}
+function event_winner_check()
+{
+	$.ajax({
+		type:"POST",
+		cache: false,
+		data:{
+			"exec"			: "winner_check"
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			if (response == "N")
+			{
+				$.magnificPopup.open({
+					items: {
+						src: '#event_sorry_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
+			}else if (response == "Y"){
+				$("#input1_image").attr("src","images/popup/title_gift_1.png");
+				$("#mb_gift").val("cream");
+				$.magnificPopup.open({
+					items: {
+						src: '#event_input1_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
+			}else if (response == "K"){
+				$("#input1_image").attr("src","images/popup/title_gift_3.png");
+				$("#mb_gift").val("kit");
+				$.magnificPopup.open({
+					items: {
+						src: '#event_input1_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
+			}else {
+				$("#input1_image").attr("src","images/popup/title_gift_2.png");
+				$("#mb_gift").val("miniature");
+				$.magnificPopup.open({
+					items: {
+						src: '#event_input1_pop',
+					},
+					type: 'inline',
+					showCloseBtn : false
+				}, 0);
+			}
+		}
+	});
+
+}
+
 function event_action()
 {
-	if (bomb_cnt > 50)
+	if (bomb_cnt >= 50)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -687,59 +761,11 @@ function event_action()
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
 		$("#game_title").hide();
-		
-
-		$.ajax({
-			type:"POST",
-			cache: false,
-			data:{
-				"exec"			: "winner_check"
-			},
-			url: "../main_exec.php",
-			success: function(response){
-				if (response == "N")
-				{
-					$.magnificPopup.open({
-						items: {
-							src: '#event_sorry_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "Y"){
-					$("#input1_image").attr("src","images/popup/title_gift_1.png");
-					$("#mb_gift").val("cream");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "K"){
-					$("#input1_image").attr("src","images/popup/title_gift_3.png");
-					$("#mb_gift").val("kit");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else {
-					$("#input1_image").attr("src","images/popup/title_gift_2.png");
-					$("#mb_gift").val("miniature");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}
-			}
+		$("#game_ing").hide();
+		$('#game_end').show(0, function(){
+			window.setTimeout("event_check_data();",2000);
 		});
-		return false;
+
 	}
 
 	var gage_per	= bomb_cnt*2;
@@ -749,6 +775,7 @@ function event_action()
 		gage_bg = "98";
 	}
 
+	
 	if (bomb_cnt % 2 == 0)
 	{
 		$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -788,7 +815,7 @@ function event_action()
 
 function event_action_ie8()
 {
-	if (bomb_cnt > 10)
+	if (bomb_cnt >= 50)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -796,59 +823,62 @@ function event_action_ie8()
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
 		$("#game_title").hide();
-		
-
-		$.ajax({
-			type:"POST",
-			cache: false,
-			data:{
-				"exec"			: "winner_check"
-			},
-			url: "../main_exec.php",
-			success: function(response){
-				if (response == "N")
-				{
-					$.magnificPopup.open({
-						items: {
-							src: '#event_sorry_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "Y"){
-					$("#input1_image").attr("src","images/popup/title_gift_1.png");
-					$("#mb_gift").val("cream");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else if (response == "K"){
-					$("#input1_image").attr("src","images/popup/title_gift_3.png");
-					$("#mb_gift").val("kit");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}else {
-					$("#input1_image").attr("src","images/popup/title_gift_2.png");
-					$("#mb_gift").val("miniature");
-					$.magnificPopup.open({
-						items: {
-							src: '#event_input1_pop',
-						},
-						type: 'inline',
-						showCloseBtn : false
-					}, 0);
-				}
-			}
+		$("#game_ing").hide();
+		$('#game_end').show(0, function(){
+			setTimeout(function(){
+				$.ajax({
+					type:"POST",
+					cache: false,
+					data:{
+						"exec"			: "winner_check"
+					},
+					url: "../main_exec.php",
+					success: function(response){
+						if (response == "N")
+						{
+							$.magnificPopup.open({
+								items: {
+									src: '#event_sorry_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else if (response == "Y"){
+							$("#input1_image").attr("src","images/popup/title_gift_1.png");
+							$("#mb_gift").val("cream");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else if (response == "K"){
+							$("#input1_image").attr("src","images/popup/title_gift_3.png");
+							$("#mb_gift").val("kit");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}else {
+							$("#input1_image").attr("src","images/popup/title_gift_2.png");
+							$("#mb_gift").val("miniature");
+							$.magnificPopup.open({
+								items: {
+									src: '#event_input1_pop',
+								},
+								type: 'inline',
+								showCloseBtn : false
+							}, 0);
+						}
+					}
+				});
+				return false;
+			},2000);
 		});
-		return false;
 	}
 
 	var gage_per	= bomb_cnt*2;
@@ -862,7 +892,8 @@ function event_action_ie8()
 	{
 		//$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#cap_img").rotate({
-			angle: 20,
+			angle: -20,
+			center: ["0%", "100%"],
 			animateTo:0
 		});
 		//$("#cap1").animate({top:-10},{duration:100,easing:'easeOutBounce'});
@@ -877,7 +908,8 @@ function event_action_ie8()
 	}else{
 		//$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: -20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#cap_img").rotate({
-			angle: -20,
+			angle: 20,
+			center: ["100%", "0%"],
 			animateTo:0
 		});
 		$("#gage_bg").animate({width:gage_bg + "%"},{duration:100,easing:'easeOutBounce'});
@@ -1135,6 +1167,8 @@ function game_ready()
 				$("#game_num4").attr("src","images/popup/num0.png");
 				$("#gage_bg").css("width", "0%");
 				$("#gage_bg").html("0%");
+				$("#game_ing").show();
+				$('#game_end').hide();
 				$("#game_title").show();
 				$(".btn_start").css("top","250px");
 				$(".btn_start").show();
@@ -1203,7 +1237,7 @@ function sns_share(media)
 {
 	if (media == "facebook")
 	{
-		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifbomb.co.kr/?media=facebook'),'sharer','toolbar=0,status=0,width=600,height=325');
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.belifbomb.com/?media=facebook'),'sharer','toolbar=0,status=0,width=600,height=325');
 		$.ajax({
 			type   : "POST",
 			async  : false,
@@ -1214,17 +1248,18 @@ function sns_share(media)
 			}
 		});
 	}else if (media == "kakao"){
+		Kakao.init('6a8c92a8f02eab6bc90b28fb96e4a56a');
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		Kakao.Link.createTalkLinkButton({
 		  container: '#kakao-link-btn',
-		  label: "서장훈이 화장품 CF를?! \n<아니 아니, 그게 아니고~> 전격 공개!\n 건조한 피부에 봄비같은 하얀 수분 크림 출시!\n 지금 10ml Kit도 신청하세요!",
+		  label: "지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기\r\n빌리프 폭탄크림 정품 50ml - 5개",
 		  image: {
-			src: 'http://www.thefaceshopclouding.co.kr/PC/images/sns_kt.jpg',
+			src: 'http://www.belifbomb.com/MOBILE/img/sns_image.png',
 			width: '1200',
 			height: '630'
 		  },
 		  webButton: {
-			text: '더페이스샵',
+			text: '수분폭탄, 즐거움이 터진다',
 			url: 'http://www.belifbomb.com/?media=kakao' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
 		  }
 		});
@@ -1247,7 +1282,7 @@ function sns_share(media)
 				Kakao.API.request( {
 					url : '/v1/api/story/linkinfo',
 					data : {
-						url : 'http://www.belifbomb.com/'
+						url : 'http://www.belifbomb.com/?media=story'
 					}
 				}).then(function(res) {
 					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
@@ -1255,7 +1290,7 @@ function sns_share(media)
 						url : '/v1/api/story/post/link',
 						data : {
 						link_info : res,
-							content:"빌리프 폭탄수분크림 \r\n\r\n테스트!"
+							content:"지금 정해진 시간안에 폭탄 크림을 터트리면 빌리프의 다양한 선물이 쏟아집니다.\r\n\r\n더 많은 이벤트 자세히 보기\r\n빌리프 폭탄크림 정품 50ml - 5개"
 						}
 					});
 				}).then(function(res) {

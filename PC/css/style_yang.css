@@ -655,13 +655,13 @@ body{
 	
 }
 .menu{
-	width:940px;
+	width:1000px;
 	height:70px;
 	z-index:5;
 	/*margin:0 auto;*/
 	position:absolute;
 	left:50%;
-	margin-left:-470px;
+	margin-left:-500px;
 }
 .menu .block_logo{
 	float:left;
@@ -670,7 +670,7 @@ body{
 .menu .block_menu{
 	padding-top:15px;
 	float:right;
-	width:763px;
+	width:823px;
 }
 .menu .block_menu a,
 .menu .block_menu span{
@@ -942,8 +942,8 @@ padding-top:50px;
 .btn_cal{
 	position:absolute;
 	text-align:center;
-	top:100px;
-	left:70%;
+	top:130px;
+	left:59%;
 }
 .ab_inner{
 	text-align:center;
