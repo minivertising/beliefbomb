@@ -493,10 +493,10 @@
             </div>
             <div class="time clearfix">
               <div class="num">
-                <img src="images/popup/num1.png" alt="" id="game_num1"/>
+                <img src="images/popup/num0.png" alt="" id="game_num1"/>
               </div>
               <div class="num">
-                <img src="images/popup/num0.png" alt="" id="game_num2"/>
+                <img src="images/popup/num5.png" alt="" id="game_num2"/>
               </div>
               <div class="num">
                 <img src="images/popup/num_dash.png" alt=""/>
@@ -920,7 +920,7 @@
 <script type="text/javascript">
 
 var bomb_cnt = 0;
-var currentsec=9;
+var currentsec=4;
 var currentmil=100;
 var keepgoin=false;
 var controller;

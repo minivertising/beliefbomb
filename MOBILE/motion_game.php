@@ -32,10 +32,10 @@
         </div>
         <div class="time clearfix">
           <div class="num">
-            <img src="img/popup/num1.png" alt="" id="game_num1"/>
+            <img src="img/popup/num0.png" alt="" id="game_num1"/>
           </div>
           <div class="num">
-            <img src="img/popup/num0.png" alt="" id="game_num2"/>
+            <img src="img/popup/num5.png" alt="" id="game_num2"/>
           </div>
           <div class="num">
             <img src="img/popup/num_dash.png" alt=""/>
@@ -129,7 +129,7 @@
 	var lastUpdate = 0; // 레코드 위에 한 번 흔들다 시간
 	var x, y, z, lastX, lastY, lastZ; // 정의 x, y, z 기록 세 축 데이터 및 한 번 트리거 데이터
 	var bomb_cnt = 0;
-	var currentsec=9;
+	var currentsec=4;
 	var currentmil=100;
 	var keepgoin=false;
 /*
@@ -214,7 +214,7 @@ function deviceMotionHandler(eventData) {
 	var curTime = new Date().getTime();
 
 	// 100 밀리초 대해 한 번 위치 판단
-	if ((curTime - lastUpdate) > 100) {
+	if ((curTime - lastUpdate) > 80) {
 
 		var diffTime = curTime - lastUpdate;
 		lastUpdate = curTime;
@@ -249,7 +249,7 @@ function deviceMotionHandler(eventData) {
 					$("#cap1").hide();
 					$("#body1").hide();
 					$('.ending_img').show(0, function(){
-						window.setTimeout("m_event_check_data();",2000);
+						window.setTimeout("m_event_check_data();",3000);
 					});
 
 					return false;
