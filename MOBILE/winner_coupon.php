@@ -10,7 +10,7 @@
   <div class="wrap_page coupon">
     <div class="txt_block">
       <ul>
-        <li>교환기간 : 2015.4.24 ~ 7.31</li>
+        <li>교환기간 : 2015.4.28 ~ 6.14</li>
         <li>내가 선택한 매장 : <?=$shop_info['shop_name']?></li>
       </ul>
     </div>
