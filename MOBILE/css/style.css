@@ -388,7 +388,7 @@ html[xmlns] .clearfix {
 	background:#9cebfc;
 }
 .bg_blue_game{
-	background:#e4f7ff;
+	background:#8fe4f8;
 }
 .wrap_page.popup{
 	background:#fff url(../img/popup/bg_popup.png) no-repeat bottom center;
@@ -399,6 +399,7 @@ html[xmlns] .clearfix {
 .wrap_page.popup.game{
 	background:none;
 	padding-bottom:0;
+	background:#e4f7ff;
 }
 .wrap_page.popup.game .content{
 	padding-top:0;
@@ -1030,6 +1031,7 @@ html[xmlns] .clearfix {
 }
 .wrap_page.popup.game .game_bg img{
 	width:100%;
+	margin-bottom:-5px;
 }
 .wrap_page.popup.game .title{
 	height:20%;
