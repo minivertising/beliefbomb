@@ -1362,7 +1362,7 @@ function show_detail_cal(cal_date)
 			}
 			list_str		+= "</ul>";
 			*/
-			$(".list_detail").html("<ul><li>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
+			$(".list_detail").html("<ul><li><span>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
 			//$(".list_detail").html(list_str);
 		}
 	});
