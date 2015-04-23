@@ -61,5 +61,6 @@
 
 </script>
   </head>
-  <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+  <!-- <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'> -->
+  <body>
 
