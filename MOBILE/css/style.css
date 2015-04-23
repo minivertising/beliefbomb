@@ -277,16 +277,17 @@ html[xmlns] .clearfix {
 	margin-bottom: -1.2%;
 }
 .offevent1 .inner_ele{
-	width:50%;
+	width:13%;
 	position:absolute;
 	/*top:30%;*/
-	right:0%;
+	right:16%;
+	top:8%;
 }
 .offevent1 .btn_block{
-	padding:5% 0;
+	padding:0;
 }
 .offevent1 .btn_block a img{
-	width:40%;
+	width:100%;
 }
 .bg_offevnet1 img{
 	width:100%;
@@ -302,15 +303,17 @@ html[xmlns] .clearfix {
 	margin-bottom: -1.2%;
 }
 .offevent2 .inner_ele{
-	width:100%;
+	width:13%;
 	position:absolute;
-	top:23.5%;
+	/*top:30%;*/
+	right:16%;
+	top:7%;
 }
 .offevent2 .btn_block{
-	padding:5% 0;
+	padding:0;
 }
 .offevent2 .btn_block a img{
-	width:40%;
+	width:100%;
 }
 .bg_offevnet2 img{
 	width:100%;
