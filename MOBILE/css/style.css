@@ -277,9 +277,10 @@ html[xmlns] .clearfix {
 	margin-bottom: -1.2%;
 }
 .offevent1 .inner_ele{
-	width:100%;
+	width:50%;
 	position:absolute;
-	top:30%;
+	/*top:30%;*/
+	right:0%;
 }
 .offevent1 .btn_block{
 	padding:5% 0;
