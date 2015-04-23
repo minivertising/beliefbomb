@@ -12,9 +12,9 @@
         <span><img src="images/ber_menu.png" alt=""/></span>
         <a href="#" onclick="screen_move('calender')"><img src="images/btn_menu_3.png" alt=""/></a>
         <a href="#" data-mfp-src="#cal_pop" class="btn_view_pro popup-with-zoom-anim2" style="outline:none"><img src="images/btn_menu_2.png" alt=""/></a>
-        <a href="#" onclick="screen_move('product')" class="btn_view_pro"><img src="images/btn_view_product.png" alt=""/></a>
-        <a href="#" class="btn_fb" onclick="sns_share('facebook')"><img src="images/btn_fb.png" alt=""/></a>
-        <a href="#" class="btn_kt" onclick="sns_share('story')"><img src="images/btn_ks.png" alt=""/></a>
+        <a href="#" onclick="screen_move('product')" class="btn_view_pro" style="padding-left:0px;padding-right:45px"><img src="images/btn_view_product.png" alt=""/></a>
+        <a href="#" class="btn_fb" onclick="sns_share('facebook')" style="padding-left:0px"><img src="images/btn_fb.png" alt=""/></a>
+        <a href="#" class="btn_kt" onclick="sns_share('story')" style="float:left"><img src="images/btn_ks.png" alt=""/></a>
       </div>
     </div> 
   </div> 
