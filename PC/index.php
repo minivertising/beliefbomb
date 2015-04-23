@@ -1054,7 +1054,7 @@ $(document).ready(function() {
 					.setTween(tween)
 					.setPin("#area4")
 					.addTo(controller);
-	var scene2 = new ScrollScene({triggerElement: "#area5", duration: 1000, offset: 450})
+	var scene2 = new ScrollScene({triggerElement: "#area5", duration: 800, offset: 450})
 					.setTween(tween2)
 					.setPin("#area5")
 					.addTo(controller2);
@@ -1202,7 +1202,7 @@ $(document).ready(function() {
 		}else if (param == "off_event"){
 			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height()},500);
 		}else{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 1017},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 1817},500);
 		}
 	}
 
