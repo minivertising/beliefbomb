@@ -1183,7 +1183,7 @@ $(document).ready(function() {
 		}else if (param == "off_event"){
 			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height()},500);
 		}else{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 970},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 1017},500);
 		}
 	}
 
