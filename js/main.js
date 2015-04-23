@@ -774,8 +774,11 @@ function event_winner_check()
 
 function event_action()
 {
+	$(".cnt_num").show();
+	var num_cnt = 0;
 	if (bomb_cnt >= 25)
 	{
+		$(".cnt_num").hide();
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 		$("#gage_bg").html("100%");
@@ -784,12 +787,13 @@ function event_action()
 		$("#game_title").hide();
 		$("#game_ing").hide();
 		$('#game_end').show(0, function(){
-			window.setTimeout("event_check_data();",2000);
+			//window.setTimeout("event_check_data();",2000);
 		});
 
 	}
-
-	var gage_per	= bomb_cnt*4;
+	num_cnt = bomb_cnt + 1;
+	$("#game_count").attr("src","images/popup/cnt_" + num_cnt + ".png");
+	var gage_per	= bomb_cnt*4 ;
 	var gage_bg	= gage_per;
 	if (gage_per > 98)
 	{
@@ -929,8 +933,8 @@ function timer(param){
 		var msec2	= Strmil.substring(1,2);
 		if (param == "P")
 		{
-			//$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
-			$("#game_num1").attr("src","images/popup/num0.png");
+			$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
+			//$("#game_num1").attr("src","images/popup/num0.png");
 			$("#game_num2").attr("src","images/popup/num" + sec2 + ".png");
 			$("#game_num3").attr("src","images/popup/num" + msec1 + ".png");
 			$("#game_num4").attr("src","images/popup/num" + msec2 + ".png");
@@ -942,8 +946,8 @@ function timer(param){
 				window.setTimeout("timer('P')", 10);
 			}
 		}else{
-			//$("#game_num1").attr("src","img/popup/num" + sec1 + ".png");
-			$("#game_num1").attr("src","img/popup/num0.png");
+			$("#game_num1").attr("src","img/popup/num" + sec1 + ".png");
+			//$("#game_num1").attr("src","img/popup/num0.png");
 			$("#game_num2").attr("src","img/popup/num" + sec2 + ".png");
 			$("#game_num3").attr("src","img/popup/num" + msec1 + ".png");
 			$("#game_num4").attr("src","img/popup/num" + msec2 + ".png");
@@ -983,8 +987,8 @@ function timer_ie8(param){
 		var msec2	= Strmil.substring(1,2);
 		if (param == "P")
 		{
-			//$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
-			$("#game_num1").attr("src","images/popup/num0.png");
+			$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
+			//$("#game_num1").attr("src","images/popup/num0.png");
 			$("#game_num2").attr("src","images/popup/num" + sec2 + ".png");
 			$("#game_num3").attr("src","images/popup/num" + msec1 + ".png");
 			$("#game_num4").attr("src","images/popup/num" + msec2 + ".png");
@@ -996,8 +1000,8 @@ function timer_ie8(param){
 				window.setTimeout("timer_ie8('P')", 10);
 			}
 		}else{
-			//$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
-			$("#game_num1").attr("src","images/popup/num0.png");
+			$("#game_num1").attr("src","images/popup/num" + sec1 + ".png");
+			//$("#game_num1").attr("src","images/popup/num1.png");
 			$("#game_num2").attr("src","img/popup/num" + sec2 + ".png");
 			$("#game_num3").attr("src","img/popup/num" + msec1 + ".png");
 			$("#game_num4").attr("src","img/popup/num" + msec2 + ".png");

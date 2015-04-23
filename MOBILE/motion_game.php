@@ -23,6 +23,15 @@
         <div class="title" id="title1">
           <img src="img/popup/title_game.png" alt="" id="title_image"/>
         </div>
+        <div class="ctn_num clearfix" style="display:none">
+          <div>
+            <img src="img/popup/ctn_1.png" alt=""  id="game_count"/>
+          </div>
+          <div>
+            <img src="img/popup/ctn_f.png" alt=""/>	
+          </div>
+        </div>
+
         <div class="cap" id="cap1">
           <img src="img/popup/cap_1.png"alt=""/>
         </div>
@@ -34,10 +43,10 @@
         </div>
         <div class="time clearfix">
           <div class="num">
-            <img src="img/popup/num0.png" alt="" id="game_num1"/>
+            <img src="img/popup/num1.png" alt="" id="game_num1"/>
           </div>
           <div class="num">
-            <img src="img/popup/num5.png" alt="" id="game_num2"/>
+            <img src="img/popup/num0.png" alt="" id="game_num2"/>
           </div>
           <div class="num">
             <img src="img/popup/num_dash.png" alt=""/>
@@ -131,9 +140,10 @@
 	var lastUpdate = 0; // 레코드 위에 한 번 흔들다 시간
 	var x, y, z, lastX, lastY, lastZ; // 정의 x, y, z 기록 세 축 데이터 및 한 번 트리거 데이터
 	var bomb_cnt = 0;
-	var currentsec=4;
+	var currentsec=9;
 	var currentmil=100;
 	var keepgoin=false;
+	var cnt_num = 0;
 /*
 	function timer(){
 		if(keepgoin){
@@ -241,10 +251,12 @@ function deviceMotionHandler(eventData) {
 			}
 			if (triger == 1)
 			{
-	var gage_per	= bomb_cnt*4;
-	var gage_bg	= gage_per;
+				var gage_per	= bomb_cnt*4;
+				var gage_bg	= gage_per;
+				$(".ctn_num").show();
 				if (bomb_cnt > 25)
 				{
+					$(".ctn_num").hide();
 					window.removeEventListener('devicemotion', deviceMotionHandler, false);
 					keepgoin=false;
 					$("#title1").hide();
@@ -256,6 +268,7 @@ function deviceMotionHandler(eventData) {
 
 					return false;
 				}else{
+					$("#game_count").attr("src","img/popup/ctn_"+bomb_cnt+".png");
 					if (bomb_cnt % 2 == 0)
 						$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 					else

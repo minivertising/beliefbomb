@@ -462,10 +462,16 @@
 	}
 ?>
             </div>
+              <div class="cnt_num clearfix" style="display:none">
+                <div><img src="images/popup/cnt_0.png" alt="" id="game_count"/></div>
+                <div><img src="images/popup/cnt_f.png" alt=""/></div>
+              </div>
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
             </div>
             <div class="img_product" id="game_ing">
+			  <!-- <div id="game_count">0
+			  </div> -->
               <div class="p_inner">
                 <div class="cap" id="cap1">
                   <img src="images/popup/cap_1.png" alt="" id="cap_img" />
@@ -493,10 +499,10 @@
             </div>
             <div class="time clearfix">
               <div class="num">
-                <img src="images/popup/num0.png" alt="" id="game_num1"/>
+                <img src="images/popup/num1.png" alt="" id="game_num1"/>
               </div>
               <div class="num">
-                <img src="images/popup/num5.png" alt="" id="game_num2"/>
+                <img src="images/popup/num0.png" alt="" id="game_num2"/>
               </div>
               <div class="num">
                 <img src="images/popup/num_dash.png" alt=""/>
@@ -920,7 +926,7 @@
 <script type="text/javascript">
 
 var bomb_cnt = 0;
-var currentsec=4;
+var currentsec=9;
 var currentmil=100;
 var keepgoin=false;
 var controller;
