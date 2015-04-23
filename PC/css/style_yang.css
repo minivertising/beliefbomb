@@ -168,6 +168,7 @@ body{
 	background:#f6f6f6;
 	padding:30px 0;
 	text-align:center;
+	margin-top:-10px;
 }
 
 /*popup*/
@@ -191,7 +192,7 @@ body{
 }
 .popup_wrap .p_mid.qr{
 	width:350px;
-	height:430px;
+	height:385px;
 }
 .popup_wrap .p_mid.cal{
 	width:900px;
@@ -349,7 +350,7 @@ body{
 .popup_wrap .p_mid.game .img_product.ending{
 	position:absolute;
 	z-index:899;
-	bottom:160px;
+	bottom:153px;
 	left:50%;
 	margin-left:-227px;
 	width:453px;
@@ -731,13 +732,13 @@ body{
 	position:absolute;
 	top:80px;
 	right:80%;
-	z-index:801;
+	z-index:799;
 }
 .contents_wrap .area1 .cap_abom{
 	position:absolute;
 	top:80px;
 	left:80%;
-	z-index:801;
+	z-index:799;
 }
 .contents_wrap .area1 .bg_mbom{
 	position:absolute;
@@ -918,7 +919,7 @@ padding-top:50px;
 }
 .block_offevent_3 .vs{
 	position:absolute;
-	top:90px;
+	top:100px;
 	left:48%;
 }
 .block_offevent_3 .mbom{
@@ -931,11 +932,17 @@ padding-top:50px;
 .block_offevent_3 .mbom .title,
 .block_offevent_3 .abom .title{
 	height:76px;
-	padding-top:80px;
+	padding-top:100px;
 }
 .block_offevent_3 .mbom .img,
 .block_offevent_3 .abom .img{
 	height:540px;
+	margin-top:-30px;
+}
+.block_offevent_3 .abom .img{
+	margin-top:0;
+	padding-top:17px;
+	height:501px;
 }
 .block_offevent_3 .mbom .img{
 }
@@ -953,7 +960,7 @@ padding-top:50px;
 	text-align:center;
 }
 .block_offevent_3 .abom .txt{
-	padding-top:20px;
+	padding-top:12px;
 }
 .block_offevent_3 .abom .btn_block{
 	padding-top:30px;
