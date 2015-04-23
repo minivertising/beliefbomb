@@ -189,7 +189,7 @@ body{
 	padding-bottom:25px;
 	background:#fff url(../images/popup/bg_popup.png) bottom right no-repeat;
 }
-.popup_wrap .p_mid{
+.popup_wrap .p_mid.qr{
 	width:350px;
 	height:430px;
 }
