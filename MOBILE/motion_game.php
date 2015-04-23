@@ -27,9 +27,6 @@
           <div>
             <img src="img/popup/ctn_1.png" alt=""  id="game_count"/>
           </div>
-          <div>
-            <img src="img/popup/ctn_f.png" alt=""/>	
-          </div>
         </div>
 
         <div class="cap" id="cap1">
@@ -268,7 +265,8 @@ function deviceMotionHandler(eventData) {
 
 					return false;
 				}else{
-					$("#game_count").attr("src","img/popup/ctn_"+bomb_cnt+".png");
+					cnt_num = bomb_cnt + 1;
+					$("#game_count").attr("src","img/popup/ctn_"+cnt_num+".png");
 					if (bomb_cnt % 2 == 0)
 						$('#cap1').jQueryTween({ to: { translate: {y: -80 },rotate: { z: 20 } }, yoyo: true, duration: 300, easing: TWEEN.Easing.Quartic.Out });
 					else
