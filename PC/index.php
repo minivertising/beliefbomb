@@ -113,7 +113,7 @@
           <div class="title">
             <img src="images/name_mbom.png" alt=""/>
           </div>
-          <div class="img">
+          <div class="img" id="mbomimg" style="opacity:0">
             <img src="images/mbom.png" alt=""/>
           </div>
           <div class="txt">
@@ -127,7 +127,7 @@
           <div class="title">
             <img src="images/name_abom.png" alt=""/>
           </div>
-          <div class="img">
+          <div class="img" id="abomimg" style="opacity:0">
             <img src="images/abom.png" alt=""/>
           </div>
           <div class="txt">
@@ -1030,22 +1030,34 @@ $(document).ready(function() {
 ?>
 	// init controller
 	controller = new ScrollMagic();
+	controller2 = new ScrollMagic();
 
 	TweenMax.set(".img_car", {marginLeft: "-=400"});
+	TweenMax.set("#mbomimg", {marginLeft: "-=400"});
+	TweenMax.set("#abomimg", {marginLeft: "+=400"});
 	// build tween
-			var tmarray	= [".d_1",".d_2",".d_3",".img_car"];
+	//var tmarray	= [".d_1",".d_2",".d_3",".img_car"];
 	var tween = new TimelineMax ()
 		.add([
-			TweenMax.to(".d_3", 0, {opacity: 1, delay:3, ease: Bounce.easeIn}),
-			TweenMax.to(".d_2", 0, {opacity: 1, delay:2, ease: Bounce.easeIn}),
-			TweenMax.to(".d_1", 0, {opacity: 1, delay:1, ease: Bounce.easeIn}),
+			TweenMax.to(".d_3", 0, {opacity: 1, delay:2, ease: Bounce.easeIn}),
+			TweenMax.to(".d_2", 0, {opacity: 1, delay:1, ease: Bounce.easeIn}),
+			TweenMax.to(".d_1", 0, {opacity: 1, delay:0, ease: Bounce.easeIn}),
 			TweenMax.to(".img_car", 1, {marginLeft: -350})
+		]);
+	var tween2 = new TimelineMax ()
+		.add([
+			TweenMax.to("#mbomimg", 1, {marginLeft: 0,opacity: 1}),
+			TweenMax.to("#abomimg", 1, {marginLeft: 0,opacity: 1})
 		]);
 	// build scene
 	var scene = new ScrollScene({triggerElement: "#area4", duration: 1000, offset: 450})
 					.setTween(tween)
 					.setPin("#area4")
 					.addTo(controller);
+	var scene2 = new ScrollScene({triggerElement: "#area5", duration: 1000, offset: 450})
+					.setTween(tween2)
+					.setPin("#area5")
+					.addTo(controller2);
 <?
 	}
 ?>
