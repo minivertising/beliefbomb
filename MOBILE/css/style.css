@@ -175,7 +175,7 @@ html[xmlns] .clearfix {
 	display:block;
 }
 .mobile_menu ul li a img{
-	width:50%;
+	width:85%;
 }
 .mobile_menu ul li.last{
 	text-align:center;
@@ -277,11 +277,11 @@ html[xmlns] .clearfix {
 	margin-bottom: -1.2%;
 }
 .offevent1 .inner_ele{
-	width:13%;
+	width:27%;
 	position:absolute;
 	/*top:30%;*/
-	right:16%;
-	top:8%;
+	right:7%;
+	top:5%;
 }
 .offevent1 .btn_block{
 	padding:0;
@@ -303,11 +303,11 @@ html[xmlns] .clearfix {
 	margin-bottom: -1.2%;
 }
 .offevent2 .inner_ele{
-	width:13%;
+	width:27%;
 	position:absolute;
 	/*top:30%;*/
-	right:16%;
-	top:7%;
+	right:7%;
+	top:4.2%;
 }
 .offevent2 .btn_block{
 	padding:0;
