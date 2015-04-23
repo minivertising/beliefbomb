@@ -7,6 +7,7 @@
 		echo "<script>location.href='index.php'</script>"; 
 		exit; 
 	} 
+	
 
 ?>
 <body class="bg_blue">
@@ -17,7 +18,7 @@
 	if ($_POST['mb_gift'] == "cream")
 	{
 ?>
-  <div class="wrap_page popup">
+  <div class="wrap_page popup" id="input_div">
     <div class="block_close clearfix">
       <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
     </div>
@@ -53,12 +54,17 @@
       </div><!--inner-->
     </div>
   </div>
+  <div id="loading_div" style="position:absolute;width:100%;height:100%;background:white;display:none">
+    <div style="position:absolute;top:50%;left:50%;margin-top:-64px;margin-left:-64px;height:500px">
+      <img src="img/loading.gif">
+    </div>
+  </div>
 <!-------------------- cream -------------------->
 <?
 	}else{
 ?>
 <!-------------------- kit & miniature -------------------->
-  <div class="wrap_page popup">
+  <div class="wrap_page popup" id="input_div">
     <div class="block_close clearfix">
       <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
     </div>
@@ -120,6 +126,11 @@
           <a href="#" onclick="chk_input2_mobile()" style="outline:none"><img src="img/popup/btn_confirm.png" alt=""/></a>
         </div>
       </div><!--inner-->
+    </div>
+  </div>
+  <div id="loading_div" style="position:absolute;width:100%;height:100%;background:white;display:none">
+    <div style="position:absolute;top:50%;left:50%;margin-top:-64px;margin-left:-64px;height:500px">
+      <img src="img/loading.gif">
     </div>
   </div>
 <?

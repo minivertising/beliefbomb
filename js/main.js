@@ -281,6 +281,7 @@ function chk_input2()
 			{
 				//alert('주소를 선택 안하셨습니다');
 				setTimeout("ins_data_cream();",500);
+				event_triger = 0;
 				return false;
 			}
 
@@ -288,6 +289,7 @@ function chk_input2()
 			{
 				//alert('주소를 선택 안하셨습니다');
 				setTimeout("ins_data_cream();",500);
+				event_triger = 0;
 				return false;
 			}
 
@@ -295,6 +297,7 @@ function chk_input2()
 			{
 				//alert('주소를 선택 안하셨습니다');
 				setTimeout("ins_data_cream();",500);
+				event_triger = 0;
 				return false;
 			}
 
@@ -302,6 +305,7 @@ function chk_input2()
 			{
 				//alert('주소를 선택 안하셨습니다');
 				setTimeout("ins_data_cream();",500);
+				event_triger = 0;
 				return false;
 			}
 		}else{
@@ -309,6 +313,7 @@ function chk_input2()
 			{
 				//alert('매장 선택을 안 하셨습니다');
 				setTimeout("ins_data_etc();",500);
+				event_triger = 0;
 				return false;
 			}
 
@@ -316,13 +321,15 @@ function chk_input2()
 			{
 				//alert('매장 선택을 안 하셨습니다');
 				setTimeout("ins_data_etc();",500);
+				event_triger = 0;
 				return false;
 			}
 
 			if (mb_shop == "")
 			{
-				//alert('매장 선택을 안 하셨습니다');
-				setTimeout("ins_data_etc();",500);
+				//setTimeout("ins_data_etc();",500);
+				alert('매장을 선택해 주세요.');
+				event_triger = 0;
 				return false;
 			}
 		}
@@ -403,42 +410,50 @@ function chk_input2_mobile()
 			if (mb_zipcode1 == "")
 			{
 				window.setTimeout("m_ins_data();",500);
+				event_triger = 0;
 				return false;
 			}
 
 			if (mb_zipcode2 == "")
 			{
 				window.setTimeout("m_ins_data();",500);
+				event_triger = 0;
 				return false;
 			}
 
 			if (mb_addr1 == "")
 			{
 				window.setTimeout("m_ins_data();",500);
+				event_triger = 0;
 				return false;
 			}
 
 			if (mb_addr2 == "")
 			{
 				window.setTimeout("m_ins_data();",500);
+				event_triger = 0;
 				return false;
 			}
 		}else{
 			if (mb_addr1 == "")
 			{
 				window.setTimeout("m_ins_data();",500);
+				event_triger = 0;
 				return false;
 			}
 
 			if (mb_addr2 == "")
 			{
 				window.setTimeout("m_ins_data();",500);
+				event_triger = 0;
 				return false;
 			}
 
 			if (mb_shop == "")
 			{
-				window.setTimeout("m_ins_data();",500);
+				//window.setTimeout("m_ins_data();",500);
+				alert('매장을 선택해 주세요.');
+				event_triger = 0;
 				return false;
 			}
 		}
@@ -455,7 +470,13 @@ function chk_input2_mobile()
 				"mb_chkphone"	: mb_chkphone
 			},
 			url: "../main_exec.php",
+			beforeSend:function(){
+				$("#input_div").hide();
+				$("#loding_div").show();
+			},
 			success: function(response){
+				$("#loding_div").hide();
+				$("#input_div").show();
 				if (response == "Y")
 				{
 					setTimeout("event_m_complete();",500);

@@ -2,10 +2,12 @@
 	include_once "./header.php";
 
 	// 주소 바로 입력시 index로 이동
+	/*
 	if ( !isset($_SERVER['HTTP_REFERER']) && $_SERVER['REMOTE_ADDR'] != "127.0.0.1" ) { 
 		echo "<script>location.href='index.php'</script>"; 
 		exit; 
 	} 
+	*/
 
 ?>
 <body class="bg_blue_game">
@@ -101,13 +103,13 @@
   <!-------------- 미션 성공 & 미당첨 alert -------------->
 
   <!-------------- 이벤트 당첨여부 체크 alert -------------->
-  <div id="event_check_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog mfp-hide">
+  <div id="event_check_alert" class="wrap_page popup alert popup_wrap zoom-anim-dialog">
     <div class="block_close clearfix">
       <a href="index.php" class="btn_close"><img src="img/popup/btn_close.png" /></a>
     </div>
-    <div class="content">
+    <div class="content" style="padding-top:0px">
       <div class="inner alert">
-        <div class="title">
+        <div class="title" style="padding-bottom:0px">
           <img src="img/popup/title_mission.png" alt=""/>
         </div>
         <div class="btn_block">
