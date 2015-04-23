@@ -1,7 +1,6 @@
 <?
 	include_once   "./header.php";
 ?>
-
   <div  class="wrap_menu" style="position:fixed;z-index:9999">
     <div id="menu" class="menu clearfix">
       <div class="block_logo">
@@ -144,7 +143,7 @@
       <img src="images/txt_footer.png" width="924" height="99" alt=""/>
     </div>
     <!--quickmenu-->
-    <div class="quickmenu" id="quickmenu" style="position:fixed;right:20px;z-index:50;bottom:50px;">
+    <div class="quickmenu" id="quickmenu" style="position:fixed;right:20px;z-index:805;bottom:50px;">
       <a href="#"><img src="images/btn_top.png" alt=""/></a>
     </div>
     <!--quickmenu-->
@@ -383,7 +382,9 @@
         </div>
         <div class="block_content agree">
           <div class="inner">
-          개인정보 활용동의 내용
+<?
+	include_once "./use_agree.php";
+?>
           </div><!--inner-->
         </div>
       </div>
@@ -397,7 +398,9 @@
         </div>
         <div class="block_content agree">
           <div class="inner">
-          개인정보 취급 위탁동의 내용
+<?
+	include_once "./privacy_agree.php";
+?>
           </div><!--inner-->
         </div>
       </div>
@@ -411,7 +414,9 @@
         </div>
         <div class="block_content agree">
           <div class="inner">
-          광고성 정보전송동의 내용
+<?
+	include_once "./adver_agree.php";
+?>
           </div><!--inner-->
         </div>
       </div>
@@ -419,17 +424,18 @@
     <!------------- 광고성 정보전송동의 팝업 -------------------->
 
       <!------------- QR코드 팝업 -------------------->
-    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none">
+    <div class="popup_wrap zoom-anim-dialog mfp-hide" id="qrcode_pop" style="display:none;">
       <div class="p_mid qr">
         <div class="block_close clearfix">
           <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
         </div>
-        <div class="block_content product">
+        <div class="block_content">
           <div class="inner">
           	<div style="padding-bottom:30px;"><img src="images/popup/title_qr.png" alt=""/></div>
             <div><img src="images/qrcode.png" width="150" alt=""/></div>
           </div><!--inner-->
         </div>
+
       </div>
     </div>
 
@@ -462,7 +468,7 @@
             <div class="img_product" id="game_ing">
               <div class="p_inner">
                 <div class="cap" id="cap1">
-                  <img src="images/popup/cap_1.png" alt="" id="cap_img"/>
+                  <img src="images/popup/cap_1.png" alt="" id="cap_img" />
                 </div>
                 <div class="body" id="body1">
                   <img src="images/popup/p_body.png" width="241" height="216" alt=""/>
@@ -687,7 +693,7 @@
 <!----------- 일정 팝업 -------------->
 
       <!------------- 개인정보 입력 alert -------------------->
-    <div id="input_privacy_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="input_privacy_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -706,7 +712,7 @@
     </div>
       <!------------- 개인정보 입력 alert -------------------->
       <!------------- 개인정보 입력 alert -------------------->
-    <div id="input_privacy_cream_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="input_privacy_cream_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -725,7 +731,7 @@
     </div>
       <!------------- 개인정보 입력 alert -------------------->
       <!------------- 개인정보 입력 alert -------------------->
-    <div id="input_privacy_etc_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="input_privacy_etc_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -745,7 +751,7 @@
       <!------------- 개인정보 입력 alert -------------------->
 
       <!------------- 개인정보 활용동의 alert -------------------->
-    <div id="use_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="use_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -764,7 +770,7 @@
     </div>
       <!------------- 개인정보 활용동의 alert -------------------->
       <!------------- 개인정보 취급위탁동의 alert -------------------->
-    <div id="privacy_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="privacy_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -783,7 +789,7 @@
     </div>
       <!------------- 개인정보 취급위탁동의 alert -------------------->
       <!------------- 광고성 정보전송동의 alert -------------------->
-    <div id="adver_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="adver_agree_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -802,7 +808,7 @@
     </div>
       <!------------- 광고성 정보전송동의 alert -------------------->
       <!------------- 게임 실패 alert -------------------->
-    <div id="gameover_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="gameover_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -821,7 +827,7 @@
     </div>
       <!------------- 게임 실패 alert -------------------->
       <!------------- 이벤트 미당첨 alert -------------------->
-    <div id="event_sorry_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="event_sorry_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -841,7 +847,7 @@
       <!------------- 이벤트 미당첨 alert -------------------->
 
       <!------------- 동일한 상품 당첨 alert -------------------->
-    <div id="event_duply_pop" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="event_duply_pop" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -861,7 +867,7 @@
       <!------------- 동일한 상품 당첨 alert -------------------->
 
       <!------------- 이벤트 당첨 후 완료 alert -------------------->
-    <div id="event_complete_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="event_complete_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -881,7 +887,7 @@
       <!------------- 이벤트 당첨 후 완료 alert -------------------->
 
       <!------------- 이벤트 당첨여부 체크 alert -------------------->
-    <div id="event_check_alert" class="popup_wrap zoom-anim-dialog mfp-hide">
+    <div id="event_check_alert" class="popup_wrap zoom-anim-dialog mfp-hide" style="margin-top:-140px">
       <div class="p_alert">
         <div class="inner">
           <div class="block_close clearfix">
@@ -1184,7 +1190,7 @@ $(document).ready(function() {
 		}else if (param == "off_event"){
 			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height()},500);
 		}else{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 970},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 1017},500);
 		}
 	}
 

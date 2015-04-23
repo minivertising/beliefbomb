@@ -47,16 +47,16 @@ switch ($_REQUEST['exec'])
 
 		if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 		{
-			$surl	= make_surl($mb_chkphone, $serialNumber, "2");
+			$surl	= make_surl($mb_chkphone, "2");
 			if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 			{
-				$surl	= make_surl($mb_chkphone, $serialNumber, "3");
+				$surl	= make_surl($mb_chkphone, "3");
 				if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 				{
-					$surl	= make_surl($mb_chkphone, $serialNumber, "4");
+					$surl	= make_surl($mb_chkphone, "4");
 					if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 					{
-						$surl	= make_surl($mb_chkphone, $serialNumber, "5");
+						$surl	= make_surl($mb_chkphone, "5");
 					}
 				}
 			}
@@ -91,10 +91,10 @@ switch ($_REQUEST['exec'])
 		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
-		$miniature_array = array("Y","N","N","N","N","N","N","N","N","N");
-		$kit_array = array("Y","N","N","N","N","N","N","N","N");
-		//$miniature_array = array("Y","N");
-		//$kit_array = array("Y","N");
+		//$miniature_array = array("Y","N","N","N","N","N","N","N","N","N");
+		//$kit_array = array("Y","N","N","N","N","N","N","N","N");
+		$miniature_array = array("Y","N");
+		$kit_array = array("Y","N");
 
 		$flag	= "N";
 		// 1일 5명 당첨 ( 정품 )
