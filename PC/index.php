@@ -143,7 +143,7 @@
       <img src="images/txt_footer.png" width="924" height="99" alt=""/>
     </div>
     <!--quickmenu-->
-    <div class="quickmenu" id="quickmenu" style="position:fixed;right:20px;z-index:50;bottom:50px;">
+    <div class="quickmenu" id="quickmenu" style="position:fixed;right:20px;z-index:805;bottom:50px;">
       <a href="#"><img src="images/btn_top.png" alt=""/></a>
     </div>
     <!--quickmenu-->
