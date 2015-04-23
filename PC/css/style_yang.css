@@ -189,6 +189,10 @@ body{
 	padding-bottom:25px;
 	background:#fff url(../images/popup/bg_popup.png) bottom right no-repeat;
 }
+.popup_wrap .p_mid{
+	width:350px;
+	height:430px;
+}
 .popup_wrap .p_mid.cal{
 	width:900px;
 	height:750px;
@@ -804,12 +808,20 @@ padding-top:50px;
 	padding-bottom:20px;
 }
 .block_offevent_1{
-	background:#f0faff;
+	background:#fff;
 	width:100%;
 	height:1000px;
 }
 .block_offevent_1 .title{
 	padding-top:100px;
+	position:relative;
+	width:660px;
+	margin:0 auto;
+}
+.block_offevent_1 .btn_cal{
+	position:absolute;
+	right:50px;
+	top:125px;
 }
 .block_offevent_1 .off1_img1,
 .block_offevent_1 .off1_img2{
@@ -832,7 +844,16 @@ padding-top:50px;
 }
 .block_offevent_2 .title{
 	padding-top:100px;
+	position:relative;
+	width:707px;
+	margin:0 auto;
 }
+.block_offevent_2 .btn_cal{
+	position:absolute;
+	right:50px;
+	top:125px;
+}
+
 .block_offevent_2 .block_img_detail{
 	width:660px;
 	left:50%;
@@ -939,12 +960,6 @@ padding-top:50px;
 	padding-bottom:80px;
 }
 
-.btn_cal{
-	position:absolute;
-	text-align:center;
-	top:130px;
-	left:59%;
-}
 .ab_inner{
 	text-align:center;
 	position:relative;
