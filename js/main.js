@@ -1370,8 +1370,8 @@ function show_detail_cal(cal_date)
 			}
 			list_str		+= "</ul>";
 			*/
-			$(".list_detail").html("<ul><li><span>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
-			//$(".list_detail").html(list_str);
+			//$(".list_detail").html("<ul><li><span>" + cal_date_arr[1] + "." + cal_date_arr[2] + "(" + weekday + ") " + response+ "</li></ul>");
+			$(".list_detail").html(response);
 		}
 	});
 
@@ -1393,12 +1393,13 @@ function getWeekday(sDate) {
 	return weekday[d.getDay()];
 }
 
-function show_desc_cal()
+function show_desc_cal(month)
 {
 	$.ajax({
 		type:"POST",
 		data:{
-			"exec"			: "select_desc_cal"
+			"exec"			: "select_desc_cal",
+			"sel_mon"	: month
 		},
 		url: "../main_exec.php",
 		success: function(response){

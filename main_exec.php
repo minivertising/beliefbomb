@@ -228,13 +228,13 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "select_desc_cal" :
-		$query 		= "SELECT * FROM ".$_gl['schedule_info_table']." WHERE sc_date > '".$cal_date."' ORDER BY sc_date ASC";
+		$cal_date		= date("Y-m-d");
+		$sel_mon		= $_REQUEST['sel_mon'];
+		$query 		= "SELECT sc_name FROM ".$_gl['schedule_info_table']." WHERE sc_date >= '".$cal_date."' AND sc_date like '%2015-0".$sel_mon."%' ORDER BY sc_date ASC LIMIT 1";
 		$result 		= mysqli_query($my_db, $query);
 		$cal_data		= mysqli_fetch_array($result);
-		$yoil = array("일","월","화","수","목","금","토");
 		
-		$date_arr		= explode("-",$cal_data['sc_date']);
-		echo "<ul><li><span>".$date_arr[1].".".$date_arr[2]."(".$yoil[date('w',strtotime($cal_data['sc_name']))].") ".$cal_data['sc_name']."</li></ul>";
+		echo $cal_data['sc_name'];
 	break;
 
 	case "update_coupon" :
