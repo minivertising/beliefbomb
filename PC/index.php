@@ -1204,7 +1204,7 @@ $(document).ready(function() {
 			cal_cnt = 2;
 		}else if (cal_cnt == 2){
 			//$("#month_7").fadeOut("fast", function(){
-				alert("이벤트 일정이 없습니다.");
+				alert("추후 공개될 예정입니다..");
 			//});
 			//cal_cnt =0;
 		}
