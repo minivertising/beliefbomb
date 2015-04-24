@@ -442,7 +442,7 @@
           <div class="inner">
             <div style="padding-bottom:30px;"><img src="images/popup/title_qr.png" alt=""/></div>
             <div><img src="images/qrcode.png" width="150" alt=""/></div>
-            <div style="text-align:center;padding-top:30px"><img src="images/popup/pop_btn__footer_close.png" alt="" onclick="$.magnificPopup.close();"></div>
+            <div style="text-align:center;padding-top:30px"><a href="#"><img src="images/popup/pop_btn__footer_close.png" alt="" onclick="$.magnificPopup.close();"></a></div>
           </div><!--inner-->
         </div>
 
