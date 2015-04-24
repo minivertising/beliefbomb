@@ -224,7 +224,7 @@ html[xmlns] .clearfix {
 	display:block;
 	float:right;
 	width:12%;
-	background:#effaff;
+	/*background:#effaff;*/
 	padding:16px 0;
 	text-align:center;
 }
