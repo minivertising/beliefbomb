@@ -1137,7 +1137,7 @@ function game_ready()
 			},
 			close: function() {
 				bomb_cnt = 0;
-				currentsec=5;
+				currentsec=9;
 				currentmil=100;
 				keepgoin=false;
 				$("#cap1").attr("onclick","");
@@ -1193,7 +1193,7 @@ function game_start_data()
 			},
 			close: function() {
 				bomb_cnt = 0;
-				currentsec=5;
+				currentsec=9;
 				currentmil=100;
 				keepgoin=false;
 				$("#cap1").attr("onclick","event_action();");
