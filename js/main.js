@@ -1142,8 +1142,8 @@ function game_ready()
 				keepgoin=false;
 				$("#cap1").attr("onclick","");
 				$("#body1").attr("onclick","");
-				$("#game_num1").attr("src","images/popup/num0.png");
-				$("#game_num2").attr("src","images/popup/num5.png");
+				$("#game_num1").attr("src","images/popup/num1.png");
+				$("#game_num2").attr("src","images/popup/num0.png");
 				$("#game_num3").attr("src","images/popup/num0.png");
 				$("#game_num4").attr("src","images/popup/num0.png");
 				$("#gage_bg").css("width", "0%");
