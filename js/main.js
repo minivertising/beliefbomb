@@ -1150,6 +1150,7 @@ function game_ready()
 				$("#gage_bg").html("0%");
 				$("#game_ing").show();
 				$('#game_end').hide();
+				$("#cnt_num").hide();
 				$("#game_title").show();
 				$(".btn_start").css("top","250px");
 				$(".btn_start").show();
@@ -1200,6 +1201,7 @@ function game_start_data()
 				$("#body1").attr("onclick","event_action();");
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
+				$("#cnt_num").hide();
 				$("#mb_name").val("");
 				$("#mb_phone1").val("");
 				$("#mb_phone2").val("");
