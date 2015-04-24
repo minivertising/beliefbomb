@@ -991,3 +991,7 @@ padding-top:50px;
 	text-align:center;
 	position:relative;
 }
+
+.block_content.agree{
+	text-align:left;
+}
