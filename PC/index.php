@@ -79,13 +79,13 @@
       </div>
 
       <div class="block_img_detail clearfix">
-        <div class="d_1" style="opacity:0">
+        <div class="d_1">
           <img src="images/img_event2_detail_1.png" alt=""/>
         </div>
-        <div class="d_2" style="opacity:0">
+        <div class="d_2">
           <img src="images/img_event2_detail_2.png" alt=""/>
         </div>
-        <div class="d_3" style="opacity:0">
+        <div class="d_3">
           <img src="images/img_event2_detail_3.png" alt=""/>
         </div>
       </div>
@@ -113,7 +113,7 @@
           <div class="title">
             <img src="images/name_mbom.png" alt=""/>
           </div>
-          <div class="img" id="mbomimg" style="opacity:0">
+          <div class="img" id="mbomimg">
             <img src="images/mbom.png" alt=""/>
           </div>
           <div class="txt">
@@ -127,7 +127,7 @@
           <div class="title">
             <img src="images/name_abom.png" alt=""/>
           </div>
-          <div class="img" id="abomimg" style="opacity:0">
+          <div class="img" id="abomimg">
             <img src="images/abom.png" alt=""/>
           </div>
           <div class="txt">
@@ -1030,9 +1030,10 @@ $(document).ready(function() {
 	var b_width			= $(window).width();
 	var car_width		= -350;
 <?
-	if ($IE8 == "N")
-	{
+	//if ($IE8 == "N")
+	//{
 ?>
+	/*
 	// init controller
 	controller = new ScrollMagic();
 	controller2 = new ScrollMagic();
@@ -1063,8 +1064,9 @@ $(document).ready(function() {
 					.setTween(tween2)
 					.setPin("#area5")
 					.addTo(controller2);
+	*/
 <?
-	}
+	//}
 ?>
 
 });
