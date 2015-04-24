@@ -15,6 +15,9 @@
 &#62;보유 및 이용기간 &#58; 이벤트 종료 후 1년까지 (단, 관계 법령에 따라 필요한 경우 해당 법률에서 정한 기간까지)
                   </div><!--inner-->
           </div>
+  <div style="text-align:center;">
+    <a href="javascript:history.go(-1);"><img src="img/popup/btn_bottom_close.png" style="width:170px"/></a>
+  </div>
       </div><!--wrap_page popup-->
     
     

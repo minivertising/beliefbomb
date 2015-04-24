@@ -14,6 +14,9 @@
 (주)엘지생활건강은 마케팅 &#47; 홍보를 위하여 고객의 개인정보를 이용에 동의를 구하며, 동의 거부 시에도 이벤트 참여는 가능하나 할인 및 이벤트 정보 안내 등 서비스는 제한될 수 있습니다.
                   </div><!--inner-->
           </div>
+  <div style="text-align:center;">
+    <a href="javascript:history.go(-1);"><img src="img/popup/btn_bottom_close.png" style="width:170px"/></a>
+  </div>
       </div><!--wrap_page popup-->
     
     
