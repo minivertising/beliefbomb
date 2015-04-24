@@ -42,9 +42,9 @@ switch ($_REQUEST['exec'])
 		$addr					= $mb_addr1." ".$mb_addr2;
 		$zipcode				= $mb_zipcode1."-".$mb_zipcode2;
 		$serialNumber		= BB_SerialNumber();
+/*
 
 		$surl	= make_surl($serialNumber, "1");
-
 		if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 		{
 			$surl	= make_surl($serialNumber, "2");
@@ -61,15 +61,16 @@ switch ($_REQUEST['exec'])
 				}
 			}
 		}
-
-		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_s_url='".$surl."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."' AND mb_winner='".$mb_gift."'";
+*/
+		//$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_s_url='".$surl."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."' AND mb_winner='".$mb_gift."'";
+		$query 		= "UPDATE ".$_gl['winner_info_table']." SET mb_zipcode='".$zipcode."', mb_addr='".$addr."', shop_idx='".$mb_shop."', mb_serialnumber='".$serialNumber."' WHERE mb_phone='".$mb_chkphone."' AND mb_winner='".$mb_gift."'";
 		$result 	= mysqli_query($my_db, $query);
 
 		//$ins_idx = mysqli_insert_id($result);
 		if ($result)
 		{
-			if ($mb_shop)
-				$lmsYN	= send_lms($mb_chkphone, $surl);
+			//if ($mb_shop)
+				//$lmsYN	= send_lms($mb_chkphone, $surl);
 				//$lmsYN	= "imsi";
 			$flag = "Y";
 		}else{

@@ -3,19 +3,46 @@
 	if (mysqli_connect_error()) {
 		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
-	
-	//include_once "include/global.php"; 			//변수정보
-	//$query	= "SELECT * FROM winner_info WHERE mb_lms='N'";
-	//$result 	= mysqli_query($my_db, $query);
-	//$data		= mysqli_fetch_array($result);
 
-	$msg	= send_lms("010-3003-3965","http://www.belif.co.kr");
-print_r($msg);
+	//include_once "include/global.php"; 			//변수정보
+	$query	= "SELECT * FROM winner_info WHERE mb_s_url=''";
+	$result 	= mysqli_query($my_db, $query);
+	while($data = mysqli_fetch_array($result))
+	{
+		$surl	= make_surl($data['mb_serialnumber'], "1");
+
+		if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+		{
+			$surl	= make_surl($serialNumber, "2");
+			if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+			{
+				$surl	= make_surl($serialNumber, "3");
+				if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+				{
+					$surl	= make_surl($serialNumber, "4");
+					if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+					{
+						$surl	= make_surl($serialNumber, "5");
+					}
+				}
+			}
+		}
+
+		if ($surl != "RATE_LIMIT_EXCEEDED" && $surl != "")
+		{
+
+			$query4 = "UPDATE winner_info SET mb_s_url='".$surl."' WHERE mb_serialnumber='".$data['mb_serialnumber']."'";
+			$result4 		= mysqli_query($my_db, $query4);
+			send_lms($data['mb_phone'],$surl);
+			echo "문자 발송 완료!";
+		}
+	}
+
 	// LMS 발송 
 	function send_lms($phone, $s_url)
 	{
-		//global $_gl;
-		//global $my_db;
+		global $_gl;
+		global $my_db;
 
 		$httpmethod = "POST";
 		$url = "http://api.openapi.io/ppurio/1/message/lms/minivertising";
@@ -24,10 +51,8 @@ print_r($msg);
 	
 		$response = sendRequest($httpmethod, $url, $clientKey, $contentType, $phone, $s_url);
 
-		//echo("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
 		$json_data = json_decode($response, true);
 
-		//print_r($json_data);
 		/*
 		받아온 결과값을 DB에 저장 및 Variation
 		*/
@@ -42,7 +67,7 @@ print_r($msg);
 		else
 			$flag = "N";
 
-		return $query3;
+		return $flag;
 	}
 
 	function sendRequest($httpMethod, $url, $clientKey, $contentType, $phone, $s_url) {
@@ -55,9 +80,6 @@ print_r($msg);
 			'send_time' => '', 
 			'send_phone' => '0800237007', 
 			'dest_phone' => $phone, 
-			//'dest_phone' => '01030033965', 
-			//'dest_phone' => '01099111804', 
-			//'dest_phone' => '01030885731', 
 			//'dest_phone' => '01030033965', 
 			'send_name' => '', 
 			'dest_name' => '', 
@@ -103,6 +125,52 @@ print_r($msg);
 		curl_close($curl);
 
 		return $response;
+	}
+
+	function make_surl($serial, $num)
+	{
+		global $_gl;
+		global $my_db;
+
+		$longurl	= "http://www.belifbomb.com/MOBILE/winner_coupon.php?serialnumber=".$serial;
+		if ($num == "1")
+		{
+			$short_url = get_bitly_short_url($longurl,'kyhfan5','R_089bb97a7ff8481da0e7b1600c6b6c0f');
+		}else if ($num == "2"){
+			$short_url = get_bitly_short_url($longurl,'kyhfan2','R_f7547b30052049679ee65de54c782e20');
+		}else if ($num == "3"){
+			$short_url = get_bitly_short_url($longurl,'kyhfan3','R_426adbe491a44aee82bd938e9c7f032e');
+		}else if ($num == "4"){
+			$short_url = get_bitly_short_url($longurl,'kyhfan4','R_6e2b8aac3f514271a5901cf546f9540a');
+		}else{
+			$short_url = get_bitly_short_url($longurl,'kyhfan','R_11ea80ffc2bf4bbe8c848b761e71df8a');
+		}
+
+		return $short_url;
+	}
+
+	/* returns the shortened url */
+	function get_bitly_short_url($url,$login,$appkey,$format='txt') {
+		$connectURL = 'http://api.bit.ly/v3/shorten?login='.$login.'&apiKey='.$appkey.'&uri='.urlencode($url).'&format='.$format;
+		return curl_get_result($connectURL);
+	}
+
+	/* returns expanded url */
+	function get_bitly_long_url($url,$login,$appkey,$format='txt') {
+		$connectURL = 'http://api.bit.ly/v3/expand?login='.$login.'&apiKey='.$appkey.'&shortUrl='.urlencode($url).'&format='.$format;
+		return curl_get_result($connectURL);
+	}
+
+	/* returns a result form url */
+	function curl_get_result($url) {
+		$ch = curl_init();
+		$timeout = 5;
+		curl_setopt($ch,CURLOPT_URL,$url);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+		$data = curl_exec($ch);
+		curl_close($ch);
+		return $data;
 	}
 
 ?>
