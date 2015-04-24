@@ -431,9 +431,9 @@
         </div>
         <div class="block_content">
           <div class="inner">
-          	<div style="padding-bottom:30px;"><img src="images/popup/title_qr.png" alt=""/></div>
+            <div style="padding-bottom:30px;"><img src="images/popup/title_qr.png" alt=""/></div>
             <div><img src="images/qrcode.png" width="150" alt=""/></div>
-			<div style="margin-top:80px;text-align:right" >X 닫기</div>
+            <!-- <div style="margin-top:80px;text-align:right" >X 닫기</div> -->
           </div><!--inner-->
         </div>
 
