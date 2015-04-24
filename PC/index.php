@@ -386,6 +386,9 @@
 	include_once "./use_agree.php";
 ?>
           </div><!--inner-->
+          <div style="padding-top:30px">
+            <a href="#event_input1_pop" class="first-popup-link"><img src="images/popup/pop_btn__footer_close.png" /></a>
+          </div>
         </div>
       </div>
     </div>
@@ -402,6 +405,9 @@
 	include_once "./privacy_agree.php";
 ?>
           </div><!--inner-->
+          <div style="padding-top:30px">
+            <a href="#event_input1_pop" class="first-popup-link"><img src="images/popup/pop_btn__footer_close.png" /></a>
+          </div>
         </div>
       </div>
     </div>
@@ -418,6 +424,9 @@
 	include_once "./adver_agree.php";
 ?>
           </div><!--inner-->
+          <div style="padding-top:30px">
+            <a href="#event_input1_pop" class="first-popup-link"><img src="images/popup/pop_btn__footer_close.png" /></a>
+          </div>
         </div>
       </div>
     </div>
