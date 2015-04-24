@@ -29,7 +29,7 @@
           <a href="#" onclick="game_ready()" style="outline:none"><img src="images/btn_event_go.png" alt=""/></a>
         </div>
         <div class="btn_mobile">
-          <a href="#" onclick="show_qrcode();return false;"><img src="images/btn_view_mobile.png" alt=""/></a>
+          <a href="#" onclick="show_qrcode();return false;" style="outline:none"><img src="images/btn_view_mobile.png" alt=""/></a>
         </div>        
         <div class="img_detail">
           <img src="images/img_detail.png" alt=""/>
@@ -463,15 +463,13 @@
 	}
 ?>
             </div>
-              <div class="cnt_num clearfix" style="display:none">
+              <div class="cnt_num clearfix">
                 <div><img src="images/popup/cnt_1.png" alt="" id="game_count"/></div>
               </div>
             <div class="title" id="game_title">
               <img src="images/popup/title_game.png" alt=""/>
             </div>
             <div class="img_product" id="game_ing">
-			  <!-- <div id="game_count">0
-			  </div> -->
               <div class="p_inner">
                 <div class="cap" id="cap1">
                   <img src="images/popup/cap_1.png" alt="" id="cap_img" />
