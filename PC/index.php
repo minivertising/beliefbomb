@@ -433,6 +433,7 @@
           <div class="inner">
           	<div style="padding-bottom:30px;"><img src="images/popup/title_qr.png" alt=""/></div>
             <div><img src="images/qrcode.png" width="150" alt=""/></div>
+			<div style="margin-top:80px;text-align:right" >X 닫기</div>
           </div><!--inner-->
         </div>
 
@@ -1209,7 +1210,7 @@ $(document).ready(function() {
 		}else if (param == "off_event"){
 			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height()},500);
 		}else{
-			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height() + 1817},500);
+			$( 'html, body' ).animate({ scrollTop: $(".area1").height() + $(".area3").height() + $(".area5").height()},500);
 		}
 	}
 
