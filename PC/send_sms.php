@@ -4,16 +4,15 @@
 		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
 	
-	include_once "include/global.php"; 			//변수정보
-	include_once "include/function.php"; 		//함수정보
+	//include_once "include/global.php"; 			//변수정보
 
 	send_lms("010-3003-3965","http://www.belif.co.kr");
 
 	// LMS 발송 
 	function send_lms($phone, $s_url)
 	{
-		global $_gl;
-		global $my_db;
+		//global $_gl;
+		//global $my_db;
 
 		$httpmethod = "POST";
 		$url = "http://api.openapi.io/ppurio/1/message/lms/minivertising";
@@ -29,10 +28,10 @@
 		/*
 		받아온 결과값을 DB에 저장 및 Variation
 		*/
-		$query3 = "INSERT INTO ".$_gl['sms_info_table']."(send_phone, send_status, cmid, send_regdate) values('".$phone."','".$json_data['result_code']."','".$json_data['cmid']."','".date("Y-m-d H:i:s")."')";
+		$query3 = "INSERT INTO sms_info(send_phone, send_status, cmid, send_regdate) values('".$phone."','".$json_data['result_code']."','".$json_data['cmid']."','".date("Y-m-d H:i:s")."')";
 		$result3 		= mysqli_query($my_db, $query3);
 
-		$query2 = "UPDATE ".$_gl['winner_info_table']." SET mb_lms='Y' WHERE mb_phone='".$phone."'";
+		$query2 = "UPDATE winner_info SET mb_lms='Y' WHERE mb_phone='".$phone."'";
 		$result2 		= mysqli_query($my_db, $query2);
 
 		if ($json_data['result_code'] == "200")
