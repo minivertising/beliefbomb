@@ -5,9 +5,12 @@
 	}
 	
 	//include_once "include/global.php"; 			//변수정보
+	//$query	= "SELECT * FROM winner_info WHERE mb_lms='N'";
+	//$result 	= mysqli_query($my_db, $query);
+	//$data		= mysqli_fetch_array($result);
 
-	send_lms("010-3003-3965","http://www.belif.co.kr");
-
+	$msg	= send_lms("010-3003-3965","http://www.belif.co.kr");
+print_r($msg);
 	// LMS 발송 
 	function send_lms($phone, $s_url)
 	{
@@ -39,7 +42,7 @@
 		else
 			$flag = "N";
 
-		return $flag;
+		return $query3;
 	}
 
 	function sendRequest($httpMethod, $url, $clientKey, $contentType, $phone, $s_url) {
