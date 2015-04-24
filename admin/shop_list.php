@@ -68,8 +68,6 @@
                 <th>매장이름</th>
                 <th>매장주소</th>
                 <th>매장전화번호</th>
-                <th>할당된갯수</th>
-                <th>선택받은갯수</th>
               </tr>
             </thead>
             <tbody>
@@ -105,8 +103,6 @@
                 <td><?php echo $buyer_info[$key]['shop_name']?></td>
                 <td><?php echo $buyer_info[$key]['shop_addr']?></td>
                 <td><?php echo $buyer_info[$key]['shop_phone']?></td>
-                <td><?php echo $buyer_info[$key]['req_cnt']?></td>
-                <td><?php echo $buyer_info[$key]['sel_count']?></td>
               </tr>
 <?php 
 	}

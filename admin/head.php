@@ -14,7 +14,7 @@ if (isset($_SESSION['ss_mb_name']) == false)
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TheFaceShop BlanClouding</title>
+    <title>Belif Bomb</title>
 	<!-- jQuery Version 1.11.0 -->
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
@@ -51,7 +51,7 @@ if (isset($_SESSION['ss_mb_name']) == false)
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="daily_influx_count.php">THEFACESHOP_BLANCLOUDING - Admin</a>
+          <a class="navbar-brand" href="daily_influx_count.php">Belif_BOMB - Admin</a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
@@ -82,10 +82,13 @@ if (isset($_SESSION['ss_mb_name']) == false)
                     <li>
                     <a href="daily_event_count.php">일자별 이벤트 참여자 수</a>
                   </li>
+                    <li>
+                    <a href="daily_winner_count.php">일자별 이벤트 당첨자 수</a>
+                  </li>
                 </ul>
               </li>
               <li>
-                <a href="entry_list.php"><i class="fa fa-fw fa-table"></i> 이벤트 참여자 목록</a>
+                <a href="entry_list.php"><i class="fa fa-fw fa-table"></i> 이벤트 당첨자 목록</a>
               </li>
               <li>
                 <a href="shop_list.php"><i class="fa fa-fw fa-table"></i> 매장 정보</a>
