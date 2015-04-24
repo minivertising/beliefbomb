@@ -613,7 +613,7 @@
                 <li>4</li>
                 <li>5</li>
                 <li>6</li>
-                <li onclick="show_detail_cal('2015-05-07')"><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>7</li>
+                <li onclick="show_detail_cal('2015-05-07')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>7</li>
                 <li onclick="show_detail_cal('2015-05-08')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>8</li>
                 <li class="sat" onclick="show_detail_cal('2015-05-09')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>9</li>
                 <li class="sun" onclick="show_detail_cal('2015-05-10')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>10</li>
