@@ -13,13 +13,13 @@
 
 		if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 		{
-			$surl	= make_surl($serialNumber, "2");
+			$surl	= make_surl($data['mb_serialnumber'], "2");
 			if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 			{
-				$surl	= make_surl($serialNumber, "3");
+				$surl	= make_surl($data['mb_serialnumber'], "3");
 				if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 				{
-					$surl	= make_surl($serialNumber, "4");
+					$surl	= make_surl($data['mb_serialnumber'], "4");
 					if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 					{
 						$surl	= make_surl($serialNumber, "5");
