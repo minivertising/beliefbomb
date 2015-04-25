@@ -6,19 +6,6 @@
 
 	$shop_info		= BB_shop_info($coupon_info['shop_idx']);
 
-	if (!$shop_info)
-	{
-		$coupon_info	= BB_check_serial1($serialnumber);
-
-		$shop_info		= BB_shop_info1($coupon_info['shop_idx']);
-		if (!$shop_info)
-		{
-			$coupon_info	= BB_check_serial2($serialnumber);
-
-			$shop_info		= BB_shop_info2($coupon_info['shop_idx']);
-		}
-	}
-	print_r($coupon_info);
 ?>
 <body class="bg_blue">
   <div class="wrap_page coupon">
