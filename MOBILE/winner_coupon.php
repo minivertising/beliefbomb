@@ -5,6 +5,11 @@
 	$coupon_info	= BB_check_serial($serialnumber);
 
 	$shop_info		= BB_shop_info($coupon_info['shop_idx']);
+
+	if (!$shop_info)
+	{
+		print_r($_SERVER['SERVER_ADDR']);
+	}
 ?>
 <body class="bg_blue">
   <div class="wrap_page coupon">
