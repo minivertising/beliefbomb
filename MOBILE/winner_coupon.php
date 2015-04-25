@@ -8,13 +8,11 @@
 
 	if (!$shop_info)
 	{
-		$my_db1 = mysqli_connect("192.168.124.155", "root", "m!nv#Rtisin9", "belifbomb");
 		$coupon_info	= BB_check_serial1($serialnumber);
 
 		$shop_info		= BB_shop_info1($coupon_info['shop_idx']);
 		if (!$shop_info)
 		{
-			$my_db2 = mysqli_connect("192.168.124.156", "root", "m!nv#Rtisin9", "belifbomb");
 			$coupon_info	= BB_check_serial2($serialnumber);
 
 			$shop_info		= BB_shop_info2($coupon_info['shop_idx']);
