@@ -18,6 +18,7 @@
 			$shop_info		= BB_shop_info2($coupon_info['shop_idx']);
 		}
 	}
+	print_r($coupon_info);
 ?>
 <body class="bg_blue">
   <div class="wrap_page coupon">
