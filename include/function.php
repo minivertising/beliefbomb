@@ -85,7 +85,7 @@
 	function BB_shop_info1($shop_idx)
 	{
 		global $_gl;
-		global $my_db;
+		global $my_db1;
 
 		$query 		= "SELECT * FROM ".$_gl['shop_info_table']." WHERE idx='".$shop_idx."'";
 		$result 	= mysqli_query($my_db1, $query);
@@ -98,7 +98,7 @@
 	function BB_check_serial2($serial)
 	{
 		global $_gl;
-		global $my_db;
+		global $my_db2;
 
 		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_serialnumber='".$serial."'";
 		$result 	= mysqli_query($my_db2, $query);
