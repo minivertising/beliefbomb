@@ -248,7 +248,6 @@ function chk_input_mobile()
 			}
 			else
 			{
-				alert(response);
 				alert("이벤트 참여자 수가 많아 참여가 지연되고 있습니다.\n다시 응모해 주시기 바랍니다.");
 				$("#mb_name").val("");
 				$("#mb_phone1").val("010");

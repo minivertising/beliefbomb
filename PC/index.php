@@ -976,6 +976,7 @@ $(document).ready(function() {
 				keepgoin=false;
 				$("#cap1").attr("onclick","event_action();");
 				$("#body1").attr("onclick","event_action();");
+				$("#cnt_num").hide();
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
 				$("#mb_name").val("");
@@ -1301,6 +1302,7 @@ $(document).ready(function() {
 			move();
 		});
 	}
+
 
 </script>
 

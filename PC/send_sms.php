@@ -5,7 +5,7 @@
 	}
 
 	//include_once "include/global.php"; 			//변수정보
-	$query	= "SELECT * FROM winner_info WHERE mb_s_url=''";
+	$query	= "SELECT * FROM winner_info WHERE mb_s_url='' AND mb_serialnumber<>''";
 	$result 	= mysqli_query($my_db, $query);
 	while($data = mysqli_fetch_array($result))
 	{
