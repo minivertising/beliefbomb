@@ -152,7 +152,6 @@ switch ($_REQUEST['exec'])
 				if ($today_cnt == $val)
 				{
 					$flag = "Y";
-					break;
 				}else{
 					// 1일 2000명 당첨 ( 키트 )
 					if ($kit_cnt > 2000)
