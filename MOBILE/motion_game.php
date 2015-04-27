@@ -38,7 +38,7 @@
         <div class="ending_img" style="display:none">
           <img src="img/popup/p_ing.gif"alt=""/>
         </div>
-        <div class="time clearfix">
+        <div class="time clearfix" id="game_time_cnt">
           <div class="num">
             <img src="img/popup/num1.png" alt="" id="game_num1"/>
           </div>
@@ -253,6 +253,7 @@ function deviceMotionHandler(eventData) {
 				$(".ctn_num").show();
 				if (bomb_cnt > 25)
 				{
+					$("#game_time_cnt").hide();
 					$(".ctn_num").hide();
 					window.removeEventListener('devicemotion', deviceMotionHandler, false);
 					keepgoin=false;
