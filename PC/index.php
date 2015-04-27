@@ -504,7 +504,7 @@
             <div class="img_product ending" id="game_end" style="display:none;">
               <img src="images/popup/game_ending.gif"  alt=""/>
             </div>
-            <div class="time clearfix">
+            <div class="time clearfix" id="game_time_cnt">
               <div class="num">
                 <img src="images/popup/num1.png" alt="" id="game_num1"/>
               </div>

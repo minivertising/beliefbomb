@@ -784,6 +784,7 @@ function event_action()
 		$(".cnt_num").hide();
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$("#game_time_cnt").hide();
 		$("#gage_bg").html("100%");
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
@@ -847,6 +848,7 @@ function event_action_ie8()
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
+		$("#game_time_cnt").hide();
 		$("#gage_bg").html("100%");
 		$("#cap1").attr("onclick","");
 		$("#body1").attr("onclick","");
