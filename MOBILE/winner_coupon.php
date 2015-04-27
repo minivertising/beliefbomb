@@ -6,6 +6,8 @@
 
 	$shop_info		= BB_shop_info($coupon_info['shop_idx']);
 
+
+
 ?>
 <body class="bg_blue">
   <div class="wrap_page coupon">
