@@ -1054,7 +1054,8 @@ html[xmlns] .clearfix {
 	width:12%;
 	left:50%;
 	margin-left:-6%;
-	top:37%;	
+	top:37%;
+	display:none;
 }
 .wrap_page.popup.game .ctn_num div{
 	width:100%;
@@ -1069,9 +1070,9 @@ html[xmlns] .clearfix {
 }
 .wrap_page.popup.game .time{
 	position:absolute;
-	bottom:12%;
+	top:37%;
 	width:25%;
-	margin-left:-10%;
+	margin-left:-12%;
 	left:50%;
 	z-index:900;
 	z-index:901;
@@ -1166,6 +1167,7 @@ html[xmlns] .clearfix {
 	bottom:8%;
 	width:40%;
 	left:0;
+	display:none;
 }
 .wrap_page.popup.game .bg_water_2{
 	position:absolute;
@@ -1173,6 +1175,7 @@ html[xmlns] .clearfix {
 	bottom:15%;
 	width:40%;
 	right:0;
+	display:none;
 }
 .wrap_page.popup.game .bg_water_1 img,
 .wrap_page.popup.game .bg_water_2 img{

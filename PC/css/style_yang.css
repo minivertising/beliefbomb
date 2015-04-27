@@ -315,7 +315,8 @@ body{
 	left:50%;
 	margin-left:-23px;
 	top:250px;
-	text-align:center;	
+	text-align:center;
+	display:none;
 }
 .popup_wrap .p_mid.game .cnt_num div{
 	width:50px;
@@ -324,7 +325,7 @@ body{
 }
 .popup_wrap .p_mid.game .time{
 	position:absolute;
-	bottom:110px;
+	top:240px;
 	left:145px;
 	z-index:910;
 }
