@@ -781,6 +781,7 @@ function event_action()
 	var num_cnt = 0;
 	if (bomb_cnt >= 25)
 	{
+
 		$(".cnt_num").hide();
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -797,7 +798,9 @@ function event_action()
 	}
 	num_cnt = bomb_cnt + 1;
 	$("#game_count").attr("src","images/popup/cnt_" + num_cnt + ".png");
+	
 	var gage_per	= bomb_cnt*4 ;
+	
 	var gage_bg	= gage_per;
 	if (gage_per > 98)
 	{
@@ -844,7 +847,7 @@ function event_action()
 
 function event_action_ie8()
 {
-	if (bomb_cnt >= 25)
+	if (bomb_cnt > 30)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -859,7 +862,14 @@ function event_action_ie8()
 		});
 	}
 
-	var gage_per	= bomb_cnt*4;
+	if (bomb_cnt < 20)
+	{
+		var gage_per	= bomb_cnt*4;
+	}
+	if (bomb_cnt >= 30 && bomb_cnt >= 20)
+	{
+		var gage_per	= bomb_cnt*2;
+	}
 	var gage_bg	= gage_per;
 	if (gage_per > 98)
 	{
