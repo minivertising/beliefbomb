@@ -22,7 +22,19 @@
 					$surl	= make_surl($data['mb_serialnumber'], "4");
 					if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
 					{
-						$surl	= make_surl($serialNumber, "5");
+						$surl	= make_surl($data['mb_serialnumber'], "5");
+						if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+						{
+							$surl	= make_surl($data['mb_serialnumber'], "6");
+							if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+							{
+								$surl	= make_surl($data['mb_serialnumber'], "7");
+								if ($surl == "RATE_LIMIT_EXCEEDED" || $surl == "")
+								{
+									$surl	= make_surl($data['mb_serialnumber'], "8");
+								}
+							}
+						}
 					}
 				}
 			}
@@ -142,6 +154,12 @@
 			$short_url = get_bitly_short_url($longurl,'kyhfan3','R_426adbe491a44aee82bd938e9c7f032e');
 		}else if ($num == "4"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan4','R_6e2b8aac3f514271a5901cf546f9540a');
+		}else if ($num == "5"){
+			$short_url = get_bitly_short_url($longurl,'kyhfan6','R_2501375b401e4c40a344748040e0026d');
+		}else if ($num == "6"){
+			$short_url = get_bitly_short_url($longurl,'kyhfan7','R_f0d6c9a8c4394e24a6a81e6aa2dc348a');
+		}else if ($num == "7"){
+			$short_url = get_bitly_short_url($longurl,'kyhfan8','R_87be85a4d0f246499882ee6e3e015ba1');
 		}else{
 			$short_url = get_bitly_short_url($longurl,'kyhfan','R_11ea80ffc2bf4bbe8c848b761e71df8a');
 		}
