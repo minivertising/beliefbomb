@@ -23,11 +23,11 @@
         <div class="title" id="title1">
           <img src="img/popup/title_game.png" alt="" id="title_image"/>
         </div>
-        <div class="ctn_num clearfix" style="display:none">
+        <!-- <div class="ctn_num clearfix" style="display:none">
           <div>
             <img src="img/popup/ctn_1.png" alt=""  id="game_count"/>
           </div>
-        </div>
+        </div> -->
 
         <div class="cap" id="cap1">
           <img src="img/popup/cap_1.png"alt=""/>
