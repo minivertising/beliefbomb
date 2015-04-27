@@ -1134,6 +1134,7 @@ html[xmlns] .clearfix {
 	width:100%;
 	position:absolute;
 	top:0;
+	z-index:9999;
 }
 .wrap_page.popup.game .ending_img img{
 	width:100%;

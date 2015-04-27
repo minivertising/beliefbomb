@@ -325,9 +325,9 @@ body{
 }
 .popup_wrap .p_mid.game .time{
 	position:absolute;
-	top:240px;
+	top:250px;
 	left:145px;
-	z-index:910;
+	z-index:800;
 }
 .popup_wrap .p_mid.game .time .num{
 	float:left;
