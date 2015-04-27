@@ -779,9 +779,8 @@ function event_action()
 {
 	$(".cnt_num").show();
 	var num_cnt = 0;
-	if (bomb_cnt >= 25)
+	if (bomb_cnt >= 30)
 	{
-
 		$(".cnt_num").hide();
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -794,12 +793,12 @@ function event_action()
 		$('#game_end').show(0, function(){
 			window.setTimeout("event_check_data();",2000);
 		});
-
+		return false;
 	}
 	num_cnt = bomb_cnt + 1;
 	$("#game_count").attr("src","images/popup/cnt_" + num_cnt + ".png");
 	
-	var gage_per	= bomb_cnt*4 ;
+	var gage_per	= Math.round(bomb_cnt*3.3) ;
 	
 	var gage_bg	= gage_per;
 	if (gage_per > 98)
@@ -847,7 +846,7 @@ function event_action()
 
 function event_action_ie8()
 {
-	if (bomb_cnt > 30)
+	if (bomb_cnt >= 30)
 	{
 		keepgoin=false;
 		//$('#cap1').jQueryTween({ to: { translate: {y: -180 },rotate: { z: -20 } }, yoyo: false, duration: 300, easing: TWEEN.Easing.Quartic.Out });
@@ -862,14 +861,7 @@ function event_action_ie8()
 		});
 	}
 
-	if (bomb_cnt < 20)
-	{
-		var gage_per	= bomb_cnt*4;
-	}
-	if (bomb_cnt >= 30 && bomb_cnt >= 20)
-	{
-		var gage_per	= bomb_cnt*2;
-	}
+	var gage_per	= Math.round(bomb_cnt*3.3) ;
 	var gage_bg	= gage_per;
 	if (gage_per > 98)
 	{
@@ -1157,6 +1149,7 @@ function game_ready()
 				$("#game_num2").attr("src","images/popup/num0.png");
 				$("#game_num3").attr("src","images/popup/num0.png");
 				$("#game_num4").attr("src","images/popup/num0.png");
+				$("#game_time_cnt").show();
 				$("#gage_bg").css("width", "0%");
 				$("#gage_bg").html("0%");
 				$("#game_ing").show();
@@ -1212,6 +1205,7 @@ function game_start_data()
 				$("#body1").attr("onclick","event_action();");
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
+				$("#game_time_cnt").show();
 				$("#cnt_num").hide();
 				$("#mb_name").val("");
 				$("#mb_phone1").val("");

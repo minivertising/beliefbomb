@@ -979,6 +979,7 @@ $(document).ready(function() {
 				$("#cnt_num").hide();
 				$("#timer_s").val("10");
 				$("#timer_ms").val("00");
+				$("#game_time_cnt").show();
 				$("#mb_name").val("");
 				$("#mb_phone1").val("");
 				$("#mb_phone2").val("");
