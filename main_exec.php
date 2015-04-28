@@ -102,10 +102,10 @@ switch ($_REQUEST['exec'])
 		if ($winner_cnt > 1)
 		{
 			// 1일 2000명 당첨 ( 키트 )
-			if ($kit_cnt > 2000)
+			if ($kit_cnt > 3000)
 			{
 				// 1일 1000명 당첨 ( 미니어쳐 )
-				if ($miniature_cnt > 1000)
+				if ($miniature_cnt > 1500)
 				{
 					$flag	= "N";
 				}else{
@@ -156,10 +156,10 @@ switch ($_REQUEST['exec'])
 					break;
 				}else{
 					// 1일 2000명 당첨 ( 키트 )
-					if ($kit_cnt > 2000)
+					if ($kit_cnt > 3000)
 					{
 						// 1일 1000명 당첨 ( 미니어쳐 )
-						if ($miniature_cnt > 800)
+						if ($miniature_cnt > 1500)
 						{
 							$flag	= "N";
 						}else{
