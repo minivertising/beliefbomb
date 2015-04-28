@@ -462,9 +462,16 @@
 <?
 	if ($IE8 == "N")
 	{
+		if	($IE9 == "Y")
+		{
+?>
+              <a href="#" onclick="game_start_ie9()"><img src="images/popup/btn_start.png" alt=""/></a>
+<?
+		}else{
 ?>
               <a href="#" onclick="game_start()"><img src="images/popup/btn_start.png" alt=""/></a>
 <?
+		}
 	}else{
 ?>
               <a href="#" onclick="game_start_ie8()"><img src="images/popup/btn_start.png" alt=""/></a>

@@ -27,6 +27,11 @@
 		$IE8	= "Y";
 	else
 		$IE8	= "N";
+
+	if(stripos( $_SERVER['HTTP_USER_AGENT'], "MSIE 9.0" ))
+		$IE9	= "Y";
+	else
+		$IE9	= "N";
 	
 	if($check_mobile == "Y")
 		$gubun = "MOBILE";
