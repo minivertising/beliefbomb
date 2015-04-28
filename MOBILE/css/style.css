@@ -1013,6 +1013,7 @@ html[xmlns] .clearfix {
 }
 .wrap_page.popup.cal .cal_block .list_cal ul li span.txt{
 	padding-top:3px;
+	font-family:Helvetica, Arial, sans-serif;
 }
 .wrap_page.popup.cal .cal_block .list_cal ul li span.icon{
 	display:inline-block;
