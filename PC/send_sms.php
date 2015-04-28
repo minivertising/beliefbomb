@@ -153,9 +153,9 @@ e-mail : jh.woo@minivertising.kr
 		$longurl	= "http://www.belifbomb.com/MOBILE/winner_coupon.php?serialnumber=".$serial;
 		if ($num == "1")
 		{
-			$short_url = get_bitly_short_url($longurl,'kyhfan4','R_6e2b8aac3f514271a5901cf546f9540a');
+			$short_url = get_bitly_short_url($longurl,'kyhfan7','R_f0d6c9a8c4394e24a6a81e6aa2dc348a');
 		}else if ($num == "2"){
-			$short_url = get_bitly_short_url($longurl,'kyhfan6','R_2501375b401e4c40a344748040e0026d');
+			$short_url = get_bitly_short_url($longurl,'kyhfan2','R_f7547b30052049679ee65de54c782e20');
 		}else if ($num == "3"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan8','R_87be85a4d0f246499882ee6e3e015ba1');
 		}else if ($num == "4"){
@@ -163,9 +163,9 @@ e-mail : jh.woo@minivertising.kr
 		}else if ($num == "5"){
 			$short_url = get_bitly_short_url($longurl,'kyhfan5','R_089bb97a7ff8481da0e7b1600c6b6c0f');
 		}else if ($num == "6"){
-			$short_url = get_bitly_short_url($longurl,'kyhfan2','R_f7547b30052049679ee65de54c782e20');
+			$short_url = get_bitly_short_url($longurl,'kyhfan6','R_2501375b401e4c40a344748040e0026d');
 		}else if ($num == "7"){
-			$short_url = get_bitly_short_url($longurl,'kyhfan7','R_f0d6c9a8c4394e24a6a81e6aa2dc348a');
+			$short_url = get_bitly_short_url($longurl,'kyhfan4','R_6e2b8aac3f514271a5901cf546f9540a');
 		}else{
 			$short_url = get_bitly_short_url($longurl,'kyhfan','R_11ea80ffc2bf4bbe8c848b761e71df8a');
 		}
