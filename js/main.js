@@ -741,6 +741,7 @@ function event_winner_check()
 				}, 0);
 			}else if (response == "Y"){
 				$("#input1_image").attr("src","images/popup/title_gift_1.png");
+				$("#gift_detail_img").attr("src","images/popup/txt_gift_detail_cream.png");
 				$("#mb_gift").val("cream");
 				$.magnificPopup.open({
 					items: {

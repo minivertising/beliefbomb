@@ -206,7 +206,7 @@
               </ul>
             </div>
             <div class="txt_gift_detail">
-              <img src="images/popup/txt_gift_detail.png" alt=""/>
+              <img src="images/popup/txt_gift_detail.png" alt="" id="gift_detail_img"/>
             </div>
             <div class="btn_block">
               <a href="#" onclick="chk_input()"><img src="images/popup/btn_input_ok.png" alt=""/></a>
