@@ -1136,6 +1136,7 @@ function game_ready()
 				$('#event_game1_pop').css('top','-890px');
 				// 이동위치값 지정
 				var position = 0;
+				event_triger = 0;
 				$('#event_game1_pop').show().animate({top:position},{duration:1000,easing:'easeOutBounce'});
 				//window.scrollTo(0,0);
 			},
@@ -1201,6 +1202,7 @@ function game_start_data()
 				bomb_cnt = 0;
 				currentsec=9;
 				currentmil=100;
+				event_triger=0;
 				keepgoin=false;
 				$("#cap1").attr("onclick","event_action();");
 				$("#body1").attr("onclick","event_action();");
