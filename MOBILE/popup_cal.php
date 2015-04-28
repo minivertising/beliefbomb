@@ -87,11 +87,6 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
-                <span class="txt">05.07(목) 영등포 타임스퀘어</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
                 <span class="txt">05.08(금) 울산 롯데백화점</span>
               </li>
               <li class="clearfix">
@@ -124,20 +119,12 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.19(화) 서울여대/고려대</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.20(수) 서울여대/고려대</span>
+                <span class="txt">05.18(월) 고려대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
                 <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
                 <span class="txt">05.20(수) 홍익대</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.21(목) 서울여대/고려대</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -198,10 +185,12 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
+                <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
                 <span class="txt">06.20(토) 레인보우 아일랜드 페스티벌</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
+                <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
                 <span class="txt">06.21(일) 레인보우 아일랜드 페스티벌</span>
               </li>
               <li class="clearfix">
