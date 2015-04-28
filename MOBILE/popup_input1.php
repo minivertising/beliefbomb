@@ -72,7 +72,18 @@
             <li class="in_check_btn"><a href="adver_agree.php" class="btn_detail"><img src="img/popup/btn_detail.png" alt=""/></a></li>
           </ul>
         </div>
+<?
+	if ($gift == "cream")
+	{
+?>
+        <div class="txt_notice img_100"><img src="img/popup/txt_notice_double_cream.png" alt=""/></div>
+<?
+	}else{
+?>
         <div class="txt_notice img_100"><img src="img/popup/txt_notice_double.png" alt=""/></div>
+<?
+	}
+?>
         <div class="btn_block comp">
           <a href="#" onclick="chk_input_mobile()"><img src="img/popup/btn_ok.png" alt=""/></a>
         </div>
