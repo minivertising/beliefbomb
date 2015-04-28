@@ -140,7 +140,7 @@
       </div>
     </div>
     <div class="footer">
-      <img src="images/txt_footer.png" width="924" height="99" alt=""/>
+      <img src="images/txt_footer.png" width="924" height="164" alt=""/>
     </div>
     <!--quickmenu-->
     <div class="quickmenu" id="quickmenu" style="position:fixed;right:20px;z-index:805;bottom:50px;">
