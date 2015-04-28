@@ -81,15 +81,15 @@ switch ($_REQUEST['exec'])
 	break;
 
 	case "winner_check" :
-		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'cream' AND mb_regdate like '%".date("Y-m-d")."%'";
+		$query 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner = 'cream' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result 	= mysqli_query($my_db, $query);
 		$winner_cnt	= mysqli_num_rows($result);
 
-		$query2 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'kit' AND mb_regdate like '%".date("Y-m-d")."%'";
+		$query2 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner = 'kit' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result2 	= mysqli_query($my_db, $query2);
 		$kit_cnt	= mysqli_num_rows($result2);
 
-		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner <> 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
+		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner = 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
 		$miniature_array = array("Y","N","N","N","N","N","N","N","N","N","N","N","N");
@@ -140,8 +140,8 @@ switch ($_REQUEST['exec'])
 			}
 		}else{
 			// 정품 당첨 추첨
-			$winner_array = array(692,2488,3658,5211);
-			$max_winner_cnt = 5;
+			$winner_array = array(13447,19372,23118,28494);
+			//$max_winner_cnt = 5;
 
 			// 오늘의 참여자 수
 			$today_cnt = BB_TodayMember();
@@ -152,12 +152,13 @@ switch ($_REQUEST['exec'])
 				if ($today_cnt == $val)
 				{
 					$flag = "Y";
+					break;
 				}else{
 					// 1일 2000명 당첨 ( 키트 )
 					if ($kit_cnt > 2000)
 					{
 						// 1일 1000명 당첨 ( 미니어쳐 )
-						if ($miniature_cnt > 500)
+						if ($miniature_cnt > 800)
 						{
 							$flag	= "N";
 						}else{
