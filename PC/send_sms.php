@@ -90,7 +90,7 @@
 
 		$params = array(
 			'send_time' => '', 
-			'send_phone' => '0316897501', 
+			'send_phone' => '0316897530', 
 			'dest_phone' => $phone, 
 			//'dest_phone' => '01030033965', 
 			'send_name' => '', 
