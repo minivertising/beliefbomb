@@ -35,9 +35,9 @@
 	
 	while ($date_data = @mysqli_fetch_array($res))
 	{		
-		$pc_query		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='PC' AND mb_erialnumber<>''";
+		$pc_query		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='PC' AND mb_serialnumber<>''";
 		$pc_count		= mysqli_num_rows(mysqli_query($my_db, $pc_query));
-		$mobile_query	= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='MOBILE' AND mb_erialnumber<>''";
+		$mobile_query	= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='MOBILE' AND mb_serialnumber<>''";
 		$mobile_count	= mysqli_num_rows(mysqli_query($my_db, $mobile_query));
 		$total_count = $pc_count + $mobile_count;
 
