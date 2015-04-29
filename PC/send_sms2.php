@@ -93,10 +93,10 @@
 
 		$params = array(
 			'send_time' => '', 
-			//'send_phone' => '0800237007', 
-			'send_phone' => '025322475', 
-			//'dest_phone' => $phone, 
-			'dest_phone' => '01099017644', 
+			'send_phone' => '0800237007', 
+			//'send_phone' => '025322475', 
+			'dest_phone' => $phone, 
+			//'dest_phone' => '01099017644', 
 			'send_name' => '', 
 			'dest_name' => '', 
 			'subject' => 'water bomb! bomb! 빌리프 폭탄 크림 쿠폰',
