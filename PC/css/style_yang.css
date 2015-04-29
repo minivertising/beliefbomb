@@ -576,6 +576,9 @@ body{
 .popup_wrap .p_alert .block_content .title{
 	padding-top:25px;
 }
+.popup_wrap .p_alert .block_content .title.thx{
+	padding-top:15px;
+}
 .popup_wrap .p_alert .block_content .btn_block{
 	text-align:center;
 	padding-top:35px;

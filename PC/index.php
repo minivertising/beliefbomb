@@ -753,7 +753,7 @@
             <a href="#" class="btn_close" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_close.png" /></a>
           </div>
           <div class="block_content">
-            <div class="title">
+            <div class="title thx">
               <img src="images/popup/title_alert_thx.png" alt=""/>
             </div>
             <div class="btn_block">
