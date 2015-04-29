@@ -99,7 +99,7 @@
 			'dest_phone' => '01099017644', 
 			'send_name' => '', 
 			'dest_name' => '', 
-			'subject' => 'water bomb! bomb! 빌리프  크림 쿠폰',
+			'subject' => 'water 빌리프  크림 쿠폰',
 			'msg_body' => "
 빌리프  크림 이벤트에 당첨되신 것을 축하드립니다.
 
