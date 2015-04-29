@@ -557,10 +557,10 @@
             <div class="arrow left"><a href="#" onclick="prev_cal()"><img src="images/arrow_cal_left.png" alt=""/></a></div>
             <div class="arrow right"><a href="#" onclick="next_cal()"><img src="images/arrow_cal_right.png" alt=""/></a></div>
           </div><!--inner-->
-          <div class="list_cal" id="month_4">
+          <div class="list_cal" id="month_4" style="display:none">
             <img src="images/popup/cal_4.png" alt="" id="month_4"/>
           </div>
-          <div class="list_cal" id="month_5" style="display:none">
+          <div class="list_cal" id="month_5">
             <img src="images/popup/cal_5.png" alt="" id="month_5"/>
           </div>
           <div class="list_cal" id="month_6" style="display:none">
@@ -1026,7 +1026,7 @@ $(document).ready(function() {
 		showDaumPostcode();
 	}
 
-	var cal_cnt = 0;
+	var cal_cnt = 1;
 	function prev_cal()
 	{
 		if (cal_cnt == 0)
