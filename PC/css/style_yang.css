@@ -672,7 +672,8 @@ body{
 
 .wrap_menu{
 	width:100%;
-	background: rgba(255, 255, 255, 1); 
+	/*background: rgba(255, 255, 255, 1); */
+	background: white; 
 	height:70px;
 	border-bottom:1px solid #cae7f3;
 	

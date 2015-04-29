@@ -1084,6 +1084,31 @@ function game_start_ie8()
 	});
 }
 
+function game_start_ie9()
+{
+	$.ajax({
+		type:"POST",
+		cache: false,
+		data:{
+			"exec"			: "insert_event_member"
+		},
+		url: "../main_exec.php"
+	});
+	var position = 0;
+	$('.btn_start').animate({top:position},500,'easeInBack', function(){
+		$('.btn_start').fadeOut('fast');
+		if (keepgoin == false)
+		{
+			keepgoin=true;
+			timer("P");
+		}
+		$("#cap1").attr("onclick","event_action_ie8();");
+		$("#body1").attr("onclick","event_action_ie8();");
+		$("#gage_bg").css("width", "0%");
+		$("#gage_bg").html("0%");
+	});
+}
+
 
 function show_qrcode()
 {

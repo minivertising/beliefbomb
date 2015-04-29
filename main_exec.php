@@ -92,8 +92,8 @@ switch ($_REQUEST['exec'])
 		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner = 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
-		$miniature_array = array("Y","N","N","N","N","N","N");
-		$kit_array = array("Y","N","N","N","N");
+		$miniature_array = array("Y","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N");
+		$kit_array = array("Y","N","N","N","N","N","N","N","N","N","N","N","N");
 		//$miniature_array = array("Y","N");
 		//$kit_array = array("Y","N");
 

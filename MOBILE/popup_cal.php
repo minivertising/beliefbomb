@@ -75,69 +75,56 @@
             <ul>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.01(금) 인천 신세계백화점</span>
+                <span class="txt">05.01(금) 신세계백화점 인천점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.02(토) 인천 신세계백화점</span>
+                <span class="txt">05.02(토) 신세계백화점 인천점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.03(일) 인천 신세계백화점</span>
+                <span class="txt">05.03(일) 신세계백화점 인천점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
-                <span class="txt">05.07(목) 영등포 타임스퀘어</span>
+                <span class="txt">05.08(금) 롯데백화점 울산점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.08(금) 울산 롯데백화점</span>
+                <span class="txt">05.09(토) 롯데백화점 울산점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.09(토) 울산 롯데백화점</span>
+                <span class="txt">05.10(일) 롯데백화점 울산점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.10(일) 울산 롯데백화점</span>
+                <span class="txt">05.12(화) 세종대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.12(화) 세종대</span>
+                <span class="txt">05.13(수) 세종대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.13(수) 세종대</span>
+                <span class="txt">05.15(금) 롯데백화점 대전점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.15(금) 대전 롯데백화점</span>
+                <span class="txt">05.16(토) 롯데백화점 대전점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.16(토) 대전 롯데백화점</span>
+                <span class="txt">05.17(일) 롯데백화점 대전점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.17(일) 대전 롯데백화점</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.19(화) 서울여대/고려대</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.20(수) 서울여대/고려대</span>
+                <span class="txt">05.18(월) 고려대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
                 <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
-                <span class="txt">05.20(수) 홍익대</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.21(목) 서울여대/고려대</span>
+                <span class="txt">05.20(수) 홍익대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -156,19 +143,19 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.27(수) 숙명여대</span>
+                <span class="txt">05.27(수) 숙명여자대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.29(금) 수원 롯데백화점</span>
+                <span class="txt">05.29(금) 롯데백화점 수원점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.30(토) 수원 롯데백화점</span>
+                <span class="txt">05.30(토) 롯데백화점 수원점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.31(일) 수원 롯데백화점</span>
+                <span class="txt">05.31(일) 롯데백화점 수원점</span>
               </li>
             </ul>
           </div>
@@ -176,15 +163,15 @@
             <ul>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.05(금) 부산 서면 롯데백화점</span>
+                <span class="txt">06.05(금) 롯데백화점 부산 서면점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.06(토) 부산 서면 롯데백화점</span>
+                <span class="txt">06.06(토) 롯데백화점 부산 서면점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.07(일) 부산 서면 롯데백화점</span>
+                <span class="txt">06.07(일) 롯데백화점 부산 서면점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -198,23 +185,25 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.20(토) 레인보우 아일랜드 페스티벌</span>
+                <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
+                <span class="txt">06.20(토) 레인보우 아일랜드</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.21(일) 레인보우 아일랜드 페스티벌</span>
+                <span class="icon"><img src="img/popup/cal_icon_mc.png" width="20" alt=""/></span>
+                <span class="txt">06.21(일) 레인보우 아일랜드</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.26(금) 부산 센텀시티 신세계백화점</span>
+                <span class="txt">06.26(금) 신세계백화점 부산 센텀시티점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.27(토) 부산 센텀시티 신세계백화점</span>
+                <span class="txt">06.27(토) 신세계백화점 부산 센텀시티점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">06.28(일) 부산 센텀시티 신세계백화점</span>
+                <span class="txt">06.28(일) 신세계백화점 부산 센텀시티점</span>
               </li>
             </ul>
           </div>

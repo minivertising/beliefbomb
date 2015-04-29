@@ -34,9 +34,10 @@
     <script type="text/javascript" src="../js/main.js"></script>
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
     <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
+	<script type='text/javascript' src='../js/analytics.js'></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 <?
-	if ($IE8 == "N")
+	if ($IE8 == "N" && $IE9 == "N")
 	{
 ?>
     <script type="text/javascript" src="../js/jQueryTween-aio-min.js"></script>

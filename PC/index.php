@@ -462,9 +462,16 @@
 <?
 	if ($IE8 == "N")
 	{
+		if	($IE9 == "Y")
+		{
+?>
+              <a href="#" onclick="game_start_ie9()"><img src="images/popup/btn_start.png" alt=""/></a>
+<?
+		}else{
 ?>
               <a href="#" onclick="game_start()"><img src="images/popup/btn_start.png" alt=""/></a>
 <?
+		}
 	}else{
 ?>
               <a href="#" onclick="game_start_ie8()"><img src="images/popup/btn_start.png" alt=""/></a>
@@ -550,155 +557,14 @@
             <div class="arrow left"><a href="#" onclick="prev_cal()"><img src="images/arrow_cal_left.png" alt=""/></a></div>
             <div class="arrow right"><a href="#" onclick="next_cal()"><img src="images/arrow_cal_right.png" alt=""/></a></div>
           </div><!--inner-->
-          <div class="list_cal"><!--list_cal 4 -->
-            <div class="mon_num">4월</div>
-            <div class="list" id="month_4">
-              <ul class="clearfix">
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li>1</li>
-                <li>2</li>
-                <li onclick="show_detail_cal('2015-04-03')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>3</li>
-                <li class="sat" onclick="show_detail_cal('2015-04-04')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>4</li>
-                <li class="sun" onclick="show_detail_cal('2015-04-05')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>5</li>
-              </ul>
-              <ul class="clearfix">
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li onclick="show_detail_cal('2015-04-10')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>10</li>
-                <li class="sat" onclick="show_detail_cal('2015-04-11')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>11</li>
-                <li class="sun" onclick="show_detail_cal('2015-04-12')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>12</li>
-              </ul>
-              <ul class="clearfix">
-                <li onclick="show_detail_cal('2015-04-13')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li onclick="show_detail_cal('2015-04-17')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>17</li>
-                <li class="sat" onclick="show_detail_cal('2015-04-18')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>18</li>
-                <li class="sun" onclick="show_detail_cal('2015-04-19')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>19</li>
-              </ul>
-              <ul class="clearfix">
-                <li>20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li class="sat" onclick="show_detail_cal('2015-04-25')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>25</li>
-                <li class="sun" onclick="show_detail_cal('2015-04-26')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>26</li>
-              </ul>
-              <ul class="last clearfix">
-                <li>27</li>
-                <li>28</li>
-                <li>29</li>
-                <li>30</li>
-                <li>&nbsp;</li>
-                <li class="sat">&nbsp;</li>
-                <li class="sun">&nbsp;</li>
-              </ul>
-            </div><!--list_cal 4 -->
-            <div class="list" id="month_5" style="display:none"><!--list_cal 5 -->
-              <ul class="clearfix">
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li onclick="show_detail_cal('2015-05-01')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>1</li>
-                <li class="sat" onclick="show_detail_cal('2015-05-02')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>2</li>
-                <li class="sun" onclick="show_detail_cal('2015-05-03')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>3</li>
-              </ul>
-              <ul class="clearfix">
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li onclick="show_detail_cal('2015-05-07')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>7</li>
-                <li onclick="show_detail_cal('2015-05-08')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>8</li>
-                <li class="sat" onclick="show_detail_cal('2015-05-09')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>9</li>
-                <li class="sun" onclick="show_detail_cal('2015-05-10')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>10</li>
-              </ul>
-              <ul class="clearfix">
-                <li>11</li>
-                <li onclick="show_detail_cal('2015-05-12')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>12</li>
-                <li onclick="show_detail_cal('2015-05-13')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>13</li>
-                <li>14</li>
-                <li onclick="show_detail_cal('2015-05-15')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>15</li>
-                <li class="sat" onclick="show_detail_cal('2015-05-16')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>16</li>
-                <li class="sun" onclick="show_detail_cal('2015-05-17')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>17</li>
-              </ul>
-              <ul class="clearfix">
-                <li>18</li>
-                <li onclick="show_detail_cal('2015-05-19')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>19</li>
-                <li onclick="show_detail_cal('2015-05-20')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>20</li>
-                <li onclick="show_detail_cal('2015-05-21')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>21</li>
-                <li>22</li>
-                <li class="sat" onclick="show_detail_cal('2015-05-23')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>23</li>
-                <li class="sun" onclick="show_detail_cal('2015-05-24')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>24</li>
-              </ul>
-              <ul class="last clearfix">
-                <li onclick="show_detail_cal('2015-05-25')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>25</li>
-                <li>26</li>
-                <li onclick="show_detail_cal('2015-05-27')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>27</li>
-                <li>28</li>
-                <li onclick="show_detail_cal('2015-05-29')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>29</li>
-                <li class="sat" onclick="show_detail_cal('2015-05-30')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>30</li>
-                <li class="sun" onclick="show_detail_cal('2015-05-31')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>31</li>
-              </ul>
-            </div><!--list_cal 5 -->
-            <div class="list" id="month_6" style="display:none"><!--list_cal 6 -->
-              <ul class="clearfix">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li onclick="show_detail_cal('2015-06-05')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>5</li>
-                <li class="sat" onclick="show_detail_cal('2015-06-06')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>6</li>
-                <li class="sun" onclick="show_detail_cal('2015-06-07')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>7</li>
-              </ul>
-              <ul class="clearfix">
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li onclick="show_detail_cal('2015-06-12')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>12</li>
-                <li class="sat" onclick="show_detail_cal('2015-06-13')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span><span class="ic_ban"><a href="#"><img src="images/icon_ban.png" alt=""/></a></span>13</li>
-                <li class="sun">14</li>
-              </ul>
-              <ul class="clearfix">
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-                <li class="sat" onclick="show_detail_cal('2015-06-20')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>20</li>
-                <li class="sun" onclick="show_detail_cal('2015-06-21')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>21</li>
-              </ul>
-              <ul class="clearfix">
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li onclick="show_detail_cal('2015-06-26')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>26</li>
-                <li class="sat" onclick="show_detail_cal('2015-06-27')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>27</li>
-                <li class="sun" onclick="show_detail_cal('2015-06-28')"><span class="ic_car"><a href="#" ><img src="images/icon_car.png" alt=""/></a></span>28</li>
-              </ul>
-              <ul class="last clearfix">
-                <li>29</li>
-                <li>30</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li class="sat">&nbsp;</li>
-                <li class="sun">&nbsp;</li>
-              </ul>
-            </div><!--list_cal 6 -->
-
-            <div class="list_detail">
-              <ul>
-                <li>&nbsp;</li>
-              </ul>
-            </div>
+          <div class="list_cal" id="month_4">
+            <img src="images/popup/cal_4.png" alt="" id="month_4"/>
+          </div>
+          <div class="list_cal" id="month_5" style="display:none">
+            <img src="images/popup/cal_5.png" alt="" id="month_5"/>
+          </div>
+          <div class="list_cal" id="month_6" style="display:none">
+            <img src="images/popup/cal_6.png" alt="" id="month_6"/>
           </div>
         </div>
       </div>
@@ -1173,15 +1039,15 @@ $(document).ready(function() {
 		}else if (cal_cnt == 1){
 			$("#month_5").fadeOut("fast", function(){
 				$("#month_4").fadeIn("slow");
-				$(".mon_num").html("4월");
-				show_desc_cal('4');
+				//$(".mon_num").html("4월");
+				//show_desc_cal('4');
 			});
 			cal_cnt = 0;
 		}else if (cal_cnt == 2){
 			$("#month_6").fadeOut("fast", function(){
 				$("#month_5").fadeIn("slow");
-				$(".mon_num").html("5월");
-				show_desc_cal('5');
+				//$(".mon_num").html("5월");
+				//show_desc_cal('5');
 			});
 			cal_cnt =1;
 		}
@@ -1193,15 +1059,15 @@ $(document).ready(function() {
 		{
 			$("#month_4").fadeOut("fast", function(){
 				$("#month_5").fadeIn("slow");
-				$(".mon_num").html("5월");
-				show_desc_cal('5');
+				//$(".mon_num").html("5월");
+				//show_desc_cal('5');
 			});
 			cal_cnt = 1;
 		}else if (cal_cnt == 1){
 			$("#month_5").fadeOut("fast", function(){
 				$("#month_6").fadeIn("slow");
-				$(".mon_num").html("6월");
-				show_desc_cal('6');
+				//$(".mon_num").html("6월");
+				//show_desc_cal('6');
 			});
 			cal_cnt = 2;
 		}else if (cal_cnt == 2){
