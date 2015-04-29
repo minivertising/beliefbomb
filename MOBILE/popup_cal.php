@@ -35,15 +35,15 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">04.10(금) U-Plex(신촌 현대백화점)</span>
+                <span class="txt">04.10(금) U-Plex(현대백화점 신촌점)</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">04.11(토) U-Plex(신촌 현대백화점)</span>
+                <span class="txt">04.11(토) U-Plex(현대백화점 신촌점)</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">04.12(일) U-Plex(신촌 현대백화점)</span>
+                <span class="txt">04.12(일) U-Plex(현대백화점 신촌점)</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -51,15 +51,15 @@
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">04.17(금) 충청 현대백화점</span>
+                <span class="txt">04.17(금) 현대백화점 충청점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">04.18(토) 충청 현대백화점</span>
+                <span class="txt">04.18(토) 현대백화점 충청점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">04.19(일) 충청 현대백화점</span>
+                <span class="txt">04.19(일) 현대백화점 충청점</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -116,10 +116,6 @@
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
                 <span class="txt">05.17(일) 롯데백화점 대전점</span>
-              </li>
-              <li class="clearfix">
-                <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
-                <span class="txt">05.18(월) 고려대학교</span>
               </li>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
