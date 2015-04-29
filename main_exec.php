@@ -140,7 +140,7 @@ switch ($_REQUEST['exec'])
 			}
 		}else{
 			// 정품 당첨 추첨
-			$winner_array = array(13447,19372,23118,28494);
+			$winner_array = array(73447,119372,123118,188494);
 			//$winner_array = array(1,2,23118,28494);
 			//$max_winner_cnt = 5;
 
