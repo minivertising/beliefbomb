@@ -8,7 +8,7 @@
 
 	//include_once "include/global.php"; 			//변수정보
 	//$query	= "SELECT * FROM winner_info WHERE mb_s_url='' AND mb_serialnumber<>'' AND mb_winner <> 'cream'";
-	$query	= "SELECT * FROM winner_info WHERE mb_phone='".$phone."' AND mb_winner='kit'";
+	$query	= "SELECT * FROM winner_info WHERE mb_phone='".$phone."' AND mb_winner='miniature'";
 	$result 	= mysqli_query($my_db, $query);
 	while($data = mysqli_fetch_array($result))
 	{
