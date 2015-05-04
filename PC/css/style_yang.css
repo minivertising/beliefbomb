@@ -577,13 +577,16 @@ body{
 	padding-top:25px;
 }
 .popup_wrap .p_alert .block_content .title.thx{
-	padding-top:15px;
+	padding-top:0px;
 }
 .popup_wrap .p_alert .block_content .btn_block{
 	text-align:center;
 	padding-top:35px;
 }
-
+.popup_wrap .p_alert .block_content .btn_block.thx{
+	text-align:center;
+	padding-top:10px;
+}
 
 .popup_wrap .p_alert .block_content.thanks .title{
 	padding-top:20px;

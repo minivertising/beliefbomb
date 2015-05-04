@@ -756,7 +756,7 @@
             <div class="title thx">
               <img src="images/popup/title_alert_thx.png" alt=""/>
             </div>
-            <div class="btn_block">
+            <div class="btn_block thx">
               <a href="#" onclick="sns_share('facebook');"><img src="images/popup/btn_share.png" alt=""/></a><a href="#" onclick="$.magnificPopup.close();"><img src="images/popup/pop_btn_ok.png" alt=""/></a>
             </div>
           </div>
