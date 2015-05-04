@@ -8,7 +8,7 @@
 
 	//include_once "include/global.php"; 			//변수정보
 	//$query	= "SELECT * FROM winner_info WHERE mb_s_url='' AND mb_serialnumber<>'' AND mb_winner <> 'cream'";
-	$query	= "SELECT * FROM winner_info WHERE mb_phone='".$phone."'";
+	$query	= "SELECT * FROM winner_info WHERE mb_phone='".$phone."' AND mb_s_url=''";
 	$result 	= mysqli_query($my_db, $query);
 	while($data = mysqli_fetch_array($result))
 	{
@@ -93,9 +93,10 @@
 
 		$params = array(
 			'send_time' => '', 
-			'send_phone' => '0800237007', 
+			'send_phone' => '0316897530', 
+			//'send_phone' => '025322475', 
 			'dest_phone' => $phone, 
-			//'dest_phone' => '01030033965', 
+			//'dest_phone' => '01099017644', 
 			'send_name' => '', 
 			'dest_name' => '', 
 			'subject' => 'water bomb! bomb! 빌리프 폭탄 크림 쿠폰',
@@ -106,17 +107,15 @@
 
 ▶ 쿠폰 받기:
 ".$s_url."
-▶ 교환 기간:
-4/28 ~ 6/14
+▶ 쿠폰 사용기간 : 4/28 ~ 6/14
 
 * 지정하신 오프라인 매장에서만 사용가능합니다.
-* 6/14이후 쿠폰 교환이 불가합니다.
+* 6/14 이후 쿠폰 교환이 불가합니다.
 
 ● 불법적인 방법으로 이벤트에 참여하신 고객님은 이벤트 당첨 대상에서 제외되며, 당첨 이후에도 당첨이 취소될 수 있습니다.
 ● 캠페인 관련 문의
 (문의 가능 시간 평일 10:00 ~ 18:00)
-고객상담전화 : 080-023-7007
-이벤트 문의전화 : 02-532-2475
+이벤트 문의전화 : 080-023-7007
 e-mail : jh.woo@minivertising.kr
 "
 		);

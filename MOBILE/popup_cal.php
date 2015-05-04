@@ -15,11 +15,11 @@
           <div class="t_mon clearfix">
             <div class="inner">
               <div class="arrow"><a href="#" onclick="prev_m_cal();"><img src="img/popup/cal_arrow_left.png" alt=""/> </a></div>
-              <div class="m_num">4월</div>
+              <div class="m_num">5월</div>
               <div class="arrow right"><a href="#" onclick="next_m_cal();"><img src="img/popup/cal_arrow_right.png" alt=""/></a></div>
             </div>
           </div>
-          <div class="list_cal" id="list_cal4">
+          <div class="list_cal" id="list_cal4" style="display:none">
             <ul>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -71,7 +71,7 @@
               </li>
             </ul>
           </div>
-          <div class="list_cal" id="list_cal5" style="display:none">
+          <div class="list_cal" id="list_cal5">
             <ul>
               <li class="clearfix">
                 <span class="icon"><img src="img/popup/cal_icon_car.png" width="20" alt=""/></span>
@@ -210,7 +210,7 @@
 </body>
 </html>
 <script type="text/javascript">
-var cal_cnt	= 0;
+var cal_cnt	= 1;
 function prev_m_cal()
 {
 	if (cal_cnt == 0)

@@ -92,8 +92,8 @@ switch ($_REQUEST['exec'])
 		$query3 		= "SELECT * FROM ".$_gl['winner_info_table']." WHERE mb_winner = 'miniature' AND mb_regdate like '%".date("Y-m-d")."%'";
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
-		$miniature_array = array("Y","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N");
-		$kit_array = array("Y","N","N","N","N","N","N","N","N","N","N","N","N");
+		$miniature_array = array("N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N");
+		$kit_array = array("Y","N","N","N","N","N","N","N","N","N");
 		//$miniature_array = array("Y","N");
 		//$kit_array = array("Y","N");
 
@@ -102,10 +102,10 @@ switch ($_REQUEST['exec'])
 		if ($winner_cnt > 1)
 		{
 			// 1일 2000명 당첨 ( 키트 )
-			if ($kit_cnt > 3000)
+			if ($kit_cnt > 5000)
 			{
 				// 1일 1000명 당첨 ( 미니어쳐 )
-				if ($miniature_cnt > 1500)
+				if ($miniature_cnt > 4000)
 				{
 					$flag	= "N";
 				}else{
@@ -140,7 +140,7 @@ switch ($_REQUEST['exec'])
 			}
 		}else{
 			// 정품 당첨 추첨
-			$winner_array = array(13447,19372,23118,28494);
+			$winner_array = array(73447,119372,123118,188494);
 			//$winner_array = array(1,2,23118,28494);
 			//$max_winner_cnt = 5;
 
@@ -156,10 +156,10 @@ switch ($_REQUEST['exec'])
 					break;
 				}else{
 					// 1일 2000명 당첨 ( 키트 )
-					if ($kit_cnt > 3000)
+					if ($kit_cnt > 5000)
 					{
 						// 1일 1000명 당첨 ( 미니어쳐 )
-						if ($miniature_cnt > 1500)
+						if ($miniature_cnt > 4000)
 						{
 							$flag	= "N";
 						}else{
