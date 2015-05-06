@@ -163,6 +163,9 @@
               <!--폭탄크림 미니어쳐 당첨 <img src="images/popup/title_gift_2.png" alt=""/>-->
               <!--폭탄크림 KIT 당첨 <img src="images/popup/title_gift_3.png" alt=""/>-->
             </div>
+            <div class="txt_gift_detail">
+              <img src="images/popup/txt_gift_detail.png" alt="" id="gift_detail_img"/>
+            </div>
             <div class="input_block">
               <ul class="clearfix">
                 <li class="t_name"><img src="images/popup/txt_name.png" alt=""/></li>
@@ -204,9 +207,6 @@
                 <li class="in_check_label"><img src="images/popup/check_agree_3.png" alt=""/></li>
                 <li class="in_check_label"><a href="#adver_div" class="btn_detail popup-with-zoom-anim"><img src="images/popup/btn_detail.png" alt=""/></a></li>
               </ul>
-            </div>
-            <div class="txt_gift_detail">
-              <img src="images/popup/txt_gift_detail.png" alt="" id="gift_detail_img"/>
             </div>
             <div class="btn_block">
               <a href="#" onclick="chk_input()"><img src="images/popup/btn_input_ok.png" alt=""/></a>

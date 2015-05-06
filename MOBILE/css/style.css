@@ -1227,6 +1227,12 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
+
+.txt_notice.t_bb{
+	padding:0 0 20px;
+	margin-top:-10px;
+}
+
 /* 팝업 jQuery ( Magnific-Popup ) 관련 CSS */
 /* Styles for dialog window */
 #input_1 {
