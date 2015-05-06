@@ -93,7 +93,7 @@ switch ($_REQUEST['exec'])
 		$result3 	= mysqli_query($my_db, $query3);
 		$miniature_cnt	= mysqli_num_rows($result3);
 		$miniature_array = array("N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N","N");
-		$kit_array = array("Y","N","N","N","N","N","N","N","N","N");
+		$kit_array = array("Y","N","N","N");
 		//$miniature_array = array("Y","N");
 		//$kit_array = array("Y","N");
 
